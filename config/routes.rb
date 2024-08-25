@@ -1,12 +1,10 @@
 # config/routes.rb
 Rails.application.routes.draw do
-  resources :users do
-    resources :reports, only: [:new, :create, :index]
+  if Rails.env == 'user'
+    root to: 'home#user_index'
+  elsif Rails.env == 'operator'
+    root to: 'home#operator_index'
+  else
+    root to: 'home#index'
   end
-
-  resources :operators do
-    resources :reports, only: [:index, :update]
-  end
-
-  root "users#index"
 end

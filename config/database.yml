@@ -23,3 +23,10 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+user:
+  <<: *default
+  database: db/user.sqlite3
+operator:
+  <<: *default
+  database: db/operator.sqlite3
