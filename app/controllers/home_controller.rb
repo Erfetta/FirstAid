@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def user_index
-    # La logica per l'index degli utenti
-    # render plain: "Ciao utente" può essere usato per debug o test
+    @users = User.all
+    Rails.logger.debug "Users loaded: #{@users.inspect}" # Per debugging
   end
 
   def operator_index

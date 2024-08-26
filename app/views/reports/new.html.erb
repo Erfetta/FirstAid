@@ -1,30 +1,14 @@
-<!-- app/views/reports/new.html.erb -->
-<h1>Nuova Segnalazione</h1>
+<%= form_with(model: @report, local: true) do |form| %>
+  <%= form.label :report_time %>
+  <%= form.time_select :report_time %>
 
-<%= form_with(model: [@user, @report], local: true) do |form| %>
-  <div class="field">
-    <%= form.label :ora, 'Ora' %>
-    <%= form.time_select :ora %>
-  </div>
+  <%= form.label :report_date %>
+  <%= form.date_select :report_date %>
 
-  <div class="field">
-    <%= form.label :data, 'Data' %>
-    <%= form.date_select :data %>
-  </div>
+  <%= form.label :coordinates %>
+  <%= form.text_field :coordinates %>
 
-  <div class="field">
-    <%= form.label :coordinate, 'Coordinate' %>
-    <%= form.text_field :coordinate %>
-  </div>
+  <%= form.hidden_field :user_id, value: 123456 %>
 
-  <div class="field">
-    <%= form.label :operator_id, 'Operatore' %>
-    <%= form.collection_select :operator_id, @operators, :id, :name, prompt: 'Seleziona un operatore' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Crea Segnalazione' %>
-  </div>
+  <%= form.submit %>
 <% end %>
-
-
