@@ -17,20 +17,32 @@
             <!-- Area centrale vuota con bordo -->
         </div>
 
-        <aside class="reports_section">
-            <div class="report_area">Richiesta 1</div>
-            <div class="report_area">Richiesta 2</div>
-            <div class="report_area">Richiesta 3</div>
-            <div class="report_area">Richiesta 4</div>
-            <div class="report_area">Richiesta 5</div>
-            <div class="report_area">Richiesta 6</div>
-            <div class="report_area">Richiesta 7</div>
-            <div class="report_area">Richiesta 8</div>
-            <div class="report_area">Richiesta 9</div>
-            <div class="report_area">Richiesta 10</div>
-            
+        <aside class="reports_section" id="reports-section">
+            <% @reports.each do |report| %>
+  <div class="report_area">
+    <p><strong>Richiesta:</strong> <%= link_to report.id, report_path(report) %></p>
+    <p><strong>Data:</strong> <%= report.report_date %></p>
+  </div>
+<% end %>
+
         </aside>
     </div>
+
+    <script>
+      function fetchReports() {
+        fetch("<%= operator_index_path %>")
+          .then(response => response.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const newReportsSection = doc.querySelector('#reports-section').innerHTML;
+
+            document.querySelector('#reports-section').innerHTML = newReportsSection;
+          })
+          .catch(error => console.error('Errore durante l\'aggiornamento dei reports:', error));
+      }
+
+      setInterval(fetchReports, 10000); // Aggiorna ogni 10 secondi
+    </script>
 </body>
 </html>
-

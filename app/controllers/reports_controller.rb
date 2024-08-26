@@ -19,6 +19,15 @@ class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
   end
+
+  def show
+    @report = Report.find(params[:id])
+    
+    # Aggiorna l'operator_id
+    @report.update(operator_id: 234567)
+
+    # Potresti voler aggiungere una logica per gestire errori in caso l'update non funzioni
+  end
   
   private
 

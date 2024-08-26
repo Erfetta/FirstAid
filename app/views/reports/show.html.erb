@@ -1,23 +1,10 @@
-<!-- app/views/reports/show.html.erb -->
+<h1>Dettagli Segnalazione</h1>
 
-<h1>Report Details</h1>
+<p><strong>ID Segnalazione:</strong> <%= @report.id %></p>
+<p><strong>Data:</strong> <%= @report.report_date %></p>
+<p><strong>Ora:</strong> <%= @report.report_time %></p>
+<p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
+<p><strong>ID Utente:</strong> <%= @report.user_id %></p>
+<p><strong>ID Operatore:</strong> <%= @report.operator_id %></p>
 
-<p>
-  <strong>Report Time:</strong>
-  <%= @report.report_time %>
-</p>
-
-<p>
-  <strong>Report Date:</strong>
-  <%= @report.report_date %>
-</p>
-
-<p>
-  <strong>Coordinates:</strong>
-  <%= @report.coordinates %>
-</p>
-
-<p>
-  <strong>User ID:</strong>
-  <%= @report.user_id %>
-</p>
+<%= link_to 'Torna alla lista', operator_index_path %>
