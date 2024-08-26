@@ -13,53 +13,51 @@
 ActiveRecord::Schema.define(version: 2024_08_26_112456) do
 
   create_table "operators", force: :cascade do |t|
-    t.string "name"
-    t.string "surname"
+    t.string "nome"
+    t.string "cognome"
     t.string "email"
-    t.string "telephone_number"
-    t.integer "age"
-    t.string "sex"
+    t.string "telefono"
+    t.integer "eta"
+    t.string "sesso"
     t.integer "supervisor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["supervisor_id"], name: "index_operators_on_supervisor_id"
   end
 
-  create_table "reports", force: :cascade do |t|
-    t.time "report_time"
-    t.date "report_date"
-    t.string "coordinates"
-    t.integer "user_id"
-    t.integer "operator_id"
-    t.boolean "accepted", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+# Could not dump table "reports" because of following StandardError
+#   Unknown type '' for column 'default'
 
   create_table "reports_done", force: :cascade do |t|
-    t.integer "operator_id"
+    t.string "nome_operatore"
+    t.string "nome_utente"
+    t.datetime "ora"
+    t.date "data"
+    t.string "coordinate"
     t.integer "user_id"
-    t.time "time"
-    t.date "date"
-    t.string "coordinates"
+    t.integer "operator_id"
+    t.integer "supervisor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["operator_id"], name: "index_reports_done_on_operator_id"
+    t.index ["supervisor_id"], name: "index_reports_done_on_supervisor_id"
+    t.index ["user_id"], name: "index_reports_done_on_user_id"
   end
 
   create_table "supervisors", force: :cascade do |t|
-    t.string "name"
+    t.string "nome"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "surname"
+    t.string "nome"
+    t.string "cognome"
     t.string "email"
-    t.string "telephone_number"
-    t.integer "age"
-    t.string "sex"
+    t.string "numero_di_telefono"
+    t.integer "eta"
+    t.string "sesso"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,5 +66,6 @@ ActiveRecord::Schema.define(version: 2024_08_26_112456) do
   add_foreign_key "reports", "operators"
   add_foreign_key "reports", "users"
   add_foreign_key "reports_done", "operators"
+  add_foreign_key "reports_done", "supervisors"
   add_foreign_key "reports_done", "users"
 end

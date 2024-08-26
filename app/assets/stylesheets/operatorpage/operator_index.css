@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container_navbar_operator {
+    display: flex;
+    height: 100vh;
+}
+
+.navbar_operator {
+    width: 70px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+    margin: 10px 0 10px 10px;
+    border-radius: 1rem;
+}
+
+.nav-button_operator {
+    width: 50px;
+    height: 50px;
+    background-color: #555;
+    border: none;
+    border-radius: 50%;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button_operator:hover {
+    background-color: #777;
+}
+
+.maps_section {
+    flex: 1;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    margin: 10px;
+}
+
+.reports_section {
+    width: 30%;
+    max-width: 300px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    overflow-y: scroll;
+    margin: 10px 10px 10px 0px;
+    border-radius: 1rem;
+}
+
+.report_area {
+    background-color: #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
