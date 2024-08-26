@@ -4,16 +4,22 @@ class ReportsController < ApplicationController
   end
 
   def create
+    puts "ciao porco dioooooooooooooooooooooooooooooooooooooooooooooooooo|||||||||||||||||||||||||||||||||||||||"
+    
     @report = Report.new(report_params)
-    @report.user_id = 123456 # Imposta manualmente l'ID dell'utente se necessario
-
+  
     if @report.save
       redirect_to @report, notice: 'Report was successfully created.'
     else
+      puts @report.errors.full_messages
       render :new
     end
   end
 
+  def show
+    @report = Report.find(params[:id])
+  end
+  
   private
 
   def report_params

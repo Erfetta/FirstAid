@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_24_163933) do
+ActiveRecord::Schema.define(version: 2024_08_26_112456) do
 
   create_table "operators", force: :cascade do |t|
     t.string "name"
@@ -26,15 +26,15 @@ ActiveRecord::Schema.define(version: 2024_08_24_163933) do
   end
 
   create_table "reports", force: :cascade do |t|
-  t.time "report_time"
-  t.date "report_date"
-  t.string "coordinates"
-  t.integer "user_id"
-  t.integer "operator_id"
-  t.boolean "accepted", default: false
-  t.datetime "created_at", precision: 6, null: false
-  t.datetime "updated_at", precision: 6, null: false
-end
+    t.time "report_time"
+    t.date "report_date"
+    t.string "coordinates"
+    t.integer "user_id"
+    t.integer "operator_id"
+    t.boolean "accepted", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "reports_done", force: :cascade do |t|
     t.integer "operator_id"

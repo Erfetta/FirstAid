@@ -5,7 +5,7 @@ class CreateReports < ActiveRecord::Migration[6.0]
       t.date :report_date
       t.string :coordinates
       t.integer :user_id
-      t.integer :operator_id
+      t.integer :operator_id, null: true # Questo permette i valori NULL
       t.boolean :accepted, default: false
 
       t.timestamps
@@ -14,7 +14,5 @@ class CreateReports < ActiveRecord::Migration[6.0]
     add_foreign_key :reports, :operators
   end
 end
-
-
 
 
