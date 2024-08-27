@@ -1,0 +1,794 @@
+Started GET "/" for 127.0.0.1 at 2024-08-25 19:59:56 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=operator
+
+You have 5 pending migrations:
+
+20240824160240_create_users.rb
+20240824160247_create_supervisors.rb
+20240824160249_create_reports.rb
+20240824163126_create_operators.rb
+20240824163933_create_reports_done.rb
+
+
+):
+  
+activerecord (6.1.7.8) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.8) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.8) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.8) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20240824160240)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cognome" varchar, "email" varchar, "numero_di_telefono" varchar, "eta" integer, "sesso" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824160240"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSupervisors (20240824160247)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824160247"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReports (20240824160249)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ora" time, "data" date, "coordinate" varchar, "user_id" integer, "operator_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c7699d537d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_c90c4759f5"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reports_on_user_id" ON "reports" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reports_on_operator_id" ON "reports" ("operator_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824160249"]]
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOperators (20240824163126)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "operators" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cognome" varchar, "email" varchar, "telefono" varchar, "eta" integer, "sesso" varchar, "supervisor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c6d9e79005"
+FOREIGN KEY ("supervisor_id")
+  REFERENCES "supervisors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_operators_on_supervisor_id" ON "operators" ("supervisor_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824163126"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReportsDone (20240824163933)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reports_done" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome_operatore" varchar, "nome_utente" varchar, "ora" datetime, "data" date, "coordinate" varchar, "user_id" integer, "operator_id" integer, "supervisor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_02e49b8027"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_ceb2b0c6cd"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+, CONSTRAINT "fk_rails_5b752e1d11"
+FOREIGN KEY ("supervisor_id")
+  REFERENCES "supervisors" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_reports_done_on_user_id" ON "reports_done" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_reports_done_on_operator_id" ON "reports_done" ("operator_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reports_done_on_supervisor_id" ON "reports_done" ("supervisor_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824163933"]]
+  [1m[36mTRANSACTION (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "operator"], ["created_at", "2024-08-25 18:02:17.814668"], ["updated_at", "2024-08-25 18:02:17.814668"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:02:37 +0200
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/operator_index.html.erb within layouts/application
+  Rendered home/operator_index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 17407)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.0ms | Allocations: 19309)
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:13:12 +0200
+Processing by HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/operator_index.html.erb within layouts/application
+  Rendered home/operator_index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 78)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1946)
+Completed 200 OK in 5ms (Views: 4.1ms | Allocations: 2919)
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:22:32 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 1955)
+Completed 200 OK in 22ms (Views: 21.3ms | Allocations: 2844)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:36:37 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/operator_index.html.erb within layouts/application
+  Rendered home/operator_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 76.8ms | Allocations: 13736)
+Completed 200 OK in 87ms (Views: 82.2ms | ActiveRecord: 0.0ms | Allocations: 16260)
+Started GET "/" for 127.0.0.1 at 2024-08-26 01:31:43 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/operator_index.html.erb within layouts/application
+  Rendered home/operator_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 14030)
+Completed 200 OK in 56ms (Views: 50.8ms | ActiveRecord: 0.0ms | Allocations: 16565)
+Started GET "/" for 127.0.0.1 at 2024-08-26 23:17:23 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 79.7ms | Allocations: 19795)
+Completed 200 OK in 90ms (Views: 85.6ms | ActiveRecord: 0.0ms | Allocations: 22314)
+Started GET "/" for 127.0.0.1 at 2024-08-26 23:23:13 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1165)
+Completed 500 Internal Server Error in 6ms (Allocations: 2146)
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    18:         </div>
+    19: 
+    20:         <aside class="reports_section">
+    21:             <% @reports.each do |report| %>
+    22:                 <div class="report_area">
+    23:                     <p><strong>Richiesta:</strong> <%= report.id %></p>
+    24:                     <p><strong>Data:</strong> <%= report.report_date %></p>
+  
+app/views/operatorpage/home/operator_index.html.erb:21
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:28:19 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:3:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4502)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 6576)
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 1.4ms | Allocations: 8983)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:29:12 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2468)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 2762)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:30:40 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 922)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2845)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 3887)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:31:58 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4106)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 4139)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.1ms | Allocations: 5139)
+  
+ActionView::Template::Error (undefined local variable or method `operator_index_path' for #<ActionView::Base:0x00000000008f98>
+Did you mean?  operator_dashboard_path):
+    38: 
+    39: <script>
+    40:   function fetchReports() {
+    41:     fetch("<%= operator_index_path %>") // Assumi che l'azione operator_index sia associata a operator_index_path
+    42:       .then(response => response.text())
+    43:       .then(html => {
+    44:         // Estrarre il contenuto della sezione dei reports dal HTML ricevuto
+  
+app/views/operatorpage/home/operator_index.html.erb:41
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:33:40 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:3:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 32.6ms | Allocations: 7469)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 7503)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 2.0ms | Allocations: 10285)
+  
+ActionView::Template::Error (undefined local variable or method `operator_dashboard_path' for #<ActionView::Base:0x0000000000a078>
+Did you mean?  operator_index_path):
+    38: 
+    39: <script>
+    40:   function fetchReports() {
+    41:     fetch("<%= operator_dashboard_path %>") // Usa il percorso corretto per la tua azione
+    42:       .then(response => response.text())
+    43:       .then(html => {
+    44:         const parser = new DOMParser();
+  
+app/views/operatorpage/home/operator_index.html.erb:41
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:33:54 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 33.7ms | Allocations: 3750)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 3783)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms | Allocations: 4034)
+  
+ActionView::Template::Error (undefined local variable or method `operator_dashboard_path' for #<ActionView::Base:0x0000000000a1e0>
+Did you mean?  operator_index_path):
+    38: 
+    39: <script>
+    40:   function fetchReports() {
+    41:     fetch("<%= operator_dashboard_path %>") // Usa il percorso corretto per la tua azione
+    42:       .then(response => response.text())
+    43:       .then(html => {
+    44:         const parser = new DOMParser();
+  
+app/views/operatorpage/home/operator_index.html.erb:41
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:35:16 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 4053)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4086)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 5078)
+  
+ActionView::Template::Error (undefined local variable or method `operator_index' for #<ActionView::Base:0x0000000000a398>
+Did you mean?  operator_index_url):
+    38: 
+    39: <script>
+    40:   function fetchReports() {
+    41:     fetch("<%= operator_index %>") // Usa il percorso corretto per la tua azione
+    42:       .then(response => response.text())
+    43:       .then(html => {
+    44:         const parser = new DOMParser();
+  
+app/views/operatorpage/home/operator_index.html.erb:41
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:35:27 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2866)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 3872)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:36:57 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:3:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4352)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6301)
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 2.3ms | Allocations: 9097)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:37:07 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2455)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 2882)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:37:17 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2487)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 2766)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:37:31 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2505)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 2784)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:37:41 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2489)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 2768)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:37:50 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 985)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2909)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 3910)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:38:03 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 717)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2501)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 2926)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:38:13 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2487)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 2766)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:38:23 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2503)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 2782)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:38:35 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2499)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 2778)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:38:45 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2497)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 2776)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:38:55 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2483)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 2762)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:39:05 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:3:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 4374)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 6170)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 1.4ms | Allocations: 8470)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:39:11 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 727)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2533)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 2834)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:39:21 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (1.9ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 717)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2501)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 1.9ms | Allocations: 2810)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:39:31 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 717)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2528)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 2838)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:39:41 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 717)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2491)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 2800)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:39:53 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2457)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 2766)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:40:04 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2450)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2759)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:40:13 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 2463)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 2773)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:40:26 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2451)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 2760)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:40:36 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2455)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 2764)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:40:46 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2473)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 2782)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:40:59 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2853)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 3940)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:41:09 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 673)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2449)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 2759)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:41:19 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2443)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 2752)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:41:32 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2437)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 2746)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:41:42 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2443)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2752)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:41:52 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 122.1ms | Allocations: 2463)
+Completed 200 OK in 124ms (Views: 122.4ms | ActiveRecord: 0.4ms | Allocations: 2772)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:42:25 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2447)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 2756)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:43:31 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2453)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2762)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:44:39 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2457)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 2766)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:45:45 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2451)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 2760)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:46:53 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:3:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 4113)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 6047)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 2.2ms | Allocations: 8344)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:47:57 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:3:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 4056)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5864)
+Completed 200 OK in 17ms (Views: 10.5ms | ActiveRecord: 2.8ms | Allocations: 8154)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:49:03 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 924)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2856)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 3943)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:49:55 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2833)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 3915)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:49:57 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 684)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2455)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 2882)
+Started GET "/reports/2" for 127.0.0.1 at 2024-08-27 00:50:01 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:24:in `show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mReport Update (0.8ms)[0m  [1m[33mUPDATE "reports" SET "operator_id" = ?, "updated_at" = ? WHERE "reports"."id" = ?[0m  [["operator_id", 234567], ["updated_at", "2024-08-26 22:50:01.247436"], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 246)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2030)
+Completed 200 OK in 37ms (Views: 6.0ms | ActiveRecord: 15.0ms | Allocations: 13028)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:50:06 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2427)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 2729)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:50:16 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 627)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2414)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 2723)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:50:29 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 627)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2400)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2709)
+Started GET "/reports/5" for 127.0.0.1 at 2024-08-27 00:50:35 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:24:in `show'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mReport Update (0.7ms)[0m  [1m[33mUPDATE "reports" SET "operator_id" = ?, "updated_at" = ? WHERE "reports"."id" = ?[0m  [["operator_id", 234567], ["updated_at", "2024-08-26 22:50:35.398843"], ["id", 5]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2722)
+Completed 200 OK in 34ms (Views: 4.3ms | ActiveRecord: 16.4ms | Allocations: 6543)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:50:46 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2358)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 2659)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:50:59 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2348)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 2657)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:09 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2383)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2693)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:19 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2362)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 2671)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:29 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2350)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 2659)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:43 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2366)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 2675)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:53 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2344)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 2653)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:52:23 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2361)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2670)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

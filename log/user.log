@@ -1,0 +1,1949 @@
+Started GET "/" for 127.0.0.1 at 2024-08-25 19:59:41 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=user
+
+You have 5 pending migrations:
+
+20240824160240_create_users.rb
+20240824160247_create_supervisors.rb
+20240824160249_create_reports.rb
+20240824163126_create_operators.rb
+20240824163933_create_reports_done.rb
+
+
+):
+  
+activerecord (6.1.7.8) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.8) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.8) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.8) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-08-25 19:59:42 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=user
+
+You have 5 pending migrations:
+
+20240824160240_create_users.rb
+20240824160247_create_supervisors.rb
+20240824160249_create_reports.rb
+20240824163126_create_operators.rb
+20240824163933_create_reports_done.rb
+
+
+):
+  
+activerecord (6.1.7.8) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.8) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.8) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.7.8) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20240824160240)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cognome" varchar, "email" varchar, "numero_di_telefono" varchar, "eta" integer, "sesso" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824160240"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSupervisors (20240824160247)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824160247"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReports (20240824160249)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ora" time, "data" date, "coordinate" varchar, "user_id" integer, "operator_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c7699d537d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_c90c4759f5"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_reports_on_user_id" ON "reports" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reports_on_operator_id" ON "reports" ("operator_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824160249"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOperators (20240824163126)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "operators" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cognome" varchar, "email" varchar, "telefono" varchar, "eta" integer, "sesso" varchar, "supervisor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c6d9e79005"
+FOREIGN KEY ("supervisor_id")
+  REFERENCES "supervisors" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_operators_on_supervisor_id" ON "operators" ("supervisor_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824163126"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReportsDone (20240824163933)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "reports_done" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome_operatore" varchar, "nome_utente" varchar, "ora" datetime, "data" date, "coordinate" varchar, "user_id" integer, "operator_id" integer, "supervisor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_02e49b8027"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_ceb2b0c6cd"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+, CONSTRAINT "fk_rails_5b752e1d11"
+FOREIGN KEY ("supervisor_id")
+  REFERENCES "supervisors" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_reports_done_on_user_id" ON "reports_done" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_reports_done_on_operator_id" ON "reports_done" ("operator_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_reports_done_on_supervisor_id" ON "reports_done" ("supervisor_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240824163933"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "user"], ["created_at", "2024-08-25 18:02:28.212723"], ["updated_at", "2024-08-25 18:02:28.212723"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:02:42 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 124.6ms | Allocations: 17396)
+Completed 200 OK in 130ms (Views: 126.1ms | ActiveRecord: 0.0ms | Allocations: 19296)
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:13:15 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 599)
+Completed 500 Internal Server Error in 4ms (Allocations: 1550)
+  
+ActionView::Template::Error (Missing partial reports/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/biar/firstaid/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actiontext-6.1.7.8/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actionmailbox-6.1.7.8/app/views"
+):
+    4: 
+    5: <h2>Crea un Report</h2>
+    6: 
+    7: <%= render 'reports/form', report: @report %> <!-- Se usi un partial per il form -->
+  
+app/views/home/user_index.html.erb:7
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:18:32 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 76)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1958)
+Completed 200 OK in 4ms (Views: 3.5ms | Allocations: 2852)
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:19:12 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered reports/_form.html.erb (Duration: 7.0ms | Allocations: 2513)
+  Rendered home/user_index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2782)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2815)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms | Allocations: 8308)
+  
+ActionView::Template::Error (undefined method `reports_path' for #<ActionView::Base:0x00000000009088>):
+    1: <%= form_with(model: report, local: true) do |form| %>
+    2:   <div class="field">
+    3:     <%= form.label :ora %>
+    4:     <%= form.time_field :ora %>
+  
+app/views/reports/_form.html.erb:1
+app/views/home/user_index.html.erb:7
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:20:27 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered reports/_form.html.erb (Duration: 5.0ms | Allocations: 2430)
+  Rendered home/user_index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2699)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2732)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3689)
+  
+ActionView::Template::Error (undefined method `reports_path' for #<ActionView::Base:0x000000000093a8>):
+    1: <%= form_with(model: report, local: true) do |form| %>
+    2:   <div class="field">
+    3:     <%= form.label :ora %>
+    4:     <%= form.time_field :ora %>
+  
+app/views/reports/_form.html.erb:1
+app/views/home/user_index.html.erb:7
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:20:33 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered reports/_form.html.erb (Duration: 7.8ms | Allocations: 2179)
+  Rendered home/user_index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2225)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2258)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2481)
+  
+ActionView::Template::Error (undefined method `reports_path' for #<ActionView::Base:0x00000000009538>):
+    1: <%= form_with(model: report, local: true) do |form| %>
+    2:   <div class="field">
+    3:     <%= form.label :ora %>
+    4:     <%= form.time_field :ora %>
+  
+app/views/reports/_form.html.erb:1
+app/views/home/user_index.html.erb:7
+Started GET "/" for 127.0.0.1 at 2024-08-25 20:22:09 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1968)
+Completed 200 OK in 6ms (Views: 5.2ms | Allocations: 2421)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:36:22 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1207)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1301)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 3879)
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.email %></td>
+  
+app/views/home/user_index.html.erb:12
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:39:56 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 617)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 651)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 929)
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.email %></td>
+  
+app/views/home/user_index.html.erb:12
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:39:57 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 612)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 646)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 852)
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:     </tr>
+    10:   </thead>
+    11:   <tbody>
+    12:     <% @users.each do |user| %>
+    13:       <tr>
+    14:         <td><%= user.name %></td>
+    15:         <td><%= user.email %></td>
+  
+app/views/home/user_index.html.erb:12
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:40:46 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/home/user_index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:12
+  Rendered home/user_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1090)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 14746)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.5ms | Allocations: 15191)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:41:58 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:2
+  Rendered home/user_index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 668)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2567)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 3554)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:42:12 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:12
+  Rendered home/user_index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 641)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2510)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 3499)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:47:14 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/home/user_index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:12
+  Rendered home/user_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1004)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2737)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 3135)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:47:15 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:12
+  Rendered home/user_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 453)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2168)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 2408)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:49:52 +0200
+Processing by HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/home/user_index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:12
+  Rendered home/user_index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3088)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.6ms | Allocations: 4111)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:54:53 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:12
+  Rendered home/user_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 14581)
+Completed 200 OK in 63ms (Views: 55.6ms | ActiveRecord: 0.4ms | Allocations: 17701)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:58:32 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:12
+  Rendered home/user_index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 711)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2603)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 4647)
+Started GET "/" for 127.0.0.1 at 2024-08-25 23:59:09 +0200
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/user_index.html.erb:13
+  Rendered home/user_index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2527)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 4008)
+Started GET "/" for 127.0.0.1 at 2024-08-26 00:01:47 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3514)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3547)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms | Allocations: 5541)
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x00000000008480>
+Did you mean?  current_page?):
+    1: <h1>Benvenuto, <%= current_user.name %></h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_user_report_path(current_user), class: 'btn btn-primary' %>
+  
+app/views/home/user_index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2024-08-26 00:05:47 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3225)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3258)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms | Allocations: 5431)
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x00000000009240>
+Did you mean?  current_page?):
+    1: <h1>Benvenuto, <%= current_user.name %></h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_user_report_path(current_user), class: 'btn btn-primary' %>
+  
+app/views/home/user_index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2024-08-26 00:05:48 +0200
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3118)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3151)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 3831)
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x000000000093d0>
+Did you mean?  current_page?):
+    1: <h1>Benvenuto, <%= current_user.name %></h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_user_report_path(current_user), class: 'btn btn-primary' %>
+  
+app/views/home/user_index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2024-08-26 00:05:48 +0200
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3118)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3152)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 3851)
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<ActionView::Base:0x00000000009560>
+Did you mean?  current_page?):
+    1: <h1>Benvenuto, <%= current_user.name %></h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_user_report_path(current_user), class: 'btn btn-primary' %>
+  
+app/views/home/user_index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2024-08-26 00:09:44 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2157)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 4209)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 00:09:50 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3757)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5303)
+Completed 200 OK in 22ms (Views: 12.4ms | ActiveRecord: 0.8ms | Allocations: 10690)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:10:01 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 500)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:13:44 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 7.6ms | Allocations: 5125)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:16:56 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms | Allocations: 4580)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:18:12 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms | Allocations: 4580)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:27:14 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms | Allocations: 4175)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:27:51 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.5ms | Allocations: 5104)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:32:41 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.2ms | Allocations: 5104)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:43:00 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=user
+
+You have 1 pending migration:
+
+20240825224040_rename_time_in_reports.rb
+
+
+):
+  
+activerecord (6.1.7.8) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.7.8) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.7.8) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activesupport (6.1.7.8) lib/active_support/evented_file_update_checker.rb:65:in `execute_if_updated'
+activerecord (6.1.7.8) lib/active_record/migration.rb:597:in `block in call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.7.8) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 00:43:54 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"time"=>"00:09", "date"=>"2024-08-26", "coordinates"=>"11111111", "user_id"=>"1", "operator_id"=>"1"}, "commit"=>"Crea Report"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms | Allocations: 4597)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'date' for Report.):
+  
+app/controllers/reports_controller.rb:3:in `create'
+Started GET "/" for 127.0.0.1 at 2024-08-26 01:21:04 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 151)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2040)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 3568)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 01:21:08 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 5701)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 7247)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 7965)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 01:24:04 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 4887)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 6602)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 7480)
+Started POST "/reports/new" for 127.0.0.1 at 2024-08-26 01:24:18 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/reports/new"):
+  
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 01:27:05 +0200
+Processing by ReportsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:3:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 5371)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 6936)
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 0.3ms | Allocations: 11450)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:27:20 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"27", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"11111111111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 552)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2024-08-26 01:31:37 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 14060)
+Completed 200 OK in 57ms (Views: 51.0ms | ActiveRecord: 0.3ms | Allocations: 17180)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 01:31:45 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 7450)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 9027)
+Completed 200 OK in 25ms (Views: 12.3ms | ActiveRecord: 0.7ms | Allocations: 14275)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:31:56 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"31", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"222222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 593)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:33:33 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"31", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"222222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.5ms | Allocations: 5367)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:34:52 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"31", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"222222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.9ms | Allocations: 5151)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:35:16 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"31", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"222222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 2ms (Allocations: 857)
+  
+NoMethodError (undefined method `coordinates=' for nil:NilClass):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:35:44 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"31", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"222222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 2ms (Allocations: 854)
+  
+NoMethodError (undefined method `user_id=' for nil:NilClass):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:38:03 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"31", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"222222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:3:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.7ms | Allocations: 5142)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:3:in `create'
+Started GET "/" for 127.0.0.1 at 2024-08-26 01:44:55 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 14170)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.2ms | Allocations: 17290)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 01:44:59 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 6942)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 8519)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 9240)
+Started POST "/reports/new" for 127.0.0.1 at 2024-08-26 01:45:03 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/reports/new"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-26 01:46:48 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2145)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.5ms | Allocations: 4368)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 01:46:51 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 5507)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 7053)
+Completed 200 OK in 15ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 12431)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:46:55 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"46", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"22222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 583)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2024-08-26 01:49:18 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 58)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 10724)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.4ms | Allocations: 12140)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 01:49:20 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 5076)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6657)
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 11169)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:49:26 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"49", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"11111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 581)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:51:12 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"49", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"11111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 549)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:53:23 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"49", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"11111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms | Allocations: 5203)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:55:21 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"49", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"11111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 3ms (Allocations: 2175)
+  
+NameError (uninitialized constant ReportsController::Reports):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 01:55:49 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"25", "report_time(4i)"=>"23", "report_time(5i)"=>"49", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"25", "coordinates"=>"11111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.4ms | Allocations: 5196)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 12:08:00 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 27.1ms | Allocations: 8079)
+  Rendered layout layouts/application.html.erb (Duration: 109.7ms | Allocations: 21073)
+Completed 200 OK in 134ms (Views: 115.9ms | ActiveRecord: 0.7ms | Allocations: 29067)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:08:08 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"08", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 593)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:7:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:11:18 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"08", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 3.3ms | Allocations: 5373)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2024-08-26 12:14:19 +0200
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 65.2ms | Allocations: 13212)
+Completed 200 OK in 83ms (Views: 72.5ms | ActiveRecord: 0.4ms | Allocations: 16332)
+Started GET "/" for 127.0.0.1 at 2024-08-26 12:17:37 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 73.0ms | Allocations: 13601)
+Completed 200 OK in 111ms (Views: 79.4ms | ActiveRecord: 0.5ms | Allocations: 16721)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 12:19:37 +0200
+Processing by ReportsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:3:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 7236)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 8813)
+Completed 200 OK in 25ms (Views: 15.3ms | ActiveRecord: 1.2ms | Allocations: 14625)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:19:42 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"19", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"111111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 598)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:9:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:25:47 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"19", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"111111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 12ms (Allocations: 3407)
+  
+NameError (undefined local variable or method `report_time' for #<ReportsController:0x00000000008d90>
+Did you mean?  report_path):
+  
+app/controllers/reports_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2024-08-26 12:29:54 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 116.9ms | Allocations: 13802)
+Completed 200 OK in 138ms (Views: 127.1ms | ActiveRecord: 0.3ms | Allocations: 16959)
+Started GET "/" for 127.0.0.1 at 2024-08-26 12:42:10 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 58)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1838)
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 1.5ms | Allocations: 3304)
+Started GET "/" for 127.0.0.1 at 2024-08-26 12:42:11 +0200
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1798)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 2536)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 12:42:13 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 7239)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 8822)
+Completed 200 OK in 39ms (Views: 25.9ms | ActiveRecord: 1.1ms | Allocations: 14139)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:42:17 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"42", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"111111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 596)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:9:in `create'
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 12:44:10 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 5019)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 6718)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 7091)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:44:17 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"44", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 543)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:9:in `create'
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:45:28 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"44", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 526)
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'coordinates' for Report.):
+  
+app/controllers/reports_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2024-08-26 12:54:42 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation []>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 46.6ms | Allocations: 13842)
+Completed 200 OK in 62ms (Views: 51.3ms | ActiveRecord: 0.3ms | Allocations: 16998)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 12:54:43 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 19.4ms | Allocations: 7073)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 8681)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 0.4ms | Allocations: 14406)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:54:47 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4674)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 6251)
+Completed 200 OK in 14ms (Views: 5.2ms | ActiveRecord: 1.3ms | Allocations: 11403)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:54:52 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 4672)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 6249)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 8968)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:54:53 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 4672)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 6254)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 8959)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:16 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 4672)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 6248)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 8963)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:16 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6247)
+Completed 200 OK in 14ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 8947)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:17 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 6247)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 8932)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:17 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6247)
+Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 8948)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:17 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 6247)
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 8932)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:18 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 6247)
+Completed 200 OK in 27ms (Views: 19.9ms | ActiveRecord: 0.4ms | Allocations: 8934)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:18 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6260)
+Completed 200 OK in 20ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 8951)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:19 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 6247)
+Completed 200 OK in 25ms (Views: 9.9ms | ActiveRecord: 3.1ms | Allocations: 8944)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:19 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6247)
+Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 8944)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:20 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 6247)
+Completed 200 OK in 20ms (Views: 7.1ms | ActiveRecord: 0.8ms | Allocations: 8932)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:21 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 6247)
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 8939)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:57:21 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 4671)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 6250)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 8943)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:59:42 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4659)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 6235)
+Completed 200 OK in 41ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 12335)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:59:43 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 4659)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 6239)
+Completed 200 OK in 22ms (Views: 11.4ms | ActiveRecord: 0.5ms | Allocations: 8939)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 12:59:44 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"10", "report_time(5i)"=>"54", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 4659)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 6237)
+Completed 200 OK in 15ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 8932)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 13:05:09 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /home/biar/firstaid/app/controllers/reports_controller.rb to define constant ReportsController, but didn't):
+  
+zeitwerk (2.6.17) lib/zeitwerk/loader/callbacks.rb:32:in `on_file_autoloaded'
+zeitwerk (2.6.17) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (6.1.7.8) lib/active_support/inflector/methods.rb:273:in `const_get'
+activesupport (6.1.7.8) lib/active_support/inflector/methods.rb:273:in `constantize'
+activesupport (6.1.7.8) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.7.8) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.7.8) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.7.8) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.7.8) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.7.8) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-08-26 13:05:18 +0200
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 13757)
+Completed 200 OK in 40ms (Views: 26.0ms | ActiveRecord: 1.7ms | Allocations: 20779)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 13:05:23 +0200
+  
+ActionController::RoutingError (uninitialized constant ReportsController
+Did you mean?  ReportDone):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-26 13:06:11 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | Allocations: 13953)
+Completed 200 OK in 99ms (Views: 65.7ms | ActiveRecord: 1.1ms | Allocations: 21456)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 13:06:12 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 7061)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 8669)
+Completed 200 OK in 33ms (Views: 20.0ms | ActiveRecord: 1.8ms | Allocations: 14119)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 13:06:16 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"11", "report_time(5i)"=>"06", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"1111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:12:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reports_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4661)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6240)
+Completed 200 OK in 17ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 11258)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 13:13:02 +0200
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 54.1ms | Allocations: 7261)
+  Rendered layout layouts/application.html.erb (Duration: 87.3ms | Allocations: 20767)
+Completed 200 OK in 136ms (Views: 97.4ms | ActiveRecord: 1.7ms | Allocations: 28338)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 13:13:09 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"11", "report_time(5i)"=>"13", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"11111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:12:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:12:in `create'
+  [1m[36mReport Create (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 11:13:00"], ["report_date", "2024-08-26"], ["coordinates", "11111"], ["user_id", 123456], ["created_at", "2024-08-26 11:13:09.124364"], ["updated_at", "2024-08-26 11:13:09.124364"]]
+  ↳ app/controllers/reports_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:12:in `create'
+Redirected to http://localhost:3000/reports/1
+Completed 302 Found in 39ms (ActiveRecord: 15.4ms | Allocations: 11165)
+Started GET "/reports/1" for 127.0.0.1 at 2024-08-26 13:13:09 +0200
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ReportsController
+Did you mean?  new
+               create):
+  
+actionpack (6.1.7.8) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.7.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-08-26 13:16:09 +0200
+Processing by HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2229)
+Completed 200 OK in 15ms (Views: 5.0ms | ActiveRecord: 1.4ms | Allocations: 8580)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 13:16:10 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 5246)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 6823)
+Completed 200 OK in 41ms (Views: 34.2ms | ActiveRecord: 0.5ms | Allocations: 12007)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 13:16:17 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"11", "report_time(5i)"=>"16", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"11111", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.3ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 11:16:00"], ["report_date", "2024-08-26"], ["coordinates", "11111"], ["user_id", 123456], ["created_at", "2024-08-26 11:16:17.879429"], ["updated_at", "2024-08-26 11:16:17.879429"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/2
+Completed 302 Found in 30ms (ActiveRecord: 7.1ms | Allocations: 5648)
+Started GET "/reports/2" for 127.0.0.1 at 2024-08-26 13:16:17 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 203)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1974)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2922)
+Started GET "/" for 127.0.0.1 at 2024-08-26 13:26:41 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/home_controller.rb:4:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering home/user_index.html.erb within layouts/application
+  Rendered home/user_index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 14080)
+Completed 200 OK in 156ms (Views: 85.0ms | ActiveRecord: 1.7ms | Allocations: 21675)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-26 13:26:43 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 7089)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 8697)
+Completed 200 OK in 48ms (Views: 18.6ms | ActiveRecord: 2.9ms | Allocations: 14207)
+Started POST "/reports" for 127.0.0.1 at 2024-08-26 13:27:02 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"13", "report_time(5i)"=>"26", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"12:34:34:56", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 13:26:00"], ["report_date", "2024-08-26"], ["coordinates", "12:34:34:56"], ["user_id", 123456], ["created_at", "2024-08-26 11:27:02.811942"], ["updated_at", "2024-08-26 11:27:02.811942"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/3
+Completed 302 Found in 27ms (ActiveRecord: 6.4ms | Allocations: 6300)
+Started GET "/reports/3" for 127.0.0.1 at 2024-08-26 13:27:02 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 1966)
+Completed 200 OK in 38ms (Views: 24.7ms | ActiveRecord: 0.5ms | Allocations: 2915)
+Started GET "/reports/3" for 127.0.0.1 at 2024-08-26 23:16:21 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 323)
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 18796)
+Completed 200 OK in 75ms (Views: 57.5ms | ActiveRecord: 0.9ms | Allocations: 27461)
+Started GET "/" for 127.0.0.1 at 2024-08-26 23:16:25 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (104.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 1975)
+Completed 200 OK in 153ms (Views: 12.3ms | ActiveRecord: 106.1ms | Allocations: 7442)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-27 00:29:01 +0200
+Processing by ReportsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:3:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 7090)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 8875)
+Completed 200 OK in 22ms (Views: 13.3ms | ActiveRecord: 0.6ms | Allocations: 14529)
+Started POST "/reports" for 127.0.0.1 at 2024-08-27 00:29:09 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"22", "report_time(5i)"=>"29", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"857474734", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 22:29:00"], ["report_date", "2024-08-26"], ["coordinates", "857474734"], ["user_id", 123456], ["created_at", "2024-08-26 22:29:09.170572"], ["updated_at", "2024-08-26 22:29:09.170572"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/4
+Completed 302 Found in 31ms (ActiveRecord: 5.6ms | Allocations: 10077)
+Started GET "/reports/4" for 127.0.0.1 at 2024-08-27 00:29:09 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 192)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2009)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2951)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-27 00:37:07 +0200
+Processing by ReportsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/reports_controller.rb:3:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 5166)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6946)
+Completed 200 OK in 20ms (Views: 11.4ms | ActiveRecord: 0.7ms | Allocations: 12557)
+Started POST "/reports" for 127.0.0.1 at 2024-08-27 00:37:17 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"07", "report_time(5i)"=>"37", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"222222", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.7ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 07:37:00"], ["report_date", "2024-08-26"], ["coordinates", "222222"], ["user_id", 123456], ["created_at", "2024-08-26 22:37:17.288825"], ["updated_at", "2024-08-26 22:37:17.288825"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/5
+Completed 302 Found in 28ms (ActiveRecord: 8.0ms | Allocations: 8410)
+Started GET "/reports/5" for 127.0.0.1 at 2024-08-27 00:37:17 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:20:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 192)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2016)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.4ms | Allocations: 2957)
+Started GET "/" for 127.0.0.1 at 2024-08-27 00:50:54 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 149)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2115)
+Completed 200 OK in 30ms (Views: 5.4ms | ActiveRecord: 2.9ms | Allocations: 7718)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-27 00:50:59 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 5150)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6782)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 11482)
+Started POST "/reports" for 127.0.0.1 at 2024-08-27 00:51:07 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"26", "report_time(4i)"=>"22", "report_time(5i)"=>"50", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"26", "coordinates"=>"234567", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.9ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 22:50:00"], ["report_date", "2024-08-26"], ["coordinates", "234567"], ["user_id", 123456], ["created_at", "2024-08-26 22:51:07.741922"], ["updated_at", "2024-08-26 22:51:07.741922"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/6
+Completed 302 Found in 44ms (ActiveRecord: 15.6ms | Allocations: 5462)
+Started GET "/reports/6" for 127.0.0.1 at 2024-08-27 00:51:07 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:24:in `show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mReport Update (1.3ms)[0m  [1m[33mUPDATE "reports" SET "operator_id" = ?, "updated_at" = ? WHERE "reports"."id" = ?[0m  [["operator_id", 234567], ["updated_at", "2024-08-26 22:51:07.793763"], ["id", 6]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 245)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2073)
+Completed 200 OK in 31ms (Views: 5.2ms | ActiveRecord: 10.7ms | Allocations: 7494)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:09 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 860)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2667)
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 3482)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:19 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 2391)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 2873)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:29 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 593)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2413)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.4ms | Allocations: 2757)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:42 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2391)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 2725)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:51:52 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2393)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 2727)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:52:02 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 2391)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.3ms | Allocations: 2725)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:52:15 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2383)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 2717)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:52:25 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2404)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 2739)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:52:35 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2413)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 2747)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:52:48 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2389)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 2723)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:52:58 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 2388)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 2722)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:53:08 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2413)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 2747)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:53:21 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 2401)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.2ms | Allocations: 2736)
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-27 00:53:31 +0200
+Processing by Operatorpage::HomeController#operator_index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 585)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2387)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 2721)
+Started GET "/" for 127.0.0.1 at 2024-08-27 17:51:24 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 78.3ms | Allocations: 15679)
+Completed 200 OK in 105ms (Views: 84.9ms | ActiveRecord: 1.2ms | Allocations: 23145)
+Started GET "/reports/new" for 127.0.0.1 at 2024-08-27 17:51:27 +0200
+Processing by ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 36.0ms | Allocations: 7100)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 8731)
+Completed 200 OK in 65ms (Views: 56.1ms | ActiveRecord: 0.6ms | Allocations: 14232)
+Started POST "/reports" for 127.0.0.1 at 2024-08-27 17:51:32 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"27", "report_time(4i)"=>"15", "report_time(5i)"=>"51", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"27", "coordinates"=>"1122123", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 15:51:00"], ["report_date", "2024-08-27"], ["coordinates", "1122123"], ["user_id", 123456], ["created_at", "2024-08-27 15:51:32.497581"], ["updated_at", "2024-08-27 15:51:32.497581"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/7
+Completed 302 Found in 45ms (ActiveRecord: 3.6ms | Allocations: 5803)
+Started GET "/reports/7" for 127.0.0.1 at 2024-08-27 17:51:32 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:24:in `show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mReport Update (3.2ms)[0m  [1m[33mUPDATE "reports" SET "operator_id" = ?, "updated_at" = ? WHERE "reports"."id" = ?[0m  [["operator_id", 234567], ["updated_at", "2024-08-27 15:51:32.519127"], ["id", 7]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mTRANSACTION (27.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 249)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2035)
+Completed 200 OK in 50ms (Views: 5.2ms | ActiveRecord: 30.8ms | Allocations: 7404)
+Started POST "/reports" for 127.0.0.1 at 2024-08-27 17:53:52 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"27", "report_time(4i)"=>"15", "report_time(5i)"=>"51", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"27", "coordinates"=>"1122123", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.3ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 15:51:00"], ["report_date", "2024-08-27"], ["coordinates", "1122123"], ["user_id", 123456], ["created_at", "2024-08-27 15:53:52.880186"], ["updated_at", "2024-08-27 15:53:52.880186"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/8
+Completed 302 Found in 25ms (ActiveRecord: 15.7ms | Allocations: 4704)
+Started GET "/reports/8" for 127.0.0.1 at 2024-08-27 17:53:52 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mReport Load (1.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:24:in `show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mReport Update (0.3ms)[0m  [1m[33mUPDATE "reports" SET "operator_id" = ?, "updated_at" = ? WHERE "reports"."id" = ?[0m  [["operator_id", 234567], ["updated_at", "2024-08-27 15:53:52.920887"], ["id", 8]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1840)
+Completed 200 OK in 19ms (Views: 3.7ms | ActiveRecord: 9.1ms | Allocations: 6878)
+Started POST "/reports" for 127.0.0.1 at 2024-08-27 17:54:27 +0200
+Processing by ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time(1i)"=>"2024", "report_time(2i)"=>"8", "report_time(3i)"=>"27", "report_time(4i)"=>"15", "report_time(5i)"=>"51", "report_date(1i)"=>"2024", "report_date(2i)"=>"8", "report_date(3i)"=>"28", "coordinates"=>"444444", "user_id"=>"123456"}, "commit"=>"Create Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mReport Create (0.3ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 15:51:00"], ["report_date", "2024-08-28"], ["coordinates", "444444"], ["user_id", 123456], ["created_at", "2024-08-27 15:54:27.899356"], ["updated_at", "2024-08-27 15:54:27.899356"]]
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reports/9
+Completed 302 Found in 27ms (ActiveRecord: 14.0ms | Allocations: 5074)
+Started GET "/reports/9" for 127.0.0.1 at 2024-08-27 17:54:27 +0200
+Processing by ReportsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:24:in `show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mReport Update (0.3ms)[0m  [1m[33mUPDATE "reports" SET "operator_id" = ?, "updated_at" = ? WHERE "reports"."id" = ?[0m  [["operator_id", 234567], ["updated_at", "2024-08-27 15:54:27.938319"], ["id", 9]]
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reports_controller.rb:27:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/show.html.erb within layouts/application
+  Rendered reports/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2375)
+Completed 200 OK in 17ms (Views: 3.0ms | ActiveRecord: 5.7ms | Allocations: 6860)
