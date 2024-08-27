@@ -14,17 +14,16 @@
         </nav>
 
         <div class="maps_section">
-            <!-- Area centrale vuota con bordo -->
+            <!-- da inserire google maps -->
         </div>
 
         <aside class="reports_section" id="reports-section">
             <% @reports.each do |report| %>
-  <div class="report_area">
-    <p><strong>Richiesta:</strong> <%= link_to report.id, report_path(report) %></p>
-    <p><strong>Data:</strong> <%= report.report_date %></p>
-  </div>
-<% end %>
-
+              <div class="report_area">
+                <p><strong>Richiesta:</strong> <%= link_to report.id, report_path(report) %></p>
+                <p><strong>Data:</strong> <%= report.report_date %></p>
+              </div>
+            <% end %>
         </aside>
     </div>
 
