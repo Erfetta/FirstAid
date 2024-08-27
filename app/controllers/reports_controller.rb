@@ -4,12 +4,12 @@ class ReportsController < ApplicationController
   end
 
   def create
-    puts "ciao porco dioooooooooooooooooooooooooooooooooooooooooooooooooo|||||||||||||||||||||||||||||||||||||||"
+   
     
     @report = Report.new(report_params)
   
     if @report.save
-      redirect_to @report, notice: 'Report was successfully created.'
+      redirect_to root_path, notice: 'Report was successfully created.'
     else
       puts @report.errors.full_messages
       render :new
