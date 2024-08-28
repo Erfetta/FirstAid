@@ -7,7 +7,7 @@ module Userpage
     def create
       @report = Report.new(report_params)
       if @report.save
-        redirect_to userpage_root_path, notice: 'Report was successfully created.'
+        redirect_to root_path, notice: 'Report was successfully created.'
       else
         Rails.logger.debug @report.errors.full_messages # <-- Questo mostrerà gli errori nel log
         render :new
