@@ -31,35 +31,35 @@
             <% end %>
         </nav>
 
-        <div class="maps_section_operator">
-            <!-- da inserire google maps -->
+        <div class="central_section_operator">
+          <div class="maps_section_operator_reduced">
+              <!-- da inserire google maps -->
+          </div>
+          <div class="report_info_operator">
+            <h2>Dettagli della richiesta</h2>
+            <p><strong>Richiesta:</strong> <%= @report.id %></p>
+            <p><strong>Data:</strong> <%= @report.report_date %></p>
+            <p><strong>Orario:</strong> <%= @report.report_time %></p>
+            <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
+
+
+          </div>
         </div>
 
-        <aside class="reports_section_operator" id="reports-section">
-            <% @reports.each do |report| %>
-              <div class="report_area_operator">
-                <p><strong>Richiesta:</strong> <%= link_to report.id, show_report_path(report)%></p>
-                <p><strong>Data:</strong> <%= report.report_date %></p>
-              </div>
-            <% end %>
-        </aside>
+        <div class="user_info_operator">
+            <h2>Informazioni utente</h2>
+            <p><strong>User ID:</strong> <%= @user.id %></p>
+            <p><strong>Nome:</strong> <%= @user.name %></p>
+            <p><strong>Cognome:</strong> <%= @user.surname %></p>
+            <p><strong>Età:</strong> <%= @user.age %></p>
+            <p><strong>Sesso:</strong> <%= @user.sex %></p>
+            <p><strong>Cellulare:</strong> <%= @user.telephone_number %></p>
+
+            
+          
+        </div>
+
+        
     </div>
-
-    <script>
-      function fetchReports() {
-        fetch("<%= root_path %>")
-          .then(response => response.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const newReportsSection = doc.querySelector('#reports-section').innerHTML;
-
-            document.querySelector('#reports-section').innerHTML = newReportsSection;
-          })
-          .catch(error => console.error('Errore durante l\'aggiornamento dei reports:', error));
-      }
-
-      setInterval(fetchReports, 10000); // Aggiorna ogni 10 secondi
-    </script>
 </body>
 </html>

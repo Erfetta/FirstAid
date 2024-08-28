@@ -1,4 +1,3 @@
-<!-- app/views/operatorpage/home/operator_index.html.erb -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -30,36 +29,5 @@
               </span>
             <% end %>
         </nav>
-
-        <div class="maps_section_operator">
-            <!-- da inserire google maps -->
-        </div>
-
-        <aside class="reports_section_operator" id="reports-section">
-            <% @reports.each do |report| %>
-              <div class="report_area_operator">
-                <p><strong>Richiesta:</strong> <%= link_to report.id, show_report_path(report)%></p>
-                <p><strong>Data:</strong> <%= report.report_date %></p>
-              </div>
-            <% end %>
-        </aside>
-    </div>
-
-    <script>
-      function fetchReports() {
-        fetch("<%= root_path %>")
-          .then(response => response.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const newReportsSection = doc.querySelector('#reports-section').innerHTML;
-
-            document.querySelector('#reports-section').innerHTML = newReportsSection;
-          })
-          .catch(error => console.error('Errore durante l\'aggiornamento dei reports:', error));
-      }
-
-      setInterval(fetchReports, 10000); // Aggiorna ogni 10 secondi
-    </script>
 </body>
 </html>

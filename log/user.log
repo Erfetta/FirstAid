@@ -2635,3 +2635,165 @@ Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surnam
   Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 167)
   Rendered layout layouts/application.html.erb (Duration: 76.1ms | Allocations: 14446)
 Completed 200 OK in 106ms (Views: 77.5ms | ActiveRecord: 2.3ms | Allocations: 22038)
+Started GET "/" for 127.0.0.1 at 2024-08-27 19:12:47 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 287)
+  Rendered layout layouts/application.html.erb (Duration: 193.7ms | Allocations: 17383)
+Completed 200 OK in 222ms (Views: 197.3ms | ActiveRecord: 6.8ms | Allocations: 24884)
+Started GET "/" for 127.0.0.1 at 2024-08-28 16:22:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 16:24:15 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 2191)
+Completed 200 OK in 96ms (Views: 48.9ms | ActiveRecord: 9.8ms | Allocations: 7991)
+Started GET "/" for 127.0.0.1 at 2024-08-28 16:25:08 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2034)
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 2858)
+Started GET "/" for 127.0.0.1 at 2024-08-28 16:36:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 16:36:25 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 2276)
+Completed 200 OK in 64ms (Views: 31.7ms | ActiveRecord: 2.6ms | Allocations: 7849)
+Started GET "/userpage/reports/new" for 127.0.0.1 at 2024-08-28 16:39:02 +0200
+Processing by Userpage::ReportsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/reports/new.html.erb within layouts/application
+  Rendered userpage/reports/new.html.erb within layouts/application (Duration: 70.2ms | Allocations: 3711)
+  Rendered layout layouts/application.html.erb (Duration: 75.5ms | Allocations: 5685)
+Completed 200 OK in 94ms (Views: 79.9ms | ActiveRecord: 1.3ms | Allocations: 11384)
+Started POST "/userpage/reports" for 127.0.0.1 at 2024-08-28 16:39:24 +0200
+Processing by Userpage::ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time"=>"15:45", "report_date"=>"2000-01-01", "coordinates"=>"416416418", "user_id"=>"123456"}, "commit"=>"Crea Report"}
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mReport Create (3.8ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 15:45:00"], ["report_date", "2000-01-01"], ["coordinates", "416416418"], ["user_id", 123456], ["created_at", "2024-08-28 14:39:24.665438"], ["updated_at", "2024-08-28 14:39:24.665438"]]
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (49.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 58.3ms | Allocations: 8985)
+  
+NameError (undefined local variable or method `userpage_root_path' for #<Userpage::ReportsController:0x00000000009ec0>
+Did you mean?  userpage_reports_path):
+  
+app/controllers/userpage/reports_controller.rb:10:in `create'
+Started POST "/userpage/reports" for 127.0.0.1 at 2024-08-28 16:40:00 +0200
+Processing by Userpage::ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time"=>"15:45", "report_date"=>"2000-01-01", "coordinates"=>"416416418", "user_id"=>"123456"}, "commit"=>"Crea Report"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/reports_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mReport Create (1.1ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 15:45:00"], ["report_date", "2000-01-01"], ["coordinates", "416416418"], ["user_id", 123456], ["created_at", "2024-08-28 14:40:01.071791"], ["updated_at", "2024-08-28 14:40:01.071791"]]
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (44.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 219ms (ActiveRecord: 50.0ms | Allocations: 13351)
+Started GET "/" for 127.0.0.1 at 2024-08-28 16:40:01 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2142)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 3502)
+Started GET "/userpage/reports/new" for 127.0.0.1 at 2024-08-28 17:45:40 +0200
+Processing by Userpage::ReportsController#new as HTML
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/reports_controller.rb:4:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/reports/new.html.erb within layouts/application
+  Rendered userpage/reports/new.html.erb within layouts/application (Duration: 25.6ms | Allocations: 1704)
+  Rendered layout layouts/application.html.erb (Duration: 194.2ms | Allocations: 14259)
+Completed 200 OK in 261ms (Views: 215.7ms | ActiveRecord: 5.7ms | Allocations: 19900)
+Started POST "/userpage/reports" for 127.0.0.1 at 2024-08-28 17:46:02 +0200
+Processing by Userpage::ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time"=>"10:15", "report_date"=>"2023-11-16", "coordinates"=>"11111111134", "user_id"=>"1234"}, "commit"=>"Crea Report"}
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1234], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+["User must exist"]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/reports/new.html.erb within layouts/application
+  Rendered userpage/reports/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3133)
+Completed 200 OK in 88ms (Views: 14.6ms | ActiveRecord: 4.9ms | Allocations: 6626)
+Started POST "/userpage/reports" for 127.0.0.1 at 2024-08-28 17:46:40 +0200
+Processing by Userpage::ReportsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"report_time"=>"10:15:00.000", "report_date"=>"2023-11-16", "coordinates"=>"11111111134", "user_id"=>"123456"}, "commit"=>"Crea Report"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mReport Create (0.7ms)[0m  [1m[32mINSERT INTO "reports" ("report_time", "report_date", "coordinates", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["report_time", "2000-01-01 10:15:00"], ["report_date", "2023-11-16"], ["coordinates", "11111111134"], ["user_id", 123456], ["created_at", "2024-08-28 15:46:40.075063"], ["updated_at", "2024-08-28 15:46:40.075063"]]
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/reports_controller.rb:9:in `create'
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 72ms (ActiveRecord: 32.8ms | Allocations: 7261)
+Started GET "/" for 127.0.0.1 at 2024-08-28 17:46:40 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 2197)
+Completed 200 OK in 35ms (Views: 27.7ms | ActiveRecord: 0.2ms | Allocations: 3989)
+Started GET "/" for 127.0.0.1 at 2024-08-28 18:22:40 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 85.8ms | Allocations: 12785)
+Completed 200 OK in 110ms (Views: 88.2ms | ActiveRecord: 0.9ms | Allocations: 18379)

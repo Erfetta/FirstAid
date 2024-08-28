@@ -1,0 +1,45 @@
+.central_section_operator{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.maps_section_operator_reduced{
+    height: 59%;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+}
+
+.report_info_operator{
+    height: 39%;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+}
+.report_info_operator h2{
+    text-align: center;
+    margin: 10px;
+}
+.report_info_operator p{
+    margin-left: 1rem;
+    font-size: 20px;
+}
+
+.user_info_operator{
+    width: 40%;
+    max-width: 400px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    overflow-y: scroll;
+    margin: 10px 10px 10px 0px;
+    border-radius: 1rem;
+}
+.user_info_operator h2{
+    text-align: center;
+    margin: 10px;
+}
+.user_info_operator p{
+    margin-left: 1rem;
+    font-size: 20px;
+}
