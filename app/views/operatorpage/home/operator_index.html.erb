@@ -1,3 +1,4 @@
+<!-- app/views/operatorpage/home/operator_index.html.erb -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -20,7 +21,7 @@
         <aside class="reports_section" id="reports-section">
             <% @reports.each do |report| %>
               <div class="report_area">
-                <p><strong>Richiesta:</strong> <%= link_to report.id, report_path(report) %></p>
+                <p><strong>Richiesta:</strong> <%= link_to report.id, operatorpage_report_path(report) %></p>
                 <p><strong>Data:</strong> <%= report.report_date %></p>
               </div>
             <% end %>
@@ -29,7 +30,7 @@
 
     <script>
       function fetchReports() {
-        fetch("<%= operator_index_path %>")
+        fetch("<%= operator_root_path %>")
           .then(response => response.text())
           .then(html => {
             const parser = new DOMParser();

@@ -1,4 +1,3 @@
-# app/controllers/userpage/home_controller.rb
 module Userpage
   class HomeController < ApplicationController
     def user_index

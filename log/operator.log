@@ -791,4 +791,279 @@ Processing by Operatorpage::HomeController#operator_index as */*
   Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 577)
   Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2361)
 Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2670)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Started GET "/operator/index" for 127.0.0.1 at 2024-08-28 01:11:35 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/operator/index"):
+  
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-28 01:11:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/operator/index"):
+  
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-28 01:15:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/operator/index"):
+  
+Started GET "/operator/index" for 127.0.0.1 at 2024-08-28 01:17:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/operator/index"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:18:00 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 29.2ms | Allocations: 3441)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 3475)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 3.9ms | Allocations: 11061)
+  
+ActionView::Template::Error (undefined local variable or method `new_userpage_report_path' for #<ActionView::Base:0x000000000091f0>):
+    1: <h1>Benvenuto</h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_userpage_report_path, class: 'btn btn-primary' %>
+  
+app/views/userpage/home/user_index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:27:02 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3040)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3073)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms | Allocations: 7992)
+  
+ActionView::Template::Error (undefined local variable or method `new_userpage_report_path' for #<ActionView::Base:0x00000000009f60>):
+    1: <h1>Benvenuto</h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_userpage_report_path, class: 'btn btn-primary' %>
+  
+app/views/userpage/home/user_index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:27:39 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 3040)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3073)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms | Allocations: 8489)
+  
+ActionView::Template::Error (undefined local variable or method `new_userpage_report_path' for #<ActionView::Base:0x0000000000acd0>):
+    1: <h1>Benvenuto</h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_userpage_report_path, class: 'btn btn-primary' %>
+  
+app/views/userpage/home/user_index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:28:31 +0200
+  
+ArgumentError (Invalid route name, already in use: 'root' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:18:in `block in <main>'
+config/routes.rb:2:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:31:10 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:5:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 7596)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 7629)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms | Allocations: 10343)
+  
+ActionView::Template::Error (undefined method `report_path' for #<ActionView::Base:0x0000000000be00>):
+    20:         <aside class="reports_section" id="reports-section">
+    21:             <% @reports.each do |report| %>
+    22:               <div class="report_area">
+    23:                 <p><strong>Richiesta:</strong> <%= link_to report.id, report_path(report) %></p>
+    24:                 <p><strong>Data:</strong> <%= report.report_date %></p>
+    25:               </div>
+    26:             <% end %>
+  
+app/views/operatorpage/home/operator_index.html.erb:23
+app/views/operatorpage/home/operator_index.html.erb:21
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:32:12 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:5:in `operator_index'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 6839)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 6872)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.6ms | Allocations: 9129)
+  
+ActionView::Template::Error (undefined method `report_path' for #<ActionView::Base:0x0000000000cd50>):
+    20:         <aside class="reports_section" id="reports-section">
+    21:             <% @reports.each do |report| %>
+    22:               <div class="report_area">
+    23:                 <p><strong>Richiesta:</strong> <%= link_to report.id, report_path(report) %></p>
+    24:                 <p><strong>Data:</strong> <%= report.report_date %></p>
+    25:               </div>
+    26:             <% end %>
+  
+app/views/operatorpage/home/operator_index.html.erb:23
+app/views/operatorpage/home/operator_index.html.erb:21
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:32:19 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3430)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3463)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 3743)
+  
+ActionView::Template::Error (undefined method `report_path' for #<ActionView::Base:0x0000000000ceb8>):
+    20:         <aside class="reports_section" id="reports-section">
+    21:             <% @reports.each do |report| %>
+    22:               <div class="report_area">
+    23:                 <p><strong>Richiesta:</strong> <%= link_to report.id, report_path(report) %></p>
+    24:                 <p><strong>Data:</strong> <%= report.report_date %></p>
+    25:               </div>
+    26:             <% end %>
+  
+app/views/operatorpage/home/operator_index.html.erb:23
+app/views/operatorpage/home/operator_index.html.erb:21
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:32:59 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 4445)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4478)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms | Allocations: 5487)
+  
+ActionView::Template::Error (undefined local variable or method `operator_root_path' for #<ActionView::Base:0x0000000000d098>
+Did you mean?  operatorpage_report_path):
+    29: 
+    30:     <script>
+    31:       function fetchReports() {
+    32:         fetch("<%= operator_root_path %>")
+    33:           .then(response => response.text())
+    34:           .then(html => {
+    35:             const parser = new DOMParser();
+  
+app/views/operatorpage/home/operator_index.html.erb:32
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:34:00 +0200
+Processing by Operatorpage::HomeController#operator_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (9.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:21
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 868.6ms | Allocations: 4213)
+  Rendered layout layouts/application.html.erb (Duration: 873.5ms | Allocations: 4246)
+Completed 500 Internal Server Error in 1598ms (ActiveRecord: 9.6ms | Allocations: 4531)
+  
+ActionView::Template::Error (undefined local variable or method `operator_root_path' for #<ActionView::Base:0x0000000000d250>
+Did you mean?  operatorpage_report_path):
+    29: 
+    30:     <script>
+    31:       function fetchReports() {
+    32:         fetch("<%= operator_root_path %>")
+    33:           .then(response => response.text())
+    34:           .then(html => {
+    35:             const parser = new DOMParser();
+  
+app/views/operatorpage/home/operator_index.html.erb:32
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:34:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:34:45 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:37:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:37:46 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:39:25 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:40:10 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:42:38 +0200
+  
+NameError (undefined local variable or method `vRails' for main:Object):
+  
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:42:46 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:44:57 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:44:58 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:44:58 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:46:40 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:50:27 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:51:59 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:52:11 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3134)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3167)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.0ms | Allocations: 11148)
+  
+ActionView::Template::Error (undefined local variable or method `new_userpage_report_path' for #<ActionView::Base:0x0000000000bae0>):
+    1: <h1>Benvenuto</h1>
+    2: 
+    3: <%= link_to 'Crea un nuovo Report', new_userpage_report_path, class: 'btn btn-primary' %>
+  
+app/views/userpage/home/user_index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2024-08-28 01:54:36 +0200
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  

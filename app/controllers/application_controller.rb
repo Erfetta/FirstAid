@@ -5,4 +5,3 @@ class ApplicationController < ActionController::Base
   # Metodi comuni che possono essere usati in tutti i controller
   # Esempio: autenticazione dell'utente, gestione delle eccezioni, ecc.
 end
-
