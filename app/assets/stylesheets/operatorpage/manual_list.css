@@ -1,0 +1,24 @@
+.manual_container_operator{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    margin: 10px;
+}
+.manual_container_operator h1{
+    text-align: center;
+    margin: 10px;
+}
+
+.manual_slider_op{
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.manual_element_operator{
+    background-color: #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+}

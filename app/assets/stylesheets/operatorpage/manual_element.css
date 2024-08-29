@@ -1,0 +1,49 @@
+.manual_element_container_op{
+    flex: 1;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    margin: 10px;
+}
+.manual_element_container_op h2{
+    text-align: center;
+    margin: 10px;
+}
+
+.man_el_op {
+    padding: 20px;
+    max-height: 99%;
+    overflow-y: auto; /* Slider verticale in caso di contenuto in eccesso */
+}
+
+.man_el_op h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.man_el_op h3 {
+    font-size: 20px;
+    color: #333; /* Colore più scuro per i sottotitoli */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.man_el_op p {
+    font-size: 16px;
+    line-height: 1.5; /* Altezza della linea per migliorare la leggibilità */
+    margin-bottom: 15px;
+}
+
+.man_el_op ul, .man_el_op ol {
+    margin-bottom: 20px;
+    padding-left: 20px; /* Spazio per gli elenchi */
+}
+
+.man_el_op li {
+    margin-bottom: 10px;
+}
+
+.man_el_op strong {
+    color: #000; /* Colore nero per enfatizzare */
+}
+
+

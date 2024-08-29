@@ -7,27 +7,125 @@
 </head>
 <body>
     <div class="container_navbar_operator">
-        <nav class="navbar_operator">
-            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
-              <span class="material-symbols-outlined">
-                home
-              </span>
-            <% end %>
-            <%= button_to manual_list_path, method: :get, class: 'nav-button_operator' do %>
-              <span class="material-symbols-outlined">
-                import_contacts
-              </span>
-            <% end %>
-            <%= button_to report_history_list_path, method: :get, class: 'nav-button_operator' do %>
-              <span class="material-symbols-outlined">
-                history
-              </span>
-            <% end %>
-            <%= button_to operator_profile_path, method: :get, class: 'nav-button_operator' do %>
-              <span class="material-symbols-outlined">
-                person
-              </span>
-            <% end %>
-        </nav>
+      <nav class="navbar_operator">
+        <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+          <span class="material-symbols-outlined">
+            home
+          </span>
+        <% end %>
+        <%= button_to manual_list_path, method: :get, class: 'nav-button_operator' do %>
+          <span class="material-symbols-outlined">
+            import_contacts
+          </span>
+        <% end %>
+        <%= button_to report_history_list_path, method: :get, class: 'nav-button_operator' do %>
+          <span class="material-symbols-outlined">
+            history
+          </span>
+        <% end %>
+        <%= button_to operator_profile_path, method: :get, class: 'nav-button_operator' do %>
+          <span class="material-symbols-outlined">
+            person
+          </span>
+        <% end %>
+      </nav>
+
+      <div class="manual_container_operator">
+        <h1>Manuale Operatore</h1>
+        <aside class="manual_slider_op" id="manual_slider">
+          <div class="manual_element_operator">
+            <p><strong>Come misurare i battiti:</strong> <%= link_to "vedi", manual_element_path(1) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Come misurare la pressione:</strong> <%= link_to "vedi", manual_element_path(2) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Come misurare la temperatura:</strong> <%= link_to "vedi", manual_element_path(3) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 4:</strong> <%= link_to "vedi", manual_element_path(4) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 5:</strong> <%= link_to "vedi", manual_element_path(5) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 6:</strong> <%= link_to "vedi", manual_element_path(6) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 7:</strong> <%= link_to "vedi", manual_element_path(7) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 8:</strong> <%= link_to "vedi", manual_element_path(8) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 9:</strong> <%= link_to "vedi", manual_element_path(9) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 10:</strong> <%= link_to "vedi", manual_element_path(10) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 11:</strong> <%= link_to "vedi", manual_element_path(11) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 12:</strong> <%= link_to "vedi", manual_element_path(12) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 13:</strong> <%= link_to "vedi", manual_element_path(13) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 14:</strong> <%= link_to "vedi", manual_element_path(14) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 15:</strong> <%= link_to "vedi", manual_element_path(15) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 16:</strong> <%= link_to "vedi", manual_element_path(16) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 17:</strong> <%= link_to "vedi", manual_element_path(17) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 18:</strong> <%= link_to "vedi", manual_element_path(18) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 19:</strong> <%= link_to "vedi", manual_element_path(19) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 20:</strong> <%= link_to "vedi", manual_element_path(20) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 21:</strong> <%= link_to "vedi", manual_element_path(21) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 22:</strong> <%= link_to "vedi", manual_element_path(22) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 23:</strong> <%= link_to "vedi", manual_element_path(23) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 24:</strong> <%= link_to "vedi", manual_element_path(24) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 25:</strong> <%= link_to "vedi", manual_element_path(25) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 26:</strong> <%= link_to "vedi", manual_element_path(26) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 27:</strong> <%= link_to "vedi", manual_element_path(27) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 28:</strong> <%= link_to "vedi", manual_element_path(28) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 29:</strong> <%= link_to "vedi", manual_element_path(29) %></p>
+          </div>
+          <div class="manual_element_operator">
+            <p><strong>Manuale 30:</strong> <%= link_to "vedi", manual_element_path(30) %></p>
+          </div>
+        </aside>
+      </div>
+
+    </div>
 </body>
 </html>
