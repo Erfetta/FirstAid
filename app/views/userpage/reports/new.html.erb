@@ -1,28 +1,177 @@
-<!-- app/views/userpage/reports/new.html.erb -->
-<h1>Crea un nuovo Report</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Question Slider</title>
+</head>
+<body>
+    <div class="body_user">
+    <div class="slider-container_user">
+        <div class="slider_user">
+            <!-- Slide 1 -->
+            <div class="slide_user">
+                <h2>Question 1</h2>
+                <p>What is the capital of France?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide_user">
+                <h2>Question 2</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
 
-<%= form_with model: @report, url: userpage_reports_path do |form| %>
-  <div class="form-group">
-    <%= form.label :report_time %>
-    <%= form.time_field :report_time, class: 'form-control' %>
-  </div>
+            <div class="slide_user">
+                <h2>Question 3</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
 
-  <div class="form-group">
-    <%= form.label :report_date %>
-    <%= form.date_field :report_date, class: 'form-control' %>
-  </div>
+            <div class="slide_user">
+                <h2>Question 4</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
 
-  <div class="form-group">
-    <%= form.label :coordinates %>
-    <%= form.text_field :coordinates, class: 'form-control' %>
-  </div>
+            <div class="slide_user">
+                <h2>Question 5</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
 
-  <div class="form-group">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, class: 'form-control' %>
-  </div>
+            <div class="slide_user">
+                <h2>Question 6</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
 
-  <div class="actions">
-    <%= form.submit 'Crea Report', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+            <div class="slide_user">
+                <h2>Question 7</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
+
+            <div class="slide_user">
+                <h2>Question 8</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
+            
+            <div class="slide_user">
+                <h2>Question 9</h2>
+                <p>What is 2 + 2?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
+            <!-- Add more slides here -->
+            
+            <!-- Slide 10 -->
+            <div class="slide_user">
+                <h2>Question 10</h2>
+                <p>What is the square root of 16?</p>
+                <input type="text" placeholder="Your answer...">
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="button-container_user">
+        <button class="small button_user" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="small button_user" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    
+    </div>
+   <nav class="nav_user">
+            <ul class="nav_user-content">
+                <li class="nav_user-list">
+                    <a href="#" class="link-item a_user">
+                        <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
+                        <span class="link-text">Settings</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-list user">
+                <%= link_to root_path, class: 'link-item active user' do %>
+                    <i class='bx bxs-home link-icon user'></i>
+                    <span class="link-text user">Home</span>
+                <% end %>
+            </li>
+                
+                <li class="nav_user-list">
+                    <a href="#" class="link-item a_user">
+                        <i class='bx bxs-user link-icon'></i>
+                        <span class="link-text">Profile</span>
+                    </a>
+                </li>
+
+                
+
+
+                <span class="indicator_user"></span>
+            </ul>
+        </nav>
+
+    <script>
+      let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide_user');
+            const totalSlides = slides.length;
+
+            // Wrap around if out of bounds
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+            });
+        }
+
+        function moveSlide(step) {
+            showSlide(currentSlide + step);
+        }
+
+        // Initialize
+        showSlide(currentSlide);
+    
+
+
+ 
+      document.addEventListener("DOMContentLoaded", () => {
+    const linkItems = document.querySelectorAll(".link-item");
+    const indicator = document.querySelector(".indicator_user");
+
+    function updateIndicator() {
+        const activeItem = document.querySelector(".link-item.active");
+        if (activeItem) {
+            const { offsetLeft, offsetWidth } = activeItem;
+            indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
+        }
+    }
+
+    linkItems.forEach((linkItem) => {
+        linkItem.addEventListener("click", () => {
+            document.querySelector(".link-item.active")?.classList.remove("active");
+            linkItem.classList.add("active");
+            updateIndicator();
+        });
+    });
+
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+});
+;
+
+
+
+    </script> <!-- Assicurati di avere un file JavaScript collegato -->
+    </div>
+</body>
+</html>

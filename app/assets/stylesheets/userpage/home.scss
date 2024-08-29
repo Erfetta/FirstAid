@@ -1,3 +1,224 @@
-// Place all the styles related to the user/home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.body_user {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #4070F4;
+    overflow: hidden;
+}
+
+
+/* CSS per la mappa */
+.map-container_user {
+    width: calc(100% - 40px); /* Deduce il padding dai lati */
+    max-width: 1000px; /* Imposta una larghezza massima se necessario */
+    height: calc(100vh - 120px); /* Altezza completa della finestra meno padding e spazio sopra */
+    padding: 20px; /* Padding interno per dare spazio attorno alla mappa */
+    margin: 20px auto 0; /* Spazio sopra, centratura orizzontale, senza margine inferiore */
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #FFF; /* Aggiungi uno sfondo bianco per evidenziare la mappa */
+}
+
+.map-container_user iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+
+/* Contenitore dei bottoni */
+/* Contenitore dei bottoni */
+.button-container_user {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px; /* Spazio intorno ai bottoni */
+}
+
+.button_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #FFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center; /* Allinea il testo al centro */
+}
+
+.button_user:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dimensioni dei bottoni */
+.small-button_user {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+}
+
+.large-button_user {
+    width: 100px;
+    height: 100px;
+    font-size: 60px; /* Dimensione icona più grande per il pulsante centrale */
+}
+
+/* Icone all'interno dei bottoni */
+.button_user i {
+    color: gray; /* Colore dell'icona */
+    margin: 0; /* Rimuove margini indesiderati */
+    line-height: 1; /* Assicura che l'icona sia centrata verticalmente */
+}
+
+
+.button_user:active {
+    transform: scale(0.95);
+}
+
+.nav_user{
+    background: #FFF;
+    padding: 0 10px; /* Usa padding più piccolo per garantire adattabilità */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Rende la navbar larga quanto la viewport */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza totale */
+}
+.nav_user-content{
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-around; /* Distribuisce gli elementi uniformemente */
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Assicurati che il contenitore sia relativamente posizionato */
+    
+}
+.link-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 120px;
+    width: 95px;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.link-item.active{
+    transform: translateY(-10px);
+}
+.link-icon{
+    font-size: 38px;
+    color: #999;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.link-item.active .link-icon{
+    color: #4070F4;
+}
+.link-text{
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4070F4;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.link-item.active .link-text{
+    opacity: 1;
+}
+.indicator_user{
+    position: absolute;
+    top: -14px; /* Spostato verso il basso per apparire sopra le icone */
+    height: 36px;
+    width: 36px;
+    background-color: #FFF;
+    border: 6px solid #4070F4;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: left 0.3s ease, bottom 0.3s ease;
+}
+.indicator_user::before,
+.indicator_user::after{
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    height: 24px;
+    width: 19px;
+}
+.indicator_user::before{
+    left: -22px;
+    background-color: #FFF;
+    border-top-right-radius: 25px;
+    box-shadow: 1px -13px #4070F4;
+}
+.indicator_user::after{
+    right: -22px;
+    background-color: #FFF;
+    border-top-left-radius: 25px;
+    box-shadow: -1px -13px #4070F4;
+}
+
+
+.a_user {
+    text-decoration: none;
+}
+
+
+.slider-container_user {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: calc(100vh - 40px); /* Height of viewport minus the margin */
+    margin: 0 auto 100px auto; /* Margin at the bottom */
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+/* Slider styling */
+.slider_user {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 20px; /* Rounded borders */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Each slide styling */
+.slide_user {
+    min-width: 100%;
+    height: 100%; /* Make each slide occupy the full height of the container */
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 20px; /* Rounded borders */
+}
+
+.slide_user h2 {
+    margin-top: 0;
+}
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
