@@ -16,25 +16,7 @@
     </head>
     <body>
         <div class="body_user">
-        <div class="map-container_user">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0899743766096!2d-122.40060808468155!3d37.78583477975862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f5f5f5f5f%3A0x5a5a5a5a5a5a5a5a!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1638183510984!5m2!1sen!2sin"
-                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
 
-    <!-- Tre bottoni sotto la mappa -->
-    <div class="button-container_user">
-        <%= link_to tutorial_path, class: 'button_user small-button_user' do %>
-            <i class='bx bxs-book'></i> <!-- Icona del libro -->
-            <% end %>
-         <%= link_to new_userpage_report_path, class: 'button_user large-button_user' do %>
-            <i class='bx bxs-error'></i> <!-- Icona del punto esclamativo -->
-            <% end %>
-        <button class="button_user small-button_user">
-            <i class='bx bx-menu'></i> <!-- Icona del menu -->
-        </button>
-    </div>
         
         <nav class="nav_user">
             <ul class="nav_user-content">
@@ -62,7 +44,7 @@
         
 
         <!-- JavaScript -->
-         <script>
+        <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const linkItems = document.querySelectorAll(".link-item");
                 const indicator = document.querySelector(".indicator_user");

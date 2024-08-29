@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Question Slider</title>
+<style>
+           .indicator_user {
+    position: absolute;
+    top: -14px; /* Posizionato sopra le icone */
+    left: 50%; /* Posizionato orizzontalmente al centro del contenitore */
+    transform: translateX(-50%); /* Centrato sopra il punto centrale */
+    height: 36px;
+    width: 36px;
+    background-color: #FFF;
+    border: 6px solid #4070F4;
+    border-radius: 50%;
+    pointer-events: none; /* Assicurati che l'indicatore non interferisca con altri elementi */
+    z-index: 10; /* Assicurati che l'indicatore sia sopra altri elementi */
+}
+
+            </style>
+
+
 </head>
 <body>
     <div class="body_user">
@@ -85,30 +103,27 @@
    <nav class="nav_user">
             <ul class="nav_user-content">
                 <li class="nav_user-list">
-                    <a href="#" class="link-item a_user">
+                    <%= link_to setting_path, class: 'link-item user' do %>
                         <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
                         <span class="link-text">Settings</span>
-                    </a>
+                    <% end %>
                 </li>
 
 
-                <li class="nav-list user">
+                <li class="nav_user-list">
                 <%= link_to root_path, class: 'link-item active user' do %>
                     <i class='bx bxs-home link-icon user'></i>
                     <span class="link-text user">Home</span>
                 <% end %>
             </li>
                 
+
                 <li class="nav_user-list">
-                    <a href="#" class="link-item a_user">
+                    <%= link_to profile_path, class: 'link-item user' do %>
                         <i class='bx bxs-user link-icon'></i>
                         <span class="link-text">Profile</span>
-                    </a>
+                    <% end%>
                 </li>
-
-                
-
-
                 <span class="indicator_user"></span>
             </ul>
         </nav>
@@ -141,36 +156,6 @@
         // Initialize
         showSlide(currentSlide);
     
-
-
- 
-      document.addEventListener("DOMContentLoaded", () => {
-    const linkItems = document.querySelectorAll(".link-item");
-    const indicator = document.querySelector(".indicator_user");
-
-    function updateIndicator() {
-        const activeItem = document.querySelector(".link-item.active");
-        if (activeItem) {
-            const { offsetLeft, offsetWidth } = activeItem;
-            indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
-        }
-    }
-
-    linkItems.forEach((linkItem) => {
-        linkItem.addEventListener("click", () => {
-            document.querySelector(".link-item.active")?.classList.remove("active");
-            linkItem.classList.add("active");
-            updateIndicator();
-        });
-    });
-
-    updateIndicator();
-    window.addEventListener("resize", updateIndicator);
-});
-;
-
-
-
     </script> <!-- Assicurati di avere un file JavaScript collegato -->
     </div>
 </body>
