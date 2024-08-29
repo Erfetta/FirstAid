@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navigation Bar with Indicator</title>
+
+        <!-- CSS -->
+        
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+        
+    </head>
+    <body>
+        <div class="body_user">
+
+
+
+
+<div class="settings-container">
+    <h2 class="title-settings">Opzioni profilo</h2>
+        <!-- Alert -->
+        <div class="settings_user-alert">
+            <label>Enable Alerts:</label>
+            <label><input type="radio" name="alert" value="yes"> Yes</label>
+            <label><input type="radio" name="alert" value="no"> No</label>
+        </div>
+        
+        <!-- Tempo del Grafico -->
+        <div class="settings_user-graph-time">
+            <label>Graph Time Range:</label>
+            <select name="graph-time">
+                <option value="1-month">1 Month</option>
+                <option value="3-months">3 Months</option>
+                <option value="6-months">6 Months</option>
+                <option value="12-months">12 Months</option>
+            </select>
+        </div>
+        
+        <!-- Eliminazione Dati -->
+        <div class="settings_user-data-delete">
+            <label>Delete Data After:</label>
+            <select name="data-delete-time">
+                <option value="1-month">1 Month</option>
+                <option value="3-months">3 Months</option>
+                <option value="6-months">6 Months</option>
+                <option value="12-months">12 Months</option>
+            </select>
+        </div>
+    </div>
+    
+ 
+    <nav class="nav_user">
+        <ul class="nav_user-content">
+            <li class="nav_user-list">
+                <%= link_to setting_path, class: 'link-item user' do %>
+                    <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
+                    <span class="link-text">Settings</span>
+                <% end %>
+            </li>
+
+
+            <li class="nav_user-list">
+            <%= link_to root_path, class: 'link-item user' do %>
+                <i class='bx bxs-home link-icon user'></i>
+                <span class="link-text user">Home</span>
+            <% end %>
+        </li>
+            
+
+            <li class="nav_user-list">
+                <%= link_to profile_path, class: 'link-item active user' do %>
+                    <i class='bx bxs-user link-icon'></i>
+                    <span class="link-text">Profile</span>
+                <% end%>
+            </li>
+            <span class="indicator_user"></span>
+        </ul>
+    </nav>
+
+
+<!-- JavaScript -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const linkItems = document.querySelectorAll(".link-item");
+        const indicator = document.querySelector(".indicator_user");
+
+        function updateIndicator() {
+            const activeItem = document.querySelector(".link-item.active");
+            if (activeItem) {
+                const { offsetLeft, offsetWidth } = activeItem;
+                indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
+            }
+        }
+
+        linkItems.forEach((linkItem) => {
+            linkItem.addEventListener("click", () => {
+                document.querySelector(".link-item.active")?.classList.remove("active");
+                linkItem.classList.add("active");
+                updateIndicator();
+            });
+        });
+
+        updateIndicator();
+        window.addEventListener("resize", updateIndicator);
+    });
+        </script>
+    </div>    
+</body>
+</html>

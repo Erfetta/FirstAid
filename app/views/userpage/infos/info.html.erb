@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navigation Bar with Indicator</title>
+
+        <!-- CSS -->
+        
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+        
+    </head>
+    <body>
+        <div class="body_user">
+
+
+            <!-- User Info Section -->
+        <div class="user-info-container">
+            <h2>User Information</h2>
+            <div class="info-item">
+                <label for="name">Name:</label>
+                <span id="name">John Doe</span>
+            </div>
+            <div class="info-item">
+                <label for="surname">Surname:</label>
+                <span id="surname">Smith</span>
+            </div>
+            <div class="info-item">
+                <label for="age">Age:</label>
+                <span id="age">30</span>
+            </div>
+            <div class="info-item">
+                <label for="blood-type">Blood Type:</label>
+                <span id="blood-type">O+</span>
+            </div>
+            <div class="info-item">
+                <label for="phone">Phone:</label>
+                <span id="phone">123-456-7890</span>
+            </div>
+        </div>
+
+
+
+
+    
+ 
+    <nav class="nav_user">
+        <ul class="nav_user-content">
+            <li class="nav_user-list">
+                <%= link_to setting_path, class: 'link-item user' do %>
+                    <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
+                    <span class="link-text">Settings</span>
+                <% end %>
+            </li>
+
+
+            <li class="nav_user-list">
+            <%= link_to root_path, class: 'link-item user' do %>
+                <i class='bx bxs-home link-icon user'></i>
+                <span class="link-text user">Home</span>
+            <% end %>
+        </li>
+            
+
+            <li class="nav_user-list">
+                <%= link_to profile_path, class: 'link-item active user' do %>
+                    <i class='bx bxs-user link-icon'></i>
+                    <span class="link-text">Profile</span>
+                <% end%>
+            </li>
+            <span class="indicator_user"></span>
+        </ul>
+    </nav>
+
+
+<!-- JavaScript -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const linkItems = document.querySelectorAll(".link-item");
+        const indicator = document.querySelector(".indicator_user");
+
+        function updateIndicator() {
+            const activeItem = document.querySelector(".link-item.active");
+            if (activeItem) {
+                const { offsetLeft, offsetWidth } = activeItem;
+                indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
+            }
+        }
+
+        linkItems.forEach((linkItem) => {
+            linkItem.addEventListener("click", () => {
+                document.querySelector(".link-item.active")?.classList.remove("active");
+                linkItem.classList.add("active");
+                updateIndicator();
+            });
+        });
+
+        updateIndicator();
+        window.addEventListener("resize", updateIndicator);
+    });
+        </script>
+    </div>    
+</body>
+</html>

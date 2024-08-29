@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     get 'tutorial', to: 'userpage/tutorials#tutorial', as: 'tutorial' # Aggiungi questa riga
     get 'setting', to: 'userpage/settings#setting', as: 'setting'
     get 'profile', to: 'userpage/profiles#profile', as: 'profile'
+    get 'option', to: 'userpage/options#option', as: 'option'
+    get 'graph', to: 'userpage/graphs#graph', as: 'graph'
+    get 'graphsetting', to: 'userpage/graphsettings#graphsetting', as: 'graphsetting'
+    get 'info', to: 'userpage/infos#info', as: 'info'
+    
 
     namespace :userpage do
       resources :reports, only: [:new, :create]

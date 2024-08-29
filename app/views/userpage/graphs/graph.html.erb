@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Indicator</title>
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="body_user">
+        <div class="chart-container">
+            <canvas id="bpmChart"></canvas>
+        </div>
+
+        <nav class="nav_user">
+        <ul class="nav_user-content">
+            <li class="nav_user-list">
+                <%= link_to setting_path, class: 'link-item user' do %>
+                    <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
+                    <span class="link-text">Settings</span>
+                <% end %>
+            </li>
+
+
+            <li class="nav_user-list">
+            <%= link_to root_path, class: 'link-item user' do %>
+                <i class='bx bxs-home link-icon user'></i>
+                <span class="link-text user">Home</span>
+            <% end %>
+        </li>
+            
+
+            <li class="nav_user-list">
+                <%= link_to profile_path, class: 'link-item active user' do %>
+                    <i class='bx bxs-user link-icon'></i>
+                    <span class="link-text">Profile</span>
+                <% end%>
+            </li>
+            <span class="indicator_user"></span>
+        </ul>
+    </nav>
+    </div>
+
+    <!-- JavaScript for Chart.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ctx = document.getElementById('bpmChart').getContext('2d');
+            const bpmChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June'], // X-axis labels
+                    datasets: [{
+                        label: 'BPM',
+                        data: [65, 59, 80, 81, 56, 55], // Data for Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const linkItems = document.querySelectorAll(".link-item");
+            const indicator = document.querySelector(".indicator_user");
+
+            function updateIndicator() {
+                const activeItem = document.querySelector(".link-item.active");
+                if (activeItem) {
+                    const { offsetLeft, offsetWidth } = activeItem;
+                    indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
+                }
+            }
+
+            linkItems.forEach((linkItem) => {
+                linkItem.addEventListener("click", () => {
+                    document.querySelector(".link-item.active")?.classList.remove("active");
+                    linkItem.classList.add("active");
+                    updateIndicator();
+                });
+            });
+
+            updateIndicator();
+            window.addEventListener("resize", updateIndicator);
+        });
+    </script>
+</body>
+</html>

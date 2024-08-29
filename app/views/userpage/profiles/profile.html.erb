@@ -12,36 +12,67 @@
                 
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-        
-    </head>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+        <style>
+           
+
+        .body_user i.fas.fa-child {
+            color: white;
+            font-size: 80vw; /* Dimensiona l'icona in base alla larghezza della finestra */
+           
+            margin-top:50px;
+            margin: auto;
+            
+        }
+        </style>
+
+
     <body>
         <div class="body_user">
+        <i class="fas fa-child"></i>
 
-        
+        <div class="button-container_user">
+            <%= link_to graph_path, class: 'button_user small-button_user' do %>
+                <i class='bx bx-line-chart'></i> <!-- Icona del grafico -->
+            <% end %>
+            <%= link_to info_path, class: 'button_user large-button_user' do %>
+                <i class='bx bxs-info-circle'></i> <!-- Icona delle info -->
+            <% end %>
+            <%= link_to graphsetting_path, class: 'button_user small-button_user' do %>
+                <i class='bx bx-dots-vertical-rounded'></i> <!-- Icona delle opzioni -->
+            <% end %>
+        </div>
+
         <nav class="nav_user">
             <ul class="nav_user-content">
                 <li class="nav_user-list">
-                    <%= link_to setting_path, class: "link-item user #{'active' if current_page?(setting_path)}" do %>
-                        <i class='bx bxs-cog link-icon'></i>
+                    <%= link_to setting_path, class: 'link-item user' do %>
+                        <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
                         <span class="link-text">Settings</span>
                     <% end %>
                 </li>
+
+
                 <li class="nav_user-list">
-                    <%= link_to root_path, class: "link-item user #{'active' if current_page?(root_path)}" do %>
-                        <i class='bx bxs-home link-icon user'></i>
-                        <span class="link-text user">Home</span>
-                    <% end %>
-                </li>
+                <%= link_to root_path, class: 'link-item user' do %>
+                    <i class='bx bxs-home link-icon user'></i>
+                    <span class="link-text user">Home</span>
+                <% end %>
+            </li>
+                
+
                 <li class="nav_user-list">
-                    <%= link_to profile_path, class: "link-item user #{'active' if current_page?(profile_path)}" do %>
+                    <%= link_to profile_path, class: 'link-item active user' do %>
                         <i class='bx bxs-user link-icon'></i>
                         <span class="link-text">Profile</span>
-                    <% end %>
+                    <% end%>
                 </li>
                 <span class="indicator_user"></span>
             </ul>
         </nav>
-        
+
+
 
         <!-- JavaScript -->
         <script>
