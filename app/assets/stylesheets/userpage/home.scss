@@ -379,31 +379,40 @@ canvas {
 .body_user i.fas.fa-child {
     color: white;
     font-size: 80vw; /* Dimensiona l'icona in base alla larghezza della finestra */
-   
-    margin-top:50px;
     margin: auto;
-    
 }
 
-
-
-
-.input-icons {
+.input-icons{
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    margin: 20px;
+    margin-top: 5vw;
+    height: 100vh;
 }
 
 .input-icon {
-    font-size: 50px;
+    position: absolute;
+    z-index: 1;
+    font-size: 12vw;
     color: red;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
 .input-icon:hover {
-    transform: scale(1.2);
+    scale:1.2;
+}
+.bxs-heart{
+    margin-top: -35vw;
+    margin-left: -50vw;
+}
+.bx-pulse{
+    margin-top:-10vw;
+    margin-left: 10vw;
+    
+}
+.bxs-droplet{
+    margin-top:-35vw;
+    margin-left:50vw;
 }
 
 .modal {
