@@ -31,7 +31,10 @@
       </nav>
 
       <div class="manual_container_operator">
-        <h1>Manuale Operatore</h1>
+        <div class="manual_title_operator"> 
+          <h1>Manuale Operatore</h1>
+          <input type="text" class="search-bar_tutorial_op" id="search-bar" placeholder="cerca">
+        </div>
         <aside class="manual_slider_op" id="manual_slider">
           <div class="manual_element_operator">
             <p><strong>Come misurare i battiti:</strong> <%= link_to "vedi", manual_element_path(1) %></p>
@@ -127,5 +130,31 @@
       </div>
 
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchBar = document.getElementById('search-bar');
+        let searchText = '';
+        searchBar.addEventListener('input', function() {
+          searchText = searchBar.value.toLowerCase();
+          if (searchText != '') {
+            let tutorialBtns = document.querySelectorAll('.manual_element_operator');
+            tutorialBtns.forEach(btn => {
+              btnText = btn.children[0].textContent.toLowerCase();
+              if (!btnText.includes(searchText)) {
+                btn.style.display = 'none';
+              } else {
+                btn.style.display = 'block';
+              }
+            });
+          }
+          else{
+            let tutorialBtns = document.querySelectorAll('.manual_element_operator');
+            tutorialBtns.forEach(btn => {
+              btn.style.display = 'block';
+            });
+          }
+        });
+      });
+    </script>
 </body>
 </html>

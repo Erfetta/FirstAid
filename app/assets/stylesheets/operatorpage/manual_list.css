@@ -22,3 +22,27 @@
     margin: 10px;
     border-radius: 5px;
 }
+.manual_title_operator{
+    display: flex;
+    margin-left: 1rem;
+    gap:2rem;
+    justify-content: left;
+    align-items: center;
+}
+.search-bar_tutorial_op {
+    margin-top: 1rem;
+    width: 15rem;
+    height: 2rem;
+    border: none;
+    border-bottom: 2px solid #000;
+    background: none;
+    font-size: 1rem;
+    color: #000;
+    outline: none;
+}
+.search-bar_tutorial_op::placeholder {
+    color: #000;
+}
+.search-bar_tutorial_op:focus::placeholder {
+    color: transparent;
+}
