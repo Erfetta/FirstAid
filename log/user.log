@@ -10888,3 +10888,959 @@ Processing by Userpage::GraphsController#graph as HTML
   Rendered userpage/graphs/graph.html.erb within layouts/application (Duration: 0.4ms | Allocations: 147)
   Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 2295)
 Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 2553)
+Started GET "/" for 127.0.0.1 at 2024-08-30 17:50:32 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 2488)
+Completed 200 OK in 42ms (Views: 17.5ms | ActiveRecord: 11.6ms | Allocations: 3293)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:50:34 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 0.7ms | Allocations: 140)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 2281)
+Completed 200 OK in 59ms (Views: 58.2ms | ActiveRecord: 0.0ms | Allocations: 2537)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:51:11 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 10.1ms | Allocations: 468)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 2758)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 3744)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:51:25 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 1.1ms | Allocations: 466)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2757)
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 3740)
+Started GET "/profile" for 127.0.0.1 at 2024-08-30 17:51:45 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 12.9ms | Allocations: 781)
+  Rendered layout layouts/application.html.erb (Duration: 56.7ms | Allocations: 2937)
+Completed 200 OK in 80ms (Views: 79.3ms | ActiveRecord: 0.0ms | Allocations: 3699)
+Started GET "/" for 127.0.0.1 at 2024-08-30 17:51:47 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (19.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 765)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 2919)
+Completed 200 OK in 71ms (Views: 37.2ms | ActiveRecord: 19.1ms | Allocations: 4232)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:51:49 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.2ms | Allocations: 147)
+  Rendered layout layouts/application.html.erb (Duration: 56.6ms | Allocations: 2297)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.0ms | Allocations: 2555)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:52:13 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 11.0ms | Allocations: 490)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 2787)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.0ms | Allocations: 3770)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:53:05 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 6.1ms | Allocations: 418)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 2710)
+Completed 200 OK in 36ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 3699)
+Started GET "/profile" for 127.0.0.1 at 2024-08-30 17:53:09 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 13.2ms | Allocations: 781)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 2929)
+Completed 200 OK in 46ms (Views: 41.6ms | ActiveRecord: 0.0ms | Allocations: 3691)
+Started GET "/" for 127.0.0.1 at 2024-08-30 17:53:11 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 766)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 2910)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.2ms | Allocations: 4225)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:53:13 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 1.4ms | Allocations: 147)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 2299)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 2556)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:53:28 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.7ms | Allocations: 398)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 2696)
+Completed 200 OK in 46ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 3680)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 17:53:41 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.6ms | Allocations: 413)
+  Rendered layout layouts/application.html.erb (Duration: 46.2ms | Allocations: 2707)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.0ms | Allocations: 3691)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:05:33 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 38.0ms | Allocations: 2680)
+  Rendered layout layouts/application.html.erb (Duration: 50.7ms | Allocations: 4971)
+Completed 200 OK in 71ms (Views: 70.2ms | Allocations: 5960)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:06:10 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2668)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4973)
+Completed 200 OK in 28ms (Views: 26.6ms | Allocations: 5956)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:06:38 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 28.3ms | Allocations: 2677)
+  Rendered layout layouts/application.html.erb (Duration: 68.9ms | Allocations: 4968)
+Completed 200 OK in 84ms (Views: 82.6ms | Allocations: 5952)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:06:50 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2692)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4985)
+Completed 200 OK in 42ms (Views: 37.9ms | Allocations: 5969)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:07:25 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 12.5ms | Allocations: 2671)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 4971)
+Completed 200 OK in 34ms (Views: 32.3ms | Allocations: 5960)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:07:39 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2663)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 4969)
+Completed 200 OK in 107ms (Views: 96.3ms | Allocations: 5953)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:08:40 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2669)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 4963)
+Completed 200 OK in 51ms (Views: 46.9ms | Allocations: 5947)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:08:48 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2668)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 4965)
+Completed 200 OK in 68ms (Views: 67.0ms | Allocations: 5948)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:09:00 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2667)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 4964)
+Completed 200 OK in 26ms (Views: 23.0ms | Allocations: 5947)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:09:18 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2668)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 4959)
+Completed 200 OK in 29ms (Views: 23.1ms | Allocations: 5942)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:09:32 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2669)
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 4972)
+Completed 200 OK in 62ms (Views: 61.5ms | Allocations: 5955)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:09:40 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2688)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 4985)
+Completed 200 OK in 24ms (Views: 22.5ms | Allocations: 5973)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:09:52 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2672)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4961)
+Completed 200 OK in 28ms (Views: 26.3ms | Allocations: 5944)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:10:00 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 19.2ms | Allocations: 2671)
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 4974)
+Completed 200 OK in 61ms (Views: 59.5ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:10:15 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2677)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 4983)
+Completed 200 OK in 41ms (Views: 38.0ms | Allocations: 5972)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:10:42 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2674)
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | Allocations: 4969)
+Completed 200 OK in 59ms (Views: 58.3ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:10:56 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 16.9ms | Allocations: 2673)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 4969)
+Completed 200 OK in 31ms (Views: 28.8ms | Allocations: 5952)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:11:16 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 23.6ms | Allocations: 2673)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 4969)
+Completed 200 OK in 55ms (Views: 53.6ms | Allocations: 5953)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:11:30 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2673)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 4972)
+Completed 200 OK in 64ms (Views: 54.2ms | Allocations: 5955)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:11:40 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 28.6ms | Allocations: 2673)
+  Rendered layout layouts/application.html.erb (Duration: 59.2ms | Allocations: 4966)
+Completed 200 OK in 81ms (Views: 75.7ms | Allocations: 5949)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:11:52 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 13.5ms | Allocations: 2673)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 4960)
+Completed 200 OK in 41ms (Views: 39.9ms | Allocations: 5943)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:12:01 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2672)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4969)
+Completed 200 OK in 24ms (Views: 16.4ms | Allocations: 5952)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:12:14 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2673)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 4976)
+Completed 200 OK in 61ms (Views: 57.8ms | Allocations: 5965)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:13:10 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2673)
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 4970)
+Completed 200 OK in 82ms (Views: 73.9ms | Allocations: 5953)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:13:33 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4968)
+Completed 200 OK in 61ms (Views: 58.5ms | Allocations: 5954)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:13:45 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2674)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 4978)
+Completed 200 OK in 24ms (Views: 22.3ms | Allocations: 5967)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:13:52 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 29.1ms | Allocations: 2674)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 4969)
+Completed 200 OK in 59ms (Views: 52.3ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:14:12 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2675)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4987)
+Completed 200 OK in 30ms (Views: 23.6ms | Allocations: 5970)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:14:21 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4974)
+Completed 200 OK in 14ms (Views: 12.1ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:14:29 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2675)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 4970)
+Completed 200 OK in 27ms (Views: 24.2ms | Allocations: 5953)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:14:47 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2674)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4965)
+Completed 200 OK in 24ms (Views: 21.6ms | Allocations: 5948)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:15:01 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2675)
+  Rendered layout layouts/application.html.erb (Duration: 48.7ms | Allocations: 4974)
+Completed 200 OK in 64ms (Views: 60.8ms | Allocations: 5957)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:15:15 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2675)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 4978)
+Completed 200 OK in 55ms (Views: 50.2ms | Allocations: 5961)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:15:34 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 4979)
+Completed 200 OK in 53ms (Views: 49.7ms | Allocations: 5968)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:16:10 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 4974)
+Completed 200 OK in 42ms (Views: 32.1ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:16:35 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2682)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4988)
+Completed 200 OK in 24ms (Views: 22.9ms | Allocations: 5977)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:16:53 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2679)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4991)
+Completed 200 OK in 26ms (Views: 23.7ms | Allocations: 5980)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:17:29 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 37.8ms | Allocations: 2678)
+  Rendered layout layouts/application.html.erb (Duration: 44.5ms | Allocations: 4965)
+Completed 200 OK in 69ms (Views: 65.4ms | Allocations: 5954)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:17:44 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 4974)
+Completed 200 OK in 39ms (Views: 38.1ms | Allocations: 5957)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:17:52 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 4974)
+Completed 200 OK in 35ms (Views: 33.8ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:18:08 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4975)
+Completed 200 OK in 19ms (Views: 17.2ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:19:10 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4977)
+Completed 200 OK in 14ms (Views: 11.8ms | Allocations: 5960)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:19:25 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4983)
+Completed 200 OK in 16ms (Views: 15.5ms | Allocations: 5966)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:19:54 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2677)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 4971)
+Completed 200 OK in 39ms (Views: 35.9ms | Allocations: 5954)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:20:41 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 24.3ms | Allocations: 2676)
+  Rendered layout layouts/application.html.erb (Duration: 54.5ms | Allocations: 4969)
+Completed 200 OK in 71ms (Views: 64.7ms | Allocations: 5958)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:20:54 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2678)
+  Rendered layout layouts/application.html.erb (Duration: 46.6ms | Allocations: 4991)
+Completed 200 OK in 61ms (Views: 59.3ms | Allocations: 5980)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:21:01 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2674)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 4975)
+Completed 200 OK in 33ms (Views: 31.8ms | Allocations: 5964)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:21:23 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 15.2ms | Allocations: 2675)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 4974)
+Completed 200 OK in 53ms (Views: 51.9ms | Allocations: 5963)
+Started GET "/tutorial.1" for 127.0.0.1 at 2024-08-30 18:22:06 +0200
+Processing by Userpage::TutorialsController#tutorial as */*
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 3927)
+Completed 200 OK in 17ms (Views: 16.2ms | Allocations: 4333)
+Started GET "/tutorial.1" for 127.0.0.1 at 2024-08-30 18:22:09 +0200
+Processing by Userpage::TutorialsController#tutorial as */*
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 24.5ms | Allocations: 1760)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 3908)
+Completed 200 OK in 60ms (Views: 59.2ms | Allocations: 4166)
+Started GET "/tutorial.2" for 127.0.0.1 at 2024-08-30 18:22:11 +0200
+Processing by Userpage::TutorialsController#tutorial as */*
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1760)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 3903)
+Completed 200 OK in 26ms (Views: 23.8ms | Allocations: 4161)
+Started GET "/tutorial.3" for 127.0.0.1 at 2024-08-30 18:22:12 +0200
+Processing by Userpage::TutorialsController#tutorial as */*
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1760)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3910)
+Completed 200 OK in 20ms (Views: 17.9ms | Allocations: 4169)
+Started GET "/tutorial.3" for 127.0.0.1 at 2024-08-30 18:25:51 +0200
+Processing by Userpage::TutorialsController#tutorial as */*
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2362)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 4651)
+Completed 200 OK in 51ms (Views: 49.6ms | Allocations: 5721)
+Started GET "/tutorial.3" for 127.0.0.1 at 2024-08-30 18:33:08 +0200
+Processing by Userpage::TutorialsController#tutorial as */*
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2366)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4678)
+Completed 200 OK in 12ms (Views: 10.8ms | Allocations: 5767)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 18:33:09 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 1.9ms | Allocations: 639)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 2778)
+Completed 200 OK in 17ms (Views: 15.0ms | Allocations: 3182)
+Started GET "/tutorial_element/5" for 127.0.0.1 at 2024-08-30 18:35:22 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 4.8ms | Allocations: 658)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 3010)
+Completed 200 OK in 49ms (Views: 40.9ms | Allocations: 4013)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 18:35:25 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 1.2ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 2293)
+Completed 200 OK in 17ms (Views: 16.0ms | Allocations: 2569)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 18:35:48 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 1.4ms | Allocations: 659)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 2950)
+Completed 200 OK in 22ms (Views: 20.5ms | Allocations: 3952)
+Started GET "/tutorial_element/2" for 127.0.0.1 at 2024-08-30 18:35:58 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 1.9ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2301)
+Completed 200 OK in 17ms (Views: 15.3ms | Allocations: 2577)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 18:36:19 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 1.0ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2292)
+Completed 200 OK in 17ms (Views: 15.3ms | Allocations: 2567)
+Started GET "/tutorial_element/2" for 127.0.0.1 at 2024-08-30 18:36:27 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 1.2ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 2294)
+Completed 200 OK in 17ms (Views: 16.2ms | Allocations: 2569)
+Started GET "/tutorial_element/4" for 127.0.0.1 at 2024-08-30 18:37:05 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"4"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 2.7ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 2298)
+Completed 200 OK in 19ms (Views: 17.7ms | Allocations: 2573)
+Started GET "/" for 127.0.0.1 at 2024-08-30 18:37:12 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 2926)
+Completed 200 OK in 100ms (Views: 23.7ms | ActiveRecord: 8.2ms | Allocations: 8395)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:37:14 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2359)
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | Allocations: 4507)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 0.0ms | Allocations: 4898)
+Started GET "/tutorial_element/3" for 127.0.0.1 at 2024-08-30 18:37:15 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 0.7ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2284)
+Completed 200 OK in 30ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 2560)
+Started GET "/profile" for 127.0.0.1 at 2024-08-30 18:37:17 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 29.8ms | Allocations: 781)
+  Rendered layout layouts/application.html.erb (Duration: 79.4ms | Allocations: 2943)
+Completed 200 OK in 89ms (Views: 87.0ms | ActiveRecord: 0.0ms | Allocations: 3708)
+Started GET "/" for 127.0.0.1 at 2024-08-30 18:37:20 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 2477)
+Completed 200 OK in 24ms (Views: 16.3ms | ActiveRecord: 0.3ms | Allocations: 3282)
+Started GET "/setting" for 127.0.0.1 at 2024-08-30 18:37:21 +0200
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 16.1ms | Allocations: 516)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 2670)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.0ms | Allocations: 3435)
+Started GET "/" for 127.0.0.1 at 2024-08-30 18:37:23 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2495)
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 3300)
+Started GET "/profile" for 127.0.0.1 at 2024-08-30 18:37:24 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 0.9ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 2423)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 2680)
+Started GET "/" for 127.0.0.1 at 2024-08-30 18:37:25 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2467)
+Completed 200 OK in 33ms (Views: 17.6ms | ActiveRecord: 0.8ms | Allocations: 3272)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:37:27 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1453)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 3608)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms | Allocations: 3869)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 18:37:44 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 0.4ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2296)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 2572)
+Started GET "/" for 127.0.0.1 at 2024-08-30 18:38:05 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2472)
+Completed 200 OK in 18ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 3276)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:38:06 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1445)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 3595)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 3855)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:39:01 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2361)
+  Rendered layout layouts/application.html.erb (Duration: 67.4ms | Allocations: 4664)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.0ms | Allocations: 5658)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:39:09 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 24.7ms | Allocations: 2360)
+  Rendered layout layouts/application.html.erb (Duration: 51.1ms | Allocations: 4665)
+Completed 200 OK in 64ms (Views: 57.9ms | ActiveRecord: 0.0ms | Allocations: 5655)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:44:00 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2384)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4686)
+Completed 200 OK in 24ms (Views: 20.0ms | Allocations: 5682)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:44:30 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2380)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4681)
+Completed 200 OK in 54ms (Views: 25.0ms | Allocations: 5672)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:44:41 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2381)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 4682)
+Completed 200 OK in 29ms (Views: 26.1ms | Allocations: 5672)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:44:54 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2380)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 4691)
+Completed 200 OK in 36ms (Views: 31.9ms | Allocations: 5681)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:45:22 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2382)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 4682)
+Completed 200 OK in 30ms (Views: 28.5ms | Allocations: 5673)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:45:37 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 17.8ms | Allocations: 2382)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 4669)
+Completed 200 OK in 42ms (Views: 37.7ms | Allocations: 5660)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:45:53 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2382)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 4683)
+Completed 200 OK in 41ms (Views: 33.9ms | Allocations: 5673)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:46:07 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2383)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4672)
+Completed 200 OK in 23ms (Views: 18.3ms | Allocations: 5666)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:46:36 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 31.6ms | Allocations: 2382)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 4669)
+Completed 200 OK in 45ms (Views: 43.7ms | Allocations: 5659)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:46:56 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2385)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4683)
+Completed 200 OK in 17ms (Views: 15.2ms | Allocations: 5679)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:47:13 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 33.7ms | Allocations: 2383)
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | Allocations: 4677)
+Completed 200 OK in 67ms (Views: 64.2ms | Allocations: 5673)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:50:49 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2442)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 4747)
+Completed 200 OK in 30ms (Views: 25.2ms | Allocations: 5738)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:52:47 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2441)
+  Rendered layout layouts/application.html.erb (Duration: 42.0ms | Allocations: 4740)
+Completed 200 OK in 59ms (Views: 47.6ms | Allocations: 5730)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:53:43 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2443)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4737)
+Completed 200 OK in 10ms (Views: 9.4ms | Allocations: 5728)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:54:08 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2415)
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 4708)
+Completed 200 OK in 58ms (Views: 57.0ms | Allocations: 5699)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:54:40 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 15.7ms | Allocations: 2416)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 4713)
+Completed 200 OK in 29ms (Views: 28.0ms | Allocations: 5707)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:55:23 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2442)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 4755)
+Completed 200 OK in 48ms (Views: 44.6ms | Allocations: 5746)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:57:05 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 41.5ms | Allocations: 2423)
+  Rendered layout layouts/application.html.erb (Duration: 59.2ms | Allocations: 4719)
+Completed 200 OK in 74ms (Views: 72.9ms | Allocations: 5715)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:57:24 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2422)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4729)
+Completed 200 OK in 58ms (Views: 51.8ms | Allocations: 5719)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:58:51 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2444)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4733)
+Completed 200 OK in 31ms (Views: 16.5ms | Allocations: 5724)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:59:04 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 60.2ms | Allocations: 2444)
+  Rendered layout layouts/application.html.erb (Duration: 77.1ms | Allocations: 4735)
+Completed 200 OK in 88ms (Views: 86.9ms | Allocations: 5725)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:59:19 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1453)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3594)
+Completed 200 OK in 11ms (Views: 10.1ms | Allocations: 3855)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 18:59:38 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 34.8ms | Allocations: 1445)
+  Rendered layout layouts/application.html.erb (Duration: 54.6ms | Allocations: 3589)
+Completed 200 OK in 84ms (Views: 81.0ms | Allocations: 3850)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:00:31 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2458)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4749)
+Completed 200 OK in 35ms (Views: 33.6ms | Allocations: 5739)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:00:52 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1453)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 3594)
+Completed 200 OK in 18ms (Views: 17.2ms | Allocations: 3856)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:01:32 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 4761)
+Completed 200 OK in 39ms (Views: 31.7ms | Allocations: 5755)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 19:01:42 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 2.8ms | Allocations: 663)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 2810)
+Completed 200 OK in 35ms (Views: 32.4ms | Allocations: 3214)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:01:45 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1446)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 3581)
+Completed 200 OK in 27ms (Views: 25.5ms | Allocations: 3842)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:02:15 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2457)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4769)
+Completed 200 OK in 24ms (Views: 21.0ms | Allocations: 5765)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:02:17 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1453)
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | Allocations: 3598)
+Completed 200 OK in 61ms (Views: 57.5ms | Allocations: 3859)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:02:25 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1445)
+  Rendered layout layouts/application.html.erb (Duration: 43.6ms | Allocations: 3602)
+Completed 200 OK in 47ms (Views: 47.0ms | Allocations: 3862)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:02:54 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 4747)
+Completed 200 OK in 29ms (Views: 28.1ms | Allocations: 5738)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:03:10 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 4753)
+Completed 200 OK in 30ms (Views: 28.8ms | Allocations: 5743)
+Started GET "/tutorial_element/2" for 127.0.0.1 at 2024-08-30 19:04:07 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 1.5ms | Allocations: 658)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 2811)
+Completed 200 OK in 29ms (Views: 26.7ms | Allocations: 3213)
+Started GET "/tutorial_element/15" for 127.0.0.1 at 2024-08-30 19:04:15 +0200
+Processing by Userpage::TutorialsController#tutorial_element as HTML
+  Parameters: {"id"=>"15"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial_element.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial_element.html.erb within layouts/application (Duration: 3.4ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 2288)
+Completed 200 OK in 14ms (Views: 13.6ms | Allocations: 2565)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:04:47 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 2.1ms | Allocations: 921)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 3226)
+Completed 200 OK in 37ms (Views: 36.2ms | Allocations: 4216)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:04:57 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2455)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 4752)
+Completed 200 OK in 38ms (Views: 35.5ms | Allocations: 5743)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:05:22 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4762)
+Completed 200 OK in 33ms (Views: 30.1ms | Allocations: 5752)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:06:58 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2461)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 4763)
+Completed 200 OK in 26ms (Views: 24.0ms | Allocations: 5759)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:07:21 +0200
+Processing by Userpage::TutorialsController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/tutorials/tutorial.html.erb within layouts/application
+  Rendered userpage/tutorials/tutorial.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2457)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 4744)
+Completed 200 OK in 52ms (Views: 48.4ms | Allocations: 5734)

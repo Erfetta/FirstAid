@@ -5,129 +5,177 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Navigation Bar with Indicator</title>
-
-        <!-- CSS -->
-        
-                
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         
         <style>
            .indicator_user {
-    position: absolute;
-    top: -14px; /* Posizionato sopra le icone */
-    left: 50%; /* Posizionato orizzontalmente al centro del contenitore */
-    transform: translateX(-50%); /* Centrato sopra il punto centrale */
-    height: 36px;
-    width: 36px;
-    background-color: #FFF;
-    border: 6px solid #4070F4;
-    border-radius: 50%;
-    pointer-events: none; /* Assicurati che l'indicatore non interferisca con altri elementi */
-    z-index: 10; /* Assicurati che l'indicatore sia sopra altri elementi */
-}
+                position: absolute;
+                top: -14px; /* Posizionato sopra le icone */
+                left: 50%; /* Posizionato orizzontalmente al centro del contenitore */
+                transform: translateX(-50%); /* Centrato sopra il punto centrale */
+                height: 36px;
+                width: 36px;
+                background-color: #FFF;
+                border: 6px solid #4070F4;
+                border-radius: 50%;
+                pointer-events: none; /* Assicurati che l'indicatore non interferisca con altri elementi */
+                z-index: 10; /* Assicurati che l'indicatore sia sopra altri elementi */
+            }
 
-            </style>
+            .tutorials_container_user {
+                display: flex;
+                flex-direction: column;
+                gap:0;
+                align-items: center;
+                height: 80vh;
+            }
+            .manual_slider_user{
+                overflow-y: auto;
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                align-items: center;
+                width: 100%;
+            }
+            .tutorial_btn_user {
+                display: block;
+                margin-bottom: 0.5rem;
+                width: 20rem;
+                height: 3rem;
+                font-size: 1.1rem;
+            }
+
+            .search-bar_tutorial_user {
+                margin-top: 1rem;
+                width: 50%;
+                border: none;
+                border-bottom: 2px solid #000;
+                background: none;
+                font-size: 1rem;
+                color: #000;
+                outline: none;
+            }
+            .search-bar_tutorial_user::placeholder {
+                color: #000;
+            }
+            .search-bar_tutorial_user:focus::placeholder {
+                color: transparent;
+            }
+        </style>
 
     </head>
     <body>
         <div class="body_user">
 
+            <div class="tutorials_container_user">
+                <input type="text" class="search-bar_tutorial_user" id="search-bar" placeholder="cerca">
+                <aside class="manual_slider_user" id="manual_slider">
+                    <%= button_to tutorial_element_path(1), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Come misurare i battiti</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(2), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Come misurare la pressione</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(3), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Come misurare la temperatura</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(4), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 4</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(5), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 5</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(6), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 6</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(7), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 7</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(8), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 8</strong></p>
+                    <% end %>
+                    <%=button_to tutorial_element_path(9), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 9</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(10), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 10</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(11), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 11</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(12), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 12</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(13), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 13</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(14), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 14</strong></p>
+                    <% end %>
+                    <%= button_to tutorial_element_path(15), method: :get, class: 'tutorial_btn_user' do %>
+                        <p><strong>Manuale 15</strong></p>
+                    <% end %>
 
-        <button class="accordion_user">Come misurare i BPM</button>
-        <div class="panel_user">
-        <p>1. Posiziona le dita (indice e medio) sul polso interno, alla base del pollice.<br>
-            2. Premi delicatamente fino a sentire il battito.<br>
-            3. Conta i battiti per 60 secondi oppure per 15 secondi e moltiplica per 4.</p>
-        </div>
+                </aside>
+            </div>
 
-        <button class="accordion_user">Come misurare la pressione sanguigna</button>
-        <div class="panel_user">
-        <p>1. Siediti in una posizione comoda con il braccio supportato all'altezza del cuore.<br>
-            2. Avvolgi il bracciale della sfigmomanometro attorno al braccio.<br>
-            3. Gonfia il bracciale e inizia la misurazione seguendo le istruzioni del dispositivo.</p>
-        </div>
-        <button class="accordion_user">Come misurare i BPM</button>
-        <div class="panel_user">
-        <p>1. Posiziona le dita (indice e medio) sul polso interno, alla base del pollice.<br>
-            2. Premi delicatamente fino a sentire il battito.<br>
-            3. Conta i battiti per 60 secondi oppure per 15 secondi e moltiplica per 4.</p>
-        </div>
-
-        <button class="accordion_user">Come misurare la pressione sanguigna</button>
-        <div class="panel_user">
-        <p>1. Siediti in una posizione comoda con il braccio supportato all'altezza del cuore.<br>
-            2. Avvolgi il bracciale della sfigmomanometro attorno al braccio.<br>
-            3. Gonfia il bracciale e inizia la misurazione seguendo le istruzioni del dispositivo.</p>
-        </div>
-        <button class="accordion_user">Come misurare i BPM</button>
-        <div class="panel_user">
-        <p>1. Posiziona le dita (indice e medio) sul polso interno, alla base del pollice.<br>
-            2. Premi delicatamente fino a sentire il battito.<br>
-            3. Conta i battiti per 60 secondi oppure per 15 secondi e moltiplica per 4.</p>
-        </div>
-
-        <button class="accordion_user">Come misurare la pressione sanguigna</button>
-        <div class="panel_user">
-        <p>1. Siediti in una posizione comoda con il braccio supportato all'altezza del cuore.<br>
-            2. Avvolgi il bracciale della sfigmomanometro attorno al braccio.<br>
-            3. Gonfia il bracciale e inizia la misurazione seguendo le istruzioni del dispositivo.</p>
-        </div>
+            <nav class="nav_user">
+                <ul class="nav_user-content">
+                    <li class="nav_user-list">
+                        <%= link_to setting_path, class: 'link-item user' do %>
+                            <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
+                            <span class="link-text">Settings</span>
+                        <% end %>
+                    </li>
 
 
-        
-        <nav class="nav_user">
-            <ul class="nav_user-content">
-                <li class="nav_user-list">
-                    <%= link_to setting_path, class: 'link-item user' do %>
-                        <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
-                        <span class="link-text">Settings</span>
+                    <li class="nav_user-list">
+                    <%= link_to root_path, class: 'link-item active user' do %>
+                        <i class='bx bxs-home link-icon user'></i>
+                        <span class="link-text user">Home</span>
                     <% end %>
                 </li>
+                    
 
-
-                <li class="nav_user-list">
-                <%= link_to root_path, class: 'link-item active user' do %>
-                    <i class='bx bxs-home link-icon user'></i>
-                    <span class="link-text user">Home</span>
-                <% end %>
-            </li>
-                
-
-                <li class="nav_user-list">
-                    <%= link_to profile_path, class: 'link-item user' do %>
-                        <i class='bx bxs-user link-icon'></i>
-                        <span class="link-text">Profile</span>
-                    <% end%>
-                </li>
-                <span class="indicator_user"></span>
-            </ul>
-        </nav>
-
-        <!-- JavaScript -->
-       <script>
-        
-document.addEventListener("DOMContentLoaded", function() {
-    var acc = document.getElementsByClassName("accordion_user");
-    for (var i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            // Toggle the active class to change the background color
-            this.classList.toggle("active");
+                    <li class="nav_user-list">
+                        <%= link_to profile_path, class: 'link-item user' do %>
+                            <i class='bx bxs-user link-icon'></i>
+                            <span class="link-text">Profile</span>
+                        <% end%>
+                    </li>
+                    <span class="indicator_user"></span>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const searchBar = document.getElementById('search-bar');
+                let searchText = '';
+                searchBar.addEventListener('input', function() {
+                    searchText = searchBar.value.toLowerCase();
+                    if (searchText != '') {
+                        let tutorialBtns = document.querySelectorAll('.tutorial_btn_user');
+                        tutorialBtns.forEach(btn => {
+                            btnText = btn.children[0].textContent.toLowerCase();
+                            if (!btnText.includes(searchText)) {
+                                btn.style.display = 'none';
+                            } else {
+                                btn.style.display = 'block';
+                            }
+                        });
+                    }
+                    else{
+                        let tutorialBtns = document.querySelectorAll('.tutorial_btn_user');
+                        tutorialBtns.forEach(btn => {
+                            btn.style.display = 'block';
+                        });
+                    }
+                });
+            });
             
-            // Get the panel (content) element
-            var panel = this.nextElementSibling;
-            
-            // Toggle the max-height style to show/hide the panel
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            } 
-        });
-    }
-});
-    </script>
-    </div>
+
+        </script>   
     </body>
 </html>
