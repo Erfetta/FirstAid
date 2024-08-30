@@ -1,36 +1,27 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Navigation Bar with Indicator</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Indicator</title>
 
-        <!-- CSS -->
-        
-                
-        <!-- Boxicons CSS -->
-        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="body_user">
 
-        <style>
-           
+        <div class="input-icons">
+            <i class='bx bxs-heart input-icon' data-modal="pressure-modal" title="Pressione"></i>
+            <i class='bx bx-pulse input-icon' data-modal="bpm-modal" title="BPM"></i>
+            <i class='bx bxs-droplet input-icon' data-modal="oxygen-modal" title="Ossigeno"></i>
+        </div>
 
-        .body_user i.fas.fa-child {
-            color: white;
-            font-size: 80vw; /* Dimensiona l'icona in base alla larghezza della finestra */
-           
-            margin-top:50px;
-            margin: auto;
-            
-        }
-        </style>
-
-
-    <body>
-        <div class="body_user">
         <i class="fas fa-child"></i>
+
+
 
         <div class="button-container_user">
             <%= link_to graph_path, class: 'button_user small-button_user' do %>
@@ -48,31 +39,75 @@
             <ul class="nav_user-content">
                 <li class="nav_user-list">
                     <%= link_to setting_path, class: 'link-item user' do %>
-                        <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
+                        <i class='bx bxs-cog link-icon'></i> <!-- Icona delle impostazioni -->
                         <span class="link-text">Settings</span>
                     <% end %>
                 </li>
 
-
                 <li class="nav_user-list">
-                <%= link_to root_path, class: 'link-item user' do %>
-                    <i class='bx bxs-home link-icon user'></i>
-                    <span class="link-text user">Home</span>
-                <% end %>
-            </li>
+                    <%= link_to root_path, class: 'link-item user' do %>
+                        <i class='bx bxs-home link-icon user'></i>
+                        <span class="link-text user">Home</span>
+                    <% end %>
+                </li>
                 
-
                 <li class="nav_user-list">
                     <%= link_to profile_path, class: 'link-item active user' do %>
                         <i class='bx bxs-user link-icon'></i>
                         <span class="link-text">Profile</span>
-                    <% end%>
+                    <% end %>
                 </li>
                 <span class="indicator_user"></span>
             </ul>
         </nav>
 
+        <!-- Modal for Pressure -->
+        <div id="pressure-modal" class="modal" style="display:none;">
+            <div class="modal-header">
+                <h3>Inserisci la Pressione Sanguigna</h3>
+                <span class="close-modal" data-modal="pressure-modal">&times;</span>
+            </div>
+            <form action="/submit_pressure" method="POST">
+                <div class="input-group">
+                    <label for="pressure">Pressione (mmHg):</label>
+                    <input type="text" id="pressure" name="pressure" required>
+                </div>
+                <button type="submit">Invia</button>
+            </form>
+        </div>
 
+        <!-- Modal for BPM -->
+        <div id="bpm-modal" class="modal" style="display:none;">
+            <div class="modal-header">
+                <h3>Inserisci BPM (Battiti per Minuto)</h3>
+                <span class="close-modal" data-modal="bpm-modal">&times;</span>
+            </div>
+            <form action="/submit_bpm" method="POST">
+                <div class="input-group">
+                    <label for="bpm">BPM:</label>
+                    <input type="text" id="bpm" name="bpm" required>
+                </div>
+                <button type="submit">Invia</button>
+            </form>
+        </div>
+
+        <!-- Modal for Oxygen -->
+        <div id="oxygen-modal" class="modal" style="display:none;">
+            <div class="modal-header">
+                <h3>Inserisci Ossigeno (%)</h3>
+                <span class="close-modal" data-modal="oxygen-modal">&times;</span>
+            </div>
+            <form action="/submit_oxygen" method="POST">
+                <div class="input-group">
+                    <label for="oxygen">Ossigeno (%):</label>
+                    <input type="text" id="oxygen" name="oxygen" required>
+                </div>
+                <button type="submit">Invia</button>
+            </form>
+        </div>
+
+        <!-- Modal Backdrop -->
+        <div class="modal-backdrop" style="display:none;"></div>
 
         <!-- JavaScript -->
         <script>
@@ -98,8 +133,37 @@
 
                 updateIndicator();
                 window.addEventListener("resize", updateIndicator);
+
+                const icons = document.querySelectorAll(".input-icon");
+                const modals = document.querySelectorAll(".modal");
+                const closeButtons = document.querySelectorAll(".close-modal");
+                const backdrop = document.querySelector(".modal-backdrop");
+
+                // Open modal on icon click
+                icons.forEach(icon => {
+                    icon.addEventListener("click", () => {
+                        const modalId = icon.getAttribute("data-modal");
+                        document.getElementById(modalId).style.display = "block";
+                        backdrop.style.display = "block";
+                    });
+                });
+
+                // Close modal on close button click
+                closeButtons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        const modalId = button.getAttribute("data-modal");
+                        document.getElementById(modalId).style.display = "none";
+                        backdrop.style.display = "none";
+                    });
+                });
+
+                // Close modal on backdrop click
+                backdrop.addEventListener("click", () => {
+                    modals.forEach(modal => modal.style.display = "none");
+                    backdrop.style.display = "none";
+                });
             });
         </script>
     </div>
-    </body>
+</body>
 </html>
