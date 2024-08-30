@@ -2,14 +2,15 @@
 Rails.application.routes.draw do
   if Rails.env == 'user'
     root 'userpage/home#user_index'
-    get 'tutorial', to: 'userpage/tutorials#tutorial', as: 'tutorial'
-    get 'tutorial_element/:id', to: 'userpage/tutorials#tutorial_element', as: 'tutorial_element'
+    get 'new', to: 'userpage/home#new', as: 'new'
+    get 'tutorial', to: 'userpage/home#tutorial', as: 'tutorial'
+    get 'tutorial_element/:id', to: 'userpage/home#tutorial_element', as: 'tutorial_element'
     get 'setting', to: 'userpage/settings#setting', as: 'setting'
     get 'profile', to: 'userpage/profiles#profile', as: 'profile'
-    get 'option', to: 'userpage/options#option', as: 'option'
-    get 'graph', to: 'userpage/graphs#graph', as: 'graph'
-    get 'graphsetting', to: 'userpage/graphsettings#graphsetting', as: 'graphsetting'
-    get 'info', to: 'userpage/infos#info', as: 'info'
+    get 'option', to: 'userpage/home#option', as: 'option'
+    get 'graph', to: 'userpage/profiles#graph', as: 'graph'
+    get 'graphsetting', to: 'userpage/profiles#graphsetting', as: 'graphsetting'
+    get 'info', to: 'userpage/profiles#info', as: 'info'
     
 
     namespace :userpage do
