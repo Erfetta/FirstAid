@@ -4,6 +4,7 @@
     border: 1px solid #ddd;
     margin: 20px;
     border-radius: 8px;
+    height: 100vw;
 }
 
 
@@ -162,4 +163,63 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+    length:50vw;
+    padding-bottom: 30px;
+}
+
+/* Stile per lo storico */
+.history-box {
+    flex: 2;
+}
+
+/* Stile per i pulsanti */
+.button-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 30px;
+    
+}
+
+.button-container button {
+    padding: 10px 10px;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.button-container select {
+    padding: 10px 10px;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    appearance: none; /* Nasconde la freccia standard del select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.button-container select:hover {
+    background-color: #e0e0e0;
+}
+
+/* Stile per aggiungere una freccia personalizzata per il select */
+.button-container select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
 

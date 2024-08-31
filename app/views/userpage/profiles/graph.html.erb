@@ -16,65 +16,82 @@
             <canvas id="bpmChart"></canvas>
         </div>
 
-        <div class="history-box">
-            <h3>Storico Inserimenti</h3>
+        <div class="box-container">
+            <div class="history-box">
+                <h3>Storico Inserimenti</h3>
                 <ul id="history-list">
                     <li>Heart Rate: 75 BPM</li>
                     <li>Heart Rate: 80 BPM</li>
                     <li>Heart Rate: 75 BPM</li>
                     <li>Heart Rate: 80 BPM</li>
-                    <li>Heart Rate: 75 BPM</li>
-                    <li>Heart Rate: 80 BPM</li>
-        
-        <!-- Qui verranno aggiunti gli inserimenti -->
                 </ul>
+            </div>
+
+            <div class="button-container">
+                <select name="graph-type" id="graph-type">
+                    <option value="BPM">BPM</option>
+                    <option value="Pressione">Pressione</option>
+                    <option value="Ossigenazione">Ossigenazione</option>
+                </select>
+                <button>Tutorial</button>
+                <button>Inserisci</button>
+            </div>
         </div>
 
-        <div class="button-container">
-        <button>Tutorial</button>
-        <button>Inserisci</button>
-    </div>
-
         <nav class="nav_user">
-        <ul class="nav_user-content">
-            <li class="nav_user-list">
-                <%= link_to setting_path, class: 'link-item user' do %>
-                    <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
-                    <span class="link-text">Settings</span>
-                <% end %>
-            </li>
-
-
-            <li class="nav_user-list">
-            <%= link_to root_path, class: 'link-item user' do %>
-                <i class='bx bxs-home link-icon user'></i>
-                <span class="link-text user">Home</span>
-            <% end %>
-        </li>
-            
-
-            <li class="nav_user-list">
-                <%= link_to profile_path, class: 'link-item active user' do %>
-                    <i class='bx bxs-user link-icon'></i>
-                    <span class="link-text">Profile</span>
-                <% end%>
-            </li>
-            <span class="indicator_user"></span>
-        </ul>
-    </nav>
+            <ul class="nav_user-content">
+                <li class="nav_user-list">
+                    <%= link_to setting_path, class: 'link-item user' do %>
+                        <i class='bx bxs-cog link-icon'></i>
+                        <span class="link-text">Settings</span>
+                    <% end %>
+                </li>
+                <li class="nav_user-list">
+                    <%= link_to root_path, class: 'link-item user' do %>
+                        <i class='bx bxs-home link-icon user'></i>
+                        <span class="link-text user">Home</span>
+                    <% end %>
+                </li>
+                <li class="nav_user-list">
+                    <%= link_to profile_path, class: 'link-item active user' do %>
+                        <i class='bx bxs-user link-icon'></i>
+                        <span class="link-text">Profile</span>
+                    <% end %>
+                </li>
+                <span class="indicator_user"></span>
+            </ul>
+        </nav>
     </div>
 
     <!-- JavaScript for Chart.js -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const ctx = document.getElementById('bpmChart').getContext('2d');
+
+            // Dati iniziali del grafico
+            const chartData = {
+                BPM: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                    data: [65, 59, 80, 81, 56, 55]
+                },
+                Pressione: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                    data: [120, 115, 130, 125, 110, 118]
+                },
+                Ossigenazione: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                    data: [98, 97, 99, 96, 95, 94]
+                }
+            };
+
+            // Configurazione del grafico
             const bpmChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June'], // X-axis labels
+                    labels: chartData.BPM.labels,
                     datasets: [{
                         label: 'BPM',
-                        data: [65, 59, 80, 81, 56, 55], // Data for Y-axis
+                        data: chartData.BPM.data,
                         borderColor: 'rgba(75, 192, 192, 1)',
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderWidth: 1
@@ -92,6 +109,20 @@
                 }
             });
 
+            // Funzione per aggiornare il grafico
+            function updateChart(type) {
+                bpmChart.data.labels = chartData[type].labels;
+                bpmChart.data.datasets[0].data = chartData[type].data;
+                bpmChart.data.datasets[0].label = type;
+                bpmChart.update();
+            }
+
+            // Event listener per il select
+            const graphTypeSelect = document.getElementById('graph-type');
+            graphTypeSelect.addEventListener('change', (event) => {
+                updateChart(event.target.value);
+            });
+
             const linkItems = document.querySelectorAll(".link-item");
             const indicator = document.querySelector(".indicator_user");
 
@@ -102,14 +133,6 @@
                     indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
                 }
             }
-
-            linkItems.forEach((linkItem) => {
-                linkItem.addEventListener("click", () => {
-                    document.querySelector(".link-item.active")?.classList.remove("active");
-                    linkItem.classList.add("active");
-                    updateIndicator();
-                });
-            });
 
             updateIndicator();
             window.addEventListener("resize", updateIndicator);
