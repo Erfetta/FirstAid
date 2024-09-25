@@ -10,63 +10,101 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_26_112456) do
+ActiveRecord::Schema.define(version: 2024_09_25_164500) do
 
   create_table "operators", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "name"
     t.string "surname"
-    t.string "email"
-    t.string "telephone_number"
-    t.integer "age"
-    t.string "sex"
-    t.integer "supervisor_id"
+    t.string "workplace"
+    t.string "supervisor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["supervisor_id"], name: "index_operators_on_supervisor_id"
+    t.index ["email"], name: "index_operators_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_operators_on_reset_password_token", unique: true
+  end
+
+  create_table "report_dones", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "report_datetime", null: false
+    t.string "coordinates", null: false
+    t.string "user_id", null: false
+    t.string "operator_id"
+    t.string "question1"
+    t.string "question2"
+    t.string "question3"
+    t.string "question4"
+    t.string "question5"
+    t.string "question6"
+    t.string "question7"
+    t.string "question8"
+    t.string "question9"
+    t.string "question10"
+    t.string "question11"
+    t.string "question12"
+    t.string "question13"
+    t.string "question14"
+    t.integer "contact_metod", null: false
   end
 
   create_table "reports", force: :cascade do |t|
-    t.time "report_time"
-    t.date "report_date"
-    t.string "coordinates"
-    t.integer "user_id"
-    t.integer "operator_id"
-    t.boolean "accepted", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "reports_done", force: :cascade do |t|
-    t.integer "operator_id"
-    t.integer "user_id"
-    t.time "time"
-    t.date "date"
-    t.string "coordinates"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "coordinates", null: false
+    t.string "user_id", null: false
+    t.string "operator_id"
+    t.string "question1"
+    t.string "question2"
+    t.string "question3"
+    t.string "question4"
+    t.string "question5"
+    t.string "question6"
+    t.string "question7"
+    t.string "question8"
+    t.string "question9"
+    t.string "question10"
+    t.string "question11"
+    t.string "question12"
+    t.string "question13"
+    t.string "question14"
+    t.integer "contact_metod", null: false
   end
 
   create_table "supervisors", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "name"
-    t.string "email"
+    t.string "surname"
+    t.string "workplace"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_supervisors_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_supervisors_on_reset_password_token", unique: true
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "name"
     t.string "surname"
-    t.string "email"
-    t.string "telephone_number"
-    t.integer "age"
+    t.string "phone"
     t.string "sex"
+    t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "operators", "supervisors"
-  add_foreign_key "reports", "operators"
-  add_foreign_key "reports", "users"
-  add_foreign_key "reports_done", "operators"
-  add_foreign_key "reports_done", "users"
 end

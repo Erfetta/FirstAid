@@ -3,5 +3,5 @@ class ReportDone < ApplicationRecord
   belongs_to :user
   belongs_to :operator
 
-  validates :time, :date, :coordinates, presence: true
+  validates :datetime, :coordinates, presence: true
 end

@@ -13790,3 +13790,166 @@ Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surnam
   Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 335)
   Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2339)
 Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 3112)
+Started GET "/" for 127.0.0.1 at 2024-08-30 19:25:14 +0200
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 39.4ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 1063.4ms | Allocations: 41233)
+Completed 200 OK in 1358ms (Views: 1086.0ms | ActiveRecord: 1.8ms | Allocations: 49740)
+Started GET "/setting" for 127.0.0.1 at 2024-08-30 19:26:52 +0200
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 5.3ms | Allocations: 522)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 2785)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.0ms | Allocations: 3592)
+Started GET "/" for 127.0.0.1 at 2024-08-30 19:26:56 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2591)
+Completed 200 OK in 21ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 3420)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:27:01 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2485)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 4742)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 5141)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 19:27:06 +0200
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 17.8ms | Allocations: 667)
+  Rendered layout layouts/application.html.erb (Duration: 104.0ms | Allocations: 2909)
+Completed 200 OK in 112ms (Views: 105.7ms | ActiveRecord: 0.0ms | Allocations: 3313)
+Started GET "/" for 127.0.0.1 at 2024-08-30 19:27:11 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 2577)
+Completed 200 OK in 55ms (Views: 23.0ms | ActiveRecord: 0.2ms | Allocations: 3387)
+Started GET "/tutorial" for 127.0.0.1 at 2024-08-30 19:27:13 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1446)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3701)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3961)
+Started GET "/tutorial_element/1" for 127.0.0.1 at 2024-08-30 19:27:15 +0200
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.6ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2395)
+Completed 200 OK in 22ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 2670)
+Started GET "/" for 127.0.0.1 at 2024-08-30 19:27:18 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2578)
+Completed 200 OK in 19ms (Views: 9.0ms | ActiveRecord: 2.5ms | Allocations: 3386)
+Started GET "/option" for 127.0.0.1 at 2024-08-30 19:27:20 +0200
+Processing by Userpage::HomeController#option as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/option.html.erb within layouts/application
+  Rendered userpage/home/option.html.erb within layouts/application (Duration: 1.3ms | Allocations: 464)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 2711)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 3105)
+Started GET "/" for 127.0.0.1 at 2024-08-30 19:27:24 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2577)
+Completed 200 OK in 18ms (Views: 9.9ms | ActiveRecord: 0.3ms | Allocations: 3386)
+Started GET "/profile" for 127.0.0.1 at 2024-08-30 19:27:26 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.0ms | Allocations: 791)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3047)
+Completed 200 OK in 80ms (Views: 42.1ms | ActiveRecord: 0.0ms | Allocations: 3814)
+Started GET "/info" for 127.0.0.1 at 2024-08-30 19:27:31 +0200
+Processing by Userpage::ProfilesController#info as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 3.6ms | Allocations: 468)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 2718)
+Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 3104)
+Started GET "/graph" for 127.0.0.1 at 2024-08-30 19:27:35 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 1.9ms | Allocations: 607)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2865)
+Completed 200 OK in 76ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 3256)
+Started GET "/profile" for 127.0.0.1 at 2024-08-30 19:27:51 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.2ms | Allocations: 266)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 2513)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 2770)
+Started GET "/" for 127.0.0.1 at 2024-08-30 19:27:58 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2597)
+Completed 200 OK in 20ms (Views: 8.6ms | ActiveRecord: 2.4ms | Allocations: 3407)
+Started GET "/new" for 127.0.0.1 at 2024-08-30 19:27:59 +0200
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 525)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 2777)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.0ms | Allocations: 3141)
+Started GET "/" for 127.0.0.1 at 2024-08-30 19:28:04 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 58.5ms | Allocations: 2577)
+Completed 200 OK in 80ms (Views: 62.3ms | ActiveRecord: 0.3ms | Allocations: 3400)
+Started GET "/" for 127.0.0.1 at 2024-09-01 17:58:06 +0200
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surname: "ere", email: "ergerg", telephone_number: "222222222222222222222", age: 222222, sex: "222222", created_at: nil, updated_at: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 1380.7ms | Allocations: 36609)
+Completed 200 OK in 1493ms (Views: 1391.3ms | ActiveRecord: 2.3ms | Allocations: 44130)

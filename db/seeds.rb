@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Questo esempio popola la tabella users con 3 utenti
+
+# Popolazione della tabella operators con alcuni operatori
+
+# Popolazione della tabella supervisors con alcuni supervisori
+
+
+
