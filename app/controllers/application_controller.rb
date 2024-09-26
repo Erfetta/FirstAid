@@ -1,7 +1,14 @@
-# app/user/application_controller.rb
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # Metodi comuni che possono essere usati in tutti i controller
-  # Esempio: autenticazione dell'utente, gestione delle eccezioni, ecc.
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  # Permetti parametri extra durante la registrazione e l'aggiornamento dell'account
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :surname, :sex, :age])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :surname, :sex, :age])
+  end
+  
 end

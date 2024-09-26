@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :reports_done
 
   validates :name, presence: true
-  validates :phone, presence: true, uniqueness: true
 end

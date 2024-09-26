@@ -13953,3 +13953,682 @@ Users loaded: #<ActiveRecord::Relation [#<User id: 123456, name: "eeiri", surnam
   Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 931)
   Rendered layout layouts/application.html.erb (Duration: 1380.7ms | Allocations: 36609)
 Completed 200 OK in 1493ms (Views: 1391.3ms | ActiveRecord: 2.3ms | Allocations: 44130)
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-09-26 18:44:57 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 8.8ms | Allocations: 591)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 29.1ms | Allocations: 5986)
+  Rendered layout layouts/application.html.erb (Duration: 146.1ms | Allocations: 45188)
+Completed 200 OK in 180ms (Views: 158.6ms | ActiveRecord: 0.5ms | Allocations: 54968)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:45:04 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 116)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1493)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3390)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4608)
+Started POST "/users" for 127.0.0.1 at 2024-09-26 18:45:20 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fettuccia56@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fettuccia56@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1155)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 3013)
+Completed 200 OK in 308ms (Views: 15.1ms | ActiveRecord: 0.6ms | Allocations: 10186)
+Started POST "/users" for 127.0.0.1 at 2024-09-26 18:45:53 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fettuccia56@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fettuccia56@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1153)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2995)
+Completed 200 OK in 259ms (Views: 3.7ms | ActiveRecord: 0.8ms | Allocations: 7623)
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-09-26 18:48:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 510)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2178)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4167)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 5939)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:48:15 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1696)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3540)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 4671)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:49:42 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 463)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2110)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4110)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 1.3ms | Allocations: 12298)
+Started POST "/users" for 127.0.0.1 at 2024-09-26 18:49:54 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fettuccia56@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fettuccia56@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1148)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2993)
+Completed 200 OK in 292ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 7837)
+Started POST "/users" for 127.0.0.1 at 2024-09-26 18:57:30 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fettuccia56@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fettuccia56@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__4584012367347772992_28300 at /home/biar/Documents/GitHub/FirstAid/app/views/devise/registrations/new.html.erb:4)
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 2.8ms | Allocations: 781)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 5255)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5288)
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 1.0ms | Allocations: 17299)
+  
+ActionView::Template::Error (Missing partial devise/shared/__links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/biar/Documents/GitHub/FirstAid/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actiontext-6.1.7.8/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actionmailbox-6.1.7.8/app/views"
+):
+    43:   </div>
+    44: <% end %>
+    45: 
+    46: <%= render "devise/shared/_links" %>
+  
+app/views/devise/registrations/new.html.erb:46
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-09-26 18:57:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 529)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2250)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 4365)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 5807)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:57:37 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__4584012367347772992_28300 at /home/biar/Documents/GitHub/FirstAid/app/views/devise/registrations/new.html.erb:4)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2437)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2470)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2999)
+  
+ActionView::Template::Error (Missing partial devise/shared/__links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/biar/Documents/GitHub/FirstAid/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actiontext-6.1.7.8/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actionmailbox-6.1.7.8/app/views"
+):
+    43:   </div>
+    44: <% end %>
+    45: 
+    46: <%= render "devise/shared/_links" %>
+  
+app/views/devise/registrations/new.html.erb:46
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:59:31 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__4584012367347772992_28860 at /home/biar/Documents/GitHub/FirstAid/app/views/devise/registrations/new.html.erb:4)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 3170)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3203)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 4916)
+  
+ActionView::Template::Error (Missing partial devise/shared/__links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/biar/Documents/GitHub/FirstAid/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actiontext-6.1.7.8/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actionmailbox-6.1.7.8/app/views"
+):
+    44: <% end %>
+    45: 
+    46: <!-- Rimuovi questa riga se non desideri utilizzare il parziale -->
+    47: <%= render "devise/shared/_links" %>
+  
+app/views/devise/registrations/new.html.erb:47
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:59:34 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__4584012367347772992_28860 at /home/biar/Documents/GitHub/FirstAid/app/views/devise/registrations/new.html.erb:4)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2394)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2427)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2950)
+  
+ActionView::Template::Error (Missing partial devise/shared/__links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/biar/Documents/GitHub/FirstAid/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actiontext-6.1.7.8/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actionmailbox-6.1.7.8/app/views"
+):
+    44: <% end %>
+    45: 
+    46: <!-- Rimuovi questa riga se non desideri utilizzare il parziale -->
+    47: <%= render "devise/shared/_links" %>
+  
+app/views/devise/registrations/new.html.erb:47
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:59:35 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__4584012367347772992_28860 at /home/biar/Documents/GitHub/FirstAid/app/views/devise/registrations/new.html.erb:4)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2394)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2427)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2949)
+  
+ActionView::Template::Error (Missing partial devise/shared/__links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/biar/Documents/GitHub/FirstAid/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actiontext-6.1.7.8/app/views"
+  * "/home/biar/.rvm/gems/ruby-2.7.2/gems/actionmailbox-6.1.7.8/app/views"
+):
+    44: <% end %>
+    45: 
+    46: <!-- Rimuovi questa riga se non desideri utilizzare il parziale -->
+    47: <%= render "devise/shared/_links" %>
+  
+app/views/devise/registrations/new.html.erb:47
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-09-26 18:59:48 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__4584012367347772992_29380 at /home/biar/Documents/GitHub/FirstAid/app/views/devise/registrations/new.html.erb:4)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2584)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4593)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 6332)
+Started POST "/users" for 127.0.0.1 at 2024-09-26 19:00:21 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fettuccia56@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"Simone", "surname"=>"Fettuccia", "sex"=>"male", "age"=>"22"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fettuccia56@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "surname", "sex", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "fettuccia56@gmail.com"], ["encrypted_password", "$2a$12$iPXmJj9xbV1nIZozLerhd.XAkMRdKZXGNShQPSkZ0c4VsVnysagYe"], ["name", "Simone"], ["surname", "Fettuccia"], ["sex", "male"], ["age", 22], ["created_at", "2024-09-26 17:00:22.249355"], ["updated_at", "2024-09-26 17:00:22.249355"]]
+  [1m[36mTRANSACTION (24.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 330ms (ActiveRecord: 24.7ms | Allocations: 7618)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:00:22 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 787)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2810)
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 4963)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:01:10 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.5ms | Allocations: 793)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2826)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3710)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:01:21 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2362)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 3700)
+Started GET "/setting" for 127.0.0.1 at 2024-09-26 19:01:23 +0200
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 8.3ms | Allocations: 522)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2537)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 3376)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:01:24 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2384)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 3722)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:01:25 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 0.3ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2299)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2537)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:05:41 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2349)
+Completed 200 OK in 20ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 3686)
+Started GET "/setting" for 127.0.0.1 at 2024-09-26 19:05:41 +0200
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 0.8ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2216)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2454)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:05:43 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2355)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 3692)
+Started GET "/tutorial" for 127.0.0.1 at 2024-09-26 19:05:44 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2483)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4502)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4876)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:05:46 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2376)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 3715)
+Started GET "/new" for 127.0.0.1 at 2024-09-26 19:05:47 +0200
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 2547)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 2885)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:05:48 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2352)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 3690)
+Started GET "/option" for 127.0.0.1 at 2024-09-26 19:05:49 +0200
+Processing by Userpage::HomeController#option as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/option.html.erb within layouts/application
+  Rendered userpage/home/option.html.erb within layouts/application (Duration: 4.5ms | Allocations: 461)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 2470)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 2841)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:05:50 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2350)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 3689)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:05:51 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.3ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 2301)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 2539)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:05:52 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2362)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3699)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:05:53 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.6ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 2285)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 2522)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:11:57 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3725)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3758)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms | Allocations: 11337)
+  
+ActionView::Template::Error (undefined local variable or method `option_path' for #<ActionView::Base:0x00000000011030>):
+    31:          <%= link_to new_path, class: 'button_user large-button_user' do %>
+    32:             <i class='bx bxs-error'></i> <!-- Icona del punto esclamativo -->
+    33:             <% end %>
+    34:             <%= link_to option_path, class: 'button_user small-button_user' do %>
+    35:             <i class='bx bx-menu'></i> <!-- Icona del libro -->
+    36:             <% end %>
+    37:         
+  
+app/views/userpage/home/user_index.html.erb:34
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:12:44 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2373)
+Completed 200 OK in 21ms (Views: 4.8ms | ActiveRecord: 0.9ms | Allocations: 10573)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:12:46 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 0.0ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 0.0ms | Allocations: 2118)
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 3733)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:12:49 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2363)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 3699)
+Started GET "/setting" for 127.0.0.1 at 2024-09-26 19:12:50 +0200
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 0.4ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2226)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2627)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:12:51 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 0.5ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2105)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 3439)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:13:41 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2339)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 3675)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:13:42 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 0.0ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2105)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3428)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:17:06 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 102.1ms | Allocations: 39885)
+Completed 200 OK in 126ms (Views: 106.2ms | ActiveRecord: 0.8ms | Allocations: 50480)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:17:08 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 0.9ms | Allocations: 793)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2692)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 5123)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:17:10 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2369)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3726)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:19:24 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 4131)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4164)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.3ms | Allocations: 12303)
+  
+ActionView::Template::Error (undefined local variable or method `profile_path' for #<ActionView::Base:0x0000000000b900>):
+    52:                     <% end %>
+    53:                 </li>
+    54:                 <li class="nav_user-list">
+    55:                     <%= link_to profile_path, class: "link-item user #{'active' if current_page?(profile_path)}" do %>
+    56:                         <i class='bx bxs-user link-icon'></i>
+    57:                         <span class="link-text">Profile</span>
+    58:                     <% end %>
+  
+app/views/userpage/home/user_index.html.erb:55
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:19:46 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 367)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2509)
+Completed 200 OK in 18ms (Views: 3.8ms | ActiveRecord: 1.6ms | Allocations: 10967)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:19:48 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 0.5ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2119)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 3772)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:19:49 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2362)
+Completed 200 OK in 22ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 3718)
+Started GET "/" for 127.0.0.1 at 2024-09-26 19:21:39 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000">, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000">, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000">, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 768)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2933)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 5107)
+Started GET "/profile" for 127.0.0.1 at 2024-09-26 19:21:41 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.0ms | Allocations: 870)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2714)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 4657)
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-09-26 19:21:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-09-26 19:23:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-09-26 19:24:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-09-26 19:25:21 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-09-26 19:36:33 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2024-09-26 19:40:19 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  

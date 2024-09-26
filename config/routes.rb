@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :supervisors
   devise_for :operators
   devise_for :users
+
+
   
   if Rails.env == 'user'
     root 'userpage/home#user_index'
