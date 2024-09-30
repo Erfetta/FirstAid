@@ -18,31 +18,63 @@
     <body>
         <div class="body_user">
 
+<div class="user-info-container">
+    <h2>User Information</h2>
+    
+    <div class="info-item">
+        <label for="name">Name:</label>
+        <span id="name"><%= current_user.name %></span>
+    </div>
+    <div class="info-item">
+        <label for="surname">Surname:</label>
+        <span id="surname"><%= current_user.surname %></span>
+    </div>
+    <div class="info-item">
+        <label for="age">Age:</label>
+        <span id="age"><%= current_user.age %></span>
+    </div>
+    <div class="info-item">
+        <label for="blood-type">Blood Type:</label>
+        <span id="blood-type"><%= current_user.blood_type || 'N/A' %></span>
+    </div>
+    <div class="info-item">
+        <label for="phone">Phone:</label>
+        <span id="phone"><%= current_user.phone || 'N/A' %></span>
+    </div>
+    <div class="info-item">
+        <label for="email">Email:</label>
+        <span id="email"><%= current_user.email %></span>
+    </div>
 
-            <!-- User Info Section -->
-        <div class="user-info-container">
-            <h2>User Information</h2>
-            <div class="info-item">
-                <label for="name">Name:</label>
-                <span id="name">John Doe</span>
-            </div>
-            <div class="info-item">
-                <label for="surname">Surname:</label>
-                <span id="surname">Smith</span>
-            </div>
-            <div class="info-item">
-                <label for="age">Age:</label>
-                <span id="age">30</span>
-            </div>
-            <div class="info-item">
-                <label for="blood-type">Blood Type:</label>
-                <span id="blood-type">O+</span>
-            </div>
-            <div class="info-item">
-                <label for="phone">Phone:</label>
-                <span id="phone">123-456-7890</span>
-            </div>
+    <h3>Edit Information</h3>
+    <%= form_with(model: current_user, local: true) do |form| %>
+        <div class="info-item">
+            <%= form.label :blood_type %>
+            <%= form.text_field :blood_type, value: current_user.blood_type %>
         </div>
+        <div class="info-item">
+            <%= form.label :phone %>
+            <%= form.text_field :phone, value: current_user.phone %>
+        </div>
+        <div class="info-item">
+            <%= form.label :email %>
+            <%= form.email_field :email, value: current_user.email %>
+        </div>
+        <div class="info-item">
+            <%= form.submit "Update Information" %>
+        </div>
+    <% end %>
+</div>
+
+
+        <% if user_signed_in? %>
+    <%= form_with(url: destroy_user_session_path, method: :delete) do %>
+    <%= submit_tag 'Logout' %>
+    <% end %>
+    <% else %>
+    <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+
 
 
 

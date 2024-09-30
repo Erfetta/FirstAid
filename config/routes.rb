@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     
 
     namespace :userpage do
-      resources :reports, only: [:new, :create]
+      resources :reports, only: [:new, :create, :update]
     end
   elsif Rails.env == 'operator'
     root 'operatorpage/home#operator_index'
