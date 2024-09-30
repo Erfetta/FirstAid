@@ -18,53 +18,76 @@
     <body>
         <div class="body_user">
 
-<div class="user-info-container">
-    <h2>User Information</h2>
-    
-    <div class="info-item">
-        <label for="name">Name:</label>
-        <span id="name"><%= current_user.name %></span>
-    </div>
-    <div class="info-item">
-        <label for="surname">Surname:</label>
-        <span id="surname"><%= current_user.surname %></span>
-    </div>
-    <div class="info-item">
-        <label for="age">Age:</label>
-        <span id="age"><%= current_user.age %></span>
-    </div>
-    <div class="info-item">
-        <label for="blood-type">Blood Type:</label>
-        <span id="blood-type"><%= current_user.blood_type || 'N/A' %></span>
-    </div>
-    <div class="info-item">
-        <label for="phone">Phone:</label>
-        <span id="phone"><%= current_user.phone || 'N/A' %></span>
-    </div>
-    <div class="info-item">
-        <label for="email">Email:</label>
-        <span id="email"><%= current_user.email %></span>
-    </div>
+           <div class="user-info-container">
+            <h2>User Information</h2>
 
-    <h3>Edit Information</h3>
-    <%= form_with(model: current_user, local: true) do |form| %>
-        <div class="info-item">
-            <%= form.label :blood_type %>
-            <%= form.text_field :blood_type, value: current_user.blood_type %>
+            <!-- Visualizzazione delle Informazioni -->
+            <div class="info-item">
+                <label for="name">Name:</label>
+                <span id="name"><%= current_user.name %></span>
+            </div>
+            <div class="info-item">
+                <label for="surname">Surname:</label>
+                <span id="surname"><%= current_user.surname %></span>
+            </div>
+            <div class="info-item">
+                <label for="age">Age:</label>
+                <span id="age"><%= current_user.age %></span>
+            </div>
+            
+
+            <!-- Modulo di Modifica -->
+            <%= form_with(model: current_user, url: userpage_profile_path(current_user), method: :patch, local: true) do |form| %>
+                <div class="info-item">
+                    <%= form.label :blood_type %>
+                    <%= form.select :blood_type, options_for_select(blood_type_options, current_user.blood_type), include_blank: 'Seleziona il tipo di sangue' %>
+                </div>
+                <div class="info-item">
+                    <%= form.label :phone %>
+                    <%= form.text_field :phone, value: current_user.phone %>
+                </div>
+                <div class="info-item">
+                    <%= form.label :email %>
+                    <%= form.email_field :email, value: current_user.email %>
+                </div>
+                <div class="info-item">
+                    <%= form.submit "Update Information" %>
+                </div>
+            <% end %>
         </div>
-        <div class="info-item">
-            <%= form.label :phone %>
-            <%= form.text_field :phone, value: current_user.phone %>
-        </div>
-        <div class="info-item">
-            <%= form.label :email %>
-            <%= form.email_field :email, value: current_user.email %>
-        </div>
-        <div class="info-item">
-            <%= form.submit "Update Information" %>
-        </div>
-    <% end %>
-</div>
+
+        <% if user_signed_in? %>
+            <%= form_with(url: destroy_user_session_path, method: :delete) do %>
+                <%= submit_tag 'Logout' %>
+            <% end %>
+        <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+        <% end %>
+
+        <nav class="nav_user">
+            <ul class="nav_user-content">
+                <li class="nav_user-list">
+                    <%= link_to setting_path, class: 'link-item user' do %>
+                        <i class='bx bxs-cog link-icon'></i>
+                        <span class="link-text">Settings</span>
+                    <% end %>
+                </li>
+                <li class="nav_user-list">
+                    <%= link_to root_path, class: 'link-item user' do %>
+                        <i class='bx bxs-home link-icon user'></i>
+                        <span class="link-text user">Home</span>
+                    <% end %>
+                </li>
+                <li class="nav_user-list">
+                    <%= link_to profile_path, class: 'link-item active user' do %>
+                        <i class='bx bxs-user link-icon'></i>
+                        <span class="link-text">Profile</span>
+                    <% end %>
+                </li>
+                <span class="indicator_user"></span>
+            </ul>
+        </nav>
+    </div>
 
 
         <% if user_signed_in? %>
