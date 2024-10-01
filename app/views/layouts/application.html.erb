@@ -12,12 +12,5 @@
 
   <body>
     <%= yield %>
-    <!-- Mostra il form di logout solo se l'utente è autenticato -->
-    <% if user_signed_in? %>
-      <%= form_with(url: destroy_user_session_path, method: :delete) do %>
-        <%= submit_tag 'Logout' %>
-      <% end %>
-    <% end %>
-
   </body>
 </html>

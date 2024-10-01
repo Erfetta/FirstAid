@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_09_30_160706) do
+ActiveRecord::Schema.define(version: 2024_10_01_230459) do
+
+  create_table "data", force: :cascade do |t|
+    t.string "tipo"
+    t.float "valore"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_data_on_user_id"
+  end
 
   create_table "operators", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -108,6 +117,7 @@ ActiveRecord::Schema.define(version: 2024_09_30_160706) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "data", "users"
   add_foreign_key "operators", "supervisors"
   add_foreign_key "report_dones", "operators"
   add_foreign_key "report_dones", "users"

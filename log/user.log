@@ -15536,3 +15536,282 @@ ActionView::Template::Error (undefined method `user_path' for #<ActionView::Base
     53:             <%= form.text_field :blood_type, value: current_user.blood_type %>
   
 app/views/userpage/profiles/info.html.erb:50
+Started GET "/" for 127.0.0.1 at 2024-10-02 00:58:09 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 104.3ms | Allocations: 41531)
+Completed 200 OK in 132ms (Views: 108.6ms | ActiveRecord: 1.1ms | Allocations: 52961)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 00:58:11 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1965)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 3861)
+Completed 200 OK in 26ms (Views: 14.4ms | ActiveRecord: 0.5ms | Allocations: 6287)
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 00:58:16 +0200
+Processing by DataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"111", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/data_controller.rb:25:in `set_user'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 1892)
+  
+NoMethodError (undefined method `create' for Data:Class):
+  
+app/controllers/data_controller.rb:6:in `create_pressure'
+Started GET "/" for 127.0.0.1 at 2024-10-02 01:06:23 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 944)
+  Rendered layout layouts/application.html.erb (Duration: 97.4ms | Allocations: 41217)
+Completed 200 OK in 126ms (Views: 103.3ms | ActiveRecord: 1.1ms | Allocations: 52833)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 01:06:25 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1965)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3860)
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 6296)
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 01:06:35 +0200
+Processing by DataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"1111", "commit"=>"Invia"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/data_controller.rb:25:in `set_user'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 1890)
+  
+NoMethodError (undefined method `create' for Data:Class):
+  
+app/controllers/data_controller.rb:6:in `create_pressure'
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 01:10:11 +0200
+Processing by DataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"1111", "commit"=>"Invia"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/data_controller.rb:24:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/data_controller.rb:24:in `set_user'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.5ms | Allocations: 9260)
+  
+NoMethodError (undefined method `create' for Data:Class):
+  
+app/controllers/data_controller.rb:6:in `create_pressure'
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 01:11:41 +0200
+Processing by DataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"1111", "commit"=>"Invia"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/data_controller.rb:26:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/data_controller.rb:26:in `set_user'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.8ms | Allocations: 8958)
+  
+NoMethodError (undefined method `create' for Data:Class):
+  
+app/controllers/data_controller.rb:6:in `create_pressure'
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 01:13:57 +0200
+Processing by DataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"1111", "commit"=>"Invia"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/data_controller.rb:26:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/data_controller.rb:26:in `set_user'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.5ms | Allocations: 8960)
+  
+NoMethodError (undefined method `create' for Data:Class):
+  
+app/controllers/data_controller.rb:6:in `create_pressure'
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 01:16:51 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1520)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3630)
+Completed 200 OK in 34ms (Views: 10.5ms | ActiveRecord: 2.2ms | Allocations: 13443)
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 01:16:55 +0200
+Processing by DataController#create_pressure as HTML
+  Parameters: {"pressure"=>"111"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 218)
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.8) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.8) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.7.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (6.1.7.8) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.7.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.7.8) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.8) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 01:18:14 +0200
+Processing by DataController#create_pressure as HTML
+  Parameters: {"pressure"=>"111"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 157)
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.7.8) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.7.8) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.7.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (6.1.7.8) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+actiontext (6.1.7.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.7.8) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.8) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'

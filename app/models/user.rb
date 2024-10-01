@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reports
   has_many :reports_done
+  has_many :data
 
   validates :name, presence: true
 end

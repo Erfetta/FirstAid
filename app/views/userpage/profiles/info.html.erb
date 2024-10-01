@@ -90,47 +90,7 @@
     </div>
 
 
-        <% if user_signed_in? %>
-    <%= form_with(url: destroy_user_session_path, method: :delete) do %>
-    <%= submit_tag 'Logout' %>
-    <% end %>
-    <% else %>
-    <%= link_to 'Login', new_user_session_path %>
-    <% end %>
-
-
-
-
-
     
- 
-    <nav class="nav_user">
-        <ul class="nav_user-content">
-            <li class="nav_user-list">
-                <%= link_to setting_path, class: 'link-item user' do %>
-                    <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
-                    <span class="link-text">Settings</span>
-                <% end %>
-            </li>
-
-
-            <li class="nav_user-list">
-            <%= link_to root_path, class: 'link-item user' do %>
-                <i class='bx bxs-home link-icon user'></i>
-                <span class="link-text user">Home</span>
-            <% end %>
-        </li>
-            
-
-            <li class="nav_user-list">
-                <%= link_to profile_path, class: 'link-item active user' do %>
-                    <i class='bx bxs-user link-icon'></i>
-                    <span class="link-text">Profile</span>
-                <% end%>
-            </li>
-            <span class="indicator_user"></span>
-        </ul>
-    </nav>
 
 
 <!-- JavaScript -->
