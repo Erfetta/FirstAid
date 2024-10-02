@@ -193,10 +193,15 @@
 }
 
 .button-container button {
-    padding: 10px 10px;
+    padding: 10px 40px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; /* Rimuove la sottolineatura nei link */
+    display: inline-block;
     cursor: pointer;
-    margin-right: 20px;
-    border-radius: 8px;
+    font-size: 16px;
 }
 
 .button-container select {
@@ -224,4 +229,21 @@
     background-size: 12px;
 }
 
+/* Stile per bottoni e link con la classe btn-inserisci */
+.btn-inserisci {
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; /* Rimuove la sottolineatura nei link */
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.btn-inserisci:hover {
+    background-color: #0056b3;
+}
 

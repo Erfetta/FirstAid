@@ -4,62 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar with Indicator</title>
+    <title>Grafico e Storico Inserimenti</title>
 
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="body_user">
+        <!-- Chart Container -->
         <div class="chart-container">
-            <canvas id="bpmChart"></canvas>
+            <canvas id="measurementChart"></canvas> <!-- Canvas per il grafico -->
         </div>
 
+        <!-- Storico Inserimenti -->
         <div class="box-container">
-    <div class="history-box">
-        <h3>Storico Inserimenti</h3>
-        
-        <!-- Storico Pressione -->
-        <% if @pressure_data.present? %>
-            <ul id="pressure-history-list">
-                <% @pressure_data.each do |data| %>
-                    <li>Pressure: <%= data.value %> mmHg - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
-                <% end %>
-            </ul>
-        <% end %>
-        
-        <!-- Storico BPM -->
-        <% if @bpm_data.present? %>
-            <ul id="bpm-history-list">
-                <% @bpm_data.each do |data| %>
-                    <li>BPM: <%= data.value %> - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
-                <% end %>
-            </ul>
-        <% end %>
-        
-        <!-- Storico Ossigeno -->
-        <% if @oxygen_data.present? %>
-            <ul id="oxygen-history-list">
-                <% @oxygen_data.each do |data| %>
-                    <li>Oxygen: <%= data.value %> % - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
-                <% end %>
-            </ul>
-        <% end %>
-    </div>
+            <div class="history-box">
+                <h3>Storico Inserimenti</h3>
 
-    <div class="button-container">
-        <select name="graph-type" id="graph-type">
-            <option value="BPM">BPM</option>
-            <option value="Pressione">Pressione</option>
-            <option value="Ossigenazione">Ossigenazione</option>
-        </select>
-        <button>Tutorial</button>
-        <button>Inserisci</button>
-    </div>
-</div>
+                <!-- Storico Pressione -->
+                <% if @pressure_data.present? %>
+                    <ul id="pressure-history-list">
+                        <% @pressure_data.each do |data| %>
+                            <li>Pressione: <%= data.value %> mmHg - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
 
+                <!-- Storico BPM -->
+                <% if @bpm_data.present? %>
+                    <ul id="bpm-history-list">
+                        <% @bpm_data.each do |data| %>
+                            <li>BPM: <%= data.value %> - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
 
+                <!-- Storico Ossigeno -->
+                <% if @oxygen_data.present? %>
+                    <ul id="oxygen-history-list">
+                        <% @oxygen_data.each do |data| %>
+                            <li>Ossigeno: <%= data.value %> % - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
+            </div>
+
+            <!-- Seleziona Tipo di Grafico e Pulsanti -->
+            <div class="button-container">
+                <select name="graph-type" id="graph-type">
+                    <option value="BPM">BPM</option>
+                    <option value="Pressione">Pressione</option>
+                    <option value="Ossigenazione">Ossigenazione</option>
+                </select>
+                <!-- Link ai Tutorial -->
+                <%= link_to 'Tutorial', tutorial_path, class: 'btn-inserisci' %>
+                <!-- Link alla Pagina Inserimento -->
+                <%= link_to 'Inserisci', profile_path, class: 'btn-inserisci' %>
+            </div>
+        </div>
+
+        <!-- Barra di Navigazione -->
         <nav class="nav_user">
             <ul class="nav_user-content">
                 <li class="nav_user-list">
@@ -85,16 +91,71 @@
         </nav>
     </div>
 
-    <!-- JavaScript for Chart.js -->
+    <!-- JavaScript per gestire Chart.js e la navigazione -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            const bpmData = <%= raw @bpm_data.map(&:value).to_json %>;
+            const pressureData = <%= raw @pressure_data.map(&:value).to_json %>;
+            const oxygenData = <%= raw @oxygen_data.map(&:value).to_json %>;
+
+            const bpmLabels = <%= raw @bpm_data.map { |data| data.created_at.strftime("%d/%m") }.to_json %>;
+            const pressureLabels = <%= raw @pressure_data.map { |data| data.created_at.strftime("%d/%m") }.to_json %>;
+            const oxygenLabels = <%= raw @oxygen_data.map { |data| data.created_at.strftime("%d/%m") }.to_json %>;
+
+            // Crea il grafico iniziale con i dati BPM
+            let currentChart;
+            function createChart(labels, data, label) {
+                const ctx = document.getElementById('measurementChart').getContext('2d');
+                if (currentChart) currentChart.destroy();  // Distruggi il grafico precedente
+                currentChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: label,
+                            data: data,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                                type: 'category',
+                                labels: labels
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Mostra il grafico BPM inizialmente
+            createChart(bpmLabels, bpmData, 'BPM nel tempo');
 
             // Event listener per il select
             const graphTypeSelect = document.getElementById('graph-type');
             graphTypeSelect.addEventListener('change', (event) => {
-                updateChart(event.target.value);
+                const selectedType = event.target.value;
+                switch (selectedType) {
+                    case 'BPM':
+                        createChart(bpmLabels, bpmData, 'BPM nel tempo');
+                        break;
+                    case 'Pressione':
+                        createChart(pressureLabels, pressureData, 'Pressione nel tempo');
+                        break;
+                    case 'Ossigenazione':
+                        createChart(oxygenLabels, oxygenData, 'Ossigenazione nel tempo');
+                        break;
+                    default:
+                        console.log("Tipo di grafico non valido.");
+                }
             });
 
+            // Funzione per aggiornare l'indicatore del menu di navigazione
             const linkItems = document.querySelectorAll(".link-item");
             const indicator = document.querySelector(".indicator_user");
 

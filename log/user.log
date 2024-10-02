@@ -17805,3 +17805,1146 @@ Processing by Userpage::ProfilesController#graph as HTML
   Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1742)
   Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3586)
 Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 5127)
+Started GET "/graph?measurement_type=pressure&commit=Filtra" for 127.0.0.1 at 2024-10-02 18:44:18 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  Parameters: {"measurement_type"=>"pressure", "commit"=>"Filtra"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4774)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 6785)
+Completed 200 OK in 30ms (Views: 13.9ms | ActiveRecord: 3.1ms | Allocations: 17666)
+Started GET "/" for 127.0.0.1 at 2024-10-02 18:44:25 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0000", updated_at: "2024-10-02 15:16:29.772639000 +0000", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 780)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2801)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 5252)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 18:44:27 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1976)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 3820)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.2ms | Allocations: 5287)
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 18:44:35 +0200
+Processing by MeasurementDataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"123", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:6:in `create_pressure'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mMeasurementData Create (0.4ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "pressure"], ["value", 123.0], ["created_at", "2024-10-02 16:44:35.367542"], ["updated_at", "2024-10-02 16:44:35.367542"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 28ms (ActiveRecord: 14.0ms | Allocations: 3431)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 18:44:35 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 2974)
+Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 2.0ms | Allocations: 4323)
+Started POST "/submit_bpm" for 127.0.0.1 at 2024-10-02 18:45:04 +0200
+Processing by MeasurementDataController#create_bpm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "bpm"=>"76", "commit"=>"Invia"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:22:in `create_bpm'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mMeasurementData Create (0.2ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "bpm"], ["value", 76.0], ["created_at", "2024-10-02 16:45:04.307187"], ["updated_at", "2024-10-02 16:45:04.307187"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 20ms (ActiveRecord: 14.8ms | Allocations: 4250)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 18:45:04 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2974)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 4312)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 18:45:35 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1970)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3831)
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 1.6ms | Allocations: 5578)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 18:50:53 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 1.6ms | Allocations: 933)
+  Rendered layout layouts/application.html.erb (Duration: 170.4ms | Allocations: 42482)
+Completed 200 OK in 191ms (Views: 175.3ms | ActiveRecord: 0.6ms | Allocations: 53804)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 18:51:06 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.4ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 30.9ms | Allocations: 4657)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 6729)
+Completed 200 OK in 75ms (Views: 35.7ms | ActiveRecord: 2.2ms | Allocations: 18475)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 18:51:25 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.4ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 10.4ms | Allocations: 4233)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 6084)
+Completed 200 OK in 39ms (Views: 18.9ms | ActiveRecord: 3.0ms | Allocations: 16274)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 18:56:49 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2610)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4621)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.8ms | Allocations: 8083)
+Started GET "/" for 127.0.0.1 at 2024-10-02 19:40:38 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0000", updated_at: "2024-10-02 15:16:29.772639000 +0000", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 783)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2823)
+Completed 200 OK in 25ms (Views: 13.7ms | ActiveRecord: 0.8ms | Allocations: 5793)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:12:06 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3404)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 5248)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 0.3ms | Allocations: 6969)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:12:09 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 16.7ms | Allocations: 1978)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 3824)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.8ms | Allocations: 5585)
+Started GET "/" for 127.0.0.1 at 2024-10-02 23:15:57 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0000", updated_at: "2024-10-02 15:16:29.772639000 +0000", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 2372)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.9ms | Allocations: 4040)
+Started GET "/setting" for 127.0.0.1 at 2024-10-02 23:15:58 +0200
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 4.2ms | Allocations: 522)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 2551)
+Completed 200 OK in 25ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 3435)
+Started GET "/" for 127.0.0.1 at 2024-10-02 23:16:05 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0000", updated_at: "2024-10-02 15:16:29.772639000 +0000", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2368)
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 4034)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:16:06 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1143)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2987)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4502)
+Started GET "/graphsetting" for 127.0.0.1 at 2024-10-02 23:16:07 +0200
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1483)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1516)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2952)
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    90:         const ctx = document.getElementById('bpmChart').getContext('2d');
+    91: 
+    92:             // Dati per il grafico BPM
+    93:             const bpmLabels = <%= @bpm_data.map { |data| data.created_at.strftime("%d/%m/%Y %H:%M") }.to_json %>;
+    94:             const bpmValues = <%= @bpm_data.map(&:value).to_json %>;
+    95: 
+    96:             // Creazione del grafico
+  
+app/views/userpage/profiles/graphsetting.html.erb:93
+Started GET "/graphsetting" for 127.0.0.1 at 2024-10-02 23:16:14 +0200
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 0.9ms | Allocations: 807)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 840)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2379)
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    90:         const ctx = document.getElementById('bpmChart').getContext('2d');
+    91: 
+    92:             // Dati per il grafico BPM
+    93:             const bpmLabels = <%= @bpm_data.map { |data| data.created_at.strftime("%d/%m/%Y %H:%M") }.to_json %>;
+    94:             const bpmValues = <%= @bpm_data.map(&:value).to_json %>;
+    95: 
+    96:             // Creazione del grafico
+  
+app/views/userpage/profiles/graphsetting.html.erb:93
+Started GET "/graphsetting" for 127.0.0.1 at 2024-10-02 23:16:44 +0200
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 1.2ms | Allocations: 470)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2600)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 4807)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:18:23 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2006)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3850)
+Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 0.2ms | Allocations: 5514)
+Started GET "/info" for 127.0.0.1 at 2024-10-02 23:18:28 +0200
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 8.3ms | Allocations: 5623)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 7467)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 8938)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:18:30 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1134)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2977)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 4496)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:18:31 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (1.4ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.5ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 65.6ms | Allocations: 2586)
+  Rendered layout layouts/application.html.erb (Duration: 72.0ms | Allocations: 4433)
+Completed 200 OK in 78ms (Views: 70.5ms | ActiveRecord: 2.4ms | Allocations: 6342)
+Started GET "/" for 127.0.0.1 at 2024-10-02 23:20:12 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0000", updated_at: "2024-10-02 15:16:29.772639000 +0000", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 768)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2797)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 5089)
+Started GET "/tutorial" for 127.0.0.1 at 2024-10-02 23:20:13 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2483)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4504)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 4879)
+Started GET "/tutorial" for 127.0.0.1 at 2024-10-02 23:21:27 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4643)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 5719)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:21:28 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1975)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3822)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.1ms | Allocations: 5930)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:21:30 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2595)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4443)
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 0.8ms | Allocations: 6322)
+Started GET "/tutorial" for 127.0.0.1 at 2024-10-02 23:21:32 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1453)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3484)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3726)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:22:40 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1989)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3981)
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 0.1ms | Allocations: 6331)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:22:42 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2639)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4490)
+Completed 200 OK in 18ms (Views: 11.5ms | ActiveRecord: 1.2ms | Allocations: 6374)
+Started GET "/tutorial" for 127.0.0.1 at 2024-10-02 23:22:44 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 4483)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 5330)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:23:22 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (3.0ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2638)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 4631)
+Completed 200 OK in 21ms (Views: 13.8ms | ActiveRecord: 3.7ms | Allocations: 7219)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:24:21 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2636)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4629)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.8ms | Allocations: 7222)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:28:45 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2637)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 19623)
+Completed 200 OK in 37ms (Views: 30.6ms | ActiveRecord: 2.8ms | Allocations: 22221)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:29:34 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1993)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 18773)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 0.7ms | Allocations: 20536)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:29:53 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (1.4ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.0ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 18754)
+Completed 200 OK in 51ms (Views: 46.0ms | ActiveRecord: 1.7ms | Allocations: 20524)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:30:27 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.5ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3829)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 1.1ms | Allocations: 5584)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:30:28 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3829)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.8ms | Allocations: 5589)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:30:46 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 41.7ms | Allocations: 18769)
+Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.4ms | Allocations: 20547)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:31:07 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.5ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 70.8ms | Allocations: 18753)
+Completed 200 OK in 76ms (Views: 70.9ms | ActiveRecord: 2.0ms | Allocations: 20507)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:31:08 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3830)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 0.6ms | Allocations: 5594)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:31:14 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3875)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.4ms | Allocations: 5631)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:31:21 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 18736)
+Completed 200 OK in 56ms (Views: 50.9ms | ActiveRecord: 0.6ms | Allocations: 20486)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:32:56 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 69.9ms | Allocations: 18778)
+Completed 200 OK in 75ms (Views: 70.0ms | ActiveRecord: 0.7ms | Allocations: 20536)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:33:16 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | Allocations: 18757)
+Completed 200 OK in 56ms (Views: 52.5ms | ActiveRecord: 0.6ms | Allocations: 20511)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:33:35 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 18740)
+Completed 200 OK in 48ms (Views: 43.5ms | ActiveRecord: 0.5ms | Allocations: 20495)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:33:36 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3829)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.6ms | Allocations: 5584)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:33:50 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 18775)
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 0.6ms | Allocations: 20541)
+Started GET "/tutorial" for 127.0.0.1 at 2024-10-02 23:35:47 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2461)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4624)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 5708)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:36:52 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2692)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4688)
+Completed 200 OK in 31ms (Views: 14.8ms | ActiveRecord: 0.9ms | Allocations: 7288)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:36:53 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1976)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3821)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 5469)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:36:55 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.5ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2023)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3867)
+Completed 200 OK in 19ms (Views: 11.9ms | ActiveRecord: 1.0ms | Allocations: 5623)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:44:57 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 16.2ms | Allocations: 2051)
+  Rendered layout layouts/application.html.erb (Duration: 74.0ms | Allocations: 18830)
+Completed 200 OK in 81ms (Views: 74.8ms | ActiveRecord: 1.2ms | Allocations: 21477)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:45:07 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2022)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3928)
+Completed 200 OK in 20ms (Views: 13.8ms | ActiveRecord: 1.2ms | Allocations: 5691)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:45:26 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2022)
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | Allocations: 18811)
+Completed 200 OK in 54ms (Views: 50.5ms | ActiveRecord: 0.4ms | Allocations: 20567)
+Started GET "/tutorial" for 127.0.0.1 at 2024-10-02 23:45:45 +0200
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2461)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4495)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms | Allocations: 5343)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:45:47 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1144)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3001)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 4515)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:45:49 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2023)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3867)
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 0.9ms | Allocations: 5623)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:49:12 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2820)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4813)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 7416)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:49:23 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.4ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2817)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 4810)
+Completed 200 OK in 24ms (Views: 17.0ms | ActiveRecord: 1.1ms | Allocations: 7409)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:49:43 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.5ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:24
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:33
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:42
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 16.5ms | Allocations: 2693)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 4702)
+Completed 200 OK in 32ms (Views: 26.5ms | ActiveRecord: 1.0ms | Allocations: 7291)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:51:33 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.6ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.7ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2852)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 4862)
+Completed 200 OK in 35ms (Views: 28.7ms | ActiveRecord: 1.6ms | Allocations: 7460)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:53:20 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2862)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 4855)
+Completed 200 OK in 42ms (Views: 32.6ms | ActiveRecord: 0.9ms | Allocations: 7437)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:53:40 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1976)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3832)
+Completed 200 OK in 21ms (Views: 13.1ms | ActiveRecord: 0.3ms | Allocations: 5499)
+Started POST "/submit_bpm" for 127.0.0.1 at 2024-10-02 23:53:54 +0200
+Processing by MeasurementDataController#create_bpm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "bpm"=>"30", "commit"=>"Invia"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:22:in `create_bpm'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mMeasurementData Create (1.1ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "bpm"], ["value", 30.0], ["created_at", "2024-10-02 21:53:54.517673"], ["updated_at", "2024-10-02 21:53:54.517673"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 22ms (ActiveRecord: 6.5ms | Allocations: 4915)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:53:54 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2991)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 4502)
+Started POST "/submit_bpm" for 127.0.0.1 at 2024-10-02 23:54:02 +0200
+Processing by MeasurementDataController#create_bpm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "bpm"=>"200", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:22:in `create_bpm'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mMeasurementData Create (0.7ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "bpm"], ["value", 200.0], ["created_at", "2024-10-02 21:54:02.045183"], ["updated_at", "2024-10-02 21:54:02.045183"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 16ms (ActiveRecord: 6.5ms | Allocations: 4364)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:54:02 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2974)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 4483)
+Started POST "/submit_bpm" for 127.0.0.1 at 2024-10-02 23:54:10 +0200
+Processing by MeasurementDataController#create_bpm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "bpm"=>"150", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:22:in `create_bpm'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mMeasurementData Create (1.2ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "bpm"], ["value", 150.0], ["created_at", "2024-10-02 21:54:10.864000"], ["updated_at", "2024-10-02 21:54:10.864000"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 20ms (ActiveRecord: 7.2ms | Allocations: 3280)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:54:10 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2974)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4487)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:54:12 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2249)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4109)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 5865)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:57:02 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3290)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5300)
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.6ms | Allocations: 7902)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:57:13 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1976)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3820)
+Completed 200 OK in 24ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 5480)
+Started POST "/submit_oxygen" for 127.0.0.1 at 2024-10-02 23:57:17 +0200
+Processing by MeasurementDataController#create_oxygen as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oxygen"=>"55", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:38:in `create_oxygen'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mMeasurementData Create (0.4ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "oxygen"], ["value", 55.0], ["created_at", "2024-10-02 21:57:17.927791"], ["updated_at", "2024-10-02 21:57:17.927791"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 17ms (ActiveRecord: 6.0ms | Allocations: 4108)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:57:17 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2987)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 4518)
+Started POST "/submit_oxygen" for 127.0.0.1 at 2024-10-02 23:57:22 +0200
+Processing by MeasurementDataController#create_oxygen as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oxygen"=>"66", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:38:in `create_oxygen'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mMeasurementData Create (0.9ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "oxygen"], ["value", 66.0], ["created_at", "2024-10-02 21:57:22.883184"], ["updated_at", "2024-10-02 21:57:22.883184"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 28ms (ActiveRecord: 6.9ms | Allocations: 4623)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:57:22 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 2989)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 4498)
+Started POST "/submit_oxygen" for 127.0.0.1 at 2024-10-02 23:57:26 +0200
+Processing by MeasurementDataController#create_oxygen as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oxygen"=>"88", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:38:in `create_oxygen'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mMeasurementData Create (0.7ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "oxygen"], ["value", 88.0], ["created_at", "2024-10-02 21:57:26.163514"], ["updated_at", "2024-10-02 21:57:26.163514"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 15ms (ActiveRecord: 4.6ms | Allocations: 3694)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:57:26 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2974)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 4492)
+Started POST "/submit_oxygen" for 127.0.0.1 at 2024-10-02 23:57:36 +0200
+Processing by MeasurementDataController#create_oxygen as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oxygen"=>"50", "commit"=>"Invia"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:38:in `create_oxygen'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mMeasurementData Create (0.3ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "oxygen"], ["value", 50.0], ["created_at", "2024-10-02 21:57:36.705685"], ["updated_at", "2024-10-02 21:57:36.705685"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 16ms (ActiveRecord: 8.2ms | Allocations: 3793)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:57:36 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2974)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4501)
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 23:57:41 +0200
+Processing by MeasurementDataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"145", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:6:in `create_pressure'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mMeasurementData Create (0.3ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "pressure"], ["value", 145.0], ["created_at", "2024-10-02 21:57:41.734082"], ["updated_at", "2024-10-02 21:57:41.734082"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 20ms (ActiveRecord: 5.9ms | Allocations: 4633)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:57:41 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2991)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 4508)
+Started POST "/submit_pressure" for 127.0.0.1 at 2024-10-02 23:57:48 +0200
+Processing by MeasurementDataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"200", "commit"=>"Invia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:6:in `create_pressure'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mMeasurementData Create (0.8ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "pressure"], ["value", 200.0], ["created_at", "2024-10-02 21:57:48.326448"], ["updated_at", "2024-10-02 21:57:48.326448"], ["user_id", 5]]
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 17ms (ActiveRecord: 5.8ms | Allocations: 4617)
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 23:57:48 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2991)
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 4507)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:57:50 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2728)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4572)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 6325)
+Started GET "/graph" for 127.0.0.1 at 2024-10-02 23:59:18 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.6ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3629)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 5634)
+Completed 200 OK in 41ms (Views: 18.7ms | ActiveRecord: 1.2ms | Allocations: 8230)
+Started GET "/profile" for 127.0.0.1 at 2024-10-03 00:00:33 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1976)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3858)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.1ms | Allocations: 5517)
+Started GET "/graphsetting" for 127.0.0.1 at 2024-10-03 00:00:38 +0200
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 2.4ms | Allocations: 470)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2317)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 3781)
+Started GET "/setting" for 127.0.0.1 at 2024-10-03 00:01:09 +0200
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 1.7ms | Allocations: 519)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2552)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 3387)
+Started GET "/" for 127.0.0.1 at 2024-10-03 00:01:14 +0200
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0000", updated_at: "2024-09-25 17:36:07.572331000 +0000", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0000", updated_at: "2024-09-25 17:36:07.999812000 +0000", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0000", updated_at: "2024-09-25 17:36:08.419824000 +0000", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0000", updated_at: "2024-09-26 17:00:22.249355000 +0000", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0000", updated_at: "2024-10-01 22:41:45.799546000 +0000", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0000", updated_at: "2024-10-02 15:16:29.772639000 +0000", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 765)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2794)
+Completed 200 OK in 25ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 5120)
+Started GET "/option" for 127.0.0.1 at 2024-10-03 00:01:16 +0200
+Processing by Userpage::HomeController#option as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/option.html.erb within layouts/application
+  Rendered userpage/home/option.html.erb within layouts/application (Duration: 4.8ms | Allocations: 464)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2499)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 2871)
+Started GET "/profile" for 127.0.0.1 at 2024-10-03 00:01:20 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1144)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3004)
+Completed 200 OK in 24ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 4523)
+Started GET "/info" for 127.0.0.1 at 2024-10-03 00:15:38 +0200
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2331)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4204)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.9ms | Allocations: 6534)
+Started GET "/profile" for 127.0.0.1 at 2024-10-03 00:15:39 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1135)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2994)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4523)
+Started GET "/graph" for 127.0.0.1 at 2024-10-03 00:15:40 +0200
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (4.0ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 5], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2757)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4601)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 4.4ms | Allocations: 6370)

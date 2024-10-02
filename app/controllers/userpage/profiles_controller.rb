@@ -3,7 +3,9 @@ class Userpage::ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:profile, :graph, :graphsetting, :info, :update]
 
   def profile
-    # Logica per la pagina del profilo
+    @pressure_data = MeasurementData.where(measurement_type: 'Pressione', user_id: current_user.id)
+    @bpm_data = MeasurementData.where(measurement_type: 'BPM', user_id: current_user.id)
+    @oxygen_data = MeasurementData.where(measurement_type: 'Ossigenazione', user_id: current_user.id)
   end
 
   def graph
