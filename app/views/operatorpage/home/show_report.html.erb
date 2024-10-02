@@ -38,10 +38,11 @@
           <div class="report_info_operator">
             <h2>Dettagli della richiesta</h2>
             <p><strong>Richiesta:</strong> <%= @report.id %></p>
-            <p><strong>Data:</strong> <%= @report.report_date %></p>
-            <p><strong>Orario:</strong> <%= @report.report_time %></p>
+            <% datetime = @report.created_at.to_s.split(' ')%>
+            <p><strong>Data: </strong><%= datetime[0] %></p>
+            <p><strong>Orario:</strong> <%= datetime[1] %></p>
             <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
-
+            
 
           </div>
         </div>
@@ -53,7 +54,7 @@
             <p><strong>Cognome:</strong> <%= @user.surname %></p>
             <p><strong>Età:</strong> <%= @user.age %></p>
             <p><strong>Sesso:</strong> <%= @user.sex %></p>
-            <p><strong>Cellulare:</strong> <%= @user.telephone_number %></p>
+            <p><strong>Cellulare:</strong> <%= @user.phone %></p>
 
             
           
