@@ -15815,3 +15815,88 @@ puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.8) lib/puma/server.rb:443:in `process_client'
 puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 12:41:14 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 10.3ms | Allocations: 4752)
+  Rendered layout layouts/application.html.erb (Duration: 104.5ms | Allocations: 44431)
+Completed 200 OK in 131ms (Views: 106.1ms | ActiveRecord: 0.8ms | Allocations: 55749)
+Started POST "/profile" for 127.0.0.1 at 2024-10-02 12:41:26 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 12:42:09 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 941)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 993)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 3.0ms | Allocations: 10196)
+  
+ActionView::Template::Error (undefined method `%' for nil:NilClass):
+    23:         
+    24:         <% if flash[:notice] %>
+    25:         <div class="notice"><%= flash[:notice] %></div>
+    26:         <% end % %>
+    27: 
+    28:         <%= form_with model: @data, local: true do |form| %>
+    29:         <div>
+  
+app/views/userpage/profiles/profile.html.erb:26
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 12:43:17 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2358)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 4524)
+Completed 200 OK in 31ms (Views: 22.8ms | ActiveRecord: 0.4ms | Allocations: 6708)
+Started POST "/profile" for 127.0.0.1 at 2024-10-02 12:43:32 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 12:46:20 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1591)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3449)
+Completed 200 OK in 17ms (Views: 4.2ms | ActiveRecord: 2.4ms | Allocations: 12351)
+Started POST "/profile" for 127.0.0.1 at 2024-10-02 12:46:34 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+Started POST "/profile" for 127.0.0.1 at 2024-10-02 12:48:37 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-10-02 12:52:08 +0200
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1507)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 3513)
+Completed 200 OK in 35ms (Views: 14.4ms | ActiveRecord: 1.5ms | Allocations: 13111)
+Started POST "/profile/data" for 127.0.0.1 at 2024-10-02 12:52:23 +0200
+Processing by Userpage::ProfilesController#create_data as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "measurement_type"=>"pressure", "value"=>"122", "user_id"=>"5", "commit"=>"Create Data"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 419)
+  
+ActionController::ParameterMissing (param is missing or the value is empty: data
+Did you mean?  action
+               authenticity_token
+               value
+               controller):
+  
+app/controllers/userpage/profiles_controller.rb:44:in `data_params'
+app/controllers/userpage/profiles_controller.rb:31:in `create_data'
