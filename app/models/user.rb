@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reports
   has_many :reports_done
-  has_many :data
+  has_many :measurement_data, class_name: 'MeasurementData', dependent: :destroy
 
   validates :name, presence: true
 end

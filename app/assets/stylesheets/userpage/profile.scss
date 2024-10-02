@@ -10,12 +10,14 @@
 
 
 .history-box {
+    text-align: left; /* Allinea il testo a sinistra */
+    max-height: 300px; /* Imposta un'altezza massima */
+    overflow-y: auto; /* Abilita lo scrolling verticale */
+    border: 1px solid #ccc; /* Aggiunge un bordo (opzionale) */
+    padding: 10px; /* Aggiunge spazio interno (opzionale) */
+    border-radius: 5px; /* Rende gli angoli arrotondati (opzionale) */
     margin-left: 20px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 200px; /* Puoi regolare la larghezza */
-    background-color: #f9f9f9;
+    background-color: white;
 }
 
 .history-box h3 {
@@ -186,7 +188,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-left: 30px;
+    margin-left: 20px;
     
 }
 

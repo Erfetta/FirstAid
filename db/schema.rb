@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_10_02_103604) do
+ActiveRecord::Schema.define(version: 2024_10_02_143847) do
 
-  create_table "data", force: :cascade do |t|
+  create_table "measurement_data", force: :cascade do |t|
     t.string "measurement_type"
     t.float "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_data_on_user_id"
+    t.index ["user_id"], name: "index_measurement_data_on_user_id"
   end
 
   create_table "operators", force: :cascade do |t|
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2024_10_02_103604) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "data", "users"
+  add_foreign_key "measurement_data", "users"
   add_foreign_key "operators", "supervisors"
   add_foreign_key "report_dones", "operators"
   add_foreign_key "report_dones", "users"

@@ -7,7 +7,10 @@ class Userpage::ProfilesController < ApplicationController
   end
 
   def graph
-    # Logica per la pagina del grafico
+    # Recupera i dati per la grafica
+    @pressure_data = current_user.measurement_data.where(measurement_type: 'pressure').order(created_at: :desc)
+    @bpm_data = current_user.measurement_data.where(measurement_type: 'bpm').order(created_at: :desc)
+    @oxygen_data = current_user.measurement_data.where(measurement_type: 'oxygen').order(created_at: :desc)
   end
 
   def graphsetting

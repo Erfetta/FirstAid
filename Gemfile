@@ -21,6 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # Devise, usato per l'autenticazione
 gem 'devise', '~> 4.7.3'
 
+#per il grafico 
+gem 'chartkick'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

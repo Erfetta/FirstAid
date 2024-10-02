@@ -17,26 +17,48 @@
         </div>
 
         <div class="box-container">
-            <div class="history-box">
-                <h3>Storico Inserimenti</h3>
-                <ul id="history-list">
-                    <li>Heart Rate: 75 BPM</li>
-                    <li>Heart Rate: 80 BPM</li>
-                    <li>Heart Rate: 75 BPM</li>
-                    <li>Heart Rate: 80 BPM</li>
-                </ul>
-            </div>
+    <div class="history-box">
+        <h3>Storico Inserimenti</h3>
+        
+        <!-- Storico Pressione -->
+        <% if @pressure_data.present? %>
+            <ul id="pressure-history-list">
+                <% @pressure_data.each do |data| %>
+                    <li>Pressure: <%= data.value %> mmHg - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
+                <% end %>
+            </ul>
+        <% end %>
+        
+        <!-- Storico BPM -->
+        <% if @bpm_data.present? %>
+            <ul id="bpm-history-list">
+                <% @bpm_data.each do |data| %>
+                    <li>BPM: <%= data.value %> - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
+                <% end %>
+            </ul>
+        <% end %>
+        
+        <!-- Storico Ossigeno -->
+        <% if @oxygen_data.present? %>
+            <ul id="oxygen-history-list">
+                <% @oxygen_data.each do |data| %>
+                    <li>Oxygen: <%= data.value %> % - <%= data.created_at.strftime("%d/%m/%Y %H:%M") %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
 
-            <div class="button-container">
-                <select name="graph-type" id="graph-type">
-                    <option value="BPM">BPM</option>
-                    <option value="Pressione">Pressione</option>
-                    <option value="Ossigenazione">Ossigenazione</option>
-                </select>
-                <button>Tutorial</button>
-                <button>Inserisci</button>
-            </div>
-        </div>
+    <div class="button-container">
+        <select name="graph-type" id="graph-type">
+            <option value="BPM">BPM</option>
+            <option value="Pressione">Pressione</option>
+            <option value="Ossigenazione">Ossigenazione</option>
+        </select>
+        <button>Tutorial</button>
+        <button>Inserisci</button>
+    </div>
+</div>
+
 
         <nav class="nav_user">
             <ul class="nav_user-content">
@@ -66,56 +88,6 @@
     <!-- JavaScript for Chart.js -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const ctx = document.getElementById('bpmChart').getContext('2d');
-
-            // Dati iniziali del grafico
-            const chartData = {
-                BPM: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-                    data: [65, 59, 80, 81, 56, 55]
-                },
-                Pressione: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-                    data: [120, 115, 130, 125, 110, 118]
-                },
-                Ossigenazione: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-                    data: [98, 97, 99, 96, 95, 94]
-                }
-            };
-
-            // Configurazione del grafico
-            const bpmChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: chartData.BPM.labels,
-                    datasets: [{
-                        label: 'BPM',
-                        data: chartData.BPM.data,
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        x: {
-                            beginAtZero: true
-                        },
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-
-            // Funzione per aggiornare il grafico
-            function updateChart(type) {
-                bpmChart.data.labels = chartData[type].labels;
-                bpmChart.data.datasets[0].data = chartData[type].data;
-                bpmChart.data.datasets[0].label = type;
-                bpmChart.update();
-            }
 
             // Event listener per il select
             const graphTypeSelect = document.getElementById('graph-type');

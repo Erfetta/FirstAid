@@ -17,7 +17,10 @@ Rails.application.routes.draw do
     get 'graph', to: 'userpage/profiles#graph', as: 'graph'
     get 'graphsetting', to: 'userpage/profiles#graphsetting', as: 'graphsetting'
     get 'info', to: 'userpage/profiles#info', as: 'info'
-    
+    post 'submit_pressure', to: 'measurement_data#create_pressure'
+    post 'submit_bpm', to: 'measurement_data#create_bpm'
+    post 'submit_oxygen', to: 'measurement_data#create_oxygen'
+
 
     namespace :userpage do
       resources :profiles, only: [:show, :edit, :update]  # Assicurati di includere `update`

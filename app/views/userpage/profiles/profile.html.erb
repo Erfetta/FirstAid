@@ -65,17 +65,17 @@
 
         <!-- Modal for Pressure -->
         <div id="pressure-modal" class="modal" style="display:none;">
-            <div class="modal-header">
-                <h3>Inserisci la Pressione Sanguigna</h3>
-                <span class="close-modal" data-modal="pressure-modal">&times;</span>
+        <div class="modal-header">
+            <h3>Inserisci la Pressione Sanguigna</h3>
+            <span class="close-modal" data-modal="pressure-modal">&times;</span>
+        </div>
+        <%= form_with(url: "/submit_pressure", local: true) do |form| %>
+            <div class="input-group">
+            <%= form.label :pressure, "Pressione (mmHg):" %>
+            <%= form.text_field :pressure, required: true %>
             </div>
-            <form action="/submit_pressure" method="POST">
-                <div class="input-group">
-                    <label for="pressure">Pressione (mmHg):</label>
-                    <input type="text" id="pressure" name="pressure" required>
-                </div>
-                <button type="submit">Invia</button>
-            </form>
+            <%= form.submit "Invia" %>
+        <% end %> <!-- Chiusura del form_with -->
         </div>
 
         <!-- Modal for BPM -->
@@ -84,14 +84,15 @@
                 <h3>Inserisci BPM (Battiti per Minuto)</h3>
                 <span class="close-modal" data-modal="bpm-modal">&times;</span>
             </div>
-            <form action="/submit_bpm" method="POST">
+            <%= form_with(url: "/submit_bpm", local: true) do |form| %>
                 <div class="input-group">
-                    <label for="bpm">BPM:</label>
-                    <input type="text" id="bpm" name="bpm" required>
-                </div>
-                <button type="submit">Invia</button>
-            </form>
+                    <%= form.label :bpm, "BPM (battiti per minuto):" %>
+            <%= form.text_field :bpm, required: true %>
+            </div>
+            <%= form.submit "Invia" %>
+        <% end %> <!-- Chiusura del form_with -->
         </div>
+        
 
         <!-- Modal for Oxygen -->
         <div id="oxygen-modal" class="modal" style="display:none;">
@@ -99,13 +100,13 @@
                 <h3>Inserisci Ossigeno (%)</h3>
                 <span class="close-modal" data-modal="oxygen-modal">&times;</span>
             </div>
-            <form action="/submit_oxygen" method="POST">
+            <%= form_with(url: "/submit_oxygen", local: true) do |form| %>
                 <div class="input-group">
-                    <label for="oxygen">Ossigeno (%):</label>
-                    <input type="text" id="oxygen" name="oxygen" required>
-                </div>
-                <button type="submit">Invia</button>
-            </form>
+                    <%= form.label :oxygen, "oxygen (%):" %>
+            <%= form.text_field :oxygen, required: true %>
+            </div>
+            <%= form.submit "Invia" %>
+        <% end %> <!-- Chiusura del form_with -->
         </div>
 
         <!-- Modal Backdrop -->
@@ -114,6 +115,34 @@
         <!-- JavaScript -->
         <script>
             document.addEventListener("DOMContentLoaded", () => {
+
+
+                // Validazione per la pressione sanguigna
+                document.querySelector('form[action="/submit_pressure"]').addEventListener('submit', function(event) {
+                    const pressureValue = parseFloat(document.querySelector('input[name="pressure"]').value);
+                    if (isNaN(pressureValue) || pressureValue < 60 || pressureValue > 250) {
+                        alert("Inserisci un valore valido per la pressione (tra 60 e 250 mmHg).");
+                        event.preventDefault(); // Blocca l'invio del form
+                    }
+                });
+
+                // Validazione per i BPM
+                document.querySelector('form[action="/submit_bpm"]').addEventListener('submit', function(event) {
+                    const bpmValue = parseFloat(document.querySelector('input[name="bpm"]').value);
+                    if (isNaN(bpmValue) || bpmValue < 30 || bpmValue > 200) {
+                        alert("Inserisci un valore valido per i BPM (tra 30 e 200).");
+                        event.preventDefault();
+                    }
+                });
+
+                // Validazione per l'ossigeno
+                document.querySelector('form[action="/submit_oxygen"]').addEventListener('submit', function(event) {
+                    const oxygenValue = parseFloat(document.querySelector('input[name="oxygen"]').value);
+                    if (isNaN(oxygenValue) || oxygenValue < 50 || oxygenValue > 100) {
+                        alert("Inserisci un valore valido per l'ossigeno (tra 50% e 100%).");
+                        event.preventDefault();
+                    }
+                });
                 const linkItems = document.querySelectorAll(".link-item");
                 const indicator = document.querySelector(".indicator_user");
 
