@@ -23,6 +23,8 @@ gem 'devise', '~> 4.7.3'
 
 #per il grafico 
 gem 'chartkick'
+gem 'groupdate'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
