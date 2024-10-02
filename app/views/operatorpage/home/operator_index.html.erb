@@ -39,7 +39,8 @@
             <% @reports.each do |report| %>
               <div class="report_area_operator">
                 <p><strong>Richiesta:</strong> <%= link_to report.id, show_report_path(report)%></p>
-                <p><strong>Data:</strong> <%= report.report_date %></p>
+                <% datetime = report.created_at.to_s.slice(0...-4)%>
+                <p><strong>Data:</strong> <%= datetime %></p>
               </div>
             <% end %>
         </aside>

@@ -10,6 +10,11 @@ module Operatorpage
       @report = Report.find(params[:id])
       @user = User.find(@report.user_id)
     end
-    
+    def update_op_id
+      @report = Report.find(params[:id])
+      @report.operator_id = current_operator.id
+      @report.save
+    end
+
   end
 end
