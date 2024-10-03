@@ -23,11 +23,36 @@
                 history
               </span>
             <% end %>
-            <%= button_to operator_profile_path, method: :get, class: 'nav-button_operator' do %>
+            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
               <span class="material-symbols-outlined">
                 person
               </span>
             <% end %>
         </nav>
+
+        <div class="op_profile_container">
+            <div class="op_profile_title">
+                <h1>Profilo Operatore</h1>
+            </div>
+            <div class="op_profile_info">
+                <p><strong>Nome:</strong> <%= @operator.name %></p>
+                <p><strong>Cognome:</strong> <%= @operator.surname %></p>
+                <p><strong>Email:</strong> <%= @operator.email %></p>
+                <p><strong>Sede:</strong> <%= @operator.workplace %></p>
+                <p><strong>Supervisore:</strong> <%= @supervisor.name%> <%= @supervisor.surname %></p>
+                <p><strong>Email Supervisore:</strong> <%= @supervisor.email %></p>
+                <%= button_to logout_path, method: :delete, class: 'logout-button' do %>
+                  <p> Logout </p>
+                  <span class="material-symbols-outlined">
+                    logout
+                  </span>
+                <% end %>
+            </div>
+
+        </div>
+
+    </div>
+
+      
 </body>
 </html>

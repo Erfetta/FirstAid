@@ -1,0 +1,45 @@
+.op_profile_container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    margin: 10px;
+}
+.op_profile_container h1{
+    text-align: center;
+    margin: 10px;
+}
+
+.op_profile_info{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.logout-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.logout-button:hover{
+    background-color: #eee;
+}
+.logout-button p{
+    margin: 0;
+    font-size: large;
+    font-weight: bold;
+}
+.logout-button span{
+    color: black;
+}

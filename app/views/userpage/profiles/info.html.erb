@@ -57,7 +57,7 @@
         </div>
 
         <% if user_signed_in? %>
-            <%= form_with(url: destroy_user_session_path, method: :delete) do %>
+            <%= form_with(url: logout_path, method: :delete) do %>
                 <%= submit_tag 'Logout' %>
             <% end %>
         <% else %>

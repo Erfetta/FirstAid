@@ -1,8 +1,10 @@
 # app/controllers/operatorpage/home_controller.rb
 module Operatorpage
   class HomeController < ApplicationController
+    before_action :authenticate_operator!
     before_action :set_report, only: [:show_report]
     def operator_index
+      @operator = current_operator
       @reports = Report.where(operator_id: nil).order(created_at: :desc)
     end
     private

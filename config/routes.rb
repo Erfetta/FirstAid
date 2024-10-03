@@ -21,16 +21,25 @@ Rails.application.routes.draw do
     post 'submit_bpm', to: 'measurement_data#create_bpm'
     post 'submit_oxygen', to: 'measurement_data#create_oxygen'
 
+    # Per devise
+    get 'login', to: 'userpage/login#new', as: 'login'  # Mostra la pagina di login
+    post 'login', to: 'userpage/login#create', as: 'login_create'  # Esegue il login
+    delete 'logout', to: 'userpage/login#destroy', as: 'logout'  # Esegue il logout
+
+
 
     namespace :userpage do
       resources :profiles, only: [:show, :edit, :update]  # Assicurati di includere `update`
     end
   elsif Rails.env == 'operator'
     root 'operatorpage/home#operator_index'
+    get 'login', to: 'operatorpage/login#new', as: 'login'  # Mostra la pagina di login
+    post 'login', to: 'operatorpage/login#create', as: 'login_create'  # Esegue il login
+    delete 'logout', to: 'operatorpage/login#destroy', as: 'logout'  # Esegue il logout
     get 'show_report/:id', to: 'operatorpage/home#show_report', as: 'show_report'
     get 'manual_list', to: 'operatorpage/manual#manual_list', as: 'manual_list'
     get 'manual_element/:id', to: 'operatorpage/manual#manual_element', as: 'manual_element'
-    get 'operator_profile', to: 'operatorpage/profile#operator_profile', as: 'operator_profile'
+    get 'profile', to: 'operatorpage/profile#operator_profile', as: 'profile'
     get 'report_history_list', to: 'operatorpage/history#report_history_list', as: 'report_history_list'
     namespace :operatorpage do
       resources :reports, only: [:show, :update] # Rotte per la parte operator
