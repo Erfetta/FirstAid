@@ -1,21 +1,30 @@
-<h2>Login Operatore</h2>
+<!DOCTYPE html>
+<html lang="it">
+<body>
+    <div class="container_navbar_operator">
+        <div class="op_log_container">
+            <h1>Login Operatore</h1>
 
-<%= form_for :operator, url: login_create_path do |f| %>
-  <div class="field">
-    <%= f.label :email, "Email" %>
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+        <%= form_for :operator, url: login_create_path do |f| %>
+        <div class="op_field">
+            <%= f.label :email, "Email" %>
+            <%= f.email_field :email, autofocus: true %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password, "Password" %>
-    <%= f.password_field :password %>
-  </div>
+        <div class="op_field">
+            <%= f.label :password, "Password" %>
+            <%= f.password_field :password %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Login" %>
-  </div>
-<% end %>
+        <div class="op_actions">
+            <%= f.submit "Login" %>
+        </div>
+        <% end %>
 
-<% if flash[:alert] %>
-  <p><%= flash[:alert] %></p>
-<% end %>
+        <% if flash[:alert] %>
+        <p><%= flash[:alert] %></p>
+        <% end %>
+
+        </div>
+    </div>
+</body>
