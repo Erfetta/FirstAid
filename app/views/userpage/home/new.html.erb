@@ -28,79 +28,143 @@
     <div class="body_user">
     <div class="slider-container_user">
         <div class="slider_user">
-            <!-- Slide 1 -->
-            <div class="slide_user">
-                <h2>Question 1</h2>
-                <p>What is the capital of France?</p>
-                <input type="text" placeholder="Your answer...">
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="slide_user">
-                <h2>Question 2</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
-            </div>
 
             <div class="slide_user">
-                <h2>Question 3</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
-            </div>
-
-            <div class="slide_user">
-                <h2>Question 4</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
-            </div>
-
-            <div class="slide_user">
-                <h2>Question 5</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
-            </div>
-
-            <div class="slide_user">
-                <h2>Question 6</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
-            </div>
-
-            <div class="slide_user">
-                <h2>Question 7</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
-            </div>
-
-            <div class="slide_user">
-                <h2>Question 8</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
+                <h2>Coscente</h2>
+                <p>Il paziente è coscente?</p>
+                <div class="button-container_TF">
+                    <button id="true1" class="toggle-button">Si</button>
+                    <button id="false1" class="toggle-button">No</button>
+                </div>
             </div>
             
             <div class="slide_user">
-                <h2>Question 9</h2>
-                <p>What is 2 + 2?</p>
-                <input type="text" placeholder="Your answer...">
+                <h2>Respirazione</h2>
+                <p>Il paziente respira autonomamente?</p>
+                <div class="button-container_TF">
+                    <button id="true2" class="toggle-button">Si</button>
+                    <button id="false2" class="toggle-button">No</button>
+                </div>
             </div>
-            <!-- Add more slides here -->
-            
-            <!-- Slide 10 -->
+
             <div class="slide_user">
-                <h2>Question 10</h2>
-                <p>What is the square root of 16?</p>
-                <input type="text" placeholder="Your answer...">
+                <h2>Cardio</h2>
+                <p>Il paziente ha battito cardiaco?</p>
+                <div class="button-container_TF">
+                    <button id="true3" class="toggle-button">Si</button>
+                    <button id="false3" class="toggle-button">No</button>
+                </div>
+            </div>
+
+            <div class="slide_user">
+                <h2>Emorragie</h2>
+                <p>Il paziente presenta emorragie evidenti?</p>
+                <div class="button-container_TF">
+                    <button id="true4" class="toggle-button">Si</button>
+                    <button id="false4" class="toggle-button">No</button>
+                </div>
+            </div>
+
+            <div class="slide_user">
+                <h2>Traumi</h2>
+                <p>Ci sono traumi visibili, come fratture o contusioni?</p>
+                <div class="button-container_TF">
+                    <button id="true5" class="toggle-button">Si</button>
+                    <button id="false5" class="toggle-button">No</button>
+                </div>
+            </div>
+
+            <div class="slide_user">
+                <h2>Coscente</h2>
+                <p>Il paziente reagisce al tocco o a leggeri stimoli dolorosi?</p>
+                <div class="button-container_TF">
+                    <button id="true6" class="toggle-button">Si</button>
+                    <button id="false6" class="toggle-button">No</button>
+                </div>
+            </div>
+
+            <div class="slide_user">
+                <h2>Coscente</h2>
+                <p>Il paziente ha le pupille reattive alla luce?</p>
+                <div class="button-container_TF">
+                    <button id="true7" class="toggle-button">Si</button>
+                    <button id="false7" class="toggle-button">No</button>
+                </div>
+            </div>
+
+            <div class="slide_user">
+                <h2>Respirazione</h2>
+                <p>La respirazione è regolare?</p>
+                <div class="button-container_TF">
+                    <button id="true8" class="toggle-button">Si</button>
+                    <button id="false8" class="toggle-button">No</button>
+                </div>
+            </div>
+            
+            <div class="slide_user">
+                <h2>Respirazione</h2>
+                <p>Quanto è frequente la respirazione?</p>
+                <input id="q9" type="text" placeholder="Your answer...">
+            </div>
+
+            <div class="slide_user">
+                <h2>Cardio</h2>
+                <p>Il battito è regolare?</p>
+                <div class="button-container_TF">
+                    <button id="true10" class="toggle-button">Si</button>
+                    <button id="false10" class="toggle-button">No</button>
+                </div>
+            </div>
+
+            <div class="slide_user">
+                <h2>Cardio</h2>
+                <p>Quanti sono i battiti al minuto?</p>
+                <input id="q11" type="text" placeholder="Your answer...">
+            </div>
+
+            <div class="slide_user">
+                <h2>Traumi</h2>
+                <p>Il paziente ha difficoltà a muoversi o sembra paralizzato in alcune parti del corpo?</p>
+                <div class="button-container_TF">
+                    <button id="true12" class="toggle-button">Si</button>
+                    <button id="false12" class="toggle-button">No</button>
+                </div>
+            </div>
+
+            <div class="slide_user">
+                <h2>Altro</h2>
+                <p>Il paziente ha problemi medici noti?</p>
+                <input id="q13" type="text" placeholder="Your answer...">
+            </div>
+
+            <div class="slide_user">
+                <h2>Altro</h2>
+                <p>Vuoi aggiungere altro di rilevante?</p>
+                <textarea id="q14" placeholder="Your answer..."></textarea>
+            </div>
+
+            <div class="slide_user">
+                <h2>Invia</h2>
+                <p>Scegli come vuoi essere contattato</p>
+                <div class="button-container_TF">
+                    <button id="sendBtn1" class="toggle-button">No</button>
+                    <button id="sendBtn2" class="toggle-button">Chat</button>
+                    <button id="sendBtn3" class="toggle-button">Cell</button>
+                </div>
+                <button id="sendBtn" class="toggle-button send-button" >INVIA</button>
             </div>
         </div>
 
         <!-- Navigation Buttons -->
         <div class="button-container_user">
+        <button class="small button_user" onclick="showSlide(0)">&#10094;&#10094;</button>
         <button class="small button_user" onclick="moveSlide(-1)">&#10094;</button>
         <button class="small button_user" onclick="moveSlide(1)">&#10095;</button>
+        <button class="small button_user" onclick="showSlide(-2)">&#10095;&#10095;</button>
     </div>
     
     </div>
-   <nav class="nav_user">
+        <nav class="nav_user">
             <ul class="nav_user-content">
                 <li class="nav_user-list">
                     <%= link_to setting_path, class: 'link-item user' do %>
@@ -127,9 +191,35 @@
                 <span class="indicator_user"></span>
             </ul>
         </nav>
+    </div>
 
+    <% #inserisci qua il form nascosto%>
+    <%= form_with url: create_report_path, method: :post, id: 'hiddenReportForm', local: true do |f| %>
+    <%= f.hidden_field :coordinates, id: 'report_coordinates' %>
+    <%= f.hidden_field :user_id, id: 'report_user_id' %>
+    <%= f.hidden_field :question1, id: 'report_question1' %>
+    <%= f.hidden_field :question2, id: 'report_question2' %>
+    <%= f.hidden_field :question3, id: 'report_question3' %>
+    <%= f.hidden_field :question4, id: 'report_question4' %>
+    <%= f.hidden_field :question5, id: 'report_question5' %>
+    <%= f.hidden_field :question6, id: 'report_question6' %>
+    <%= f.hidden_field :question7, id: 'report_question7' %>
+    <%= f.hidden_field :question8, id: 'report_question8' %>
+    <%= f.hidden_field :question9, id: 'report_question9' %>
+    <%= f.hidden_field :question10, id: 'report_question10' %>
+    <%= f.hidden_field :question11, id: 'report_question11' %>
+    <%= f.hidden_field :question12, id: 'report_question12' %>
+    <%= f.hidden_field :question13, id: 'report_question13' %>
+    <%= f.hidden_field :question14, id: 'report_question14' %>
+    <%= f.hidden_field :contact_method, id: 'report_contact_method' %>
+    <%= f.submit 'Submit', id: 'submitButton', style: 'display: none;' %>
+    <% end %>
+
+
+</body>
     <script>
-      let currentSlide = 0;
+        
+        let currentSlide = 0;
 
         function showSlide(index) {
             const slides = document.querySelectorAll('.slide_user');
@@ -137,9 +227,11 @@
 
             // Wrap around if out of bounds
             if (index >= totalSlides) {
-                currentSlide = 0;
-            } else if (index < 0) {
                 currentSlide = totalSlides - 1;
+            } else if (index == -2) {
+                currentSlide = totalSlides - 1;
+            } else if (index == -1) {
+                currentSlide = 0;
             } else {
                 currentSlide = index;
             }
@@ -155,8 +247,258 @@
 
         // Initialize
         showSlide(currentSlide);
+
+        let q1="";
+        let q2="";
+        let q3="";
+        let q4="";
+        let q5="";
+        let q6="";
+        let q7="";
+        let q8="";
+        let q9="";
+        let q10="";
+        let q11="";
+        let q12="";
+        let q13="";
+        let q14="";
+        let q15=0;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('sendBtn').addEventListener('click', function(event) {
+                event.preventDefault(); // Previene l'invio del form predefinito
+
+                q9 = document.getElementById('q9').value
+                q11 = document.getElementById('q11').value
+                q13 = document.getElementById('q13').value
+                q14 = document.getElementById('q14').value
+
+                document.getElementById('report_coordinates').value = 0; // Valore arbitrario
+                document.getElementById('report_user_id').value = 1; // Valore arbitrario
+                document.getElementById('report_question1').value = q1;
+                document.getElementById('report_question2').value = q2;
+                document.getElementById('report_question3').value = q3;
+                document.getElementById('report_question4').value = q4;
+                document.getElementById('report_question5').value = q5;
+                document.getElementById('report_question6').value = q6;
+                document.getElementById('report_question7').value = q7;
+                document.getElementById('report_question8').value = q8;
+                document.getElementById('report_question9').value = q9;
+                document.getElementById('report_question10').value = q10;
+                document.getElementById('report_question11').value = q11;
+                document.getElementById('report_question12').value = q12;
+                document.getElementById('report_question13').value = q13;
+                document.getElementById('report_question14').value = q14;
+                document.getElementById('report_contact_method').value = q15;
+
+                document.getElementById('hiddenReportForm').submit();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const true1 = document.getElementById('true1');
+            const false1 = document.getElementById('false1');
+            const true2 = document.getElementById('true2');
+            const false2 = document.getElementById('false2');
+            const true3 = document.getElementById('true3');
+            const false3 = document.getElementById('false3');
+            const true4 = document.getElementById('true4');
+            const false4 = document.getElementById('false4');
+            const true5 = document.getElementById('true5');
+            const false5 = document.getElementById('false5');
+            const true6 = document.getElementById('true6');
+            const false6 = document.getElementById('false6');
+            const true7 = document.getElementById('true7');
+            const false7 = document.getElementById('false7');
+            const true8 = document.getElementById('true8');
+            const false8 = document.getElementById('false8');
+            const true10 = document.getElementById('true10');
+            const false10 = document.getElementById('false10');
+            const true12 = document.getElementById('true12');
+            const false12 = document.getElementById('false12');
+            const sendBtn1 = document.getElementById('sendBtn1');
+            const sendBtn2 = document.getElementById('sendBtn2');
+            const sendBtn3 = document.getElementById('sendBtn3');
+
+            true1.addEventListener('click', function() {
+                q1 = true;
+                true1.classList.add('active');
+                true1.classList.remove('inactive');
+                false1.classList.add('inactive');
+                false1.classList.remove('active');
+            });
+            false1.addEventListener('click', function() {
+                q1 = false;
+                false1.classList.add('active');
+                false1.classList.remove('inactive');
+                true1.classList.add('inactive');
+                true1.classList.remove('active');
+            });
+
+            true2.addEventListener('click', function() {
+                q2 = true;
+                true2.classList.add('active');
+                true2.classList.remove('inactive');
+                false2.classList.add('inactive');
+                false2.classList.remove('active');
+            });
+            false2.addEventListener('click', function() {
+                q2 = false;
+                false2.classList.add('active');
+                false2.classList.remove('inactive');
+                true2.classList.add('inactive');
+                true2.classList.remove('active');
+            });
+
+            true3.addEventListener('click', function() {
+                q3 = true;
+                true3.classList.add('active');
+                true3.classList.remove('inactive');
+                false3.classList.add('inactive');
+                false3.classList.remove('active');
+            });
+            false3.addEventListener('click', function() {
+                q3 = false;
+                false3.classList.add('active');
+                false3.classList.remove('inactive');
+                true3.classList.add('inactive');
+                true3.classList.remove('active');
+            });
+
+            true4.addEventListener('click', function() {
+                q4 = true;
+                true4.classList.add('active');
+                true4.classList.remove('inactive');
+                false4.classList.add('inactive');
+                false4.classList.remove('active');
+            });
+            false4.addEventListener('click', function() {
+                q4 = false;
+                false4.classList.add('active');
+                false4.classList.remove('inactive');
+                true4.classList.add('inactive');
+                true4.classList.remove('active');
+            });
+
+            true5.addEventListener('click', function() {
+                q5 = true;
+                true5.classList.add('active');
+                true5.classList.remove('inactive');
+                false5.classList.add('inactive');
+                false5.classList.remove('active');
+            });
+            false5.addEventListener('click', function() {
+                q5 = false;
+                false5.classList.add('active');
+                false5.classList.remove('inactive');
+                true5.classList.add('inactive');
+                true5.classList.remove('active');
+            });
+
+            true6.addEventListener('click', function() {
+                q6 = true;
+                true6.classList.add('active');
+                true6.classList.remove('inactive');
+                false6.classList.add('inactive');
+                false6.classList.remove('active');
+            });
+            false6.addEventListener('click', function() {
+                q6 = false;
+                false6.classList.add('active');
+                false6.classList.remove('inactive');
+                true6.classList.add('inactive');
+                true6.classList.remove('active');
+            });
+
+            true7.addEventListener('click', function() {
+                q7 = true;
+                true7.classList.add('active');
+                true7.classList.remove('inactive');
+                false7.classList.add('inactive');
+                false7.classList.remove('active');
+            });
+            false7.addEventListener('click', function() {
+                q7 = false;
+                false7.classList.add('active');
+                false7.classList.remove('inactive');
+                true7.classList.add('inactive');
+                true7.classList.remove('active');
+            });
+
+            true8.addEventListener('click', function() {
+                q8 = true;
+                true8.classList.add('active');
+                true8.classList.remove('inactive');
+                false8.classList.add('inactive');
+                false8.classList.remove('active');
+            });
+            false8.addEventListener('click', function() {
+                q8 = false;
+                false8.classList.add('active');
+                false8.classList.remove('inactive');
+                true8.classList.add('inactive');
+                true8.classList.remove('active');
+            });
+
+            true10.addEventListener('click', function() {
+                q10 = true;
+                true10.classList.add('active');
+                true10.classList.remove('inactive');
+                false10.classList.add('inactive');
+                false10.classList.remove('active');
+            });
+            false10.addEventListener('click', function() {
+                q10 = false;
+                false10.classList.add('active');
+                false10.classList.remove('inactive');
+                true10.classList.add('inactive');
+                true10.classList.remove('active');
+            });
+
+            true12.addEventListener('click', function() {
+                q12 = true;
+                true12.classList.add('active');
+                true12.classList.remove('inactive');
+                false12.classList.add('inactive');
+                false12.classList.remove('active');
+            });
+            false12.addEventListener('click', function() {
+                q12 = false;
+                false12.classList.add('active');
+                false12.classList.remove('inactive');
+                true12.classList.add('inactive');
+                true12.classList.remove('active');
+            });
+
+            sendBtn1.addEventListener('click', function() {
+                q15 = 0;
+                sendBtn1.classList.add('active');
+                sendBtn1.classList.remove('inactive');
+                sendBtn2.classList.add('inactive');
+                sendBtn2.classList.remove('active');
+                sendBtn3.classList.add('inactive');
+                sendBtn3.classList.remove('active');
+            });
+            sendBtn2.addEventListener('click', function() {
+                q15 = 1;
+                sendBtn2.classList.add('active');
+                sendBtn2.classList.remove('inactive');
+                sendBtn1.classList.add('inactive');
+                sendBtn1.classList.remove('active');
+                sendBtn3.classList.add('inactive');
+                sendBtn3.classList.remove('active');
+            });
+            sendBtn3.addEventListener('click', function() {
+                q15 = 2;
+                sendBtn3.classList.add('active');
+                sendBtn3.classList.remove('inactive');
+                sendBtn1.classList.add('inactive');
+                sendBtn1.classList.remove('active');
+                sendBtn2.classList.add('inactive');
+                sendBtn2.classList.remove('active');
+            });
+
+        });
     
-    </script> <!-- Assicurati di avere un file JavaScript collegato -->
-    </div>
-</body>
+    </script> 
 </html>

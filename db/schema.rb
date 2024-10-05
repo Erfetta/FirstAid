@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2024_10_02_143847) do
     t.string "question12"
     t.string "question13"
     t.string "question14"
-    t.integer "contact_metod", null: false
+    t.integer "contact_method", null: false
   end
 
   create_table "reports", force: :cascade do |t|
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2024_10_02_143847) do
     t.string "question12"
     t.string "question13"
     t.string "question14"
-    t.integer "contact_metod", null: false
+    t.integer "contact_method", null: false
   end
 
   create_table "supervisors", force: :cascade do |t|

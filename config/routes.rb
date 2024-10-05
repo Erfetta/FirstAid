@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   devise_for :supervisors
   devise_for :operators
   devise_for :users
-
-
   
   if Rails.env == 'user'
     root 'userpage/home#user_index'
@@ -26,11 +24,13 @@ Rails.application.routes.draw do
     post 'login', to: 'userpage/login#create', as: 'login_create'  # Esegue il login
     delete 'logout', to: 'userpage/login#destroy', as: 'logout'  # Esegue il logout
 
-
+    # Per i report
+    post 'reports', to: 'userpage/home#create', as: 'create_report'  # Rotta per la creazione del report
 
     namespace :userpage do
       resources :profiles, only: [:show, :edit, :update]  # Assicurati di includere `update`
     end
+
   elsif Rails.env == 'operator'
     root 'operatorpage/home#operator_index'
     get 'login', to: 'operatorpage/login#new', as: 'login'  # Mostra la pagina di login

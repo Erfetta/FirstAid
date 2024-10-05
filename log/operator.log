@@ -10452,3 +10452,17 @@ Processing by Operatorpage::HomeController#operator_index as */*
   Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1468)
   Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 3722)
 Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.2ms | Allocations: 4061)
+Started GET "/" for 192.168.1.20 at 2024-10-05 12:26:29 +0200
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Operatorpage::HomeController#operator_index as HTML
+Redirected to http://192.168.1.29:4000/login
+Filter chain halted as :authenticate_operator! rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 0.0ms | Allocations: 1827)
+Started GET "/login" for 192.168.1.20 at 2024-10-05 12:26:29 +0200
+Processing by Operatorpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/login/op_login.html.erb within layouts/application
+  Rendered operatorpage/login/op_login.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1289)
+  Rendered layout layouts/application.html.erb (Duration: 198.0ms | Allocations: 28789)
+Completed 200 OK in 212ms (Views: 211.6ms | ActiveRecord: 0.0ms | Allocations: 30576)

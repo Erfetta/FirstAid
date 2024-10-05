@@ -213,12 +213,79 @@
     background: #fff;
     box-sizing: border-box;
     border-radius: 20px; /* Rounded borders */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .slide_user h2 {
     margin-top: 0;
+    text-align: center;
+}
+.slide_user p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+.slide_user input{
+    width: 60%;
+    padding: 10px;
+    font-size: 15px;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: block;
+}
+.slide_user textarea {
+    width: 100%;
+    height: 70%;
+    padding: 10px;
+    font-size: 15px;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    display: block;
+    resize: none; /* Prevent user from resizing the textarea */
+}
+.send-button{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
+.button-container_TF {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.toggle-button {
+    padding: 10px 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 20vw;
+    height: 3rem;
+    margin-bottom: 0;
+}
+
+.toggle-button.active {
+    background-color: #4070F4;
+    color: white;
+}
+
+.toggle-button.inactive {
+    background-color: #ffffff; 
+    color: black;
+}
 
 .prev {
     left: 10px;
