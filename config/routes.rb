@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     post 'submit_pressure', to: 'measurement_data#create_pressure'
     post 'submit_bpm', to: 'measurement_data#create_bpm'
     post 'submit_oxygen', to: 'measurement_data#create_oxygen'
+    get 'chat', to: 'chat#index', as: 'chat'
 
     # Per devise
     get 'login', to: 'userpage/login#new', as: 'login'  # Mostra la pagina di login

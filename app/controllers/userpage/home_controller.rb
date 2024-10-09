@@ -43,7 +43,11 @@ module Userpage
       )
       if @report.save
         flash[:notice] = 'Report creato con successo!'
-        redirect_to root_path
+        if @report.contact_method == 1
+          redirect_to chat_path
+        else
+          redirect_to root_path
+        end
       else
         # deb.log dell'errore
         Rails.logger.debug("Errors: #{@report.errors.full_messages}")
