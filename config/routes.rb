@@ -38,10 +38,13 @@ Rails.application.routes.draw do
     post 'login', to: 'operatorpage/login#create', as: 'login_create'  # Esegue il login
     delete 'logout', to: 'operatorpage/login#destroy', as: 'logout'  # Esegue il logout
     get 'show_report/:id', to: 'operatorpage/home#show_report', as: 'show_report'
+    patch 'update_op_id/:id', to: 'operatorpage/home#update_op_id', as: 'update_op_id'
+    patch 'remove_me_from_report/:id', to: 'operatorpage/home#remove_me_from_report', as: 'remove_me_from_report'
     get 'manual_list', to: 'operatorpage/manual#manual_list', as: 'manual_list'
     get 'manual_element/:id', to: 'operatorpage/manual#manual_element', as: 'manual_element'
     get 'profile', to: 'operatorpage/profile#operator_profile', as: 'profile'
     get 'report_history_list', to: 'operatorpage/history#report_history_list', as: 'report_history_list'
+
     namespace :operatorpage do
       resources :reports, only: [:show, :update] # Rotte per la parte operator
     end

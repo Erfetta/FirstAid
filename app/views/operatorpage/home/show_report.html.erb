@@ -37,13 +37,57 @@
           </div>
           <div class="report_info_operator">
             <h2>Dettagli della richiesta</h2>
-            <p><strong>Richiesta:</strong> <%= @report.id %></p>
-            <% datetime = @report.created_at.to_s.split(' ')%>
-            <p><strong>Data: </strong><%= datetime[0] %></p>
-            <p><strong>Orario:</strong> <%= datetime[1] %></p>
-            <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
-            
-
+            <div class="report_info_container">
+              <div class="report_info_c1">
+                <h3>Informazioni richiesta</h3>
+                <p><strong>Richiesta n°:</strong> <%= @report.id %></p>
+                <% datetime = @report.created_at.to_s.split(' ')%>
+                <p><strong>Data: </strong><%= datetime[0] %></p>
+                <p><strong>Orario:</strong> <%= datetime[1] %></p>
+                <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
+                <p><strong>Modalità di contatto:</strong> <%= @report.contact_method %></p>
+                <%= button_to 'Prendi in carico', update_op_id_path(@report), method: :patch, class: 'report-button_operator chooseReportBtn' %>
+                <%= button_to 'Rimuovi incarico', remove_me_from_report_path(@report), method: :patch, class: 'report-button_operator removeReportBtn' %>
+                <% if @rep_taken%>
+                <style>
+                  .chooseReportBtn {
+                    display: none;
+                  }
+                  .removeReportBtn{
+                    display: block;
+                  }
+                </style>
+                <% else %>
+                <style>
+                  .chooseReportBtn {
+                    display: block;
+                  }
+                  .removeReportBtn{
+                    display: none;
+                  }
+                </style>
+                <% end %>
+              </div>
+              <div class="report_info_c2">
+                <h3>Informazioni paziente</h3>
+                <div class="report_info_c2_sub">
+                  <p><strong>Domanda 1:</strong> <%= @report.question1 %></p>
+                  <p><strong>Domanda 2:</strong> <%= @report.question2 %></p>
+                  <p><strong>Domanda 3:</strong> <%= @report.question3 %></p>
+                  <p><strong>Domanda 4:</strong> <%= @report.question4 %></p>
+                  <p><strong>Domanda 5:</strong> <%= @report.question5 %></p>
+                  <p><strong>Domanda 6:</strong> <%= @report.question6 %></p>
+                  <p><strong>Domanda 7:</strong> <%= @report.question7 %></p>
+                  <p><strong>Domanda 8:</strong> <%= @report.question8 %></p>
+                  <p><strong>Domanda 9:</strong> <%= @report.question9 %></p>
+                  <p><strong>Domanda 10:</strong> <%= @report.question10 %></p>
+                  <p><strong>Domanda 11:</strong> <%= @report.question11 %></p>
+                  <p><strong>Domanda 12:</strong> <%= @report.question12 %></p>
+                  <p><strong>Domanda 13:</strong> <%= @report.question13 %></p>
+                  <p><strong>Domanda 14:</strong> <%= @report.question14 %></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
