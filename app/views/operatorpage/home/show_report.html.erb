@@ -32,8 +32,19 @@
         </nav>
 
         <div class="central_section_operator">
-          <div class="maps_section_operator_reduced">
+          <div class="map-chat-section_op">
+            <div class="maps_section_operator_reduced">
               <!-- da inserire google maps -->
+              <p> Mappa </p>
+            </div>
+            <div class="chat_section_operator">
+              <!-- da inserire chat con utente -->
+              <p> Chat </p>
+            </div>
+            <div class="map-chat_selector">
+                <button class="map-chat_selector_button1" id="select-map_button"><span class="material-symbols-outlined">map</span></button>
+                <button class="map-chat_selector_button2" id="select-chat_button"><span class="material-symbols-outlined">forum</span></button>
+            </div>
           </div>
           <div class="report_info_operator">
             <h2>Dettagli della richiesta</h2>
@@ -46,7 +57,7 @@
                 <p><strong>Orario:</strong> <%= datetime[1] %></p>
                 <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
                 <p><strong>Modalità di contatto:</strong> <%= @report.contact_method %></p>
-                <%= button_to 'Prendi in carico', update_op_id_path(@report), method: :patch, class: 'report-button_operator chooseReportBtn' %>
+                <%= button_to 'Prendi incarico', update_op_id_path(@report), method: :patch, class: 'report-button_operator chooseReportBtn' %>
                 <%= button_to 'Rimuovi incarico', remove_me_from_report_path(@report), method: :patch, class: 'report-button_operator removeReportBtn' %>
                 <% if @rep_taken%>
                 <style>
@@ -99,12 +110,29 @@
             <p><strong>Età:</strong> <%= @user.age %></p>
             <p><strong>Sesso:</strong> <%= @user.sex %></p>
             <p><strong>Cellulare:</strong> <%= @user.phone %></p>
-
-            
-          
         </div>
-
-        
     </div>
 </body>
+<script>
+
+  const mapButton = document.getElementById('select-map_button');
+  const chatButton = document.getElementById('select-chat_button');
+  const mapSection = document.querySelector('.maps_section_operator_reduced');
+  const chatSection = document.querySelector('.chat_section_operator');
+
+  mapButton.addEventListener('click', () => {
+    mapSection.style.display = 'flex';
+    chatSection.style.display = 'none';
+    mapButton.style.backgroundColor = '#eee';
+    chatButton.style.backgroundColor = '#fff';
+  });
+
+  chatButton.addEventListener('click', () => {
+    mapSection.style.display = 'none';
+    chatSection.style.display = 'flex';
+    chatButton.style.backgroundColor = '#eee';
+    mapButton.style.backgroundColor = '#fff';
+  });
+
+</script>
 </html>
