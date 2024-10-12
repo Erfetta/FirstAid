@@ -58,6 +58,11 @@ body, html {
     border-radius: 1rem;
     margin: 10px;
 }
+.maps_section_operator iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
 
 .reports_section_operator {
     width: 30%;

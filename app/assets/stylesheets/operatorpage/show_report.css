@@ -19,6 +19,11 @@
     justify-content: center;
     align-items: center;
 }
+.maps_section_operator_reduced iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
 
 .chat_section_operator{
     width: 100%;
@@ -31,7 +36,7 @@
 
 .map-chat_selector{
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
     z-index: 1000;
     display: flex;
