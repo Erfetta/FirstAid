@@ -38,8 +38,13 @@
               <!-- div per il render di google maps -->
             </div>
             <div class="chat_section_operator">
-              <!-- da inserire chat con utente -->
-              <p> Chat </p>
+              <% cm = @report.contact_method %>
+              <% if cm != 2%>
+                <p> L'utente non ha selezionato la chat come metodo di contatto</p>
+              <% else %>
+                inserire chat
+                <!-- da inserire chat con utente -->
+              <% end %>
             </div>
             <div class="map-chat_selector">
                 <button class="map-chat_selector_button1" id="select-map_button"><span class="material-symbols-outlined">map</span></button>
@@ -56,7 +61,15 @@
                 <p><strong>Data: </strong><%= datetime[0] %></p>
                 <p><strong>Orario:</strong> <%= datetime[1] %></p>
                 <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
-                <p><strong>Modalità di contatto:</strong> <%= @report.contact_method %></p>
+                <p><strong>Modalità di contatto:</strong> 
+                <% cm = @report.contact_method %>
+                <% if cm == 0%>
+                  Non contattare </p>
+                <% elsif cm == 1%>
+                  Telefono </p>
+                <% elsif cm == 2%>
+                  Chat </p>
+                <% end %>
                 <%= button_to 'Prendi incarico', update_op_id_path(@report), method: :patch, class: 'report-button_operator chooseReportBtn' %>
                 <%= button_to 'Rimuovi incarico', remove_me_from_report_path(@report), method: :patch, class: 'report-button_operator removeReportBtn' %>
                 <% if @rep_taken%>

@@ -38,10 +38,12 @@
 
         <aside class="reports_section_operator" id="reports-section">
             <% @reports.each do |report| %>
-              <div class="report_area_operator">
-                <p><strong>Richiesta:</strong> <%= link_to report.id, show_report_path(report)%></p>
+              <div class="report_area_operator" onclick=openReport(<%= report.id %>)>
+                <p><strong>Richiesta:</strong> <%= report.id %></p>
                 <% datetime = report.created_at.to_s.slice(0...-5)%>
-                <p><strong>Data:</strong> <%= datetime %></p>
+                <% datetime = datetime.split(' ')%>
+                <p><strong>Data:</strong> <%= datetime[0] %></p>
+                <p><strong>Ora:</strong> <%= datetime[1] %></p>
               </div>
             <% end %>
         </aside>
@@ -94,6 +96,10 @@
       }
 
       setInterval(fetchReports, 10000); // Aggiorna ogni 10 secondi
+
+      function openReport(id) {
+        window.location.href = "/show_report/" + id;
+      }
 
     </script>
 </body>
