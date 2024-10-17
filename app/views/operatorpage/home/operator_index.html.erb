@@ -48,21 +48,32 @@
     </div>
     <script>
 
-      var arrayReports = <%= raw @reports.map {|report| j report.coordinates}.to_json %>;
-      console.log(arrayReports);
+      var arrrayReportsID = <%= raw @reports.map {|report| j report.id}.to_json %>;
+      var arrayReportsC = <%= raw @reports.map {|report| j report.coordinates}.to_json %>;
+      console.log(arrrayReportsID);
+      console.log(arrayReportsC);
+
       function initMap() {
 
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
-          center: { lat: 41.86, lng: 12.56 } // Default center, will be adjusted later
+          center: { lat: 41.86, lng: 12.56 }, // Default center, will be adjusted later
+          fullscreenControl: false, // Disables fullscreen control
+          streetViewControl: false, // Disables street view control
+          mapTypeControl: false // Disables map type control
         });
-
-        arrayReports.forEach(function(report) {
+        
+        arrayReportsC.forEach(function(report) {
+          i = arrayReportsC.indexOf(report);
           coordinates = report.split(',');
-          new google.maps.Marker({
+          mark = new google.maps.Marker({
             position: new google.maps.LatLng(coordinates[0], coordinates[1]),
             map: map,
-            title: 'Richiesta'
+            title: 'Richiesta '+arrrayReportsID[i],
+            id: arrrayReportsID[i]
+          });
+          mark.addListener('click', function() {
+            window.location.href = "/show_report/" + this.id;
           });
         });
       }
