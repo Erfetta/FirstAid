@@ -25,6 +25,8 @@ gem 'devise', '~> 4.7.3'
 gem 'chartkick'
 gem 'groupdate'
 
+# per usare le variabili d'ambiente
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
