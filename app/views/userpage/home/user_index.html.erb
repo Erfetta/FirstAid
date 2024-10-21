@@ -5,22 +5,19 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Navigation Bar with Indicator</title>
-
-        <!-- CSS -->
-        
-                
+        <!-- CSS -->     
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         
     </head>
     <body>
         <div class="body_user">
-        <div class="map-container_user">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0899743766096!2d-122.40060808468155!3d37.78583477975862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f5f5f5f5f%3A0x5a5a5a5a5a5a5a5a!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1638183510984!5m2!1sen!2sin"
-                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+        <div class="map-container_user" id="map">
+            <!-- div per il render di google maps -->
+            <script 
+                src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap&v=weekly" 
+                defer
+            ></script>
         </div>
 
     <!-- Tre bottoni sotto la mappa -->
@@ -90,4 +87,56 @@
         </script>
     </div>
     </body>
+    <script>
+        // google maps
+        let map, marker;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: { lat: 41.86, lng: 12.56 }, // Default center, will be adjusted later
+                fullscreenControl: false, // Disables fullscreen control
+                streetViewControl: false, // Disables street view control
+                mapTypeControl: false // Disables map type control
+            });
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        marker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                            title: "You are here"
+                        });
+                        map.setCenter(pos);
+                    },
+                    () => {
+                        handleLocationError(true, map.getCenter());
+                    }
+                );
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, pos) {
+            const content = browserHasGeolocation
+                ? "Error: The Geolocation service failed."
+                : "Error: Your browser doesn't support geolocation.";
+            const infoWindow = new google.maps.InfoWindow({
+                position: pos,
+                content: content,
+            });
+            infoWindow.open(map);
+        }
+
+        window.onload = initMap;
+
+    </script>
 </html>

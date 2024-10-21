@@ -19,7 +19,6 @@ module Userpage
       # Logica per mostrare un elemento del tutorial
     end
 
-
     #report
     def create
       @report = Report.new(
