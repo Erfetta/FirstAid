@@ -43,7 +43,7 @@ module Userpage
       if @report.save
         flash[:notice] = 'Report creato con successo!'
         if @report.contact_method == 1
-          redirect_to chat_path
+          redirect_to waiting_path(id: @report.id)
         else
           redirect_to root_path
         end
@@ -53,6 +53,8 @@ module Userpage
         flash[:alert] = 'Errore nella creazione del report'
       end
     end
+
+    
 
     private
     def tutorialID
