@@ -25,6 +25,10 @@ gem 'devise', '~> 4.7.3'
 gem 'chartkick'
 gem 'groupdate'
 
+#per la chat
+gem 'firebase'
+
+
 # per usare le variabili d'ambiente
 gem 'dotenv-rails'
 

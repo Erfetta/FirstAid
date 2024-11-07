@@ -24608,3 +24608,1533 @@ Processing by Userpage::ProfilesController#graph as HTML
   Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2839)
   Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4784)
 Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.7ms | Allocations: 6407)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-11-07 21:44:45 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/profile
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 29ms (ActiveRecord: 1.0ms | Allocations: 10108)
+Started GET "/profile" for 127.0.0.1 at 2024-11-07 21:44:45 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2426)
+  Rendered layout layouts/application.html.erb (Duration: 79.1ms | Allocations: 48960)
+Completed 200 OK in 112ms (Views: 82.6ms | ActiveRecord: 0.9ms | Allocations: 53446)
+Started GET "/info" for 127.0.0.1 at 2024-11-07 21:45:34 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3961)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5966)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 7222)
+Started GET "/" for 127.0.0.1 at 2024-11-07 21:45:35 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 854)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2994)
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 5651)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 21:45:36 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3461)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 5404)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5753)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 21:45:39 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 21:45:39.568105"], ["updated_at", "2024-11-07 21:45:39.568105"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (25.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=36
+Completed 302 Found in 60ms (ActiveRecord: 27.1ms | Allocations: 16587)
+Started GET "/waiting?id=36" for 127.0.0.1 at 2024-11-07 21:45:39 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.8ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2454)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 3938)
+Started GET "/check_operator_assigned?id=36" for 127.0.0.1 at 2024-11-07 21:45:44 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"36"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 651)
+Started GET "/check_operator_assigned?id=36" for 127.0.0.1 at 2024-11-07 21:45:50 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"36"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 538)
+Started GET "/chat.36" for 127.0.0.1 at 2024-11-07 21:45:51 +0100
+Processing by ChatController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2061)
+  
+NameError (uninitialized constant ChatController::Message
+Did you mean?  MessagePack):
+  
+app/controllers/chat_controller.rb:5:in `index'
+Started GET "/new" for 127.0.0.1 at 2024-11-07 21:50:09 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 4069)
+  Rendered layout layouts/application.html.erb (Duration: 83.4ms | Allocations: 51370)
+Completed 200 OK in 89ms (Views: 85.9ms | ActiveRecord: 0.0ms | Allocations: 54350)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 21:50:13 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 21:50:13.322085"], ["updated_at", "2024-11-07 21:50:13.322085"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=37
+Completed 302 Found in 44ms (ActiveRecord: 8.8ms | Allocations: 23430)
+Started GET "/waiting?id=37" for 127.0.0.1 at 2024-11-07 21:50:13 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.8ms | Allocations: 308)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2513)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 3999)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:18 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 651)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:25 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 551)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:30 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 552)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:35 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:40 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:45 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:50 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:50:56 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:51:01 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:51:06 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:51:11 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 10951)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:51:16 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=37" for 127.0.0.1 at 2024-11-07 21:51:21 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 537)
+Started GET "/chat.37" for 127.0.0.1 at 2024-11-07 21:51:21 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 234)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2382)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3580)
+Started GET "/chat.37" for 127.0.0.1 at 2024-11-07 21:51:25 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2189)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 2439)
+Started GET "/chat.37" for 127.0.0.1 at 2024-11-07 21:51:47 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 2204)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 2452)
+Started GET "/" for 127.0.0.1 at 2024-11-07 21:53:59 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 863)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3162)
+Completed 200 OK in 18ms (Views: 6.0ms | ActiveRecord: 0.9ms | Allocations: 11819)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 21:54:07 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3345)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5288)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 5636)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 21:54:10 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 21:54:10.679726"], ["updated_at", "2024-11-07 21:54:10.679726"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=38
+Completed 302 Found in 24ms (ActiveRecord: 10.0ms | Allocations: 5473)
+Started GET "/waiting?id=38" for 127.0.0.1 at 2024-11-07 21:54:10 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 1.1ms | Allocations: 301)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 2429)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.2ms | Allocations: 3757)
+Started GET "/check_operator_assigned?id=38" for 127.0.0.1 at 2024-11-07 21:54:17 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=38" for 127.0.0.1 at 2024-11-07 21:54:22 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 537)
+Started GET "/chat.38" for 127.0.0.1 at 2024-11-07 21:54:22 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 224)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2361)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 3246)
+Started GET "/chat.38" for 127.0.0.1 at 2024-11-07 21:54:28 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2175)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 2425)
+Started GET "/" for 127.0.0.1 at 2024-11-07 21:54:50 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2475)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 4324)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 21:56:39 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1616)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3577)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3819)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 21:56:42 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 21:56:42.820756"], ["updated_at", "2024-11-07 21:56:42.820756"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=39
+Completed 302 Found in 21ms (ActiveRecord: 9.3ms | Allocations: 4344)
+Started GET "/waiting?id=39" for 127.0.0.1 at 2024-11-07 21:56:42 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.4ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 2202)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.1ms | Allocations: 2851)
+Started GET "/check_operator_assigned?id=39" for 127.0.0.1 at 2024-11-07 21:56:48 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"39"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=39" for 127.0.0.1 at 2024-11-07 21:56:53 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"39"}
+  [1m[36mReport Load (0.9ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 537)
+Started GET "/chat.39" for 127.0.0.1 at 2024-11-07 21:56:53 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2204)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 2452)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:00:27 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 840)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3127)
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 5834)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:00:39 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3374)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5336)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5685)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:00:42 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:00:42.713823"], ["updated_at", "2024-11-07 22:00:42.713823"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=40
+Completed 302 Found in 21ms (ActiveRecord: 8.8ms | Allocations: 4238)
+Started GET "/waiting?id=40" for 127.0.0.1 at 2024-11-07 22:00:42 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.9ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2440)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 3677)
+Started GET "/check_operator_assigned?id=40" for 127.0.0.1 at 2024-11-07 22:00:48 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 537)
+Started GET "/chat.40" for 127.0.0.1 at 2024-11-07 22:00:48 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2394)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3280)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:00:54 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2465)
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 4315)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:00:56 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1601)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3542)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3785)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:00:59 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.7ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:00:59.703862"], ["updated_at", "2024-11-07 22:00:59.703862"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=41
+Completed 302 Found in 29ms (ActiveRecord: 8.0ms | Allocations: 5128)
+Started GET "/waiting?id=41" for 127.0.0.1 at 2024-11-07 22:00:59 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.3ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2192)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 2839)
+Started GET "/check_operator_assigned?id=41" for 127.0.0.1 at 2024-11-07 22:01:05 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=41" for 127.0.0.1 at 2024-11-07 22:01:10 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=41" for 127.0.0.1 at 2024-11-07 22:01:15 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 538)
+Started GET "/chat.41" for 127.0.0.1 at 2024-11-07 22:01:15 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2185)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 2435)
+Started GET "/chat.41" for 127.0.0.1 at 2024-11-07 22:01:19 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2185)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2433)
+Started GET "/chat.41" for 127.0.0.1 at 2024-11-07 22:01:47 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2161)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 2409)
+Started GET "/chat.41" for 127.0.0.1 at 2024-11-07 22:02:02 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2195)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 2443)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:03:07 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3139)
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 5824)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:03:15 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3362)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5324)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 5673)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:03:18 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:03:18.393076"], ["updated_at", "2024-11-07 22:03:18.393076"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=42
+Completed 302 Found in 30ms (ActiveRecord: 6.6ms | Allocations: 4652)
+Started GET "/waiting?id=42" for 127.0.0.1 at 2024-11-07 22:03:18 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.7ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2436)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 3673)
+Started GET "/check_operator_assigned?id=42" for 127.0.0.1 at 2024-11-07 22:03:24 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=42" for 127.0.0.1 at 2024-11-07 22:03:28 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 537)
+Started GET "/chat.42" for 127.0.0.1 at 2024-11-07 22:03:28 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 257)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2392)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3277)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:04:30 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.2ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:04:30.448457"], ["updated_at", "2024-11-07 22:04:30.448457"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=43
+Completed 302 Found in 17ms (ActiveRecord: 5.7ms | Allocations: 5134)
+Started GET "/waiting?id=43" for 127.0.0.1 at 2024-11-07 22:04:30 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.8ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2599)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 4065)
+Started GET "/check_operator_assigned?id=43" for 127.0.0.1 at 2024-11-07 22:04:36 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=43" for 127.0.0.1 at 2024-11-07 22:04:41 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 537)
+Started GET "/chat.43" for 127.0.0.1 at 2024-11-07 22:04:41 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 262)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2416)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 3311)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:04:50 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3003)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 5454)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:05:20 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3367)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5309)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 5656)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:05:23 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:05:23.934284"], ["updated_at", "2024-11-07 22:05:23.934284"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=44
+Completed 302 Found in 17ms (ActiveRecord: 6.5ms | Allocations: 5110)
+Started GET "/waiting?id=44" for 127.0.0.1 at 2024-11-07 22:05:23 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.3ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2209)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 2857)
+Started GET "/check_operator_assigned?id=44" for 127.0.0.1 at 2024-11-07 22:05:29 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"44"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=44" for 127.0.0.1 at 2024-11-07 22:05:34 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"44"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 538)
+Started GET "/chat.44" for 127.0.0.1 at 2024-11-07 22:05:34 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2197)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 2446)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:07:29 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:07:29.338166"], ["updated_at", "2024-11-07 22:07:29.338166"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=45
+Completed 302 Found in 16ms (ActiveRecord: 7.0ms | Allocations: 4615)
+Started GET "/waiting?id=45" for 127.0.0.1 at 2024-11-07 22:07:29 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.8ms | Allocations: 301)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2579)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 4051)
+Started GET "/check_operator_assigned?id=45" for 127.0.0.1 at 2024-11-07 22:07:35 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"45"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=45" for 127.0.0.1 at 2024-11-07 22:07:40 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"45"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 537)
+Started GET "/chat.45" for 127.0.0.1 at 2024-11-07 22:07:40 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 260)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2387)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3282)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:10:24 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3137)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 5843)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:10:30 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 3384)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 5346)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 5695)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:10:33 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:10:33.074603"], ["updated_at", "2024-11-07 22:10:33.074603"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=46
+Completed 302 Found in 18ms (ActiveRecord: 8.0ms | Allocations: 4578)
+Started GET "/waiting?id=46" for 127.0.0.1 at 2024-11-07 22:10:33 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mReport Load (1.7ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.8ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2469)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 1.7ms | Allocations: 3707)
+Started GET "/check_operator_assigned?id=46" for 127.0.0.1 at 2024-11-07 22:10:39 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"46"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=46" for 127.0.0.1 at 2024-11-07 22:10:44 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"46"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 537)
+Started GET "/chat.46" for 127.0.0.1 at 2024-11-07 22:10:44 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2418)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3304)
+Started GET "/chat.46" for 127.0.0.1 at 2024-11-07 22:10:48 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2193)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2442)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:12:41 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 3138)
+Completed 200 OK in 28ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 5846)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:12:46 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 3373)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 5315)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5662)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:12:49 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:12:49.380586"], ["updated_at", "2024-11-07 22:12:49.380586"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=47
+Completed 302 Found in 17ms (ActiveRecord: 7.1ms | Allocations: 5104)
+Started GET "/waiting?id=47" for 127.0.0.1 at 2024-11-07 22:12:49 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mReport Load (1.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 1.0ms | Allocations: 301)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2453)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 1.1ms | Allocations: 3690)
+Started GET "/check_operator_assigned?id=47" for 127.0.0.1 at 2024-11-07 22:12:54 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"47"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 536)
+Started GET "/check_operator_assigned?id=47" for 127.0.0.1 at 2024-11-07 22:12:59 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"47"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 537)
+Started GET "/chat.47" for 127.0.0.1 at 2024-11-07 22:12:59 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 266)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 2401)
+Completed 200 OK in 38ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 3286)
+Started GET "/chat.47" for 127.0.0.1 at 2024-11-07 22:13:12 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 2193)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 2443)
+Started GET "/chat.47" for 127.0.0.1 at 2024-11-07 22:13:28 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2198)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 2447)
+Started GET "/chat.47" for 127.0.0.1 at 2024-11-07 22:13:48 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2194)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 2443)
+Started GET "/chat.47" for 127.0.0.1 at 2024-11-07 22:14:02 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2169)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 2417)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:15:21 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3140)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 5848)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:15:25 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3355)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 5297)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 5644)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:15:28 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (4.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:15:28.783316"], ["updated_at", "2024-11-07 22:15:28.783316"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=48
+Completed 302 Found in 30ms (ActiveRecord: 17.5ms | Allocations: 5122)
+Started GET "/waiting?id=48" for 127.0.0.1 at 2024-11-07 22:15:28 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.8ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2443)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 3680)
+Started GET "/check_operator_assigned?id=48" for 127.0.0.1 at 2024-11-07 22:15:34 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"48"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 536)
+Started GET "/check_operator_assigned?id=48" for 127.0.0.1 at 2024-11-07 22:15:39 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"48"}
+  [1m[36mReport Load (0.0ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 537)
+Started GET "/chat.48" for 127.0.0.1 at 2024-11-07 22:15:39 +0100
+Processing by ChatController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index.html.erb within layouts/application
+  Rendered chat/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 297)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2447)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 3332)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:21:53 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3140)
+Completed 200 OK in 23ms (Views: 6.5ms | ActiveRecord: 1.1ms | Allocations: 12302)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:22:02 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3365)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5322)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 5669)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:22:06 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:22:06.380786"], ["updated_at", "2024-11-07 22:22:06.380786"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=49
+Completed 302 Found in 50ms (ActiveRecord: 8.6ms | Allocations: 13601)
+Started GET "/waiting?id=49" for 127.0.0.1 at 2024-11-07 22:22:06 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 1.0ms | Allocations: 304)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2456)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 3937)
+Started GET "/check_operator_assigned?id=49" for 127.0.0.1 at 2024-11-07 22:22:11 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"49"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 631)
+Started GET "/chat.49" for 127.0.0.1 at 2024-11-07 22:22:11 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.7ms | Allocations: 348)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2485)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3677)
+Started GET "/chat.49" for 127.0.0.1 at 2024-11-07 22:25:13 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.8ms | Allocations: 357)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2662)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3788)
+Started GET "/chat.49" for 127.0.0.1 at 2024-11-07 22:29:18 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 1.0ms | Allocations: 356)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 2643)
+Completed 200 OK in 27ms (Views: 24.1ms | Allocations: 3788)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:35:01 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3138)
+Completed 200 OK in 30ms (Views: 16.2ms | ActiveRecord: 3.2ms | Allocations: 6379)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:35:10 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 26.4ms | Allocations: 3373)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 5335)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 5683)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:35:13 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:35:13.651487"], ["updated_at", "2024-11-07 22:35:13.651487"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=50
+Completed 302 Found in 26ms (ActiveRecord: 12.5ms | Allocations: 5185)
+Started GET "/waiting?id=50" for 127.0.0.1 at 2024-11-07 22:35:13 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 5.0ms | Allocations: 305)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 2465)
+Completed 200 OK in 74ms (Views: 42.1ms | ActiveRecord: 0.6ms | Allocations: 4187)
+Started GET "/check_operator_assigned?id=50" for 127.0.0.1 at 2024-11-07 22:35:19 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"50"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 537)
+Started GET "/chat.50" for 127.0.0.1 at 2024-11-07 22:35:19 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 1.2ms | Allocations: 384)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2529)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3414)
+Started GET "/" for 127.0.0.1 at 2024-11-07 22:56:54 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3112)
+Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 1.6ms | Allocations: 6376)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 22:56:55 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3364)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 5306)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5653)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 22:56:59 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 22:56:59.156991"], ["updated_at", "2024-11-07 22:56:59.156991"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=51
+Completed 302 Found in 21ms (ActiveRecord: 7.9ms | Allocations: 4567)
+Started GET "/waiting?id=51" for 127.0.0.1 at 2024-11-07 22:56:59 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.7ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 1.0ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2448)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.7ms | Allocations: 3769)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:04 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:09 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:14 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:19 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:26 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 536)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:31 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:36 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:41 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:46 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:51 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:57:56 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:58:03 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=51" for 127.0.0.1 at 2024-11-07 22:58:48 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 538)
+Started GET "/chat.51" for 127.0.0.1 at 2024-11-07 22:58:48 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.9ms | Allocations: 386)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2695)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3848)
+Started GET "/" for 127.0.0.1 at 2024-11-07 23:08:23 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3154)
+Completed 200 OK in 28ms (Views: 10.6ms | ActiveRecord: 0.8ms | Allocations: 12334)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 23:08:25 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 33.8ms | Allocations: 3343)
+  Rendered layout layouts/application.html.erb (Duration: 45.4ms | Allocations: 5305)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms | Allocations: 5653)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 23:08:28 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (2.2ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 23:08:28.747472"], ["updated_at", "2024-11-07 23:08:28.747472"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=52
+Completed 302 Found in 51ms (ActiveRecord: 10.9ms | Allocations: 13115)
+Started GET "/waiting?id=52" for 127.0.0.1 at 2024-11-07 23:08:28 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 1.1ms | Allocations: 306)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2462)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 3943)
+Started GET "/check_operator_assigned?id=52" for 127.0.0.1 at 2024-11-07 23:08:34 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 629)
+Started GET "/check_operator_assigned?id=52" for 127.0.0.1 at 2024-11-07 23:08:39 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"52"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 537)
+Started GET "/chat.52" for 127.0.0.1 at 2024-11-07 23:08:39 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.9ms | Allocations: 383)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 2530)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 3721)
+Started GET "/" for 127.0.0.1 at 2024-11-07 23:08:52 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2481)
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 4331)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 23:08:59 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1620)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3561)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3803)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 23:09:02 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.7ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 23:09:02.919850"], ["updated_at", "2024-11-07 23:09:02.919850"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=53
+Completed 302 Found in 21ms (ActiveRecord: 7.0ms | Allocations: 4223)
+Started GET "/waiting?id=53" for 127.0.0.1 at 2024-11-07 23:09:02 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"53"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.5ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2201)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 2848)
+Started GET "/check_operator_assigned?id=53" for 127.0.0.1 at 2024-11-07 23:09:08 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"53"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=53" for 127.0.0.1 at 2024-11-07 23:09:13 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"53"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 537)
+Started GET "/chat.53" for 127.0.0.1 at 2024-11-07 23:09:13 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2187)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 2436)
+Started GET "/" for 127.0.0.1 at 2024-11-07 23:11:34 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 326)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2486)
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 4349)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 23:11:44 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1576)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 3542)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 3785)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 23:11:48 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.6ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 23:11:48.307329"], ["updated_at", "2024-11-07 23:11:48.307329"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=54
+Completed 302 Found in 23ms (ActiveRecord: 9.0ms | Allocations: 5107)
+Started GET "/waiting?id=54" for 127.0.0.1 at 2024-11-07 23:11:48 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"54"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.5ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2210)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2856)
+Started GET "/check_operator_assigned?id=54" for 127.0.0.1 at 2024-11-07 23:11:54 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"54"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 538)
+Started GET "/chat.54" for 127.0.0.1 at 2024-11-07 23:11:54 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2191)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 2439)
+Started GET "/" for 127.0.0.1 at 2024-11-07 23:15:34 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+Users loaded: #<ActiveRecord::Relation [#<User id: 1, email: "mario.rossi@example.com", name: "Mario", surname: "Rossi", phone: "1234567890", sex: "M", age: 30, created_at: "2024-09-25 17:36:07.572331000 +0200", updated_at: "2024-09-25 17:36:07.572331000 +0200", blood_type: nil>, #<User id: 2, email: "giulia.bianchi@example.com", name: "Giulia", surname: "Bianchi", phone: "0987654321", sex: "F", age: 25, created_at: "2024-09-25 17:36:07.999812000 +0200", updated_at: "2024-09-25 17:36:07.999812000 +0200", blood_type: nil>, #<User id: 3, email: "luca.verdi@example.com", name: "Luca", surname: "Verdi", phone: "1122334455", sex: "M", age: 28, created_at: "2024-09-25 17:36:08.419824000 +0200", updated_at: "2024-09-25 17:36:08.419824000 +0200", blood_type: nil>, #<User id: 4, email: "fettuccia56@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "male", age: 22, created_at: "2024-09-26 17:00:22.249355000 +0200", updated_at: "2024-09-26 17:00:22.249355000 +0200", blood_type: nil>, #<User id: 5, email: "guariglia@gmail.com", name: "Alessio", surname: "Guariglia", phone: "1313123123", sex: "male", age: 102, created_at: "2024-09-30 15:54:59.689313000 +0200", updated_at: "2024-10-03 15:34:13.550920000 +0200", blood_type: "AB+">, #<User id: 6, email: "irene@gmail.com", name: "irene", surname: "fettuccia", phone: nil, sex: "M", age: 18, created_at: "2024-10-02 15:16:29.772639000 +0200", updated_at: "2024-10-02 15:16:29.772639000 +0200", blood_type: nil>, #<User id: 7, email: "simone@gmail.com", name: "Simone", surname: "Fettuccia", phone: nil, sex: "M", age: 23, created_at: "2024-11-06 23:55:22.598603000 +0100", updated_at: "2024-11-06 23:55:22.598603000 +0100", blood_type: nil>]>
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3127)
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 5825)
+Started GET "/new" for 127.0.0.1 at 2024-11-07 23:15:42 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 3361)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5303)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 5650)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 23:15:45 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (1.4ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 23:15:45.580880"], ["updated_at", "2024-11-07 23:15:45.580880"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=55
+Completed 302 Found in 23ms (ActiveRecord: 8.7ms | Allocations: 4570)
+Started GET "/waiting?id=55" for 127.0.0.1 at 2024-11-07 23:15:45 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"55"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 1.6ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2430)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 0.3ms | Allocations: 3667)
+Started GET "/check_operator_assigned?id=55" for 127.0.0.1 at 2024-11-07 23:15:51 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"55"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=55" for 127.0.0.1 at 2024-11-07 23:15:56 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"55"}
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 537)
+Started GET "/chat.55" for 127.0.0.1 at 2024-11-07 23:15:56 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2536)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2569)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3433)
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    117: }
+    118: 
+    119: 
+    120:   const reportId = '<%= @report.id %>'; // Ottieni l'ID del report dinamicamente
+    121: listenForMessages(reportId); // Ascolta solo i messaggi per questo report
+    122: 
+    123: 
+  
+app/views/chat/index_user.html.erb:120
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 23:18:17 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.2ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 23:18:17.137697"], ["updated_at", "2024-11-07 23:18:17.137697"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=56
+Completed 302 Found in 41ms (ActiveRecord: 10.4ms | Allocations: 21023)
+Started GET "/waiting?id=56" for 127.0.0.1 at 2024-11-07 23:18:17 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.2ms | Allocations: 66)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2204)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 3210)
+Started GET "/check_operator_assigned?id=56" for 127.0.0.1 at 2024-11-07 23:18:22 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"56"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 629)
+Started GET "/check_operator_assigned?id=56" for 127.0.0.1 at 2024-11-07 23:18:27 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"56"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 537)
+Started GET "/chat.56" for 127.0.0.1 at 2024-11-07 23:18:27 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 1.1ms | Allocations: 696)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 729)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1375)
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    117: }
+    118: 
+    119: 
+    120:   const reportId = '<%= @report.id %>'; // Ottieni l'ID del report dinamicamente
+    121: listenForMessages(reportId); // Ascolta solo i messaggi per questo report
+    122: 
+    123: 
+  
+app/views/chat/index_user.html.erb:120
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 23:19:33 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 23:19:33.228694"], ["updated_at", "2024-11-07 23:19:33.228694"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=57
+Completed 302 Found in 19ms (ActiveRecord: 9.6ms | Allocations: 5115)
+Started GET "/waiting?id=57" for 127.0.0.1 at 2024-11-07 23:19:33 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.7ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2606)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 4079)
+Started GET "/check_operator_assigned?id=57" for 127.0.0.1 at 2024-11-07 23:19:38 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"57"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=57" for 127.0.0.1 at 2024-11-07 23:19:43 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"57"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 537)
+Started GET "/chat.57" for 127.0.0.1 at 2024-11-07 23:19:43 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.5ms | Allocations: 365)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2516)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3410)
+Started POST "/reports" for 127.0.0.1 at 2024-11-07 23:22:33 +0100
+Processing by Userpage::HomeController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coordinates"=>"0", "user_id"=>"1", "question1"=>"", "question2"=>"", "question3"=>"", "question4"=>"", "question5"=>"", "question6"=>"", "question7"=>"", "question8"=>"", "question9"=>"", "question10"=>"", "question11"=>"", "question12"=>"", "question13"=>"", "question14"=>"", "contact_method"=>"1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("created_at", "updated_at", "coordinates", "user_id", "question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10", "question11", "question12", "question13", "question14", "contact_method") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2024-11-07 23:22:33.692980"], ["updated_at", "2024-11-07 23:22:33.692980"], ["coordinates", "0"], ["user_id", "1"], ["question1", ""], ["question2", ""], ["question3", ""], ["question4", ""], ["question5", ""], ["question6", ""], ["question7", ""], ["question8", ""], ["question9", ""], ["question10", ""], ["question11", ""], ["question12", ""], ["question13", ""], ["question14", ""], ["contact_method", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/home_controller.rb:43:in `create'
+Redirected to http://localhost:3000/waiting?id=58
+Completed 302 Found in 15ms (ActiveRecord: 6.5ms | Allocations: 4526)
+Started GET "/waiting?id=58" for 127.0.0.1 at 2024-11-07 23:22:33 +0100
+Processing by Userpage::WaitingController#index as HTML
+  Parameters: {"id"=>"58"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/waiting.html.erb within layouts/application
+  Rendered userpage/home/waiting.html.erb within layouts/application (Duration: 0.7ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2580)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4046)
+Started GET "/check_operator_assigned?id=58" for 127.0.0.1 at 2024-11-07 23:22:39 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"58"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 535)
+Started GET "/check_operator_assigned?id=58" for 127.0.0.1 at 2024-11-07 23:22:42 +0100
+Processing by Userpage::WaitingController#check_operator_assigned as */*
+  Parameters: {"id"=>"58"}
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/waiting_controller.rb:14:in `check_operator_assigned'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 537)
+Started GET "/chat.58" for 127.0.0.1 at 2024-11-07 23:22:42 +0100
+Processing by ChatController#index_user as */*
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.9ms | Allocations: 373)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2518)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 3408)
