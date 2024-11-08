@@ -59,7 +59,7 @@
         .then(response => response.json())
         .then(data => {
           if (data.assigned) {
-            window.location.href = "<%= chat_path(@report.id) %>"; // Reindirizza alla chat
+            window.location.href = "<%= chat_path(report_id: @report.id) %>"; // Reindirizza alla chat
           }
         })
         .catch(error => {

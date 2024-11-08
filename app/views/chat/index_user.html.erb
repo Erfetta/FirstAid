@@ -50,6 +50,7 @@
 </body>
 
 <script type="module">
+ 
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
   import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js';
 
@@ -63,79 +64,76 @@
     appId: "1:842153800095:web:7115d88af786b85ba84daa",
     measurementId: "G-923GDNFVBT"
   };
-
+  
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
 
+  const reportId = '<%= @report_id %>'; // Inietta l'ID del report come variabile JavaScript
+  listenForMessages(reportId); // Avvia l’ascolto dei messaggi per questo report
+
   // Funzione per inviare un messaggio
-function sendMessage(message, senderType, reportId) {
+  function sendMessage(message, senderType, reportId) {
+  console.log("Invio messaggio:", message, "Tipo:", senderType, "Report ID:", reportId); // Aggiungi questo log
   const messagesRef = ref(database, 'messages');
   push(messagesRef, {
     text: message,
     senderType: senderType, 
     timestamp: Date.now(),
     reportId: reportId
+  })
+  .then(() => {
+    console.log("Messaggio inviato con successo");
+  })
+  .catch((error) => {
+    console.error("Errore durante l'invio del messaggio:", error);
   });
 }
 
 
   // Funzione per ascoltare i messaggi
   function listenForMessages(reportId) {
-  const messagesRef = ref(database, 'messages');
-  
-  // Aggiungi un filtro per l'ID del report
-  onValue(messagesRef, (snapshot) => {
-    const messages = snapshot.val();
-    const messagesContainer = document.getElementById('messages');
-    messagesContainer.innerHTML = ''; // Pulisce i messaggi esistenti
+    const messagesRef = ref(database, 'messages');
+    onValue(messagesRef, (snapshot) => {
+      const messages = snapshot.val();
+      const messagesContainer = document.getElementById('messages');
+      messagesContainer.innerHTML = '';
 
-    if (messages) {
-      for (let id in messages) {
-        const message = messages[id];
-        
-        // Filtra i messaggi in base al reportId
-        if (message.reportId === reportId) {
-          const messageDiv = document.createElement('div');
-          messageDiv.classList.add('message'); // Applica la classe generica per il messaggio
+      if (messages) {
+        for (let id in messages) {
+          const message = messages[id];
+          if (message.reportId === reportId) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
 
-          // Determina da chi proviene il messaggio e applica la classe corrispondente
-          if (message.senderType === 'user') {
-            messageDiv.classList.add('current-message'); 
-          } else if (message.senderType === 'operator') {
-            messageDiv.classList.add('other-message'); 
+            if (message.senderType === 'user') {
+              messageDiv.classList.add('current-message'); 
+            } else if (message.senderType === 'operator') {
+              messageDiv.classList.add('other-message'); 
+            }
+
+            messageDiv.textContent = `${new Date(message.timestamp).toLocaleTimeString()}: ${message.text}`;
+            messagesContainer.appendChild(messageDiv);
           }
-
-          messageDiv.textContent = `${new Date(message.timestamp).toLocaleTimeString()}: ${message.text}`;
-          messagesContainer.appendChild(messageDiv);
         }
+      } else {
+        console.log('Nessun messaggio trovato per questo report');
       }
-    } else {
-      console.log('Nessun messaggio trovato per questo report');
+    });
+  }
+
+  // Evento per inviare il messaggio
+  const chatForm = document.getElementById('chat-form');
+  chatForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const messageInput = document.getElementById('message-input');
+    const messageText = messageInput.value.trim();
+
+    if (messageText) {
+      const senderType = 'user';
+      sendMessage(messageText, senderType, reportId);
+      messageInput.value = '';
     }
   });
-}
-
-
-  const reportId = '<%= @report_id %>';
-listenForMessages(reportId); // Ascolta solo i messaggi per questo report
-
-
-  // Aggiungi un evento al form per inviare il messaggio
-const chatForm = document.getElementById('chat-form');
-chatForm.addEventListener('submit', function(event) {
-  event.preventDefault();  // Evita il comportamento predefinito del form (ricarica pagina)
-  const messageInput = document.getElementById('message-input');
-  const messageText = messageInput.value.trim();
-  
-  const reportId = '<%= @report_id %>'; // L'ID del report corrente, che puoi ottenere dinamicamente
-
-  if (messageText) {
-    const senderType = 'user';  // Cambia dinamicamente se sei un operatore
-    sendMessage(messageText, senderType, reportId);  // Invia il messaggio
-    messageInput.value = '';  // Pulisce il campo di input dopo l'invio
-  }
-});
-
 </script>
 
 </html>

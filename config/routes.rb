@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     post 'submit_pressure', to: 'measurement_data#create_pressure'
     post 'submit_bpm', to: 'measurement_data#create_bpm'
     post 'submit_oxygen', to: 'measurement_data#create_oxygen'
-    get 'chat', to: 'chat#index_user'
+  
+    get 'chat/:report_id', to: 'chat#index_user', as: 'chat'
+
 
 
     #definizione rotta per la pagina di attesa
@@ -53,7 +55,9 @@ Rails.application.routes.draw do
     get 'manual_element/:id', to: 'operatorpage/manual#manual_element', as: 'manual_element'
     get 'profile', to: 'operatorpage/profile#operator_profile', as: 'profile'
     get 'report_history_list', to: 'operatorpage/history#report_history_list', as: 'report_history_list'
-    get 'chat', to: 'chat#index_operator'
+
+    get 'chat/:report_id', to: 'chat#index_operator', as: 'chat'
+
 
     namespace :operatorpage do
       resources :reports, only: [:show, :update] # Rotte per la parte operator

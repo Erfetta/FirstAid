@@ -46,11 +46,12 @@
   <button type="submit">Invia</button>
 </form>
 
-<%= link_to 'Torna alla pagina precedente', request.referrer || root_path, class: 'button' %>
+<%= link_to 'Vai al report', show_report_path(@report_id), class: 'button' %>
 
 </body>
 
 <script type="module">
+    
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
   import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js';
 
@@ -65,20 +66,32 @@
     measurementId: "G-923GDNFVBT"
   };
 
+
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
+
+  const reportId = '<%= @report_id %>'; // Inietta l'ID del report come variabile JavaScript
+  listenForMessages(reportId); // Avvia l’ascolto dei messaggi per questo report
 
 
   // Funzione per inviare un messaggio
 function sendMessage(message, senderType, reportId) {
+  console.log("Invio messaggio:", message, "Tipo:", senderType, "Report ID:", reportId); // Aggiungi questo log
   const messagesRef = ref(database, 'messages');
   push(messagesRef, {
     text: message,
-    senderType: senderType, // Tipo di mittente ('user' o 'operator')
+    senderType: senderType, 
     timestamp: Date.now(),
-    reportId: reportId // ID del report a cui il messaggio appartiene
+    reportId: reportId
+  })
+  .then(() => {
+    console.log("Messaggio inviato con successo");
+  })
+  .catch((error) => {
+    console.error("Errore durante l'invio del messaggio:", error);
   });
 }
+
 
   // Funzione per ascoltare i messaggi di un report specifico
 function listenForMessages(reportId) {
@@ -117,7 +130,7 @@ function listenForMessages(reportId) {
 }
 
 
-  const reportId = '<%= @report_id %>';
+ 
 listenForMessages(reportId); // Ascolta solo i messaggi per questo report
 
 

@@ -73,7 +73,8 @@
                 <%= button_to 'Prendi incarico', update_op_id_path(@report), method: :patch, class: 'report-button_operator chooseReportBtn' %>
                 <%= button_to 'Rimuovi incarico', remove_me_from_report_path(@report), method: :patch, class: 'report-button_operator removeReportBtn' %>
                 <% if @rep_taken%>
-                <%= link_to 'Vai alla Chat', chat_path, class: 'btn btn-primary' %>
+                <%= link_to 'Vai alla Chat', chat_path(report_id: @report.id) %>
+
 
                 <style>
                   .chooseReportBtn {
