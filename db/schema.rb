@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_11_07_204932) do
+ActiveRecord::Schema.define(version: 2024_11_08_122529) do
 
   create_table "measurement_data", force: :cascade do |t|
     t.string "measurement_type"
@@ -19,15 +19,6 @@ ActiveRecord::Schema.define(version: 2024_11_07_204932) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_measurement_data_on_user_id"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "text"
-    t.datetime "timestamp"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "operators", force: :cascade do |t|
@@ -127,7 +118,6 @@ ActiveRecord::Schema.define(version: 2024_11_07_204932) do
   end
 
   add_foreign_key "measurement_data", "users"
-  add_foreign_key "messages", "users"
   add_foreign_key "operators", "supervisors"
   add_foreign_key "report_dones", "operators"
   add_foreign_key "report_dones", "users"
