@@ -11,6 +11,14 @@ module Userpage
       @report_exists = @user_report.present?
     end
 
+    def new
+      if current_user.present?
+        @user_id = current_user.id
+      else
+        @user_id = 8 # Utente non loggato
+      end
+    end
+
     #option
     def option
       # Logica per mostrare il tutorial
@@ -60,8 +68,6 @@ module Userpage
         flash[:alert] = 'Errore nella creazione del report'
       end
     end
-
-    
 
     private
     def tutorialID

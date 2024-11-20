@@ -75,10 +75,11 @@
 }
 
 .report_info_operator{
-    height: 39%;
+    height: 40%;
     margin-top: 10px;
     border: 2px solid #ccc;
     border-radius: 1rem;
+    overflow: hidden;
 }
 .report_info_operator h2{
     text-align: center;
@@ -92,6 +93,8 @@
 .report_info_container{
     display: flex;
     flex-direction: row;
+    height: 100%;
+    overflow: hidden;
 }
 .report_info_container h3{
     margin-left: 1rem;
@@ -102,11 +105,14 @@
 }
 .report_info_c2{
     width: 50%;
+    height: 100%;
+    overflow: hidden;
 }
 .report_info_c2_sub{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
+    margin-right: 1rem;
+    max-height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 10rem;
 }
 .report-button_operator{
     margin: 1rem;
@@ -134,7 +140,6 @@
     max-width: 400px;
     background-color: #f1f1f1;
     padding: 20px;
-    overflow-y: scroll;
     margin: 10px 10px 10px 0px;
     border-radius: 1rem;
 }

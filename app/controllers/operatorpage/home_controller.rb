@@ -7,7 +7,7 @@ module Operatorpage
     
     def operator_index
       @operator = current_operator
-      @reports = Report.where(operator_id: nil).order(created_at: :desc)
+      @reports = Report.where(operator_id: nil).or(Report.where(operator_id: current_operator.id)).order(created_at: :desc)
     end
 
     def update_op_id

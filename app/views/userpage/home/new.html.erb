@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Question Slider</title>
-<style>
-           .indicator_user {
-    position: absolute;
-    top: -14px; /* Posizionato sopra le icone */
-    left: 50%; /* Posizionato orizzontalmente al centro del contenitore */
-    transform: translateX(-50%); /* Centrato sopra il punto centrale */
-    height: 36px;
-    width: 36px;
-    background-color: #FFF;
-    border: 6px solid #4070F4;
-    border-radius: 50%;
-    pointer-events: none; /* Assicurati che l'indicatore non interferisca con altri elementi */
-    z-index: 10; /* Assicurati che l'indicatore sia sopra altri elementi */
-}
 
-            </style>
-
+    <style>
+        .indicator_user {
+            position: absolute;
+            top: -14px; /* Posizionato sopra le icone */
+            left: 50%; /* Posizionato orizzontalmente al centro del contenitore */
+            transform: translateX(-50%); /* Centrato sopra il punto centrale */
+            height: 36px;
+            width: 36px;
+            background-color: #FFF;
+            border: 6px solid #4070F4;
+            border-radius: 50%;
+            pointer-events: none; /* Assicurati che l'indicatore non interferisca con altri elementi */
+            z-index: 10; /* Assicurati che l'indicatore sia sopra altri elementi */
+        }
+    </style>
 
 </head>
 <body>
@@ -218,7 +217,18 @@
 
 </body>
     <script>
+
+        // geolocalizzazione
+        let geo_coordinates = 0;
+        navigator.geolocation.getCurrentPosition(function(position) {
+            geo_coordinates = position.coords.latitude + ", " + position.coords.longitude;
+        });
+
+        // user id
+        let UserId = "<%= @user_id %>";
+        console.log(UserId);
         
+        // slider
         let currentSlide = 0;
 
         function showSlide(index) {
@@ -273,8 +283,8 @@
                 q13 = document.getElementById('q13').value
                 q14 = document.getElementById('q14').value
 
-                document.getElementById('report_coordinates').value = 0; // Valore arbitrario
-                document.getElementById('report_user_id').value = 1; // Valore arbitrario
+                document.getElementById('report_coordinates').value = geo_coordinates;
+                document.getElementById('report_user_id').value = UserId;
                 document.getElementById('report_question1').value = q1;
                 document.getElementById('report_question2').value = q2;
                 document.getElementById('report_question3').value = q3;

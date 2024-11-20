@@ -39,7 +39,7 @@
             </div>
             <div class="chat_section_operator">
               <% cm = @report.contact_method %>
-              <% if cm != 2%>
+              <% if cm != 1%>
                 <p> L'utente non ha selezionato la chat come metodo di contatto</p>
               <% else %>
                 inserire chat
@@ -60,22 +60,24 @@
                 <% datetime = @report.created_at.to_s.split(' ')%>
                 <p><strong>Data: </strong><%= datetime[0] %></p>
                 <p><strong>Orario:</strong> <%= datetime[1] %></p>
+                <% if @report.coordinates != '0'%>
                 <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
+                <% else %>
+                <p><strong>Coordinate:</strong> Non condivise</p>
+                <% end %>
                 <p><strong>Modalità di contatto:</strong> 
                 <% cm = @report.contact_method %>
                 <% if cm == 0%>
                   Non contattare </p>
                 <% elsif cm == 1%>
-                  Telefono </p>
-                <% elsif cm == 2%>
                   Chat </p>
+                <% elsif cm == 2%>
+                  Telefono </p>
                 <% end %>
                 <%= button_to 'Prendi incarico', update_op_id_path(@report), method: :patch, class: 'report-button_operator chooseReportBtn' %>
                 <%= button_to 'Rimuovi incarico', remove_me_from_report_path(@report), method: :patch, class: 'report-button_operator removeReportBtn' %>
                 <% if @rep_taken%>
                 <%= link_to 'Vai alla Chat', chat_path(report_id: @report.id) %>
-
-
                 <style>
                   .chooseReportBtn {
                     display: none;
@@ -97,28 +99,29 @@
               </div>
               <div class="report_info_c2">
                 <h3>Informazioni paziente</h3>
-                <div class="report_info_c2_sub">
-                  <p><strong>Domanda 1:</strong> <%= @report.question1 %></p>
-                  <p><strong>Domanda 2:</strong> <%= @report.question2 %></p>
-                  <p><strong>Domanda 3:</strong> <%= @report.question3 %></p>
-                  <p><strong>Domanda 4:</strong> <%= @report.question4 %></p>
-                  <p><strong>Domanda 5:</strong> <%= @report.question5 %></p>
-                  <p><strong>Domanda 6:</strong> <%= @report.question6 %></p>
-                  <p><strong>Domanda 7:</strong> <%= @report.question7 %></p>
-                  <p><strong>Domanda 8:</strong> <%= @report.question8 %></p>
-                  <p><strong>Domanda 9:</strong> <%= @report.question9 %></p>
-                  <p><strong>Domanda 10:</strong> <%= @report.question10 %></p>
-                  <p><strong>Domanda 11:</strong> <%= @report.question11 %></p>
-                  <p><strong>Domanda 12:</strong> <%= @report.question12 %></p>
-                  <p><strong>Domanda 13:</strong> <%= @report.question13 %></p>
-                  <p><strong>Domanda 14:</strong> <%= @report.question14 %></p>
-                </div>
+                <aside class="report_info_c2_sub">
+                  <p><strong>È coscente:</strong> <%= @report.question1 %></p>
+                  <p><strong>Respira:</strong> <%= @report.question2 %></p>
+                  <p><strong>Ha battito:</strong> <%= @report.question3 %></p>
+                  <p><strong>Presenta emorragie:</strong> <%= @report.question4 %></p>
+                  <p><strong>Presenta contusioni:</strong> <%= @report.question5 %></p>
+                  <p><strong>Reagisce agli stimoli:</strong> <%= @report.question6 %></p>
+                  <p><strong>Pupille reattive:</strong> <%= @report.question7 %></p>
+                  <p><strong>Respirazione regolare:</strong> <%= @report.question8 %></p>
+                  <p><strong>Frequenza respirazione:</strong> <%= @report.question9 %></p>
+                  <p><strong>Battito regolare:</strong> <%= @report.question10 %></p>
+                  <p><strong>Frequenza cardiaca:</strong> <%= @report.question11 %></p>
+                  <p><strong>Difficoltà di movimento:</strong> <%= @report.question12 %></p>
+                  <p><strong>Problemi noti:</strong> <%= @report.question13 %></p>
+                  <p><strong>Note segnalazione:</strong> <%= @report.question14 %></p>
+                </aside>
               </div>
             </div>
           </div>
         </div>
 
         <div class="user_info_operator">
+          <% if @user.id != 8%>
             <h2>Informazioni utente</h2>
             <p><strong>User ID:</strong> <%= @user.id %></p>
             <p><strong>Nome:</strong> <%= @user.name %></p>
@@ -126,6 +129,9 @@
             <p><strong>Età:</strong> <%= @user.age %></p>
             <p><strong>Sesso:</strong> <%= @user.sex %></p>
             <p><strong>Cellulare:</strong> <%= @user.phone %></p>
+          <% else %>
+            <h2>Utente non registrato </h2>
+          <% end %>
         </div>
     </div>
 </body>
