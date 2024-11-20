@@ -1,8 +1,11 @@
 module Userpage
   class HomeController < ApplicationController
     def user_index
-     
-      @user_report = Report.find_by(user_id: current_user.id)
+      if current_user.present?
+        @user_report = Report.find_by(user_id: current_user.id)
+      else
+        @user_report = nil
+      end
 
       # Passa l'esito della ricerca alla vista (verifica se il report esiste)
       @report_exists = @user_report.present?
