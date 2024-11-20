@@ -1,8 +1,11 @@
 module Userpage
   class HomeController < ApplicationController
     def user_index
-      @users = User.all
-      Rails.logger.debug "Users loaded: #{@users.inspect}" # Per debugging
+     
+      @user_report = Report.find_by(user_id: current_user.id)
+
+      # Passa l'esito della ricerca alla vista (verifica se il report esiste)
+      @report_exists = @user_report.present?
     end
 
     #option
@@ -19,6 +22,7 @@ module Userpage
       # Logica per mostrare un elemento del tutorial
     end
 
+ 
     #report
     def create
       @report = Report.new(

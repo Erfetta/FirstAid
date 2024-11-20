@@ -27618,3 +27618,358 @@ Processing by Operatorpage::HomeController#operator_index as */*
   Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3290)
   Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5238)
 Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 1.0ms | Allocations: 6405)
+Started GET "/login" for 127.0.0.1 at 2024-11-20 00:26:21 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Operatorpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/login/op_login.html.erb within layouts/application
+  Rendered operatorpage/login/op_login.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1465)
+  Rendered layout layouts/application.html.erb (Duration: 102.8ms | Allocations: 49066)
+Completed 200 OK in 114ms (Views: 105.0ms | ActiveRecord: 0.0ms | Allocations: 52335)
+Started POST "/login" for 127.0.0.1 at 2024-11-20 00:26:29 +0100
+Processing by Operatorpage::LoginController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "operator"=>{"email"=>"sara.deluca@example.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOperator Load (0.2ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."email" = ? LIMIT ?[0m  [["email", "sara.deluca@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/login_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/login/op_login.html.erb within layouts/application
+  Rendered operatorpage/login/op_login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 412)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2416)
+Completed 200 OK in 175ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 9965)
+Started POST "/login" for 127.0.0.1 at 2024-11-20 00:26:39 +0100
+Processing by Operatorpage::LoginController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "operator"=>{"email"=>"giovanni.ferrari@example.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."email" = ? LIMIT ?[0m  [["email", "giovanni.ferrari@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/login_controller.rb:10:in `create'
+  [1m[36mOperator Load (0.2ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/login_controller.rb:13:in `create'
+Redirected to http://localhost:4000/
+Completed 302 Found in 160ms (ActiveRecord: 0.4ms | Allocations: 1586)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:26:39 +0100
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 12516)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 14462)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.9ms | Allocations: 17786)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:26:49 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3471)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 5434)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.4ms | Allocations: 6740)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:26:59 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 3472)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5436)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 6592)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:00 +0100
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 3471)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 5413)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 6533)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:11 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3471)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 5413)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 6548)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:21 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3471)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5413)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 6556)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:31 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3471)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 5413)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 6546)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:40 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 3521)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 5463)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 6600)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:41 +0100
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (1.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3522)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 5486)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 1.4ms | Allocations: 6625)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:43 +0100
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 3521)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 5463)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 6592)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:27:53 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.5ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3521)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 5463)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.7ms | Allocations: 6602)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:28:03 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3469)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5411)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 0.6ms | Allocations: 6547)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:28:07 +0100
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3470)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5432)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 6563)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:28:17 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3469)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 5431)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 6578)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:28:27 +0100
+Processing by Operatorpage::HomeController#operator_index as */*
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 3468)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 5410)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 6554)
+Started GET "/show_report/79" for 127.0.0.1 at 2024-11-20 00:28:28 +0100
+Processing by Operatorpage::HomeController#show_report as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:32:in `set_report'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:33:in `set_report'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/show_report.html.erb within layouts/application
+  Rendered operatorpage/home/show_report.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1953)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3895)
+Completed 200 OK in 21ms (Views: 6.5ms | ActiveRecord: 0.9ms | Allocations: 12218)
+Started PATCH "/update_op_id/79" for 127.0.0.1 at 2024-11-20 00:28:31 +0100
+Processing by Operatorpage::HomeController#update_op_id as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"79"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:14:in `update_op_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+  [1m[36mReport Update (0.4ms)[0m  [1m[33mUPDATE "reports" SET "updated_at" = ?, "operator_id" = ? WHERE "reports"."id" = ?[0m  [["updated_at", "2024-11-20 00:28:31.379550"], ["operator_id", "1"], ["id", 79]]
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+Redirected to http://localhost:4000/show_report/79
+Completed 302 Found in 29ms (ActiveRecord: 6.3ms | Allocations: 8633)
+Started GET "/show_report/79" for 127.0.0.1 at 2024-11-20 00:28:31 +0100
+Processing by Operatorpage::HomeController#show_report as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.0ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:32:in `set_report'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:33:in `set_report'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/show_report.html.erb within layouts/application
+  Rendered operatorpage/home/show_report.html.erb within layouts/application (Duration: 0.7ms | Allocations: 889)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2830)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 4743)
+Started GET "/chat/79" for 127.0.0.1 at 2024-11-20 00:28:34 +0100
+Processing by ChatController#index_operator as HTML
+  Parameters: {"report_id"=>"79"}
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_operator.html.erb within layouts/application
+  Rendered chat/index_operator.html.erb within layouts/application (Duration: 2.1ms | Allocations: 390)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2495)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3665)
+Started GET "/show_report/79" for 127.0.0.1 at 2024-11-20 00:29:42 +0100
+Processing by Operatorpage::HomeController#show_report as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.8ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:32:in `set_report'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:33:in `set_report'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/show_report.html.erb within layouts/application
+  Rendered operatorpage/home/show_report.html.erb within layouts/application (Duration: 2.7ms | Allocations: 897)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2839)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 1.0ms | Allocations: 4734)
+Started PATCH "/remove_me_from_report/79" for 127.0.0.1 at 2024-11-20 00:29:50 +0100
+Processing by Operatorpage::HomeController#remove_me_from_report as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"79"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:22:in `remove_me_from_report'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:24:in `remove_me_from_report'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:24:in `remove_me_from_report'
+  [1m[36mReport Update (0.2ms)[0m  [1m[33mUPDATE "reports" SET "updated_at" = ?, "operator_id" = ? WHERE "reports"."id" = ?[0m  [["updated_at", "2024-11-20 00:29:50.504877"], ["operator_id", nil], ["id", 79]]
+  ↳ app/controllers/operatorpage/home_controller.rb:24:in `remove_me_from_report'
+  [1m[36mTRANSACTION (15.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:24:in `remove_me_from_report'
+Redirected to http://localhost:4000/show_report/79
+Completed 302 Found in 50ms (ActiveRecord: 17.1ms | Allocations: 5903)
+Started GET "/show_report/79" for 127.0.0.1 at 2024-11-20 00:29:50 +0100
+Processing by Operatorpage::HomeController#show_report as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:32:in `set_report'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:33:in `set_report'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/show_report.html.erb within layouts/application
+  Rendered operatorpage/home/show_report.html.erb within layouts/application (Duration: 1.4ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2778)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.6ms | Allocations: 4670)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:29:54 +0100
+Processing by Operatorpage::HomeController#operator_index as HTML
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/operator_index.html.erb within layouts/application
+  [1m[36mReport Load (7.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."operator_id" IS NULL ORDER BY "reports"."created_at" DESC[0m
+  ↳ app/views/operatorpage/home/operator_index.html.erb:40
+  Rendered operatorpage/home/operator_index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3469)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 5436)
+Completed 200 OK in 19ms (Views: 9.7ms | ActiveRecord: 7.8ms | Allocations: 6576)
+Started GET "/show_report/78" for 127.0.0.1 at 2024-11-20 00:29:57 +0100
+Processing by Operatorpage::HomeController#show_report as HTML
+  Parameters: {"id"=>"78"}
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:32:in `set_report'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:33:in `set_report'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/show_report.html.erb within layouts/application
+  Rendered operatorpage/home/show_report.html.erb within layouts/application (Duration: 3.5ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2793)
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 4694)
+Started PATCH "/update_op_id/78" for 127.0.0.1 at 2024-11-20 00:29:59 +0100
+Processing by Operatorpage::HomeController#update_op_id as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"78"}
+  [1m[36mOperator Load (0.2ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:14:in `update_op_id'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+  [1m[36mReport Update (0.2ms)[0m  [1m[33mUPDATE "reports" SET "updated_at" = ?, "operator_id" = ? WHERE "reports"."id" = ?[0m  [["updated_at", "2024-11-20 00:29:59.619703"], ["operator_id", "1"], ["id", 78]]
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/operatorpage/home_controller.rb:16:in `update_op_id'
+Redirected to http://localhost:4000/show_report/78
+Completed 302 Found in 36ms (ActiveRecord: 9.0ms | Allocations: 4896)
+Started GET "/show_report/78" for 127.0.0.1 at 2024-11-20 00:29:59 +0100
+Processing by Operatorpage::HomeController#show_report as HTML
+  Parameters: {"id"=>"78"}
+  [1m[36mOperator Load (24.6ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? ORDER BY "operators"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authenticate_operator!'
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:32:in `set_report'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/operatorpage/home_controller.rb:33:in `set_report'
+  Rendering layout layouts/application.html.erb
+  Rendering operatorpage/home/show_report.html.erb within layouts/application
+  Rendered operatorpage/home/show_report.html.erb within layouts/application (Duration: 5.0ms | Allocations: 884)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2845)
+Completed 200 OK in 95ms (Views: 7.5ms | ActiveRecord: 24.9ms | Allocations: 5103)
+Started GET "/chat/78" for 127.0.0.1 at 2024-11-20 00:30:03 +0100
+Processing by ChatController#index_operator as HTML
+  Parameters: {"report_id"=>"78"}
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_operator.html.erb within layouts/application
+  Rendered chat/index_operator.html.erb within layouts/application (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2175)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 2432)

@@ -27660,3 +27660,292 @@ Processing by Userpage::ProfilesController#profile as HTML
   Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1134)
   Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 3075)
 Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 4333)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:18:58 +0100
+  [1m[35m (13.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (1.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1275)
+  Rendered layout layouts/application.html.erb (Duration: 124.1ms | Allocations: 48836)
+Completed 200 OK in 190ms (Views: 136.5ms | ActiveRecord: 4.3ms | Allocations: 61906)
+Started GET "/new" for 127.0.0.1 at 2024-11-19 15:19:11 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 3587)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 5614)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 5965)
+Started GET "/new" for 127.0.0.1 at 2024-11-19 15:20:52 +0100
+Processing by Userpage::HomeController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:26:in `new'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:26:in `new'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.4ms | Allocations: 8586)
+  
+NoMethodError (undefined method `id=' for nil:NilClass):
+  
+app/controllers/userpage/home_controller.rb:26:in `new'
+Started GET "/new" for 127.0.0.1 at 2024-11-19 15:21:10 +0100
+Processing by Userpage::HomeController#new as HTML
+Completed 500 Internal Server Error in 2ms (Allocations: 1191)
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/userpage/home_controller.rb:26:in `new'
+Started GET "/new" for 127.0.0.1 at 2024-11-19 15:21:22 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1599)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3563)
+Completed 200 OK in 7ms (Views: 6.1ms | Allocations: 4458)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:22:11 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 543)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2485)
+Completed 200 OK in 57ms (Views: 4.4ms | ActiveRecord: 3.4ms | Allocations: 21732)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:28:21 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3062)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 6082)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:28:45 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 932)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3024)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 5350)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:30:21 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4043)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4076)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms | Allocations: 5494)
+  
+ActionView::Template::Error (undefined local variable or method `new_report_path' for #<ActionView::Base:0x000000000123b8>
+Did you mean?  new_registration_path):
+    32:             <% end %>
+    33:             <% else %>
+    34:             <!-- Se il report non esiste, mostra il bottone per creare un nuovo report -->
+    35:             <%= link_to new_report_path, class: 'button_user large-button_user' do %>
+    36:                 <i class="bx bx-plus"></i> <!-- Icona di creazione -->
+    37:             <% end %>
+    38:             <% end %>
+  
+app/views/userpage/home/user_index.html.erb:35
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:30:43 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3020)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 5299)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:31:33 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3000)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 5262)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:31:57 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3000)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.2ms | Allocations: 5286)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:32:17 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 358)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2320)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 3805)
+Started GET "/chat/0" for 127.0.0.1 at 2024-11-19 15:32:21 +0100
+Processing by ChatController#index_user as HTML
+  Parameters: {"report_id"=>"0"}
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 1.6ms | Allocations: 383)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2542)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3763)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:33:21 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3022)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 5323)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:34:16 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3023)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 5322)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:34:26 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 932)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 3023)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.1ms | Allocations: 5320)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:34:37 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3022)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 5322)
+Started GET "/chat/0" for 127.0.0.1 at 2024-11-19 15:35:21 +0100
+Processing by ChatController#index_user as HTML
+  Parameters: {"report_id"=>"0"}
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 1.1ms | Allocations: 375)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2680)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3791)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:35:23 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2876)
+Completed 200 OK in 16ms (Views: 5.8ms | ActiveRecord: 2.2ms | Allocations: 4952)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:38:50 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3021)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 5334)
+Started GET "/" for 127.0.0.1 at 2024-11-19 15:39:25 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2298)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 3742)
+Started GET "/new" for 127.0.0.1 at 2024-11-20 00:24:13 +0100
+Processing by Userpage::HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3357)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5299)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 5645)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:28:38 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 350)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2292)
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 0.8ms | Allocations: 4429)
+Started GET "/chat/78" for 127.0.0.1 at 2024-11-20 00:28:39 +0100
+Processing by ChatController#index_user as HTML
+  Parameters: {"report_id"=>"78"}
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 1.5ms | Allocations: 376)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2493)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3352)
+Started GET "/" for 127.0.0.1 at 2024-11-20 00:30:12 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ? LIMIT ?[0m  [["user_id", "5"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:5:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 357)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 2322)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 3780)
+Started GET "/chat/78" for 127.0.0.1 at 2024-11-20 00:30:18 +0100
+Processing by ChatController#index_user as HTML
+  Parameters: {"report_id"=>"78"}
+  Rendering layout layouts/application.html.erb
+  Rendering chat/index_user.html.erb within layouts/application
+  Rendered chat/index_user.html.erb within layouts/application (Duration: 0.3ms | Allocations: 50)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2154)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 2411)
