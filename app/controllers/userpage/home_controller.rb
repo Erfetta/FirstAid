@@ -1,14 +1,17 @@
 module Userpage
   class HomeController < ApplicationController
     def user_index
+      @report_exists = false
+      @user_report = nil
       if current_user.present?
-        @user_report = Report.find_by(user_id: current_user.id)
-      else
-        @user_report = nil
-      end
-
-      # Passa l'esito della ricerca alla vista (verifica se il report esiste)
-      @report_exists = @user_report.present?
+        @user_reports = Report.where(user_id: current_user.id)
+        for report in @user_reports
+          if report.contact_method == 1
+            @user_report = report
+            @report_exists = true
+          end
+        end
+      end  
     end
 
     def new

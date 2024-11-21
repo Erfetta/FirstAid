@@ -26,7 +26,7 @@
             <i class='bx bxs-book'></i> <!-- Icona del libro -->
             <% end %>
          <% if @report_exists %>
-            <!-- Se il report esiste, mostra il bottone per accedere alla chat -->
+            <!-- Se il report esiste ed aveva chat come metodo di contatto, mostra il bottone per accedere alla chat -->
             <%= link_to chat_path(report_id: @user_report.id), class: 'button_user large-button_user' do %>
                 <i class="bx bx-chat"></i> <!-- Icona della chat -->
             <% end %>
