@@ -13,9 +13,16 @@
     overflow: hidden;
 }
 
-.body_user.dark {
-    background-color: #121212;
-    color: #ffffff;
+/* Tema scuro */
+.body_user.dark-theme {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+/* Tema chiaro */
+.body_user.light-theme {
+    background-color: #4070F4;;
+    color: #000000;
 }
 
 
@@ -112,7 +119,9 @@
     position: relative; /* Assicurati che il contenitore sia relativamente posizionato */
     
 }
-.link-item{
+
+
+.link-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,63 +129,103 @@
     height: 120px;
     width: 95px;
     text-decoration: none;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--link-color); /* Colore del testo dinamico */
+    position: relative; /* Necessario per posizionare .link-text rispetto a questo contenitore */
 }
-.link-item.active{
+
+.link-item.active {
     transform: translateY(-10px);
 }
-.link-icon{
+
+.link-icon {
     font-size: 38px;
-    color: #999;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--icon-color); /* Colore dell'icona dinamico */
 }
-.link-item.active .link-icon{
-    color: #4070F4;
+
+.link-item.active .link-icon {
+    color: var(--icon-active-color); /* Colore icona attiva dinamico */
 }
-.link-text{
+
+.link-text {
     position: absolute;
+    bottom: 25px; /* Posiziona il testo sotto l'icona */
     font-size: 12px;
     font-weight: 500;
-    color: #4070F4;
-    opacity: 0;
-    transform: translateY(32px);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--text-color); /* Colore del testo dinamico */
+    opacity: 0; /* Invisibile di default */
+    transform: translateY(5px); /* Per un effetto di movimento */
+    white-space: nowrap; /* Evita che il testo vada a capo */
 }
-.link-item.active .link-text{
-    opacity: 1;
+
+.link-item.active .link-text {
+    opacity: 1; /* Rende visibile il testo */
+    transform: translateY(0); /* Ripristina posizione */
+}
+
+/* Temi: Variabili per chiaro e scuro */
+:root {
+    --link-color: #000; /* Colore predefinito del link (tema chiaro) */
+    --icon-color: #999; /* Colore predefinito dell'icona (tema chiaro) */
+    --icon-active-color: #4070F4; /* Colore icona attiva (tema chiaro) */
+    --text-color: #4070F4; /* Colore testo attivo (tema chiaro) */
+}
+
+body.dark-theme {
+    --link-color: #FFF; /* Colore del link (tema scuro) */
+    --icon-color: #BBB; /* Colore dell'icona (tema scuro) */
+    --icon-active-color: #000000; /* Colore icona attiva (tema scuro) */
+    --text-color: #000000; /* Colore testo attivo (tema scuro) */
 }
 
 
-.indicator_user{
+
+
+/* Stile di base per indicator_user */
+.indicator_user {
     position: absolute;
     top: -14px; /* Spostato verso il basso per apparire sopra le icone */
     height: 36px;
     width: 36px;
-    background-color: #FFF;
-    border: 6px solid #4070F4;
+    background-color: var(--indicator-bg); /* Variabile per il colore di sfondo */
+    border: 6px solid var(--indicator-border); /* Variabile per il colore del bordo */
     border-radius: 50%;
     transform: translateX(-50%);
 }
+
 .indicator_user::before,
-.indicator_user::after{
+.indicator_user::after {
     content: '';
     position: absolute;
     bottom: -8px;
     height: 24px;
     width: 19px;
+    background-color: var(--indicator-bg); /* Variabile per il colore di sfondo */
 }
-.indicator_user::before{
+
+.indicator_user::before {
     left: -22px;
-    background-color: #FFF;
     border-top-right-radius: 25px;
-    box-shadow: 1px -13px #4070F4;
+    box-shadow: 1px -13px var(--indicator-border); /* Variabile per il colore dell'ombra */
 }
-.indicator_user::after{
+
+.indicator_user::after {
     right: -22px;
-    background-color: #FFF;
     border-top-left-radius: 25px;
-    box-shadow: -1px -13px #4070F4;
+    box-shadow: -1px -13px var(--indicator-border); /* Variabile per il colore dell'ombra */
 }
+
+/* Temi: Variabili per chiaro e scuro */
+:root {
+    --indicator-bg: #FFF; /* Sfondo per il tema chiaro */
+    --indicator-border: #4070F4; /* Bordo/ombra per il tema chiaro */
+}
+
+body.dark-theme {
+    --indicator-bg: #ffffff; /* Sfondo per il tema scuro */
+    --indicator-border: #1e1e1e; /* Bordo/ombra per il tema scuro */
+}
+
+
 
 
 .a_user {

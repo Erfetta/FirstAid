@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   # Permetti parametri extra durante la registrazione e l'aggiornamento dell'account
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_theme
 
   protected
 
@@ -36,6 +37,11 @@ class ApplicationController < ActionController::Base
     else
       redirect_to login_path  # Reindirizza alla tua pagina di login personalizzata
     end
+  end
+
+  private
+  def set_theme
+    @theme = cookies[:theme] || "light"
   end
 
 end

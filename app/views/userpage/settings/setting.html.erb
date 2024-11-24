@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Navigation Bar with Indicator</title>
 
-        <!-- CSS -->
+        
         
                 
         <!-- Boxicons CSS -->
@@ -15,7 +15,7 @@
         
     </head>
     <body>
-        <div class="body_user">
+        <body class="body_user <%= @theme %>-theme">
 
 
 
@@ -39,7 +39,7 @@
                 <!-- Aggiungi altre opzioni se necessario -->
             </select>
         </div>
-        <button class="button-center">Save Settings</button>
+        
     </div>
         <nav class="nav_user">
             <ul class="nav_user-content">
@@ -69,6 +69,36 @@
         <!-- JavaScript -->
          <script>
             document.addEventListener("DOMContentLoaded", () => {
+
+
+                const themeSelect = document.getElementById("theme-select");
+                const bodyUser = document.querySelector(".body_user");
+
+                // Funzione per applicare il tema
+                const applyTheme = (theme) => {
+                    bodyUser.classList.toggle("dark-theme", theme === "dark");
+                    bodyUser.classList.toggle("light-theme", theme === "light");
+                };
+
+                // Leggi il tema dal cookie
+                const savedTheme = document.cookie
+                    .split("; ")
+                    .find(row => row.startsWith("theme="))
+                    ?.split("=")[1];
+
+                if (savedTheme) {
+                    applyTheme(savedTheme);
+                    themeSelect.value = savedTheme;
+                }
+
+                // Cambia tema e salva nel cookie
+                themeSelect.addEventListener("change", () => {
+                    const selectedTheme = themeSelect.value;
+                    applyTheme(selectedTheme);
+
+                    // Salva il tema nel cookie (es. valido per 30 giorni)
+                    document.cookie = `theme=${selectedTheme}; path=/; max-age=${30 * 24 * 60 * 60}`;
+                });
 
 
             

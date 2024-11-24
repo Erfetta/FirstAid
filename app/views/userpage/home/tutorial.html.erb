@@ -17,7 +17,7 @@
                 height: 36px;
                 width: 36px;
                 background-color: #FFF;
-                border: 6px solid #4070F4;
+                border: 6px solid var(--indicator-border);
                 border-radius: 50%;
                 pointer-events: none; /* Assicurati che l'indicatore non interferisca con altri elementi */
                 z-index: 10; /* Assicurati che l'indicatore sia sopra altri elementi */
@@ -28,7 +28,7 @@
                 flex-direction: column;
                 gap:0;
                 align-items: center;
-                height: 80vh;
+                height: 75vh;
             }
             .manual_slider_user{
                 overflow-y: auto;
@@ -67,7 +67,7 @@
 
     </head>
     <body>
-        <div class="body_user">
+        <body class="body_user <%= @theme %>-theme">
 
             <div class="tutorials_container_user">
                 <input type="text" class="search-bar_tutorial_user" id="search-bar" placeholder="cerca">
