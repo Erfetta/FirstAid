@@ -16,8 +16,8 @@
                 transform: translateX(-50%); /* Centrato sopra il punto centrale */
                 height: 36px;
                 width: 36px;
-                background-color: #FFF;
-                border: 6px solid #4070F4;
+                background-color: var(--indicator-bg);
+                border: 6px solid var(--indicator-border);
                 border-radius: 50%;
                 pointer-events: none; /* Assicurati che l'indicatore non interferisca con altri elementi */
                 z-index: 10; /* Assicurati che l'indicatore sia sopra altri elementi */
@@ -34,7 +34,7 @@
 
             .man_el_user h3 {
                 font-size: 20px;
-                color: #333; /* Colore più scuro per i sottotitoli */
+                color: var(--h3-tutorial); /* Colore più scuro per i sottotitoli */
                 margin-top: 20px;
                 margin-bottom: 10px;
             }
@@ -55,7 +55,7 @@
             }
 
             .man_el_user strong {
-                color: #000; /* Colore nero per enfatizzare */
+                color: var(--link-color); /* Colore nero per enfatizzare */
             }
         </style>
 

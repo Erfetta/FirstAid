@@ -62,7 +62,7 @@
     height: 50px;
     border-radius: 50%;
     border: none;
-    background-color: #FFF;
+    background-color: var(--bg-color);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 24px;
@@ -71,7 +71,6 @@
 }
 
 .button_user:hover {
-    background-color: #f0f0f0;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -90,7 +89,7 @@
 
 /* Icone all'interno dei bottoni */
 .button_user i {
-    color: gray; /* Colore dell'icona */
+    color: var(--icon-color); /* Colore dell'icona */
     margin: 0; /* Rimuove margini indesiderati */
     line-height: 1; /* Assicura che l'icona sia centrata verticalmente */
 }
@@ -101,7 +100,7 @@
 }
 
 .nav_user{
-    background: #FFF;
+    background: var(--bg-color);
     padding: 0 10px; /* Usa padding più piccolo per garantire adattabilità */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%; /* Rende la navbar larga quanto la viewport */
@@ -168,16 +167,18 @@
     --icon-color: #999; /* Colore predefinito dell'icona (tema chiaro) */
     --icon-active-color: #4070F4; /* Colore icona attiva (tema chiaro) */
     --text-color: #4070F4; /* Colore testo attivo (tema chiaro) */
+    --bg-color: #FFF;
+    --h3-tutorial:#333;
 }
 
 body.dark-theme {
     --link-color: #FFF; /* Colore del link (tema scuro) */
-    --icon-color: #BBB; /* Colore dell'icona (tema scuro) */
+    --icon-color: #222; /* Colore dell'icona (tema scuro) */
     --icon-active-color: #000000; /* Colore icona attiva (tema scuro) */
     --text-color: #000000; /* Colore testo attivo (tema scuro) */
+    --bg-color: #777;
+    --h3-tutorial:#ccc;
 }
-
-
 
 
 /* Stile di base per indicator_user */
@@ -221,11 +222,9 @@ body.dark-theme {
 }
 
 body.dark-theme {
-    --indicator-bg: #ffffff; /* Sfondo per il tema scuro */
+    --indicator-bg: #777; /* Sfondo per il tema scuro */
     --indicator-border: #1e1e1e; /* Bordo/ombra per il tema scuro */
 }
-
-
 
 
 .a_user {
@@ -259,7 +258,7 @@ body.dark-theme {
     height: 100%; /* Make each slide occupy the full height of the container */
     transition: transform 0.5s ease-in-out;
     padding: 20px;
-    background: #fff;
+    background: var(--bg-color);
     box-sizing: border-box;
     border-radius: 20px; /* Rounded borders */
     text-align: center;
