@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     post 'submit_oxygen', to: 'measurement_data#create_oxygen'
   
     get 'chat/:report_id', to: 'chat#index_user', as: 'chat'
+   
+    get '/reports/:id/exists', to: 'chat#exists'
+
 
 
 

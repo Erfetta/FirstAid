@@ -134,6 +134,35 @@
       messageInput.value = '';
     }
   });
+
+
+
+
+function checkReportExists(reportId) {
+  fetch(`/reports/${reportId}/exists`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.exists) {
+        console.log("Report trovato");
+      } else {
+        console.log("Report non trovato");
+        clearInterval(checkInterval); // Ferma i controlli
+        window.location.href = '/'; // Cambia con il tuo percorso
+      }
+    })
+    .catch((error) => {
+      console.error("Errore durante la verifica del report:", error);
+    });
+}
+
+const checkInterval = setInterval(() => {
+  checkReportExists(reportId);
+}, 500);
+
+
+
+
+
 </script>
 
 </html>

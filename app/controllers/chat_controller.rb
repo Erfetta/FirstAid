@@ -18,5 +18,14 @@ class ChatController < ApplicationController
     @report_id = @report.id
   end
 
+  def exists
+    report = Report.find_by(id: params[:id])
+    if report
+      render json: { exists: true }
+    else
+      render json: { exists: false }
+    end
+  end
+
   
 end
