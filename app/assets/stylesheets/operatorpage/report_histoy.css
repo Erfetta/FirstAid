@@ -1,0 +1,22 @@
+.reports_done_section_operator {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    overflow-y: scroll;
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, 180px);
+    gap: 10px;
+}
+
+.report_done_area_operator {
+    height: 180px;
+    background-color: #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

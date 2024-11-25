@@ -29,5 +29,25 @@
               </span>
             <% end %>
         </nav>
+
+        <aside class="reports_done_section_operator" id="reports-section">
+            <% @reports.each do |report| %>
+                <div class="report_done_area_operator" onclick="window.location.href='<%= show_report_done_path(report.id) %>'">
+                <p><strong>Richiesta:</strong></p>
+                <% datetime = report.report_time.to_s.slice(0...-5)%>
+                <% datetime = datetime.split(' ')%>
+                <p><strong>Data:</strong> <%= datetime[0] %></p>
+                <p><strong>Ora:</strong> <%= datetime[1] %></p>
+                <p><strong>Risoluzione:</strong></p>
+                <% datetime = report.created_at.to_s.slice(0...-5)%>
+                <% datetime = datetime.split(' ')%>
+                <p><strong>Data:</strong> <%= datetime[0] %></p>
+                <p><strong>Ora:</strong> <%= datetime[1] %></p>
+
+              </div>
+            <% end %>
+        </aside>
+
+    </div>
 </body>
 </html>

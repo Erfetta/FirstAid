@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>"></script>
+</head>
+
+<body>
+    <div class="container_navbar_operator">
+        <nav class="navbar_operator">
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                home
+              </span>
+            <% end %>
+            <%= button_to manual_list_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                import_contacts
+              </span>
+            <% end %>
+            <%= button_to report_history_list_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                history
+              </span>
+            <% end %>
+            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                person
+              </span>
+            <% end %>
+        </nav>
+
+        <div class="central_section_operator">
+          <div class="map-chat-section_op">
+            <div class="maps_section_operator_reduced" id="map">
+              <!-- div per il render di google maps -->
+            </div>
+          </div>
+          <div class="report_info_operator">
+            <h2>Dettagli della richiesta</h2>
+            <div class="report_info_container">
+              <div class="report_info_c1">
+                <h3>Informazioni richiesta</h3>
+                <p><strong>Richiesta risolta n°:</strong> <%= @report.id %></p>
+                <% datetime = @report.created_at.to_s.split(' ')%>
+                <p><strong>Data Risoluzione: </strong><%= datetime[0] %></p>
+                <p><strong>Orario Risoluzione:</strong> <%= datetime[1] %></p>
+                <% datetime2 = @report.report_time.to_s.split(' ')%>
+                <p><strong>Data Richiesta: </strong><%= datetime2[0] %></p>
+                <p><strong>Orario Richiesta:</strong> <%= datetime2[1] %></p>
+                <% if @report.coordinates != '0'%>
+                <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
+                <% else %>
+                <p><strong>Coordinate:</strong> Non condivise</p>
+                <% end %>
+                <p><strong>Modalità di contatto:</strong> 
+                <% cm = @report.contact_method %>
+                <% if cm == 0%>
+                  Non contattare </p>
+                <% elsif cm == 1%>
+                  Chat </p>
+                <% elsif cm == 2%>
+                  Telefono </p>
+                <% end %>
+              </div>
+              <div class="report_info_c2">
+                <h3>Informazioni paziente</h3>
+                <aside class="report_info_c2_sub">
+                  <p><strong>È coscente:</strong> <%= @report.question1 %></p>
+                  <p><strong>Respira:</strong> <%= @report.question2 %></p>
+                  <p><strong>Ha battito:</strong> <%= @report.question3 %></p>
+                  <p><strong>Presenta emorragie:</strong> <%= @report.question4 %></p>
+                  <p><strong>Presenta contusioni:</strong> <%= @report.question5 %></p>
+                  <p><strong>Reagisce agli stimoli:</strong> <%= @report.question6 %></p>
+                  <p><strong>Pupille reattive:</strong> <%= @report.question7 %></p>
+                  <p><strong>Respirazione regolare:</strong> <%= @report.question8 %></p>
+                  <p><strong>Frequenza respirazione:</strong> <%= @report.question9 %></p>
+                  <p><strong>Battito regolare:</strong> <%= @report.question10 %></p>
+                  <p><strong>Frequenza cardiaca:</strong> <%= @report.question11 %></p>
+                  <p><strong>Difficoltà di movimento:</strong> <%= @report.question12 %></p>
+                  <p><strong>Problemi noti:</strong> <%= @report.question13 %></p>
+                  <p><strong>Note segnalazione:</strong> <%= @report.question14 %></p>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="user_info_operator">
+          <% if @user.id != 8%>
+            <h2>Informazioni utente</h2>
+            <p><strong>User ID:</strong> <%= @user.id %></p>
+            <p><strong>Nome:</strong> <%= @user.name %></p>
+            <p><strong>Cognome:</strong> <%= @user.surname %></p>
+            <p><strong>Età:</strong> <%= @user.age %></p>
+            <p><strong>Sesso:</strong> <%= @user.sex %></p>
+            <p><strong>Cellulare:</strong> <%= @user.phone %></p>
+          <% else %>
+            <h2>Utente non registrato </h2>
+          <% end %>
+        </div>
+    </div>
+</body>
+<script>
+
+  // google maps
+  var Coordinate = "<%= @report.coordinates %>";
+  function initMap() {
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: { lat: 41.86, lng: 12.56 }, // Default center, will be adjusted later
+      fullscreenControl: false, // Disables fullscreen control
+      streetViewControl: false, // Disables street view control
+      mapTypeControl: false // Disables map type control
+    });
+
+    coordinates = Coordinate.split(',');
+    new google.maps.Marker({
+      position: new google.maps.LatLng(coordinates[0], coordinates[1]),
+      map: map,
+      title: 'Richiesta'
+    });
+
+  }
+
+  window.onload = initMap;
+</script>
+</html>
