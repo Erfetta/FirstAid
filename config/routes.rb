@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     get 'show_report/:id', to: 'operatorpage/home#show_report', as: 'show_report'
     patch 'update_op_id/:id', to: 'operatorpage/home#update_op_id', as: 'update_op_id'
     patch 'remove_me_from_report/:id', to: 'operatorpage/home#remove_me_from_report', as: 'remove_me_from_report'
+    patch 'mark_as_done/:id' , to: 'operatorpage/home#mark_as_done', as: 'mark_as_done'
     get 'manual_list', to: 'operatorpage/manual#manual_list', as: 'manual_list'
     get 'manual_element/:id', to: 'operatorpage/manual#manual_element', as: 'manual_element'
     get 'profile', to: 'operatorpage/profile#operator_profile', as: 'profile'

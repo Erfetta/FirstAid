@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_11_08_122529) do
+ActiveRecord::Schema.define(version: 2024_11_24_185640) do
 
   create_table "measurement_data", force: :cascade do |t|
     t.string "measurement_type"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2024_11_08_122529) do
   create_table "report_dones", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "report_datetime", null: false
+    t.datetime "report_time", null: false
     t.string "coordinates", null: false
     t.string "user_id", null: false
     t.string "operator_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2024_11_08_122529) do
     t.string "question12"
     t.string "question13"
     t.string "question14"
-    t.integer "contact_metod", null: false
+    t.integer "contact_method", null: false
   end
 
   create_table "reports", force: :cascade do |t|

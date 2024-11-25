@@ -1,7 +1,6 @@
 class ReportDone < ApplicationRecord
-  belongs_to :supervisor
   belongs_to :user
   belongs_to :operator
 
-  validates :datetime, :coordinates, presence: true
+  validates :report_time, :coordinates, :user_id, :contact_method, presence: true
 end

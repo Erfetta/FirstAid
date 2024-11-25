@@ -13,15 +13,10 @@ class ChatController < ApplicationController
   end
 
   # reports_controller.rb
-# reports_controller.rb
-def show
-  @report = Report.find(params[:id])
-  @report_id = @report.id
-end
-
-
-
-
+  def show
+    @report = Report.find(params[:id])
+    @report_id = @report.id
+  end
 
   
 end
