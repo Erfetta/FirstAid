@@ -19,6 +19,8 @@ if Rails.env == 'user'
   port ENV.fetch("PORT") { 3000 }
 elsif Rails.env == 'operator'
   port ENV.fetch("PORT") { 4000 }
+elsif Rails.env == 'supervisor'
+  port ENV.fetch("PORT") { 5000 }
 end
 
 # Specifies the `environment` that Puma will run in.

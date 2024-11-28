@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="container_navbar_operator">
+        <nav class="navbar_operator">
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                home
+              </span>
+            <% end %>
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                import_contacts
+              </span>
+            <% end %>
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                history
+              </span>
+            <% end %>
+            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                person
+              </span>
+            <% end %>
+        </nav>
+
+        <div class="op_profile_container">
+            <div class="op_profile_title">
+                <h1>Profilo Supervisore</h1>
+            </div>
+            <div class="op_profile_info">
+                <p><strong>Nome:</strong> <%= @supervisor.name %></p>
+                <p><strong>Cognome:</strong> <%= @supervisor.surname %></p>
+                <p><strong>Email:</strong> <%= @supervisor.email %></p>
+                <p><strong>Sede:</strong> <%= @supervisor.workplace %></p>
+                <%= button_to logout_path, method: :delete, class: 'logout-button' do %>
+                  <p> Logout </p>
+                  <span class="material-symbols-outlined">
+                    logout
+                  </span>
+                <% end %>
+            </div>
+
+        </div>
+
+    </div>
+
+      
+</body>
+</html>

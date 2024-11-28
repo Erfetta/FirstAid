@@ -28,3 +28,7 @@ user:
 operator:
   <<: *default
   database: db/development.sqlite3
+
+supervisor:
+  <<: *default
+  database: db/development.sqlite3

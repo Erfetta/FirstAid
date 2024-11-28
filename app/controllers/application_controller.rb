@@ -39,6 +39,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_supervisor!
+    if supervisor_signed_in?
+      super
+    else
+      redirect_to login_path  # Reindirizza alla tua pagina di login personalizzata
+    end
+  end
+
   private
   def set_theme
     @theme = cookies[:theme] || "light"

@@ -23,17 +23,10 @@ Rails.application.routes.draw do
    
     get '/reports/:id/exists', to: 'chat#exists'
 
-
-
-
     #definizione rotta per la pagina di attesa
     get 'waiting', to: 'userpage/waiting#index'
     get 'check_operator_assigned', to: 'userpage/waiting#check_operator_assigned'
     
-    
-
-
-
     # Per devise
     get 'login', to: 'userpage/login#new', as: 'login'  # Mostra la pagina di login
     post 'login', to: 'userpage/login#create', as: 'login_create'  # Esegue il login
@@ -63,9 +56,21 @@ Rails.application.routes.draw do
 
     get 'chat/:report_id', to: 'chat#index_operator', as: 'chat'
 
-
     namespace :operatorpage do
       resources :reports, only: [:show, :update] # Rotte per la parte operator
     end
-  end  
+
+  elsif Rails.env == 'supervisor'
+    root 'supervisorpage/home#supervisor_index'
+    get 'login', to: 'supervisorpage/login#new', as: 'login'  # Mostra la pagina di login
+    post 'login', to: 'supervisorpage/login#create', as: 'login_create'  # Esegue il login
+    delete 'logout', to: 'supervisorpage/login#destroy', as: 'logout'  # Esegue il logout
+    get 'profile', to: 'supervisorpage/profile#supervisor_profile', as: 'profile'
+
+
+    namespace :supervisorpage do
+      resources :reports, only: [:show, :update] # Rotte per la parte supervisor
+    end
+  end 
+
 end
