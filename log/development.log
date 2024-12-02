@@ -5568,3 +5568,18 @@ Content-Transfer-Encoding: quoted-printable
   </body>
 </html>
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOperator Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "operators" WHERE "operators"."email" = ? LIMIT ?[0m  [["email", "alessio.lavore@gmail.com"], ["LIMIT", 1]]
+  [1m[36mSupervisor Load (0.1ms)[0m  [1m[34mSELECT "supervisors".* FROM "supervisors" WHERE "supervisors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOperator Create (1.7ms)[0m  [1m[32mINSERT INTO "operators" ("email", "encrypted_password", "name", "surname", "workplace", "supervisor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alessio.lavore@gmail.com"], ["encrypted_password", "$2a$12$lDdcFdbtExmgGNEwJ.5VyeonIVvN0MUnN.JtPgO0IMU87dYVnbn.O"], ["name", "Alessio"], ["surname", "Lavore"], ["workplace", "Roma"], ["supervisor_id", "1"], ["created_at", "2024-12-02 16:38:06.373023"], ["updated_at", "2024-12-02 16:38:06.373023"]]
+  [1m[36mTRANSACTION (162.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOperator Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "operators" WHERE "operators"."email" = ? LIMIT ?[0m  [["email", "alessio.lavore@gmail.com"], ["LIMIT", 1]]
+  [1m[36mSupervisor Load (0.1ms)[0m  [1m[34mSELECT "supervisors".* FROM "supervisors" WHERE "supervisors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
