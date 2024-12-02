@@ -23,7 +23,7 @@
 #   name: "Luigi",
 #   surname: "Bianchi",
 #   workplace: "Roma",
-#   supervisor_id: Supervisor.first.id
+#   supervisor_id: 1
 # )
 
 # Supervisor.create!(
