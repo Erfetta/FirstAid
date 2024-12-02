@@ -80,8 +80,8 @@ Rails.application.configure do
     address: 'smtp.gmail.com', # O il server SMTP che stai usando
     port: 587,
     domain: 'localhost', # Puoi usare 'localhost' per ambiente locale
-    user_name: ENV['MAIL_USERNAME'],
-    password: ENV['MAIL_PASSWORD'],
+    user_name: 'aidfirst134@gmail.com',
+    password: 'isdf oznm pjlv fwqi',
     authentication: 'plain',
     enable_starttls_auto: true
   }
