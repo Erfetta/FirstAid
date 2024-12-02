@@ -14,3 +14,12 @@
 
 
 
+Operator.create!(
+  email: "fettuccia56@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  name: "Simone",
+  surname: "Fettuccia",
+  workplace: "Roma",
+  supervisor_id: "1",
+)

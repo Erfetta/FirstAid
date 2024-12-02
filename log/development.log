@@ -5354,3 +5354,217 @@ FOREIGN KEY ("operator_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOtpToOperators (20241201154833)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "operators" ADD "otp" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "operators" ADD "otp_expires_at" datetime[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20241201154833"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "development"], ["updated_at", "2024-12-01 16:48:41.202378"], ["key", "environment"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOperator Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "operators" WHERE "operators"."email" = ? LIMIT ?[0m  [["email", "fettuccia56@gmail.com"], ["LIMIT", 1]]
+  [1m[36mSupervisor Load (0.1ms)[0m  [1m[34mSELECT "supervisors".* FROM "supervisors" WHERE "supervisors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOperator Create (0.4ms)[0m  [1m[32mINSERT INTO "operators" ("email", "encrypted_password", "name", "surname", "workplace", "supervisor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "fettuccia56@gmail.com"], ["encrypted_password", "$2a$12$kZAsRt8M4O7cMm/Mwci0Ve9ugfPvwOSBCgpveEnBfYFcK1gEZzllu"], ["name", "Simone"], ["surname", "Fettuccia"], ["workplace", "Roma"], ["supervisor_id", "1"], ["created_at", "2024-12-01 17:01:55.347049"], ["updated_at", "2024-12-01 17:01:55.347049"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" ORDER BY "operators"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 249)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 427)
+OperatorMailer#send_otp: processed outbound mail in 10.9ms
+Delivered mail 674c9f9898926_7276d48366ef@biar.mail (1178.7ms)
+Date: Sun, 01 Dec 2024 18:40:40 +0100
+From: fettuccia.2007145@studenti.uniroma1.it
+To: giovanni.ferrari@example.com
+Message-ID: <674c9f9898926_7276d48366ef@biar.mail>
+Subject: =?UTF-8?Q?Il_tuo_codice_OTP_per_l=E2=80=99accesso?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Ciao Giovanni,</h1>
+
+<p>Il tuo codice OTP per l'accesso =C3=A8:</p>
+<h2></h2>
+
+<p>Inserisci questo codice per completare il processo di login.</p>
+
+<p>Grazie,</p>
+<p>Il team di First Aid</p>
+
+  </body>
+</html>
+
+  [1m[36mOperator Load (0.3ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 93)
+OperatorMailer#send_otp: processed outbound mail in 1.8ms
+Delivered mail 674c9fd379aa_7276d483671d@biar.mail (1142.8ms)
+Date: Sun, 01 Dec 2024 18:41:39 +0100
+From: fettuccia.2007145@studenti.uniroma1.it
+To: fettuccia57@gmail.com
+Message-ID: <674c9fd379aa_7276d483671d@biar.mail>
+Subject: =?UTF-8?Q?Il_tuo_codice_OTP_per_l=E2=80=99accesso?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Ciao Simone,</h1>
+
+<p>Il tuo codice OTP per l'accesso =C3=A8:</p>
+<h2>728548</h2>
+
+<p>Inserisci questo codice per completare il processo di login.</p>
+
+<p>Grazie,</p>
+<p>Il team di First Aid</p>
+
+  </body>
+</html>
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOperator Load (0.2ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 251)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 429)
+OperatorMailer#send_otp: processed outbound mail in 13.3ms
+Delivered mail 674ca3029855a_7805d4839541@biar.mail (1238.0ms)
+Date: Sun, 01 Dec 2024 18:55:14 +0100
+From: fettuccia.2007145@studenti.uniroma1.it
+To: fettuccia57@gmail.com
+Message-ID: <674ca3029855a_7805d4839541@biar.mail>
+Subject: =?UTF-8?Q?Il_tuo_codice_OTP_per_l=E2=80=99accesso?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Ciao Simone,</h1>
+
+<p>Il tuo codice OTP per l'accesso =C3=A8:</p>
+<h2>765668</h2>
+
+<p>Inserisci questo codice per completare il processo di login.</p>
+
+<p>Grazie,</p>
+<p>Il team di First Aid</p>
+
+  </body>
+</html>
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.5ms | Allocations: 251)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.9ms | Allocations: 429)
+  [1m[36mOperator Load (0.2ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.5ms | Allocations: 93)
+  [1m[36mOperator Load (0.2ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.3ms | Allocations: 93)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 251)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 429)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOperator Load (0.1ms)[0m  [1m[34mSELECT "operators".* FROM "operators" WHERE "operators"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering operator_mailer/send_otp.html.erb within layouts/mailer
+  Rendered operator_mailer/send_otp.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 251)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 429)
+OperatorMailer#send_otp: processed outbound mail in 9.8ms
+Delivered mail 674cec0113982_1156d482545b@biar.mail (1183.4ms)
+Date: Mon, 02 Dec 2024 00:06:41 +0100
+From: fettuccia.2007145@studenti.uniroma1.it
+To: fettuccia57@gmail.com
+Message-ID: <674cec0113982_1156d482545b@biar.mail>
+Subject: =?UTF-8?Q?Il_tuo_codice_OTP_per_l=E2=80=99accesso?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Ciao Simone,</h1>
+
+<p>Il tuo codice OTP per l'accesso =C3=A8:</p>
+<h2>797856</h2>
+
+<p>Inserisci questo codice per completare il processo di login.</p>
+
+<p>Grazie,</p>
+<p>Il team di First Aid</p>
+
+  </body>
+</html>
+

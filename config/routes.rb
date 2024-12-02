@@ -60,6 +60,10 @@ Rails.application.routes.draw do
       resources :reports, only: [:show, :update] # Rotte per la parte operator
     end
 
+    post 'verify_otp', to: 'operatorpage/login#verify_otp', as: 'verify_otp'
+    get 'verify_otp', to: 'operatorpage/login#verify_otp'
+
+
   elsif Rails.env == 'supervisor'
     root 'supervisorpage/home#supervisor_index'
     get 'login', to: 'supervisorpage/login#new', as: 'login'  # Mostra la pagina di login
