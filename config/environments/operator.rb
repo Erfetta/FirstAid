@@ -89,7 +89,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
 
-  config.action_mailer.default_options = { from: 'fettuccia.2007145@studenti.uniroma1.it' }
+  config.action_mailer.default_options = { from: 'aidfirst123@gmail.com' }
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 4000 }
 

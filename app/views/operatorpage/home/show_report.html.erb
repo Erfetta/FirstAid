@@ -192,7 +192,7 @@
         </div>
     </div>
 </body>
-<script type="module">
+<script>
 
   const mapButton = document.getElementById('select-map_button');
   const chatButton = document.getElementById('select-chat_button');
@@ -214,7 +214,6 @@
   });
 
   // google maps
-  var Coordinate = "<%= @report.coordinates %>";
   function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -225,17 +224,22 @@
       mapTypeControl: false // Disables map type control
     });
 
-    coordinates = Coordinate.split(',');
-    new google.maps.Marker({
-      position: new google.maps.LatLng(coordinates[0], coordinates[1]),
-      map: map,
-      title: 'Richiesta'
-    });
+    var Coordinate = "<%= @report.coordinates %>";
+    if (Coordinate != '0') {
+      Coordinate = Coordinate.split(',');
+      new google.maps.Marker({
+        position: new google.maps.LatLng(Coordinate[0], Coordinate[1]),
+        map: map,
+        title: 'Richiesta'
+      });
+    }
 
   }
 
   window.onload = initMap;
 
+</script>
+<script type="module">
 
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
   import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js';
