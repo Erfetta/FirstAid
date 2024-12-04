@@ -39,7 +39,11 @@ module Userpage
  
     #report
     def create
+      maxRep = Report.maximum(:id).to_i
+      maxRepDone = ReportDone.maximum(:id).to_i
+      newID = [maxRep, maxRepDone].max + 1
       @report = Report.new(
+        id: newID,
         coordinates: params[:coordinates],
         user_id: params[:user_id],
         question1: params[:question1],
@@ -57,6 +61,8 @@ module Userpage
         question13: params[:question13],
         question14: params[:question14],
         contact_method: params[:contact_method],
+        flagCell: params[:flagCell],
+        flagInfo: params[:flagInfo]
       )
       if @report.save
         flash[:notice] = 'Report creato con successo!'

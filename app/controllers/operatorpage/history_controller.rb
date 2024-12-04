@@ -5,11 +5,11 @@ module Operatorpage
 
     def report_history_list
       @operator = current_operator
-      @reports = ReportDone.where(operator_id: current_operator.id).order(created_at: :asc)
+      @reports = ReportDone.where(operator_id: current_operator.id).order(created_at: :desc)
     end
 
     def show_report_done
-      @report_id = params[:report_id] # Recupera l'ID del report dall'URL
+
     end
 
     private

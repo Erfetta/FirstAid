@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_12_01_154833) do
+ActiveRecord::Schema.define(version: 2024_12_04_165229) do
 
   create_table "measurement_data", force: :cascade do |t|
     t.string "measurement_type"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 2024_12_01_154833) do
     t.string "question13"
     t.string "question14"
     t.integer "contact_method", null: false
+    t.integer "flagCell"
+    t.integer "flagInfo"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -84,6 +86,8 @@ ActiveRecord::Schema.define(version: 2024_12_01_154833) do
     t.string "question13"
     t.string "question14"
     t.integer "contact_method", null: false
+    t.integer "flagCell"
+    t.integer "flagInfo"
   end
 
   create_table "supervisors", force: :cascade do |t|

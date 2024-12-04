@@ -20,31 +20,25 @@
 
 
 
-<div class="settings-container">
-            <h2 class="title-settings">Opzioni segnalazioni</h2>
-            <div class="settings_user-position">
-                <label>Attach Position:</label>
-                <label><input type="radio" name="position" value="yes"> Yes</label>
-                <label><input type="radio" name="position" value="no"> No</label>
-            </div>
-            <div class="settings_user-phone">
-                <label>Attach Phone Number:</label>
-                <label><input type="radio" name="phone" value="yes"> Yes</label>
-                <label><input type="radio" name="phone" value="no"> No</label>
-            </div>
-            <div class="settings_user-email">
-                <label>Attach Email:</label>
-                <label><input type="radio" name="email" value="yes"> Yes</label>
-                <label><input type="radio" name="email" value="no"> No</label>
-            </div>
-            <button class="button-center">Save Settings</button>
+    <div class="settings-container">
+        <h2 class="title-settings">Opzioni segnalazioni</h2>
+        <div class="settings_user-position">
+            <label>Attach Position:</label>
+            <label><input type="radio" name="position" value="yes"> Yes</label>
+            <label><input type="radio" name="position" value="no"> No</label>
         </div>
-        
-
-
-
-
-
+        <div class="settings_user-phone">
+            <label>Attach Phone Number:</label>
+            <label><input type="radio" name="phone" value="yes"> Yes</label>
+            <label><input type="radio" name="phone" value="no"> No</label>
+        </div>
+        <div class="settings_user-email">
+            <label>Attach Personal Info:</label>
+            <label><input type="radio" name="info" value="yes"> Yes</label>
+            <label><input type="radio" name="info" value="no"> No</label>
+        </div>
+        <button class="button-center" onclick=updateSettings()>Save Settings</button>
+    </div>
 
         <nav class="nav_user">
             <ul class="nav_user-content">
@@ -77,7 +71,46 @@
 
         <!-- JavaScript -->
          <script>
+
+            function updateSettings(){
+                AttachPosition = document.querySelector('input[name="position"]:checked').value;
+                AttachPhone = document.querySelector('input[name="phone"]:checked').value;
+                AttachInfo = document.querySelector('input[name="info"]:checked').value;
+
+                document.cookie = `AttachPos=${AttachPosition}; path=/; max-age=${30 * 24 * 60 * 60}`;
+                document.cookie = `AttachPhone=${AttachPhone}; path=/; max-age=${30 * 24 * 60 * 60}`;
+                document.cookie = `AttachInfo=${AttachInfo}; path=/; max-age=${30 * 24 * 60 * 60}`;
+            }
+
             document.addEventListener("DOMContentLoaded", () => {
+                
+                // cookie
+                const savedAttachPosition = document.cookie
+                    .split("; ")
+                    .find(row => row.startsWith("AttachPos="))
+                    ?.split("=")[1];
+
+                const savedAttachPhone = document.cookie
+                    .split("; ")
+                    .find(row => row.startsWith("AttachPhone="))
+                    ?.split("=")[1];
+                
+                const savedAttachInfo = document.cookie
+                    .split("; ")
+                    .find(row => row.startsWith("AttachInfo="))
+                    ?.split("=")[1];
+
+                if (savedAttachPosition) {
+                    document.querySelector(`input[name="position"][value="${savedAttachPosition}"]`).checked = true;
+                }
+                if (savedAttachPhone) {
+                    document.querySelector(`input[name="phone"][value="${savedAttachPhone}"]`).checked = true;
+                }
+                if (savedAttachInfo) {
+                    document.querySelector(`input[name="info"][value="${savedAttachInfo}"]`).checked = true;
+                }
+                
+                // nav bar
                 const linkItems = document.querySelectorAll(".link-item");
                 const indicator = document.querySelector(".indicator_user");
 

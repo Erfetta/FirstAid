@@ -10,44 +10,62 @@
 
 <style>
   .chat-box {
+    height: 100%;
     width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
   }
-
-  #messages {
-    max-height: 400px;
+  .chat-section{
+    height: calc(100% - 50px);
     overflow-y: auto;
-    border: 1px solid #ccc;
+    margin: 10px;
+    margin-top: 60px;
+  }
+
+  .message {
+    max-width: 60%;
+    margin-bottom: 10px;
     padding: 10px;
-    margin-top: 20px;
-}
+    border-radius: 10px;
+    position: relative;
+  }
+  .current-message {
+    background-color: lightblue;
+    margin-left: auto; /* Posizione a destra */
+    text-align: right; /* Allinea il testo a destra */
+  }
+  .other-message {
+    background-color: lightgreen;
+    margin-right: auto; /* Posizione a sinistra */
+    text-align: left; /* Allinea il testo a sinistra */
+  }
 
-.message {
-  max-width: 60%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.current-message {
-  background-color: lightblue;
-  margin-left: auto; /* Posizione a destra */
-  text-align: right; /* Allinea il testo a destra */
-}
-
-.other-message {
-  background-color: lightgreen;
-  margin-right: auto; /* Posizione a sinistra */
-  text-align: left; /* Allinea il testo a sinistra */
-}
+  .chat-form-container{
+    height: 50px;
+    background-color: #333;
+  }
+  .chat-form-container form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+  }
+  .chat-form-container input{
+    width: 40%;
+    height: 30px;
+    padding: 0 1rem;
+    border-radius: 10px;
+  }
+  .chat-form-container button{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+  }
 </style>
 
 
@@ -83,21 +101,23 @@
             </div>
             <div class="chat_section_operator">
               <% cm = @report.contact_method %>
-              <% if cm != 1%>
+              <% if cm != 1 %>
                 <p> L'utente non ha selezionato la chat come metodo di contatto</p>
+              <% elsif @report.operator_id.to_s != @operator.id.to_s%>
+                <p> Non hai preso in carico questa chat</p>
               <% else %>
                 <div class="chat-box">
-              <!-- Area messaggi -->
-              <div id="messages"></div>
+                  <!-- Area messaggi -->
+                  <div class="chat-section" id="messages"></div>
 
-              <!-- Form per inviare un nuovo messaggio -->
-              <div class="chat-form-container">
-                <form id="chat-form" style="flex: 1; display: flex;">
-                  <input type="text" id="message-input" placeholder="Scrivi un messaggio" required>
-                  <button type="submit">Invia</button>
-                </form>
-              </div>
-            </div>
+                  <!-- Form per inviare un nuovo messaggio -->
+                  <div class="chat-form-container">
+                    <form id="chat-form">
+                      <input type="text" id="message-input" placeholder="Scrivi un messaggio" required>
+                      <button type="submit">Invia</button>
+                    </form>
+                  </div>
+                </div>
 
               <% end %>
             </div>
@@ -185,7 +205,11 @@
             <p><strong>Cognome:</strong> <%= @user.surname %></p>
             <p><strong>Età:</strong> <%= @user.age %></p>
             <p><strong>Sesso:</strong> <%= @user.sex %></p>
+            <% if @report.flagCell == 1%>
             <p><strong>Cellulare:</strong> <%= @user.phone %></p>
+            <% else %>
+            <p><strong>Cellulare:</strong> Non condiviso</p>
+            <% end %>
           <% else %>
             <h2>Utente non registrato </h2>
           <% end %>
@@ -336,8 +360,6 @@ chatForm.addEventListener('submit', function(event) {
     messageInput.value = '';  // Pulisce il campo di input dopo l'invio
   }
 });
-
-
 
 </script>
 </html>

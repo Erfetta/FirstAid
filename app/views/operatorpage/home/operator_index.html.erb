@@ -95,7 +95,7 @@
           .catch(error => console.error('Errore durante l\'aggiornamento dei reports:', error));
       }
 
-      setInterval(fetchReports, 10000); // Aggiorna ogni 10 secondi
+      setInterval(fetchReports, 5000); // Aggiorna ogni 5 secondi
 
       function openReport(id) {
         window.location.href = "/show_report/" + id;

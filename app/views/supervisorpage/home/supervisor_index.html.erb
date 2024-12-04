@@ -39,6 +39,7 @@
           <div class="btn_container_sup_index">
               <button> bt1 </button>
               <button> bt2 </button>
+              <button> bt3 </button>
           </div>
         </div>
       </div>
@@ -69,10 +70,25 @@
         id: arrrayReportsID[i]
       });
       mark.addListener('click', function() {
-        window.location.href = "/show_report/" + this.id;
+        window.location.href = "/sup_show_report/" + this.id;
       });
     });
   }
   window.onload = initMap;
+
+  function fetchOPs() {
+    fetch("<%= root_path %>")
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newOpsSection = doc.querySelector('#op_list_sup').innerHTML;
+        document.querySelector('#op_list_sup').innerHTML = newOpsSection;
+      })
+      .catch(error => console.error('Errore durante l\'aggiornamento degli operatori:', error));
+  }
+
+  setInterval(fetchOPs, 5000); // Aggiorna ogni 5 secondi
+
 </script>
 </html>

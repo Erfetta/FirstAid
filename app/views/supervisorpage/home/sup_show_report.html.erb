@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>"></script>
+</head>
+
+<style>
+  .chat-box {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .chat-section{
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    margin: 10px;
+    margin-top: 60px;
+  }
+
+  .message {
+    max-width: 60%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+  }
+  .current-message {
+    background-color: lightblue;
+    margin-left: auto; /* Posizione a destra */
+    text-align: right; /* Allinea il testo a destra */
+  }
+  .other-message {
+    background-color: lightgreen;
+    margin-right: auto; /* Posizione a sinistra */
+    text-align: left; /* Allinea il testo a sinistra */
+  }
+
+  .chat-form-container{
+    height: 50px;
+    background-color: #333;
+  }
+
+</style>
+
+
+<body>
+    <div class="container_navbar_supervisor">
+        <nav class="navbar_supervisor">
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                home
+              </span>
+            <% end %>
+            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                person
+              </span>
+            <% end %>
+        </nav>
+
+        <div class="sup_show_report_central">
+
+          <div class="central_section_operator">
+            <div class="map-chat-section_op">
+              <div class="maps_section_operator_reduced" id="map">
+                <!-- div per il render di google maps -->
+              </div>
+              <div class="chat_section_operator">
+                <% cm = @report.contact_method %>
+                <% if cm != 1 %>
+                  <p> L'utente non ha selezionato la chat come metodo di contatto</p>
+                <% else %>
+                  <div class="chat-box">
+                    <!-- Area messaggi -->
+                    <div class="chat-section" id="messages"></div>
+
+                    <!-- Form per inviare un nuovo messaggio -->
+                    <div class="chat-form-container">
+                    </div>
+                  </div>
+
+                <% end %>
+              </div>
+              <div class="map-chat_selector">
+                  <button class="map-chat_selector_button1" id="select-map_button"><span class="material-symbols-outlined">map</span></button>
+                  <button class="map-chat_selector_button2" id="select-chat_button"><span class="material-symbols-outlined">forum</span></button>
+              </div>
+            </div>
+            <div class="report_info_operator">
+              <h2>Dettagli della richiesta</h2>
+              <div class="report_info_container">
+                <div class="report_info_c1">
+                  <h3>Informazioni richiesta</h3>
+                  <p><strong>Richiesta n°:</strong> <%= @report.id %></p>
+                  <% datetime = @report.report_time.to_s.slice(0...-5)%>
+                  <p><strong>Inviata:</strong> <%= datetime %></p>
+                  <% datetime = @report.created_at.to_s.slice(0...-5)%>
+                  <p><strong>Risolta:</strong> <%= datetime %></p>
+                  <% if @report.coordinates != '0'%>
+                  <p><strong>Coordinate:</strong> <%= @report.coordinates %></p>
+                  <% else %>
+                  <p><strong>Coordinate:</strong> Non condivise</p>
+                  <% end %>
+                  <p><strong>Modalità di contatto:</strong> 
+                  <% cm = @report.contact_method %>
+                  <% if cm == 0%>
+                    Non contattare </p>
+                  <% elsif cm == 1%>
+                    Chat </p>
+                  <% elsif cm == 2%>
+                    Telefono </p>
+                  <% end %>
+                </div>
+                <div class="report_info_c2">
+                  <h3>Informazioni paziente</h3>
+                  <aside class="report_info_c2_sub">
+                    <p><strong>È coscente:</strong> <%= @report.question1 %></p>
+                    <p><strong>Respira:</strong> <%= @report.question2 %></p>
+                    <p><strong>Ha battito:</strong> <%= @report.question3 %></p>
+                    <p><strong>Presenta emorragie:</strong> <%= @report.question4 %></p>
+                    <p><strong>Presenta contusioni:</strong> <%= @report.question5 %></p>
+                    <p><strong>Reagisce agli stimoli:</strong> <%= @report.question6 %></p>
+                    <p><strong>Pupille reattive:</strong> <%= @report.question7 %></p>
+                    <p><strong>Respirazione regolare:</strong> <%= @report.question8 %></p>
+                    <p><strong>Frequenza respirazione:</strong> <%= @report.question9 %></p>
+                    <p><strong>Battito regolare:</strong> <%= @report.question10 %></p>
+                    <p><strong>Frequenza cardiaca:</strong> <%= @report.question11 %></p>
+                    <p><strong>Difficoltà di movimento:</strong> <%= @report.question12 %></p>
+                    <p><strong>Problemi noti:</strong> <%= @report.question13 %></p>
+                    <p><strong>Note segnalazione:</strong> <%= @report.question14 %></p>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info_section_sup">
+            <div class="user_info_sup">
+              <% if @user.id != 8%>
+                <h2>Informazioni utente</h2>
+                <p><strong>User ID:</strong> <%= @user.id %></p>
+                <p><strong>Nome:</strong> <%= @user.name %></p>
+                <p><strong>Cognome:</strong> <%= @user.surname %></p>
+                <p><strong>Età:</strong> <%= @user.age %></p>
+                <p><strong>Sesso:</strong> <%= @user.sex %></p>
+                <% if @report.flagCell == 1%>
+                <p><strong>Cellulare:</strong> <%= @user.phone %></p>
+                <% else %>
+                <p><strong>Cellulare:</strong> Non condiviso</p>
+                <% end %>
+              <% else %>
+                <h2>Utente non registrato </h2>
+              <% end %>
+            </div>
+            <div class="operator_info_sup">
+              <h2>Informazioni Operatore</h2>
+                <p><strong>Operator ID:</strong> <%= @operator.id %></p>
+                <p><strong>Nome:</strong> <%= @operator.name %></p>
+                <p><strong>Cognome:</strong> <%= @operator.surname %></p>
+                <p><strong>Sede:</strong> <%= @operator.workplace %></p>
+                <p><strong>Email:</strong> <%= @operator.email %></p>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+<script>
+
+  const mapButton = document.getElementById('select-map_button');
+  const chatButton = document.getElementById('select-chat_button');
+  const mapSection = document.querySelector('.maps_section_operator_reduced');
+  const chatSection = document.querySelector('.chat_section_operator');
+
+  mapButton.addEventListener('click', () => {
+    mapSection.style.display = 'flex';
+    chatSection.style.display = 'none';
+    mapButton.style.backgroundColor = '#eee';
+    chatButton.style.backgroundColor = '#fff';
+  });
+
+  chatButton.addEventListener('click', () => {
+    mapSection.style.display = 'none';
+    chatSection.style.display = 'flex';
+    chatButton.style.backgroundColor = '#eee';
+    mapButton.style.backgroundColor = '#fff';
+  });
+
+  // google maps
+  function initMap() {
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: { lat: 41.86, lng: 12.56 }, // Default center, will be adjusted later
+      fullscreenControl: false, // Disables fullscreen control
+      streetViewControl: false, // Disables street view control
+      mapTypeControl: false // Disables map type control
+    });
+
+    var Coordinate = "<%= @report.coordinates %>";
+    if (Coordinate != '0') {
+      Coordinate = Coordinate.split(',');
+      new google.maps.Marker({
+        position: new google.maps.LatLng(Coordinate[0], Coordinate[1]),
+        map: map,
+        title: 'Richiesta'
+      });
+    }
+
+  }
+
+  window.onload = initMap;
+
+</script>
+<script type="module">
+
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
+  import { getDatabase, ref, push, onValue } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAtyI56iKeFrVoo3UnoadYqUsK5uv_DHEU",
+    authDomain: "firstaidchat.firebaseapp.com",
+    databaseURL: "https://firstaidchat-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "firstaidchat",
+    storageBucket: "firstaidchat.firebasestorage.app",
+    messagingSenderId: "842153800095",
+    appId: "1:842153800095:web:7115d88af786b85ba84daa",
+    measurementId: "G-923GDNFVBT"
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+  const reportId = '<%= @report.id %>'; // Inietta l'ID del report come variabile JavaScript
+  listenForMessages(reportId); // Avvia l’ascolto dei messaggi per questo report
+
+
+  // Funzione per inviare un messaggio
+function sendMessage(message, senderType, reportId) {
+  console.log("Invio messaggio:", message, "Tipo:", senderType, "Report ID:", reportId); // Aggiungi questo log
+  const messagesRef = ref(database, 'messages');
+  push(messagesRef, {
+    text: message,
+    senderType: senderType, 
+    timestamp: Date.now(),
+    reportId: reportId
+  })
+  .then(() => {
+    console.log("Messaggio inviato con successo");
+  })
+  .catch((error) => {
+    console.error("Errore durante l'invio del messaggio:", error);
+  });
+}
+
+
+  // Funzione per ascoltare i messaggi di un report specifico
+function listenForMessages(reportId) {
+  const messagesRef = ref(database, 'messages');
+  
+  // Aggiungi un filtro per l'ID del report
+  onValue(messagesRef, (snapshot) => {
+    const messages = snapshot.val();
+    const messagesContainer = document.getElementById('messages');
+    messagesContainer.innerHTML = ''; // Pulisce i messaggi esistenti
+
+    if (messages) {
+      for (let id in messages) {
+        const message = messages[id];
+        
+        // Filtra i messaggi in base al reportId
+        if (message.reportId === reportId) {
+          const messageDiv = document.createElement('div');
+          messageDiv.classList.add('message'); // Applica la classe generica per il messaggio
+
+          // Determina da chi proviene il messaggio e applica la classe
+          if (message.senderType === 'operator') {
+            messageDiv.classList.add('current-message'); 
+          } else if (message.senderType === 'user') {
+            messageDiv.classList.add('other-message'); 
+          }
+
+          messageDiv.textContent = `${new Date(message.timestamp).toLocaleTimeString()}: ${message.text}`;
+          messagesContainer.appendChild(messageDiv);
+        }
+      }
+    } else {
+      console.log('Nessun messaggio trovato per questo report');
+    }
+  });
+}
+
+listenForMessages(reportId); // Ascolta solo i messaggi per questo report
+
+const chatForm = document.getElementById('chat-form');
+chatForm.addEventListener('submit', function(event) {
+  event.preventDefault();  // Evita il comportamento predefinito del form (ricarica pagina)
+  const messageInput = document.getElementById('message-input');
+  const messageText = messageInput.value.trim();
+  const reportId = '<%= @report.id %>';
+  
+  if (messageText) {
+    const senderType = 'operator';  // Cambia dinamicamente se sei un operatore
+    sendMessage(messageText, senderType, reportId);  // Invia il messaggio
+    messageInput.value = '';  // Pulisce il campo di input dopo l'invio
+  }
+});
+
+</script>
+</html>

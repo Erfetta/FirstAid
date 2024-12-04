@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>"></script>
+</head>
+<body>
+    <div class="container_navbar_supervisor">
+        <nav class="navbar_supervisor">
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                home
+              </span>
+            <% end %>
+            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
+              <span class="material-symbols-outlined">
+                person
+              </span>
+            <% end %>
+        </nav>
+      <div class="central_sec_sup">
+        <aside class="operator_list_sup" id="op_list_sup">
+          <% @operators.each do |op| %>
+            <div class="op_section_sup">
+              <p><strong>ID Operatore:</strong> <%= op.id %></p>
+              <p><strong>Nome:</strong> <%= op.name  %></p>
+              <p><strong>Cognome:</strong> <%= op.surname %></p>
+              <p><strong>Sede:</strong> <%= op.workplace %></p>
+            </div>
+          <% end %>
+        </aside>
+        <div class="right_section_sup">
+          <div class="maps_section_sup" id="map">
+              <!-- div per il render di google maps -->
+          </div>
+
+          <div class="btn_container_sup_index">
+              <button> bt1 </button>
+              <button> bt2 </button>
+              <button> bt3 </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>

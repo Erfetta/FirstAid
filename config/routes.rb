@@ -70,6 +70,8 @@ Rails.application.routes.draw do
     post 'login', to: 'supervisorpage/login#create', as: 'login_create'  # Esegue il login
     delete 'logout', to: 'supervisorpage/login#destroy', as: 'logout'  # Esegue il logout
     get 'profile', to: 'supervisorpage/profile#supervisor_profile', as: 'profile'
+    get 'sup_show_op/:id', to: 'supervisorpage/home#sup_show_op', as: 'sup_show_op'
+    get 'sup_show_report/:id', to: 'supervisorpage/home#sup_show_report', as: 'sup_show_report'
 
 
     namespace :supervisorpage do

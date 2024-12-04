@@ -14,10 +14,7 @@
         <body class="body_user <%= @theme %>-theme">
         <div class="map-container_user" id="map">
             <!-- div per il render di google maps -->
-            <script 
-                src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap&v=weekly" 
-                defer
-            ></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap&v=weekly" defer></script>
         </div>
 
     <!-- Tre bottoni sotto la mappa -->
@@ -125,6 +122,7 @@
                             title: "You are here"
                         });
                         map.setCenter(pos);
+                        console.log(pos);
                     },
                     () => {
                         handleLocationError(true, map.getCenter());

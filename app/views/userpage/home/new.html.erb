@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initGeo&v=weekly" defer></script>
     <title>Question Slider</title>
 
     <style>
@@ -211,6 +212,8 @@
     <%= f.hidden_field :question13, id: 'report_question13' %>
     <%= f.hidden_field :question14, id: 'report_question14' %>
     <%= f.hidden_field :contact_method, id: 'report_contact_method' %>
+    <%= f.hidden_field :flagCell, id: 'report_flagCell'%>
+    <%= f.hidden_field :flagInfo, id: 'report_flagInfo'%>
     <%= f.submit 'Submit', id: 'submitButton', style: 'display: none;' %>
     <% end %>
 
@@ -220,13 +223,17 @@
 
         // geolocalizzazione
         let geo_coordinates = 0;
-        navigator.geolocation.getCurrentPosition(function(position) {
-            geo_coordinates = position.coords.latitude + ", " + position.coords.longitude;
-        });
+
+        function initGeo() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    geo_coordinates = position.coords.latitude + ", " + position.coords.longitude;
+                });
+            }
+        }
 
         // user id
         let UserId = "<%= @user_id %>";
-        console.log(UserId);
         
         // slider
         let currentSlide = 0;
@@ -274,6 +281,41 @@
         let q14="";
         let q15=0;
 
+        let rep_coordinates = 0;
+        var rep_flagCell = 0;
+        var rep_flagInfo = 0;
+        function updateFromCookie(){
+
+            // recupero flag da cookie
+            const savedAttachPosition = document.cookie
+                .split("; ")
+                .find(row => row.startsWith("AttachPos="))
+                ?.split("=")[1];
+
+            const savedAttachPhone = document.cookie
+                .split("; ")
+                .find(row => row.startsWith("AttachPhone="))
+                ?.split("=")[1];
+                    
+            const savedAttachInfo = document.cookie
+                .split("; ")
+                .find(row => row.startsWith("AttachInfo="))
+                ?.split("=")[1];
+
+            // aggiorna valori per il report
+            if (savedAttachPosition == "yes") {
+                rep_coordinates = geo_coordinates;
+            }
+            if (savedAttachPhone == "yes") {
+                rep_flagCell = 1;
+            }
+            if (savedAttachInfo == "yes") {
+                rep_flagInfo = 1;
+            }
+
+            console.log(rep_coordinates);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('sendBtn').addEventListener('click', function(event) {
                 event.preventDefault(); // Previene l'invio del form predefinito
@@ -283,7 +325,9 @@
                 q13 = document.getElementById('q13').value
                 q14 = document.getElementById('q14').value
 
-                document.getElementById('report_coordinates').value = geo_coordinates;
+                updateFromCookie();
+
+                document.getElementById('report_coordinates').value = rep_coordinates;
                 document.getElementById('report_user_id').value = UserId;
                 document.getElementById('report_question1').value = q1;
                 document.getElementById('report_question2').value = q2;
@@ -300,6 +344,8 @@
                 document.getElementById('report_question13').value = q13;
                 document.getElementById('report_question14').value = q14;
                 document.getElementById('report_contact_method').value = q15;
+                document.getElementById('report_flagCell').value = rep_flagCell;
+                document.getElementById('report_flagInfo').value = rep_flagInfo;
 
                 document.getElementById('hiddenReportForm').submit();
             });

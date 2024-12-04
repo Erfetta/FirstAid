@@ -11,6 +11,7 @@ module Operatorpage
     end
     
     def show_report 
+      @operator = current_operator
       @messages = Message.all
       @report_id = params[:report_id] # Recupera l'ID del report dall'URL
     end
@@ -38,6 +39,7 @@ module Operatorpage
     
       # Crea un nuovo ReportDone con i dati da @report
       report_done = ReportDone.new(
+        id: @report.id, # Usa lo stesso ID del report
         report_time: @report.created_at,  # Usa report_time invece di report_datetime
         coordinates: @report.coordinates,
         user_id: @report.user_id,
@@ -56,7 +58,9 @@ module Operatorpage
         question12: @report.question12,
         question13: @report.question13,
         question14: @report.question14,
-        contact_method: @report.contact_method
+        contact_method: @report.contact_method,
+        flagCell: @report.flagCell,
+        flagInfo: @report.flagInfo
       )
     
       

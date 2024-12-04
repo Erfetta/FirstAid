@@ -1,0 +1,44 @@
+.sup_show_report_central{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.info_section_sup{
+    width: 40%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.user_info_sup{
+    height: calc(50% - 10px);
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 1rem;
+}
+.user_info_sup h2{
+    text-align: center;
+    margin: 10px;
+}
+.user_info_sup p{
+    margin-left: 1rem;
+    font-size: 20px;
+}
+.operator_info_sup{
+    height: calc(50% - 10px);
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 0 10px 10px 0px;
+    border-radius: 1rem;
+}
+.operator_info_sup h2{
+    text-align: center;
+    margin: 10px;
+}
+.operator_info_sup p{
+    margin-left: 1rem;
+    font-size: 20px;
+}
