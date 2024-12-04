@@ -13,11 +13,85 @@
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
+        <style>
+        /* Aggiungi qui lo stile per il container */
+       
+
+         /* Stile per il body e il container principale */
+        /* Impostazioni per il body */
+        .body_user {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;  /* Imposta un'altezza minima di 100vh per coprire tutta la pagina */
+            margin: 0;
+        }
+
+        /* Contenitore del contenuto */
+        .content-container {
+            flex: 1;  /* Consente al contenuto di espandersi per occupare lo spazio disponibile */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;  /* Imposta la larghezza massima */
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-item label {
+            font-size: 16px;
+        }
+
+        .info-item input,
+        .info-item select {
+            font-size: 16px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Media query per schermi più piccoli */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+                max-width: 95%;
+            }
+
+            .info-item {
+                margin-bottom: 12px;
+            }
+
+            .info-item label {
+                font-size: 14px;
+            }
+
+            .info-item input,
+            .info-item select {
+                font-size: 14px;
+                padding: 6px;
+            }
+        }
+
+        </style>
         
     </head>
     <body>
         <body class="body_user <%= @theme %>-theme">
-
+        <div class="content-container">
+        <div class="container">
            <div class="user-info-container">
             <h2>User Information</h2>
 
@@ -63,6 +137,8 @@
         <% else %>
             <%= link_to 'Login', new_user_session_path %>
         <% end %>
+        </div>
+        </div>
 
         <nav class="nav_user">
             <ul class="nav_user-content">
@@ -88,6 +164,7 @@
             </ul>
         </nav>
     </div>
+
 
 
     
