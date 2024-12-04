@@ -3,7 +3,7 @@ module Userpage
 
     def new
       # Mostra la pagina di login
-      render 'userpage/login/user_login'
+      render 'userpage/profiles/user_login'
     end
 
     def create

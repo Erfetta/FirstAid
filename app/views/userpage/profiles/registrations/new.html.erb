@@ -1,0 +1,185 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Aggiungi qui lo stile per il container */
+       
+
+        .body_user {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;  /* Imposta un'altezza minima di 100vh per coprire tutta la pagina */
+            margin: 0;
+        }
+
+        /* Contenitore del contenuto */
+        .content-container {
+            flex: 1;  /* Consente al contenuto di espandersi per occupare lo spazio disponibile */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;  /* Imposta la larghezza massima */
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-item label {
+            font-size: 16px;
+        }
+
+        .info-item input,
+        .info-item select {
+            font-size: 16px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Media query per schermi più piccoli */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+                max-width: 95%;
+            }
+
+            .info-item {
+                margin-bottom: 12px;
+            }
+
+            .info-item label {
+                font-size: 14px;
+            }
+
+            .info-item input,
+            .info-item select {
+                font-size: 14px;
+                padding: 6px;
+            }
+
+            
+        }
+        
+
+    </style>
+</head>
+<body class="body_user <%= @theme %>-theme">
+<div class="content-container">
+    <div class="container">
+      <h2>Registra un nuovo account</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.select :sex, options_for_select([['Male', 'M'], ['Female', 'F'], ['Other', 'O']]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+        
+    </div>
+    </div>
+
+    <nav class="nav_user">
+        <ul class="nav_user-content">
+            <li class="nav_user-list">
+                <%= link_to setting_path, class: 'link-item user' do %>
+                    <i class='bx bxs-cog link-icon'></i> <!-- Modificato da bxs-user a bxs-cog -->
+                    <span class="link-text">Settings</span>
+                <% end %>
+            </li>
+
+
+            <li class="nav_user-list">
+            <%= link_to root_path, class: 'link-item user' do %>
+                <i class='bx bxs-home link-icon user'></i>
+                <span class="link-text user">Home</span>
+            <% end %>
+        </li>
+            
+
+            <li class="nav_user-list">
+                <%= link_to profile_path, class: 'link-item active user' do %>
+                    <i class='bx bxs-user link-icon'></i>
+                    <span class="link-text">Profile</span>
+                <% end%>
+            </li>
+            <span class="indicator_user"></span>
+        </ul>
+    </nav>
+</body>
+<script>
+const linkItems = document.querySelectorAll(".link-item");
+            const indicator = document.querySelector(".indicator_user");
+
+            function updateIndicator() {
+                const activeItem = document.querySelector(".link-item.active");
+                if (activeItem) {
+                    const { offsetLeft, offsetWidth } = activeItem;
+                    indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
+                }
+            }
+
+            updateIndicator();
+            window.addEventListener("resize", updateIndicator);
+</script>
+
+</html>
+
+
