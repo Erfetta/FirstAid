@@ -15,7 +15,7 @@ module Userpage
         redirect_to profile_path  # Reindirizza alla pagina principale
       else
         flash.now[:alert] = 'Credenziali non valide. Riprova.'
-        render 'userpage/login/user_login'
+        render 'userpage/profiles/user_login'
       end
     end
 

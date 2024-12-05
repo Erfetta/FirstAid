@@ -9,18 +9,12 @@
     <style>
         /* Aggiungi qui lo stile per il container */
        
-
-        .body_user {
-          align-items: center;
-        }
-
         .container {
-            background-color: #ffffff;
+            background-color: #fff;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 800px;  /* Imposta la larghezza massima */
+            width: 350px;
             text-align: center;
             margin-bottom: 40px;
         }
@@ -81,7 +75,7 @@
         }
 
         .content-container {
-            flex: 1;  /* Consente al contenuto di espandersi per occupare lo spazio disponibile */
+            height: calc(100% - 150px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,12 +93,12 @@
         <%= form_for :user, url: login_create_path do |f| %>
             <div class="field">
                 <%= f.label :email, "Email" %>
-                <%= f.email_field :email, autofocus: true %>
+                <%= f.email_field :email, autofocus: true, required: true %>
             </div>
 
             <div class="field">
                 <%= f.label :password, "Password" %>
-                <%= f.password_field :password %>
+                <%= f.password_field :password, required: true %>
             </div>
 
             <div class="actions">
@@ -118,7 +112,7 @@
 
         <p>Non hai un account? <%= link_to "Registrati", new_user_registration_path %></p>
     </div>
-    </div>
+</div>
 
     <nav class="nav_user">
         <ul class="nav_user-content">

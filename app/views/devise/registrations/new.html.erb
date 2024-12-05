@@ -11,73 +11,87 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <style>
         /* Aggiungi qui lo stile per il container */
-       
 
-        .body_user {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;  /* Imposta un'altezza minima di 100vh per coprire tutta la pagina */
-            margin: 0;
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            margin-bottom: 40px;
+            height: 80%;
+            overflow-y: auto;
         }
 
-        /* Contenitore del contenuto */
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .field {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .field label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .field select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .actions {
+            margin-top: 20px;
+        }
+
+        .actions input {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .actions input:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
         .content-container {
-            flex: 1;  /* Consente al contenuto di espandersi per occupare lo spazio disponibile */
+            height: calc(100% - 150px);
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
-
-        .container {
-            background-color: #ffffff;
-            border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 800px;  /* Imposta la larghezza massima */
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .info-item {
-            margin-bottom: 15px;
-        }
-
-        .info-item label {
-            font-size: 16px;
-        }
-
-        .info-item input,
-        .info-item select {
-            font-size: 16px;
-            padding: 8px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Media query per schermi più piccoli */
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 15px;
-                max-width: 95%;
-            }
-
-            .info-item {
-                margin-bottom: 12px;
-            }
-
-            .info-item label {
-                font-size: 14px;
-            }
-
-            .info-item input,
-            .info-item select {
-                font-size: 14px;
-                padding: 6px;
-            }
-
-            
         }
         
 
@@ -86,54 +100,46 @@
 <body class="body_user <%= @theme %>-theme">
 <div class="content-container">
     <div class="container">
-      <h2>Registra un nuovo account</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sex %><br />
-    <%= f.select :sex, options_for_select([['Male', 'M'], ['Female', 'F'], ['Other', 'O']]) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-        
+      <h2>Registrazione Utente</h2>
+        <% if flash[:alert] %>
+            <p><%= flash[:alert] %></p>
+        <% end %>
+        <%= form_for :user, url: registration_path(resource_name) do |f| %>
+        <div class="field">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
+        </div>
+        <div class="field">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "new-password", required: true %>
+        </div>
+        <div class="field">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true %>
+        </div>
+        <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+        <div class="field">
+            <%= f.label :surname %>
+            <%= f.text_field :surname %>
+        </div>
+        <div class="field">
+            <%= f.label :sex %>
+            <%= f.select :sex, options_for_select([['Male', 'M'], ['Female', 'F'], ['Other', 'O']]) %>
+        </div>
+        <div class="field">
+            <%= f.label :age %>
+            <%= f.number_field :age %>
+        </div>
+        <div class="actions">
+            <%= f.submit "Sign up" %>
+        </div>
+        <% end %>
+        <p>Torna al <%= link_to "Login", profile_path %></p>
     </div>
-    </div>
+</div>
 
     <nav class="nav_user">
         <ul class="nav_user-content">
