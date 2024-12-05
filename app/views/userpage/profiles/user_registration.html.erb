@@ -104,7 +104,7 @@
         <% if flash[:alert] %>
             <p><%= flash[:alert] %></p>
         <% end %>
-        <%= form_for :user, url: registration_path(resource_name) do |f| %>
+        <%= form_for :user, url: registration_create_path do |f| %>
         <div class="field">
             <%= f.label :email %>
             <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>

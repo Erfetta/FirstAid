@@ -44616,3 +44616,1009 @@ Processing by Userpage::ProfilesController#profile as HTML
   Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1135)
   Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 3244)
 Completed 200 OK in 55ms (Views: 52.1ms | ActiveRecord: 0.1ms | Allocations: 4530)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 19:18:08 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2496)
+  Rendered layout layouts/application.html.erb (Duration: 145.2ms | Allocations: 60051)
+Completed 200 OK in 220ms (Views: 151.1ms | ActiveRecord: 3.0ms | Allocations: 72202)
+Started GET "/info" for 127.0.0.1 at 2024-12-05 19:18:10 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 30.9ms | Allocations: 4581)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 6742)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.2ms | Allocations: 7978)
+Started DELETE "/logout" for 127.0.0.1 at 2024-12-05 19:18:12 +0100
+Processing by Userpage::LoginController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Logout"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:23:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 1872)
+Started GET "/" for 127.0.0.1 at 2024-12-05 19:18:12 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 3032)
+Completed 200 OK in 103ms (Views: 76.7ms | ActiveRecord: 0.0ms | Allocations: 4222)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 19:18:14 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 19:18:14 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1345)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3457)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4354)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 19:18:15 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 34.8ms | Allocations: 3465)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 5569)
+Completed 200 OK in 63ms (Views: 51.6ms | ActiveRecord: 0.0ms | Allocations: 8456)
+Started POST "/users" for 127.0.0.1 at 2024-12-05 19:18:36 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"456@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "456@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "surname", "sex", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "456@gmail.com"], ["encrypted_password", "$2a$12$gDfO2MYku3bbzMrY0Lv3XufMg317fiQYkTO1Y9ewpl0ZB4m1Rxbzm"], ["name", ""], ["surname", ""], ["sex", "M"], ["created_at", "2024-12-05 19:18:36.935851"], ["updated_at", "2024-12-05 19:18:36.935851"]]
+  [1m[36mTRANSACTION (13.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 404ms (ActiveRecord: 14.3ms | Allocations: 9337)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 19:18:36 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1145)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 3241)
+Completed 200 OK in 67ms (Views: 34.3ms | ActiveRecord: 0.5ms | Allocations: 4478)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 19:18:46 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3219)
+Completed 200 OK in 21ms (Views: 9.0ms | ActiveRecord: 1.8ms | Allocations: 4466)
+Started GET "/info" for 127.0.0.1 at 2024-12-05 19:18:47 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 3746)
+Completed 200 OK in 74ms (Views: 25.8ms | ActiveRecord: 4.0ms | Allocations: 4834)
+Started DELETE "/logout" for 127.0.0.1 at 2024-12-05 19:18:49 +0100
+Processing by Userpage::LoginController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Logout"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:23:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 0.5ms | Allocations: 1251)
+Started GET "/" for 127.0.0.1 at 2024-12-05 19:18:49 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 2428)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 2924)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 19:18:50 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 385)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 19:18:50 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 697)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 2785)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 3088)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 19:18:51 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 38.6ms | Allocations: 2177)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 4264)
+Completed 200 OK in 74ms (Views: 65.8ms | ActiveRecord: 0.0ms | Allocations: 4905)
+Started POST "/users" for 127.0.0.1 at 2024-12-05 19:19:19 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "3@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2883)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4970)
+Completed 200 OK in 376ms (Views: 8.5ms | ActiveRecord: 0.6ms | Allocations: 8842)
+Started POST "/users" for 127.0.0.1 at 2024-12-05 19:20:43 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "3@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 4958)
+  Rendered layout layouts/application.html.erb (Duration: 148.3ms | Allocations: 61195)
+Completed 200 OK in 549ms (Views: 156.3ms | ActiveRecord: 1.5ms | Allocations: 80491)
+Started POST "/users" for 127.0.0.1 at 2024-12-05 19:21:41 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"we@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "we@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "surname", "sex", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "we@gmail.com"], ["encrypted_password", "$2a$12$n3v83WfRSVdPEUIQe8N60.qRmWLWEFZvE/TKuBEFQGJ4WiTCMUPi."], ["name", ""], ["surname", ""], ["sex", "M"], ["created_at", "2024-12-05 19:21:42.290325"], ["updated_at", "2024-12-05 19:21:42.290325"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 361ms (ActiveRecord: 5.1ms | Allocations: 9426)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 19:21:42 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 14.5ms | Allocations: 2035)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 4344)
+Completed 200 OK in 30ms (Views: 20.3ms | ActiveRecord: 0.8ms | Allocations: 7422)
+Started GET "/" for 127.0.0.1 at 2024-12-05 20:13:51 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "14"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 144.5ms | Allocations: 57380)
+Completed 200 OK in 228ms (Views: 148.4ms | ActiveRecord: 5.7ms | Allocations: 71970)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:13:53 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2304)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 4465)
+Completed 200 OK in 38ms (Views: 29.8ms | ActiveRecord: 0.3ms | Allocations: 7206)
+Started GET "/info" for 127.0.0.1 at 2024-12-05 20:13:55 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 11.3ms | Allocations: 4579)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 6668)
+Completed 200 OK in 54ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 7886)
+Started DELETE "/logout" for 127.0.0.1 at 2024-12-05 20:13:56 +0100
+Processing by Userpage::LoginController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Logout"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:23:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms | Allocations: 1848)
+Started GET "/" for 127.0.0.1 at 2024-12-05 20:13:56 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2435)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 2957)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:13:57 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 357)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:13:57 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 18.7ms | Allocations: 1345)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 3434)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 4340)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:13:59 +0100
+  
+SyntaxError (/home/biar/Documents/GitHub/FirstAid/app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected symbol literal, expecting ')'
+                :name, name, :surname, surn, :...
+                ^
+/home/biar/Documents/GitHub/FirstAid/app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+...         :name, name, :surname, surn, :sex , sex , :age, age)
+...                              ^
+/home/biar/Documents/GitHub/FirstAid/app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+...e, name, :surname, surn, :sex , sex , :age, age)
+...                              ^
+/home/biar/Documents/GitHub/FirstAid/app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+...rname, surn, :sex , sex , :age, age)
+...                              ^
+):
+  
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected symbol literal, expecting ')'
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected symbol literal, expecting ')'
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/controllers/userpage/registrations_controller.rb:27: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+Started GET "/" for 127.0.0.1 at 2024-12-05 20:24:53 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1124)
+  Rendered layout layouts/application.html.erb (Duration: 169.7ms | Allocations: 58293)
+Completed 200 OK in 182ms (Views: 172.6ms | ActiveRecord: 0.0ms | Allocations: 62166)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:24:56 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 451)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:24:56 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1658)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 3819)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 4765)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:24:58 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 31.8ms | Allocations: 4416)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 6505)
+Completed 200 OK in 68ms (Views: 67.0ms | ActiveRecord: 0.0ms | Allocations: 7388)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:25:32 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"provadef@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 3440)
+  
+NameError (undefined local variable or method `sign_up_params' for #<Userpage::RegistrationsController:0x00000000009df8>):
+  
+app/controllers/userpage/registrations_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2024-12-05 20:42:12 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 146.5ms | Allocations: 57484)
+Completed 200 OK in 182ms (Views: 152.4ms | ActiveRecord: 0.0ms | Allocations: 61053)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:42:15 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.0ms | Allocations: 468)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:42:15 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1658)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3819)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4777)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:42:19 +0100
+  
+Zeitwerk::NameError (expected file /home/biar/Documents/GitHub/FirstAid/app/controllers/userpage/registrations_controller.rb to define constant Userpage::RegistrationsController, but didn't):
+  
+zeitwerk (2.6.17) lib/zeitwerk/loader/callbacks.rb:32:in `on_file_autoloaded'
+zeitwerk (2.6.17) lib/zeitwerk/kernel.rb:27:in `require'
+activesupport (6.1.7.8) lib/active_support/inflector/methods.rb:287:in `const_get'
+activesupport (6.1.7.8) lib/active_support/inflector/methods.rb:287:in `block in constantize'
+activesupport (6.1.7.8) lib/active_support/inflector/methods.rb:283:in `each'
+activesupport (6.1.7.8) lib/active_support/inflector/methods.rb:283:in `inject'
+activesupport (6.1.7.8) lib/active_support/inflector/methods.rb:283:in `constantize'
+activesupport (6.1.7.8) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.7.8) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.7.8) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.7.8) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.7.8) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.7.8) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:43:29 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.9ms | Allocations: 691)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2803)
+Completed 200 OK in 18ms (Views: 13.8ms | Allocations: 3739)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:43:31 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 186)
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 5.4ms | Allocations: 720)
+  Rendered /home/biar/.rvm/gems/ruby-2.7.2/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 34.1ms | Allocations: 4799)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 6908)
+Completed 200 OK in 109ms (Views: 48.3ms | ActiveRecord: 4.0ms | Allocations: 17120)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:44:26 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 691)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2779)
+Completed 200 OK in 8ms (Views: 6.3ms | Allocations: 3708)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:44:27 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2459)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 4547)
+Completed 200 OK in 17ms (Views: 15.8ms | Allocations: 5433)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:44:51 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova4@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+[Devise] Could not find devise mapping for path "/registration".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 0ms (Allocations: 127)
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/registration".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.7.3) app/controllers/devise_controller.rb:90:in `unknown_action!'
+devise (4.7.3) app/controllers/devise_controller.rb:65:in `assert_is_devise_resource!'
+devise (4.7.3) app/controllers/devise_controller.rb:103:in `require_no_authentication'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.8) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:46:29 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 25.3ms | Allocations: 1898)
+  Rendered layout layouts/application.html.erb (Duration: 184.3ms | Allocations: 59248)
+Completed 200 OK in 225ms (Views: 198.9ms | ActiveRecord: 0.0ms | Allocations: 63015)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:46:30 +0100
+  
+ActionController::RoutingError (uninitialized constant RegistrationsController):
+  
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:48:07 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1840)
+  Rendered layout layouts/application.html.erb (Duration: 169.4ms | Allocations: 58308)
+Completed 200 OK in 179ms (Views: 172.2ms | ActiveRecord: 0.0ms | Allocations: 61618)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:48:09 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 37.0ms | Allocations: 4834)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 4868)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms | Allocations: 6777)
+  
+ActionView::Template::Error (undefined local variable or method `registration_create_path' for #<ActionView::Base:0x00000000009b78>
+Did you mean?  registration_path):
+    104:         <% if flash[:alert] %>
+    105:             <p><%= flash[:alert] %></p>
+    106:         <% end %>
+    107:         <%= form_for :user, url: registration_create_path do |f| %>
+    108:         <div class="field">
+    109:             <%= f.label :email %>
+    110:             <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
+  
+app/views/userpage/profiles/user_registration.html.erb:107
+app/controllers/userpage/registrations_controller.rb:6:in `new'
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:48:46 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1909)
+  Rendered layout layouts/application.html.erb (Duration: 201.2ms | Allocations: 59735)
+Completed 200 OK in 213ms (Views: 207.8ms | ActiveRecord: 0.0ms | Allocations: 63326)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:48:51 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 26.1ms | Allocations: 4305)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 6466)
+Completed 200 OK in 47ms (Views: 44.1ms | ActiveRecord: 0.0ms | Allocations: 8401)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:49:11 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova5@gamil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+[Devise] Could not find devise mapping for path "/registration".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 129)
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/registration".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.7.3) app/controllers/devise_controller.rb:90:in `unknown_action!'
+devise (4.7.3) app/controllers/devise_controller.rb:65:in `assert_is_devise_resource!'
+devise (4.7.3) app/controllers/devise_controller.rb:103:in `require_no_authentication'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.8) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.8) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.8) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.8) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.8) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.8) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.8) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.8) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.8) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.8) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.8) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.8) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+railties (6.1.7.8) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:50:12 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova5@gamil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "prova5@gamil.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2950)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5062)
+Completed 200 OK in 357ms (Views: 11.1ms | ActiveRecord: 7.4ms | Allocations: 17274)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:50:24 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova5@gamil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "prova5@gamil.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2775)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4862)
+Completed 200 OK in 402ms (Views: 11.0ms | ActiveRecord: 0.5ms | Allocations: 8089)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:50:36 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova5@gamil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "prova5@gamil.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "surname", "sex", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "prova5@gamil.com"], ["encrypted_password", "$2a$12$UDsUYTzC95MOz9vqmMVkc..BYkZIOO./QAa4Ezoj3CEQ6vyqa2Icu"], ["name", ""], ["surname", ""], ["sex", "M"], ["created_at", "2024-12-05 20:50:36.778042"], ["updated_at", "2024-12-05 20:50:36.778042"]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 377ms (ActiveRecord: 6.9ms | Allocations: 4805)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:50:36 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2797)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3268)
+Started POST "/login" for 127.0.0.1 at 2024-12-05 20:50:57 +0100
+Processing by Userpage::LoginController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova5@gamil.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "prova5@gamil.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:13:in `create'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 382ms (ActiveRecord: 0.7ms | Allocations: 1712)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:50:58 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2037)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4125)
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 0.5ms | Allocations: 6858)
+Started GET "/info" for 127.0.0.1 at 2024-12-05 20:51:50 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2465)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 4553)
+Completed 200 OK in 83ms (Views: 25.6ms | ActiveRecord: 0.7ms | Allocations: 5762)
+Started DELETE "/logout" for 127.0.0.1 at 2024-12-05 20:51:58 +0100
+Processing by Userpage::LoginController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Logout"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:23:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.5ms | Allocations: 2866)
+Started GET "/" for 127.0.0.1 at 2024-12-05 20:51:58 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 943)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 3057)
+Completed 200 OK in 96ms (Views: 87.7ms | ActiveRecord: 0.0ms | Allocations: 4218)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:52:00 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 356)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:52:00 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 689)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2777)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3056)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:52:01 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3587)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4112)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:52:24 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova6@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "prova6@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "surname", "sex", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "prova6@gmail.com"], ["encrypted_password", "$2a$12$HXGOz7dNJHkMH43uZzlocOmCNviWcXS9X1q8d5RyCj27g4HOQVinK"], ["name", ""], ["surname", ""], ["sex", "M"], ["created_at", "2024-12-05 20:52:24.803093"], ["updated_at", "2024-12-05 20:52:24.803093"]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 354ms (ActiveRecord: 4.4ms | Allocations: 3838)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:52:24 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 682)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2769)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 3061)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:52:29 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Redirected to http://localhost:3000/profile
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 1268)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:52:29 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1145)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3238)
+Completed 200 OK in 18ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 4478)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:52:31 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 3237)
+Completed 200 OK in 51ms (Views: 25.9ms | ActiveRecord: 0.3ms | Allocations: 4475)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:52:33 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 3219)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.2ms | Allocations: 4474)
+Started GET "/info" for 127.0.0.1 at 2024-12-05 20:52:34 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 3746)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 4821)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:54:54 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1146)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3262)
+Completed 200 OK in 49ms (Views: 10.5ms | ActiveRecord: 2.6ms | Allocations: 12603)
+Started GET "/info" for 127.0.0.1 at 2024-12-05 20:54:57 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3818)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 4888)
+Started DELETE "/logout" for 127.0.0.1 at 2024-12-05 20:54:58 +0100
+Processing by Userpage::LoginController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Logout"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:23:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 1468)
+Started GET "/" for 127.0.0.1 at 2024-12-05 20:54:58 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2428)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3123)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:54:59 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 360)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:54:59 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.3ms | Allocations: 703)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2791)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3201)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:55:26 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 15.9ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 3587)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 4354)
+Started GET "/" for 127.0.0.1 at 2024-12-05 20:55:43 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2452)
+Completed 200 OK in 14ms (Views: 9.8ms | Allocations: 3606)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:55:44 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (Allocations: 413)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:55:44 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 4.6ms | Allocations: 690)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2796)
+Completed 200 OK in 13ms (Views: 12.4ms | Allocations: 3252)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:55:47 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 3587)
+Completed 200 OK in 42ms (Views: 34.5ms | Allocations: 4344)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:55:59 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fettuccia56@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fettuccia56@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2757)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4844)
+Completed 200 OK in 322ms (Views: 8.4ms | ActiveRecord: 2.4ms | Allocations: 14763)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:56:10 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 339)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:56:10 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.6ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2765)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3045)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:56:12 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 31.6ms | Allocations: 1489)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 3602)
+Completed 200 OK in 69ms (Views: 66.2ms | ActiveRecord: 0.0ms | Allocations: 4134)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:56:17 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 349)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:56:17 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 2766)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 3046)
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-05 20:56:20 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1489)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 3582)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms | Allocations: 4103)
+Started POST "/registration" for 127.0.0.1 at 2024-12-05 20:56:34 +0100
+Processing by Userpage::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova33@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"", "surname"=>"", "sex"=>"M", "age"=>""}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "prova33@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/userpage/registrations_controller.rb:13:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2775)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4880)
+Completed 200 OK in 252ms (Views: 6.7ms | ActiveRecord: 0.6ms | Allocations: 8070)
+Started GET "/profile" for 127.0.0.1 at 2024-12-05 20:56:39 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 343)
+Started GET "/login" for 127.0.0.1 at 2024-12-05 20:56:39 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.9ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 2765)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 3049)

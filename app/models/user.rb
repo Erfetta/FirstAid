@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_many :reports_done
   has_many :measurement_data, class_name: 'MeasurementData', dependent: :destroy
 
-  validates :name, presence: true
 end
