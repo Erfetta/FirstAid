@@ -52,3 +52,26 @@
     outline: none;
     width: 10rem;
 }
+
+
+/* pagina OTP */
+
+.otp_op_text{
+    margin-bottom: 2rem;
+}
+
+.op_otp_to_login{
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.op_otp_to_login input{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    width: 10rem;
+}

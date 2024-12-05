@@ -1,22 +1,31 @@
-<h1>Inserisci il codice OTP</h1>
+<!DOCTYPE html>
+<html lang="it">
+<body>
+    <div class="container_navbar_operator">
+      <div class="op_log_container">
+        <h1>Autenticazione Due Fattori</h1>
 
-<% if flash[:alert] %>
-  <div class="alert alert-danger">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
+        <% if flash[:alert] %>
+          <div class="alert alert-danger">
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
 
-<%= form_with url: verify_otp_path, method: :post do |f| %>
-  <div>
-    <%= f.label :otp, "Codice OTP" %>
-    <%= f.text_field :otp, class: "form-control" %>
-  </div>
-  <div>
-    <%= f.submit "Verifica", class: "btn btn-primary" %>
-  </div>
-<% end %>
+        <%= form_with url: verify_otp_path, method: :post do |f| %>
+          <div class="op_field">
+            <%= f.label :otp, "Codice OTP" %>
+            <%= f.text_field :otp, class: "form-control" %>
+          </div>
+          <p class="otp_op_text"> Controlla la tua email per il codice OTP </p>
+          <div class="op_actions">
+            <%= f.submit "Verifica", class: "btn btn-primary" %>
+          </div>
+        <% end %>
 
-<!-- Bottone per tornare alla pagina di login -->
-<div style="margin-top: 20px;">
-  <%= link_to "Torna al login", login_path, class: "btn btn-secondary" %>
-</div>
+        <!-- Bottone per tornare alla pagina di login -->
+          <div class="op_otp_to_login">
+            <%= button_to "Torna al login", login_path, method: :get%>
+          </div>
+      </div>
+    </div>
+</body>
