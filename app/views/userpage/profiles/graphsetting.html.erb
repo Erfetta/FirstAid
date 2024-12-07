@@ -21,36 +21,30 @@
 
 
 
-<div class="settings-container">
+    <div class="settings-container">
     <h2 class="title-settings">Opzioni profilo</h2>
-        <!-- Alert -->
-        <div class="settings_user-alert">
-            <label>Enable Alerts:</label>
-            <label><input type="radio" name="alert" value="yes"> Yes</label>
-            <label><input type="radio" name="alert" value="no"> No</label>
-        </div>
-        
-        <!-- Tempo del Grafico -->
-        <div class="settings_user-graph-time">
-            <label>Graph Time Range:</label>
-            <select name="graph-time">
-                <option value="1-month">1 Month</option>
-                <option value="3-months">3 Months</option>
-                <option value="6-months">6 Months</option>
-                <option value="12-months">12 Months</option>
-            </select>
-        </div>
-        
-        <!-- Eliminazione Dati -->
-        <div class="settings_user-data-delete">
-            <label>Delete Data After:</label>
-            <select name="data-delete-time">
-                <option value="1-month">1 Month</option>
-                <option value="3-months">3 Months</option>
-                <option value="6-months">6 Months</option>
-                <option value="12-months">12 Months</option>
-            </select>
-        </div>
+
+    <!-- Tempo del Grafico -->
+    <div class="settings_user-graph-time">
+        <label>Graph Time Range:</label>
+        <select name="graph-time">
+        <option value="1-month">1 Month</option>
+        <option value="3-months">3 Months</option>
+        <option value="6-months">6 Months</option>
+        <option value="12-months">12 Months</option>
+        </select>
+    </div>
+
+    <!-- Eliminazione Dati -->
+    <div class="settings_user-data-delete">
+        <label>Delete Data After:</label>
+        <select name="data-delete-time">
+        <option value="1-month">1 Month</option>
+        <option value="3-months">3 Months</option>
+        <option value="6-months">6 Months</option>
+        <option value="12-months">12 Months</option>
+        </select>
+    </div>
     </div>
     
  
@@ -86,6 +80,48 @@
 <!-- JavaScript -->
     <script>
     document.addEventListener("DOMContentLoaded", () => {
+
+        // Recupera i selettori
+  const graphTimeSelect = document.querySelector("select[name='graph-time']");
+  const dataDeleteSelect = document.querySelector("select[name='data-delete-time']");
+
+  // Funzione per impostare un cookie
+  function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Scadenza in giorni
+    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+  }
+
+  // Funzione per leggere un cookie
+  function getCookie(name) {
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+      const [key, value] = cookie.split("=");
+      if (key === name) return value;
+    }
+    return null;
+  }
+
+  // Aggiorna i valori delle opzioni basandosi sui cookie salvati
+  function loadSavedOptions() {
+    const savedGraphTime = getCookie("graph_time");
+    const savedDataDeleteTime = getCookie("data_delete_time");
+
+    if (savedGraphTime) graphTimeSelect.value = savedGraphTime;
+    if (savedDataDeleteTime) dataDeleteSelect.value = savedDataDeleteTime;
+  }
+
+  // Event listeners per salvare le selezioni nei cookie
+  graphTimeSelect.addEventListener("change", () => {
+    setCookie("graph_time", graphTimeSelect.value, 30); // Salva per 30 giorni
+  });
+
+  dataDeleteSelect.addEventListener("change", () => {
+    setCookie("data_delete_time", dataDeleteSelect.value, 30); // Salva per 30 giorni
+  });
+
+  // Carica le opzioni salvate al caricamento della pagina
+  loadSavedOptions();
 
         
 
