@@ -13,6 +13,29 @@ class Userpage::ProfilesController < ApplicationController
     @pressure_data = current_user.measurement_data.where(measurement_type: 'pressure').order(created_at: :desc)
     @bpm_data = current_user.measurement_data.where(measurement_type: 'bpm').order(created_at: :desc)
     @oxygen_data = current_user.measurement_data.where(measurement_type: 'oxygen').order(created_at: :desc)
+
+    time_ago = case cookies[:graph_time].to_i
+    when 1 then 1.minute.ago
+    when 2 then 2.minutes.ago
+    when 6 then 6.minutes.ago
+    when 12 then 12.minutes.ago
+    else 1.minute.ago
+    end
+
+    @bpm_data = current_user.measurement_data
+                        .where(measurement_type: 'bpm')
+                        .where("created_at >= ?", time_ago)
+                        .order(:created_at)
+
+    @pressure_data = current_user.measurement_data
+                                .where(measurement_type: 'pressure')
+                                .where("created_at >= ?", time_ago)
+                                .order(:created_at)
+
+    @oxygen_data = current_user.measurement_data
+                              .where(measurement_type: 'oxygen')
+                              .where("created_at >= ?", time_ago)
+                              .order(:created_at)
   end
 
   def graphsetting
