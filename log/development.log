@@ -5626,3 +5626,26 @@ Migrating to AddFlagsToReportAndReportDones (20241204165229)
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeleteDataAfterToUsers (20241209184329)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "delete_data_after" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20241209184329"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[ActiveJob] [DeleteOldDataJob] [67f1a26c-3668-48bc-957c-b30317a046f9] Performing DeleteOldDataJob (Job ID: 67f1a26c-3668-48bc-957c-b30317a046f9) from Async(default) enqueued at 
+[ActiveJob] [DeleteOldDataJob] [67f1a26c-3668-48bc-957c-b30317a046f9]   [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[ActiveJob] [DeleteOldDataJob] [67f1a26c-3668-48bc-957c-b30317a046f9]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."delete_data_after" IS NOT NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+[ActiveJob] [DeleteOldDataJob] [67f1a26c-3668-48bc-957c-b30317a046f9]   [1m[36mMeasurementData Destroy (3.3ms)[0m  [1m[31mDELETE FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND (created_at < '2024-12-09 20:06:48.152008')[0m  [["user_id", 9]]
+[ActiveJob] [DeleteOldDataJob] [67f1a26c-3668-48bc-957c-b30317a046f9] Cancellazione completata per utente 9. Dati eliminati prima di 2024-12-09 20:06:48 +0100. Record eliminati: 33.
+[ActiveJob] [DeleteOldDataJob] [67f1a26c-3668-48bc-957c-b30317a046f9] Performed DeleteOldDataJob (Job ID: 67f1a26c-3668-48bc-957c-b30317a046f9) from Async(default) in 17.71ms
+[ActiveJob] Enqueued DataCleanupJob (Job ID: 37169fc3-0531-4e0a-bc77-eca70b356f5b) to Async(default)
+[ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4] Performing DataCleanupJob (Job ID: 37e38b06-7a45-482a-9364-acb4c93e94f4) from Async(default) enqueued at 
+[ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4]   [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+[ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4]   [1m[36mMeasurementData Destroy (4.9ms)[0m  [1m[31mDELETE FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND (created_at < '2024-12-10 00:28:44.886651')[0m  [["user_id", 9]]
+[ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4] Cancellazione completata per utente 9. Dati eliminati prima di 2024-12-10 00:28:44 +0100.
+[ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4] Performed DataCleanupJob (Job ID: 37e38b06-7a45-482a-9364-acb4c93e94f4) from Async(default) in 21.59ms

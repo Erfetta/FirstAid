@@ -37,14 +37,15 @@
 
     <!-- Eliminazione Dati -->
     <div class="settings_user-data-delete">
-        <label>Delete Data After:</label>
-        <select name="data-delete-time">
-        <option value="1-minutes">1 Minutes</option>
+    <label>Delete Data After:</label>
+    <select name="data-delete-time" id="data-delete-time">
+        <option value="1-minutes">1 Minute</option>
         <option value="2-minutes">2 Minutes</option>
         <option value="6-minutes">6 Minutes</option>
         <option value="12-minutes">12 Minutes</option>
-        </select>
+    </select>
     </div>
+
     </div>
     
  
@@ -81,47 +82,75 @@
     <script>
     document.addEventListener("DOMContentLoaded", () => {
 
-        // Recupera i selettori
-  const graphTimeSelect = document.querySelector("select[name='graph-time']");
-  const dataDeleteSelect = document.querySelector("select[name='data-delete-time']");
+        const dataDeleteSelect = document.querySelector("#data-delete-time");
 
-  // Funzione per impostare un cookie
-  function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Scadenza in giorni
-    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
-  }
-
-  // Funzione per leggere un cookie
-  function getCookie(name) {
-    const cookies = document.cookie.split("; ");
-    for (const cookie of cookies) {
-      const [key, value] = cookie.split("=");
-      if (key === name) return value;
+    // Funzione per inviare il valore al server
+    function updateDeleteDataAfter(value) {
+      fetch('/userpage/update_delete_data_after', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+        },
+        body: JSON.stringify({ delete_data_after: value })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Errore durante il salvataggio");
+        return response.json();
+      })
+      .then(data => {
+        console.log("Impostazione aggiornata con successo:", data);
+      })
+      .catch(error => {
+        console.error("Errore:", error);
+      });
     }
-    return null;
-  }
 
-  // Aggiorna i valori delle opzioni basandosi sui cookie salvati
-  function loadSavedOptions() {
-    const savedGraphTime = getCookie("graph_time");
-    const savedDataDeleteTime = getCookie("data_delete_time");
+    // Aggiungi un listener al menu a tendina
+    dataDeleteSelect.addEventListener("change", (event) => {
+      const selectedValue = event.target.value;
+      updateDeleteDataAfter(selectedValue);
+    });
 
-    if (savedGraphTime) graphTimeSelect.value = savedGraphTime;
-    if (savedDataDeleteTime) dataDeleteSelect.value = savedDataDeleteTime;
-  }
+        // Recupera i selettori
+    const graphTimeSelect = document.querySelector("select[name='graph-time']");
+    
 
-  // Event listeners per salvare le selezioni nei cookie
-  graphTimeSelect.addEventListener("change", () => {
-    setCookie("graph_time", graphTimeSelect.value, 30); // Salva per 30 giorni
-  });
+    // Funzione per impostare un cookie
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Scadenza in giorni
+        document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+    }
 
-  dataDeleteSelect.addEventListener("change", () => {
-    setCookie("data_delete_time", dataDeleteSelect.value, 30); // Salva per 30 giorni
-  });
+    // Funzione per leggere un cookie
+    function getCookie(name) {
+        const cookies = document.cookie.split("; ");
+        for (const cookie of cookies) {
+        const [key, value] = cookie.split("=");
+        if (key === name) return value;
+        }
+        return null;
+    }
 
-  // Carica le opzioni salvate al caricamento della pagina
-  loadSavedOptions();
+    // Aggiorna i valori delle opzioni basandosi sui cookie salvati
+    function loadSavedOptions() {
+        const savedGraphTime = getCookie("graph_time");
+        
+
+        if (savedGraphTime) graphTimeSelect.value = savedGraphTime;
+        
+    }
+
+    // Event listeners per salvare le selezioni nei cookie
+    graphTimeSelect.addEventListener("change", () => {
+        setCookie("graph_time", graphTimeSelect.value, 30); // Salva per 30 giorni
+    });
+
+    
+
+    // Carica le opzioni salvate al caricamento della pagina
+    loadSavedOptions();
 
         
 
