@@ -166,6 +166,7 @@
                 <p><strong>Cognome:</strong> <%= @operator.surname %></p>
                 <p><strong>Sede:</strong> <%= @operator.workplace %></p>
                 <p><strong>Email:</strong> <%= @operator.email %></p>
+                <%= button_to 'Vedi scheda operatore', sup_show_op_path(@operator.id), method: :get, class: 'btn btn-primary' %>
             </div>
           </div>
         </div>

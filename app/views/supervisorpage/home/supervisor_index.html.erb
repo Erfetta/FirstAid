@@ -23,7 +23,7 @@
       <div class="central_sec_sup">
         <aside class="operator_list_sup" id="op_list_sup">
           <% @operators.each do |op| %>
-            <div class="op_section_sup">
+            <div class="op_section_sup" id="<%= op.id %>">
               <p><strong>ID Operatore:</strong> <%= op.id %></p>
               <p><strong>Nome:</strong> <%= op.name  %></p>
               <p><strong>Cognome:</strong> <%= op.surname %></p>
@@ -37,15 +37,16 @@
           </div>
 
           <div class="btn_container_sup_index">
-              <button> bt1 </button>
-              <button> bt2 </button>
-              <button> bt3 </button>
+              <button> Aggiungi Operatore </button>
+              <%= button_to "Lista\nReport", sup_report_list_path, method: :get, class: 'btn btn-primary'%>
+              <button> Crea Recap </button>
           </div>
         </div>
       </div>
     </div>
 </body>
 <script>
+
   var arrrayReportsID = <%= raw @reports.map {|report| j report.id}.to_json %>;
   var arrayReportsC = <%= raw @reports.map {|report| j report.coordinates}.to_json %>;
   console.log(arrrayReportsID);
@@ -84,11 +85,22 @@
         const doc = parser.parseFromString(html, 'text/html');
         const newOpsSection = doc.querySelector('#op_list_sup').innerHTML;
         document.querySelector('#op_list_sup').innerHTML = newOpsSection;
+        attachClickListeners();
       })
       .catch(error => console.error('Errore durante l\'aggiornamento degli operatori:', error));
   }
 
-  setInterval(fetchOPs, 5000); // Aggiorna ogni 5 secondi
+  function attachClickListeners() {
+    document.querySelectorAll('.op_section_sup').forEach(element => {
+      element.addEventListener('click', () => {
+        window.location.href = `/sup_show_op/${element.id}`;
+      });
+    });
+  }
+
+  attachClickListeners();
+
+  setInterval(fetchRPs, 5000); // Aggiorna ogni 5 secondi
 
 </script>
 </html>

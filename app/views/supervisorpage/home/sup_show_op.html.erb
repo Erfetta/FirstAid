@@ -8,40 +8,126 @@
 </head>
 <body>
     <div class="container_navbar_supervisor">
-        <nav class="navbar_supervisor">
-            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
-              <span class="material-symbols-outlined">
-                home
-              </span>
-            <% end %>
-            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
-              <span class="material-symbols-outlined">
-                person
-              </span>
-            <% end %>
-        </nav>
+      <nav class="navbar_supervisor">
+          <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+            <span class="material-symbols-outlined">
+              home
+            </span>
+          <% end %>
+          <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
+            <span class="material-symbols-outlined">
+              person
+            </span>
+          <% end %>
+      </nav>
       <div class="central_sec_sup">
-        <aside class="operator_list_sup" id="op_list_sup">
-          <% @operators.each do |op| %>
-            <div class="op_section_sup">
-              <p><strong>ID Operatore:</strong> <%= op.id %></p>
-              <p><strong>Nome:</strong> <%= op.name  %></p>
-              <p><strong>Cognome:</strong> <%= op.surname %></p>
-              <p><strong>Sede:</strong> <%= op.workplace %></p>
+        <div class ="left_section_sup" id="left_section_sup">
+          <% if @contReport != 0%>
+            <aside class="report_list_sup_mini" id="rep_list_sup">
+              <% @reports.each do |rp| %>
+                <div class="op_section_sup" id="<%= rp.id %>">
+                  <p><strong>ID:</strong> <%= rp.id %></p>
+                  <% if rp.user_id != '8'%>
+                    <p><strong>Utente:</strong> <%= rp.user_id %></p>
+                  <% else %>
+                    <p><strong>Utente:</strong> Non registrato</p>
+                  <% end %>
+                  <% datetime = rp.report_time.to_s.slice(0...-5)%>
+                  <p><strong>Inviata:</strong> <%= datetime %></p>
+                  <% datetime = rp.created_at.to_s.slice(0...-5)%>
+                  <p><strong>Risolta:</strong> <%= datetime %></p>
+                </div>
+              <% end %>
+            </aside>
+          <% else %>
+            <div class="no_report_sup">
+              <h2>Questo operatore non ha richieste risolte</h2>
             </div>
           <% end %>
-        </aside>
+        </div>
         <div class="right_section_sup">
           <div class="maps_section_sup" id="map">
               <!-- div per il render di google maps -->
           </div>
 
-          <div class="btn_container_sup_index">
-              <button> bt1 </button>
-              <button> bt2 </button>
-              <button> bt3 </button>
+          <div class="operator_info_sup" id = "operator_info_sup">
+            <h2>Informazioni Operatore</h2>
+            <p><strong>Operator ID:</strong> <%= @operator.id %></p>
+            <p><strong>Nome:</strong> <%= @operator.name %></p>
+            <p><strong>Cognome:</strong> <%= @operator.surname %></p>
+            <p><strong>Sede:</strong> <%= @operator.workplace %></p>
+            <p><strong>Email:</strong> <%= @operator.email %></p>
+            <p><strong>Richieste gestite:</strong> <%= @contReport %></p>
           </div>
         </div>
       </div>
     </div>
 </body>
+<script>
+
+  // MAPPA
+  var arrrayReportsID = <%= raw @reports.map {|report| j report.id}.to_json %>;
+  var arrayReportsC = <%= raw @reports.map {|report| j report.coordinates}.to_json %>;
+  console.log(arrrayReportsID);
+  console.log(arrayReportsC);
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: { lat: 41.86, lng: 12.56 }, // Default center, will be adjusted later
+      fullscreenControl: false, // Disables fullscreen control
+      streetViewControl: false, // Disables street view control
+      mapTypeControl: false // Disables map type control
+    });
+    
+    arrayReportsC.forEach(function(report) {
+      i = arrayReportsC.indexOf(report);
+      coordinates = report.split(',');
+      mark = new google.maps.Marker({
+        position: new google.maps.LatLng(coordinates[0], coordinates[1]),
+        map: map,
+        title: 'Richiesta '+arrrayReportsID[i],
+        id: arrrayReportsID[i]
+      });
+      mark.addListener('click', function() {
+        window.location.href = "/sup_show_report/" + this.id;
+      });
+    });
+  }
+  window.onload = initMap;
+
+  // UPDATE PAGINA
+
+  function fetchRPs() {
+    fetch("<%= sup_show_op_path(@operator.id) %>")
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newCentralSection = doc.querySelector('#left_section_sup').innerHTML;
+        const newOperatorInfo = doc.querySelector('#operator_info_sup').innerHTML;
+        document.querySelector('#left_section_sup').innerHTML = newCentralSection;
+        document.querySelector('#operator_info_sup').innerHTML = newOperatorInfo;
+        attachClickListeners();
+      })
+      .catch(error => console.error('Errore durante l\'aggiornamento dei report:', error));
+  }
+
+  function attachClickListeners() {
+    if (document.querySelectorAll('.op_section_sup').length === 0) {
+      return;
+    }
+    document.querySelectorAll('.op_section_sup').forEach(element => {
+      element.addEventListener('click', () => {
+        window.location.href = `/sup_show_report/${element.id}`;
+      });
+    });
+  }
+
+  setInterval(fetchRPs, 5000); // Aggiorna ogni 5 secondi
+
+  // Initial call to attach listeners
+  attachClickListeners();
+
+</script>
+</html>

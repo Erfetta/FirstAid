@@ -16,11 +16,15 @@ module Supervisorpage
     end
 
     def sup_show_op
-      
+      @contReport = ReportDone.where(operator_id: @operator.id).count
     end
 
     def sup_show_report
       @messages = Message.all
+    end
+
+    def sup_report_list
+      @reports = ReportDone.all
     end
 
     private

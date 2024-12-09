@@ -1,0 +1,13 @@
+.report_list_sup{
+    height: 100%;
+    margin: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fill, 150px);
+    gap: 10px;
+    border-radius: 1rem;
+}
+

@@ -45813,3 +45813,872 @@ Processing by Userpage::HomeController#option as HTML
   Rendered userpage/home/option.html.erb within layouts/application (Duration: 1.6ms | Allocations: 519)
   Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2718)
 Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3162)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:00:11 +0100
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1093)
+  Rendered layout layouts/application.html.erb (Duration: 252.2ms | Allocations: 46629)
+Completed 200 OK in 279ms (Views: 257.6ms | ActiveRecord: 0.0ms | Allocations: 50129)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:43:17 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 928)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 23697)
+Completed 200 OK in 68ms (Views: 65.6ms | Allocations: 25655)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:18 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://192.168.1.29:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (Allocations: 500)
+Started GET "/login" for 192.168.1.20 at 2024-12-09 14:43:18 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1678)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 3816)
+Completed 200 OK in 19ms (Views: 18.2ms | Allocations: 4804)
+Started GET "/users/sign_up" for 192.168.1.20 at 2024-12-09 14:43:20 +0100
+Processing by Userpage::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_registration.html.erb within layouts/application
+  Rendered userpage/profiles/user_registration.html.erb within layouts/application (Duration: 16.1ms | Allocations: 4303)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 6440)
+Completed 200 OK in 25ms (Views: 24.0ms | Allocations: 8422)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:24 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://192.168.1.29:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (Allocations: 410)
+Started GET "/login" for 192.168.1.20 at 2024-12-09 14:43:24 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 0.7ms | Allocations: 701)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2840)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 3155)
+Started GET "/setting" for 192.168.1.20 at 2024-12-09 14:43:25 +0100
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 1.6ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2821)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 3774)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:26 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+Redirected to http://192.168.1.29:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (Allocations: 410)
+Started GET "/login" for 192.168.1.20 at 2024-12-09 14:43:26 +0100
+Processing by Userpage::LoginController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/user_login.html.erb within layouts/application
+  Rendered userpage/profiles/user_login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 701)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2839)
+Completed 200 OK in 5ms (Views: 4.2ms | Allocations: 3171)
+Started POST "/login" for 192.168.1.20 at 2024-12-09 14:43:34 +0100
+Processing by Userpage::LoginController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"prova@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/userpage/login_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "prova@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/login_controller.rb:10:in `create'
+Redirected to http://192.168.1.29:3000/profile
+Completed 302 Found in 287ms (ActiveRecord: 1.6ms | Allocations: 8950)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:34 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2030)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4191)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 7045)
+Started GET "/info" for 192.168.1.20 at 2024-12-09 14:43:36 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2582)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4719)
+Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 5959)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:38 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1135)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3271)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4596)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:43:39 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.4ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 11.0ms | Allocations: 5862)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 8026)
+Completed 200 OK in 26ms (Views: 14.5ms | ActiveRecord: 1.1ms | Allocations: 11301)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:47 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1135)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3271)
+Completed 200 OK in 13ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 4576)
+Started GET "/graphsetting" for 192.168.1.20 at 2024-12-09 14:43:50 +0100
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 2.0ms | Allocations: 535)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2675)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 3936)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:53 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1135)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3271)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 4543)
+Started GET "/graphsetting" for 192.168.1.20 at 2024-12-09 14:43:53 +0100
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 0.2ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2278)
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 3410)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:43:59 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 42.6ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 81.4ms | Allocations: 3268)
+Completed 200 OK in 106ms (Views: 98.4ms | ActiveRecord: 0.1ms | Allocations: 4544)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:44:00 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2224)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4361)
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 5873)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:08 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3268)
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 4550)
+Started POST "/submit_bpm" for 192.168.1.20 at 2024-12-09 14:44:12 +0100
+Processing by MeasurementDataController#create_bpm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "bpm"=>"100", "commit"=>"Invia"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:22:in `create_bpm'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mMeasurementData Create (0.7ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "bpm"], ["value", 100.0], ["created_at", "2024-12-09 14:44:12.771827"], ["updated_at", "2024-12-09 14:44:12.771827"], ["user_id", 9]]
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:25:in `create_bpm'
+Redirected to http://192.168.1.29:3000/profile
+Completed 302 Found in 30ms (ActiveRecord: 13.5ms | Allocations: 4376)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:12 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3268)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 4563)
+Started POST "/submit_pressure" for 192.168.1.20 at 2024-12-09 14:44:17 +0100
+Processing by MeasurementDataController#create_pressure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pressure"=>"100", "commit"=>"Invia"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:6:in `create_pressure'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mMeasurementData Create (3.3ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "pressure"], ["value", 100.0], ["created_at", "2024-12-09 14:44:17.727791"], ["updated_at", "2024-12-09 14:44:17.727791"], ["user_id", 9]]
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:9:in `create_pressure'
+Redirected to http://192.168.1.29:3000/profile
+Completed 302 Found in 30ms (ActiveRecord: 14.5ms | Allocations: 4616)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:17 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3293)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4618)
+Started POST "/submit_oxygen" for 192.168.1.20 at 2024-12-09 14:44:22 +0100
+Processing by MeasurementDataController#create_oxygen as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oxygen"=>"60", "commit"=>"Invia"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/measurement_data_controller.rb:38:in `create_oxygen'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mMeasurementData Create (0.5ms)[0m  [1m[32mINSERT INTO "measurement_data" ("measurement_type", "value", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["measurement_type", "oxygen"], ["value", 60.0], ["created_at", "2024-12-09 14:44:22.260167"], ["updated_at", "2024-12-09 14:44:22.260167"], ["user_id", 9]]
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/measurement_data_controller.rb:41:in `create_oxygen'
+Redirected to http://192.168.1.29:3000/profile
+Completed 302 Found in 25ms (ActiveRecord: 15.3ms | Allocations: 4615)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:22 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3293)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 4615)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:44:23 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.2ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2401)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4538)
+Completed 200 OK in 15ms (Views: 8.0ms | ActiveRecord: 0.6ms | Allocations: 6080)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:38 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3268)
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 4572)
+Started GET "/graphsetting" for 192.168.1.20 at 2024-12-09 14:44:38 +0100
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 0.2ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2278)
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 3420)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:44 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3292)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 4608)
+Started GET "/graphsetting" for 192.168.1.20 at 2024-12-09 14:44:45 +0100
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 0.2ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2278)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3421)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:46 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3268)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 4585)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:44:47 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2401)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4538)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 6087)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:44:59 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3268)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 4587)
+Started GET "/info" for 192.168.1.20 at 2024-12-09 14:45:01 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1673)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 3809)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.1ms | Allocations: 4954)
+Started PATCH "/userpage/profiles/9" for 192.168.1.20 at 2024-12-09 14:45:04 +0100
+Processing by Userpage::ProfilesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"blood_type"=>"B+", "phone"=>"3334445566", "email"=>"prova@gmail.com"}, "commit"=>"Update Information", "id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+Redirected to http://192.168.1.29:3000/profile
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1776)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:04 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3268)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 4579)
+Started GET "/info" for 192.168.1.20 at 2024-12-09 14:45:05 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1669)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 3805)
+Completed 200 OK in 27ms (Views: 17.2ms | ActiveRecord: 0.1ms | Allocations: 4948)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:12 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3268)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 4601)
+Started GET "/info" for 192.168.1.20 at 2024-12-09 14:45:14 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1669)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3815)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 4963)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:16 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3293)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4598)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:45:17 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2503)
+Completed 200 OK in 47ms (Views: 4.7ms | ActiveRecord: 1.2ms | Allocations: 16084)
+Started GET "/setting" for 192.168.1.20 at 2024-12-09 14:45:18 +0100
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 0.5ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2478)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 2859)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:45:24 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2466)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 4084)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:25 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3269)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4601)
+Started GET "/graphsetting" for 192.168.1.20 at 2024-12-09 14:45:31 +0100
+Processing by Userpage::ProfilesController#graphsetting as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graphsetting.html.erb within layouts/application
+  Rendered userpage/profiles/graphsetting.html.erb within layouts/application (Duration: 0.4ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2288)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 3435)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:35 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3268)
+Completed 200 OK in 23ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 4598)
+Started GET "/info" for 192.168.1.20 at 2024-12-09 14:45:35 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1669)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3805)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 4950)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:40 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3268)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 4571)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:45:40 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2466)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 4092)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:41 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3268)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 4571)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:45:42 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2401)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4538)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 6084)
+Started GET "/tutorial" for 192.168.1.20 at 2024-12-09 14:45:48 +0100
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2503)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4771)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 5286)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:50 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1144)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3281)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 4587)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:45:52 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2402)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4563)
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 6110)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:45:58 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3293)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4626)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:45:59 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.3ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2401)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4538)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.6ms | Allocations: 6112)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:46:05 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.2ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2474)
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 4114)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:46:09 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3287)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 4623)
+Started GET "/graph" for 192.168.1.20 at 2024-12-09 14:46:12 +0100
+Processing by Userpage::ProfilesController#graph as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/graph.html.erb within layouts/application
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "pressure"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:27
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "bpm"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:36
+  [1m[36mMeasurementData Load (0.1ms)[0m  [1m[34mSELECT "measurement_data".* FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND "measurement_data"."measurement_type" = ? ORDER BY "measurement_data"."created_at" DESC[0m  [["user_id", 9], ["measurement_type", "oxygen"]]
+  ↳ app/views/userpage/profiles/graph.html.erb:45
+  Rendered userpage/profiles/graph.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2401)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4538)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 6084)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:46:16 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3273)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4572)
+Started GET "/info" for 192.168.1.20 at 2024-12-09 14:46:17 +0100
+Processing by Userpage::ProfilesController#info as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/info.html.erb within layouts/application
+  Rendered userpage/profiles/info.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1673)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3829)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 4978)
+Started GET "/profile" for 192.168.1.20 at 2024-12-09 14:46:19 +0100
+Processing by Userpage::ProfilesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:35:in `authenticate_user!'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/profiles/profile.html.erb within layouts/application
+  Rendered userpage/profiles/profile.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3268)
+Completed 200 OK in 23ms (Views: 13.7ms | ActiveRecord: 0.1ms | Allocations: 4585)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:46:19 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2466)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 4093)
+Started GET "/option" for 192.168.1.20 at 2024-12-09 14:46:20 +0100
+Processing by Userpage::HomeController#option as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/option.html.erb within layouts/application
+  Rendered userpage/home/option.html.erb within layouts/application (Duration: 7.2ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 2798)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 3308)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:46:34 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2469)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 4110)
+Started GET "/new" for 192.168.1.20 at 2024-12-09 14:46:35 +0100
+Processing by Userpage::HomeController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:18:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 4735)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 6872)
+Completed 200 OK in 40ms (Views: 14.3ms | ActiveRecord: 0.1ms | Allocations: 8121)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:46:35 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2469)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 4094)
+Started GET "/option" for 192.168.1.20 at 2024-12-09 14:46:36 +0100
+Processing by Userpage::HomeController#option as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/option.html.erb within layouts/application
+  Rendered userpage/home/option.html.erb within layouts/application (Duration: 0.5ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2406)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2778)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:46:38 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2466)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 4068)
+Started GET "/new" for 192.168.1.20 at 2024-12-09 14:46:38 +0100
+Processing by Userpage::HomeController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:18:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/new.html.erb within layouts/application
+  Rendered userpage/home/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1543)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3703)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 4825)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:46:45 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2490)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 4112)
+Started GET "/setting" for 192.168.1.20 at 2024-12-09 14:46:46 +0100
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 0.5ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2497)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2877)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:46:47 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2466)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 4092)
+Started GET "/tutorial" for 192.168.1.20 at 2024-12-09 14:46:49 +0100
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1447)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3717)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 4101)
+Started GET "/tutorial_element/1" for 192.168.1.20 at 2024-12-09 14:46:50 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 2.0ms | Allocations: 687)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2955)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3481)
+Started GET "/tutorial_element/2" for 192.168.1.20 at 2024-12-09 14:46:53 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.3ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2428)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 2823)
+Started GET "/tutorial_element/3" for 192.168.1.20 at 2024-12-09 14:46:55 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.4ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2409)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2798)
+Started GET "/tutorial_element/4" for 192.168.1.20 at 2024-12-09 14:46:59 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"4"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.9ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2409)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2808)
+Started GET "/tutorial_element/1" for 192.168.1.20 at 2024-12-09 14:47:01 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.5ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2409)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 2818)
+Started GET "/tutorial_element/1" for 192.168.1.20 at 2024-12-09 14:47:07 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2429)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2814)
+Started GET "/tutorial_element/2" for 192.168.1.20 at 2024-12-09 14:47:08 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2409)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2806)
+Started GET "/tutorial_element/3" for 192.168.1.20 at 2024-12-09 14:47:10 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2409)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 2807)
+Started GET "/tutorial_element/4" for 192.168.1.20 at 2024-12-09 14:47:12 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"4"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 1.0ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2409)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2794)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:47:13 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2469)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 4084)
+Started GET "/setting" for 192.168.1.20 at 2024-12-09 14:47:14 +0100
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 2.4ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 2478)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 2851)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:47:16 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2466)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 4074)
+Started GET "/tutorial" for 192.168.1.20 at 2024-12-09 14:47:17 +0100
+Processing by Userpage::HomeController#tutorial as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial.html.erb within layouts/application
+  Rendered userpage/home/tutorial.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1447)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3712)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4086)
+Started GET "/tutorial_element/1" for 192.168.1.20 at 2024-12-09 14:47:18 +0100
+Processing by Userpage::HomeController#tutorial_element as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/tutorial_element.html.erb within layouts/application
+  Rendered userpage/home/tutorial_element.html.erb within layouts/application (Duration: 2.9ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2409)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2810)
+Started GET "/setting" for 192.168.1.20 at 2024-12-09 14:47:20 +0100
+Processing by Userpage::SettingsController#setting as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/settings/setting.html.erb within layouts/application
+  Rendered userpage/settings/setting.html.erb within layouts/application (Duration: 1.4ms | Allocations: 203)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2468)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 2850)
+Started GET "/" for 192.168.1.20 at 2024-12-09 14:47:22 +0100
+Processing by Userpage::HomeController#user_index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/userpage/home_controller.rb:6:in `user_index'
+  [1m[36mReport Load (0.1ms)[0m  [1m[34mSELECT "reports".* FROM "reports" WHERE "reports"."user_id" = ?[0m  [["user_id", "9"]]
+  ↳ app/controllers/userpage/home_controller.rb:8:in `user_index'
+  Rendering layout layouts/application.html.erb
+  Rendering userpage/home/user_index.html.erb within layouts/application
+  Rendered userpage/home/user_index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2466)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 4076)
