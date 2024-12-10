@@ -23,6 +23,9 @@ Rails.application.routes.draw do
    
     get '/reports/:id/exists', to: 'chat#exists'
 
+    patch '/userpage/update_delete_data_after', to: 'userpage/profiles#update_delete_data_after'
+
+
     #definizione rotta per la pagina di attesa
     get 'waiting', to: 'userpage/waiting#index'
     get 'check_operator_assigned', to: 'userpage/waiting#check_operator_assigned'
@@ -57,6 +60,9 @@ Rails.application.routes.draw do
     get 'profile', to: 'operatorpage/profile#operator_profile', as: 'profile'
     get 'report_history_list', to: 'operatorpage/history#report_history_list', as: 'report_history_list'
     get 'show_report_done/:id', to: 'operatorpage/history#show_report_done', as: 'show_report_done'
+
+
+    
 
     get 'chat/:report_id', to: 'chat#index_operator', as: 'chat'
 
