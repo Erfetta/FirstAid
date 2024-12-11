@@ -12,6 +12,8 @@ module Userpage
       if user && user.valid_password?(params[:user][:password])
         sign_in(:user, user)  # Usa devise per eseguire il login
         session[:user_id] = user.id  # Salva l'ID dell'utente nella sessione
+        flash[:notice] = "Signed in successfully."
+
         redirect_to profile_path  # Reindirizza alla pagina principale
       else
         flash.now[:alert] = 'Credenziali non valide. Riprova.'

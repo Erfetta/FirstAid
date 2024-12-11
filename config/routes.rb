@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :operators
   devise_for :users, controllers: { registrations: 'userpage/registrations' }
   
-  if Rails.env == 'user'
+  if Rails.env == 'user' || Rails.env == 'test'
     root 'userpage/home#user_index'
     get 'new', to: 'userpage/home#new', as: 'new'
     get 'tutorial', to: 'userpage/home#tutorial', as: 'tutorial'
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
       resources :profiles, only: [:show, :edit, :update]  # Assicurati di includere `update`
     end
 
-  elsif Rails.env == 'operator'
+  elsif Rails.env == 'operator' 
     root 'operatorpage/home#operator_index'
     get 'login', to: 'operatorpage/login#new', as: 'login'  # Mostra la pagina di login
     post 'login', to: 'operatorpage/login#create', as: 'login_create'  # Esegue il login

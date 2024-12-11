@@ -13,8 +13,7 @@ class Userpage::RegistrationsController < Devise::RegistrationsController
     if resource.save
       yield resource if block_given?
       if resource.active_for_authentication?
-        sign_up(resource_name, resource)
-        redirect_to profile_path
+        redirect_to login_path
       else
         expire_data_after_sign_in!
         redirect_to login_path    

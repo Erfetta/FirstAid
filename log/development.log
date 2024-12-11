@@ -5649,3 +5649,394 @@ Migrating to AddDeleteDataAfterToUsers (20241209184329)
 [ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4]   [1m[36mMeasurementData Destroy (4.9ms)[0m  [1m[31mDELETE FROM "measurement_data" WHERE "measurement_data"."user_id" = ? AND (created_at < '2024-12-10 00:28:44.886651')[0m  [["user_id", 9]]
 [ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4] Cancellazione completata per utente 9. Dati eliminati prima di 2024-12-10 00:28:44 +0100.
 [ActiveJob] [DataCleanupJob] [37e38b06-7a45-482a-9364-acb4c93e94f4] Performed DataCleanupJob (Job ID: 37e38b06-7a45-482a-9364-acb4c93e94f4) from Async(default) in 21.59ms
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropMessagesTable (20241211101240)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20241211101240"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropMessagesTable (20241211101240)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20241211101240"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "measurement_data"[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "measurement_data" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measurement_type" varchar, "value" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_measurement_data_on_user_id" ON "measurement_data" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "operators"[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "operators" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "surname" varchar, "workplace" varchar, "supervisor_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "otp" varchar, "otp_expires_at" datetime)[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_email" ON "operators" ("email")[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_reset_password_token" ON "operators" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "report_dones"[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "report_dones" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar, "question1" varchar, "question2" varchar, "question3" varchar, "question4" varchar, "question5" varchar, "question6" varchar, "question7" varchar, "question8" varchar, "question9" varchar, "question10" varchar, "question11" varchar, "question12" varchar, "question13" varchar, "question14" varchar, "contact_method" integer NOT NULL, "flagCell" integer, "flagInfo" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar, "question1" varchar, "question2" varchar, "question3" varchar, "question4" varchar, "question5" varchar, "question6" varchar, "question7" varchar, "question8" varchar, "question9" varchar, "question10" varchar, "question11" varchar, "question12" varchar, "question13" varchar, "question14" varchar, "contact_method" integer NOT NULL, "flagCell" integer, "flagInfo" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "supervisors"[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "surname" varchar, "workplace" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (39.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_supervisors_on_email" ON "supervisors" ("email")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_supervisors_on_reset_password_token" ON "supervisors" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (19.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "surname" varchar, "phone" varchar, "sex" varchar, "age" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "blood_type" varchar, "delete_data_after" varchar)[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ameasurement_data" ("id" integer NOT NULL PRIMARY KEY, "measurement_type" varchar DEFAULT NULL, "value" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_ameasurement_data_on_user_id" ON "ameasurement_data" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ameasurement_data" ("id","measurement_type","value","created_at","updated_at","user_id")
+                     SELECT "id","measurement_type","value","created_at","updated_at","user_id" FROM "measurement_data"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "measurement_data"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "measurement_data" ("id" integer NOT NULL PRIMARY KEY, "measurement_type" varchar DEFAULT NULL, "value" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_da40c49f78"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_measurement_data_on_user_id" ON "measurement_data" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "measurement_data" ("id","measurement_type","value","created_at","updated_at","user_id")
+                     SELECT "id","measurement_type","value","created_at","updated_at","user_id" FROM "ameasurement_data"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ameasurement_data"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aoperators" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "name" varchar DEFAULT NULL, "surname" varchar DEFAULT NULL, "workplace" varchar DEFAULT NULL, "supervisor_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "otp" varchar DEFAULT NULL, "otp_expires_at" datetime DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aoperators_on_reset_password_token" ON "aoperators" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aoperators_on_email" ON "aoperators" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aoperators" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at" FROM "operators"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "operators"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "operators" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "name" varchar DEFAULT NULL, "surname" varchar DEFAULT NULL, "workplace" varchar DEFAULT NULL, "supervisor_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "otp" varchar DEFAULT NULL, "otp_expires_at" datetime DEFAULT NULL, CONSTRAINT "fk_rails_c6d9e79005"
+FOREIGN KEY ("supervisor_id")
+  REFERENCES "supervisors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_email" ON "operators" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_reset_password_token" ON "operators" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "operators" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at" FROM "aoperators"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aoperators"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areport_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areport_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "report_dones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "report_dones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "report_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_3fc7d917ac"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "report_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areport_dones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areport_dones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areport_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areport_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "report_dones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "report_dones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "report_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_3fc7d917ac"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+, CONSTRAINT "fk_rails_127e6050d4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "report_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areport_dones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areport_dones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "reports"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "reports"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_c90c4759f5"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "reports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areports"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areports"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "reports"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "reports"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_c90c4759f5"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+, CONSTRAINT "fk_rails_c7699d537d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "reports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areports"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areports"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241209184329)[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240902101316),
+(20240902102957),
+(20240925164311),
+(20240925164448),
+(20240925164500),
+(20241001224954),
+(20241107204932),
+(20241201154833),
+(20241204165229);
+
+[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-12-11 11:35:30.408539"], ["updated_at", "2024-12-11 11:35:30.408539"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2024-12-11 11:35:30.425943"], ["key", "environment"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6f8da21708cb9a7c1f003eac1925d0f406e11b38"], ["created_at", "2024-12-11 11:35:30.438970"], ["updated_at", "2024-12-11 11:35:30.438970"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "measurement_data"[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "measurement_data" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measurement_type" varchar, "value" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_measurement_data_on_user_id" ON "measurement_data" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "operators"[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "operators" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "surname" varchar, "workplace" varchar, "supervisor_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "otp" varchar, "otp_expires_at" datetime)[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_email" ON "operators" ("email")[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_reset_password_token" ON "operators" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "report_dones"[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "report_dones" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar, "question1" varchar, "question2" varchar, "question3" varchar, "question4" varchar, "question5" varchar, "question6" varchar, "question7" varchar, "question8" varchar, "question9" varchar, "question10" varchar, "question11" varchar, "question12" varchar, "question13" varchar, "question14" varchar, "contact_method" integer NOT NULL, "flagCell" integer, "flagInfo" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar, "question1" varchar, "question2" varchar, "question3" varchar, "question4" varchar, "question5" varchar, "question6" varchar, "question7" varchar, "question8" varchar, "question9" varchar, "question10" varchar, "question11" varchar, "question12" varchar, "question13" varchar, "question14" varchar, "contact_method" integer NOT NULL, "flagCell" integer, "flagInfo" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "supervisors"[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE TABLE "supervisors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "surname" varchar, "workplace" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_supervisors_on_email" ON "supervisors" ("email")[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_supervisors_on_reset_password_token" ON "supervisors" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "surname" varchar, "phone" varchar, "sex" varchar, "age" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "blood_type" varchar, "delete_data_after" varchar)[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (39.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ameasurement_data" ("id" integer NOT NULL PRIMARY KEY, "measurement_type" varchar DEFAULT NULL, "value" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_ameasurement_data_on_user_id" ON "ameasurement_data" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "ameasurement_data" ("id","measurement_type","value","created_at","updated_at","user_id")
+                     SELECT "id","measurement_type","value","created_at","updated_at","user_id" FROM "measurement_data"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "measurement_data"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "measurement_data" ("id" integer NOT NULL PRIMARY KEY, "measurement_type" varchar DEFAULT NULL, "value" float DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_da40c49f78"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_measurement_data_on_user_id" ON "measurement_data" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "measurement_data" ("id","measurement_type","value","created_at","updated_at","user_id")
+                     SELECT "id","measurement_type","value","created_at","updated_at","user_id" FROM "ameasurement_data"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ameasurement_data"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aoperators" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "name" varchar DEFAULT NULL, "surname" varchar DEFAULT NULL, "workplace" varchar DEFAULT NULL, "supervisor_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "otp" varchar DEFAULT NULL, "otp_expires_at" datetime DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aoperators_on_reset_password_token" ON "aoperators" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aoperators_on_email" ON "aoperators" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aoperators" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at" FROM "operators"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "operators"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "operators" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "name" varchar DEFAULT NULL, "surname" varchar DEFAULT NULL, "workplace" varchar DEFAULT NULL, "supervisor_id" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "otp" varchar DEFAULT NULL, "otp_expires_at" datetime DEFAULT NULL, CONSTRAINT "fk_rails_c6d9e79005"
+FOREIGN KEY ("supervisor_id")
+  REFERENCES "supervisors" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_email" ON "operators" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_operators_on_reset_password_token" ON "operators" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "operators" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name","surname","workplace","supervisor_id","created_at","updated_at","otp","otp_expires_at" FROM "aoperators"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aoperators"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areport_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areport_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "report_dones"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "report_dones"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "report_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_3fc7d917ac"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "report_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areport_dones"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areport_dones"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areport_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "areport_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "report_dones"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "report_dones"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "report_dones" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "report_time" datetime NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_3fc7d917ac"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+, CONSTRAINT "fk_rails_127e6050d4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "report_dones" ("id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","report_time","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areport_dones"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "areport_dones"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "reports"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "reports"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_c90c4759f5"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "reports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areports"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areports"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "reports"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "reports"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "coordinates" varchar NOT NULL, "user_id" varchar NOT NULL, "operator_id" varchar DEFAULT NULL, "question1" varchar DEFAULT NULL, "question2" varchar DEFAULT NULL, "question3" varchar DEFAULT NULL, "question4" varchar DEFAULT NULL, "question5" varchar DEFAULT NULL, "question6" varchar DEFAULT NULL, "question7" varchar DEFAULT NULL, "question8" varchar DEFAULT NULL, "question9" varchar DEFAULT NULL, "question10" varchar DEFAULT NULL, "question11" varchar DEFAULT NULL, "question12" varchar DEFAULT NULL, "question13" varchar DEFAULT NULL, "question14" varchar DEFAULT NULL, "contact_method" integer NOT NULL, "flagCell" integer DEFAULT NULL, "flagInfo" integer DEFAULT NULL, CONSTRAINT "fk_rails_c90c4759f5"
+FOREIGN KEY ("operator_id")
+  REFERENCES "operators" ("id")
+, CONSTRAINT "fk_rails_c7699d537d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "reports" ("id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo")
+                     SELECT "id","created_at","updated_at","coordinates","user_id","operator_id","question1","question2","question3","question4","question5","question6","question7","question8","question9","question10","question11","question12","question13","question14","contact_method","flagCell","flagInfo" FROM "areports"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "areports"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241209184329)[0m
+  [1m[35m (5.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240902101316),
+(20240902102957),
+(20240925164311),
+(20240925164448),
+(20240925164500),
+(20241001224954),
+(20241107204932),
+(20241201154833),
+(20241204165229);
+
+[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-12-11 11:46:26.973645"], ["updated_at", "2024-12-11 11:46:26.973645"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2024-12-11 11:46:26.981953"], ["key", "environment"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6f8da21708cb9a7c1f003eac1925d0f406e11b38"], ["created_at", "2024-12-11 11:46:26.987513"], ["updated_at", "2024-12-11 11:46:26.987513"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
