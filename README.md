@@ -13,6 +13,16 @@ nella terza:
 poi visitare rispettivamente [localhost:3000](http://localhost:3000) e [localhost:4000](http://localhost:4000) [localhost:5000](http://localhost:5000) 
 
 
+
+per fare i test:
+
+test di registrazione e login : rails test:system --verbose
+
+test sul controller : rails test test/controllers/user/home_controller_test.rb --verbose
+
+test sul modello : rails test test/models/user_test.rb --verbose
+
+
 Domande segnalazione emergenza:
 1) Il paziente è coscente?
 2) Il paziente respira autonomamente?
