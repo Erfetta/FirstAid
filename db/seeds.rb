@@ -16,21 +16,24 @@
 #   blood_type: "O+"
 # )
 
-# Operator.create!(
-#   email: "operator@example.com",
-#   password: "password123",
-#   password_confirmation: "password123",
-#   name: "Luigi",
-#   surname: "Bianchi",
-#   workplace: "Roma",
-#   supervisor_id: 1
-# )
+Supervisor.create!(
+   email: "supervisor@example.com",
+   password: "password123",
+   password_confirmation: "password123",
+   name: "Giovanni",
+   surname: "Verdi",
+   workplace: "Milano"
+ )
 
-# Supervisor.create!(
-#   email: "supervisor@example.com",
-#   password: "password123",
-#   password_confirmation: "password123",
-#   name: "Giovanni",
-#   surname: "Verdi",
-#   workplace: "Milano"
-# )
+
+Operator.create!(
+  email: "fettuccia56@gmail.com",
+  password: "password123",
+  password_confirmation: "password123",
+  name: "Luigi",
+  surname: "Bianchi",
+  workplace: "Roma",
+  supervisor_id: 1 
+  )
+
+ 
