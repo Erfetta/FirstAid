@@ -1,6 +1,10 @@
 module Userpage
   class HomeController < ApplicationController
     def user_index
+      @users = User.all
+
+      # Elimina i dati obsoleti
+      @users.each(&:delete_old_data)
       @report_exists = false
       @user_report = nil
       if current_user.present?
