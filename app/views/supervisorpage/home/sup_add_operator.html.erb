@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="container_navbar_supervisor">
+        <nav class="navbar_supervisor">
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+                <span class="material-symbols-outlined">
+                home
+                </span>
+            <% end %>
+            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
+                <span class="material-symbols-outlined">
+                person
+                </span>
+            <% end %>
+        </nav>
+
+        <div class="container_new_operator_sup">
+            <h2>Registrazione Operatore</h2>
+            <% if flash[:alert] %>
+                <p><%= flash[:alert] %></p>
+            <% end %>
+            <%= form_for :operator, url: add_operator_create_path do |f| %>
+                <div class="field">
+                    <%= f.label :email %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
+                </div>
+                <div class="field">
+                    <%= f.label :name %>
+                    <%= f.text_field :name, required: true  %>
+                </div>
+                <div class="field">
+                    <%= f.label :surname %>
+                    <%= f.text_field :surname, required: true  %>
+                </div>
+                <%= f.hidden_field :password %>
+                <%= f.hidden_field :workplace %>
+                <%= f.hidden_field :supervisor_id, value: @supervisor_id %>
+                <div class="actions">
+                    <%= f.submit "Aggiungi" %>
+                </div>
+            <% end %>
+        </div>
+
+    </div>
+</body>

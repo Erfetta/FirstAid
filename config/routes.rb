@@ -36,8 +36,8 @@ Rails.application.routes.draw do
     delete 'logout', to: 'userpage/login#destroy', as: 'logout'  # Esegue il logout
 
     devise_scope :user do
-    get 'registration', to: 'userpage/registrations#new', as: 'registration'
-    post 'registration', to: 'userpage/registrations#create', as: 'registration_create'
+      get 'registration', to: 'userpage/registrations#new', as: 'registration'
+      post 'registration', to: 'userpage/registrations#create', as: 'registration_create'
     end
     # Per i report
     post 'reports', to: 'userpage/home#create', as: 'create_report'  # Rotta per la creazione del report
@@ -60,9 +60,6 @@ Rails.application.routes.draw do
     get 'profile', to: 'operatorpage/profile#operator_profile', as: 'profile'
     get 'report_history_list', to: 'operatorpage/history#report_history_list', as: 'report_history_list'
     get 'show_report_done/:id', to: 'operatorpage/history#show_report_done', as: 'show_report_done'
-
-
-    
 
     get 'chat/:report_id', to: 'chat#index_operator', as: 'chat'
 
@@ -87,6 +84,10 @@ Rails.application.routes.draw do
     namespace :supervisorpage do
       resources :reports, only: [:show, :update] # Rotte per la parte supervisor
     end
+
+    get 'add_operator', to: 'supervisorpage/add_operator#new', as: 'add_operator'
+    post 'add_operator', to: 'supervisorpage/add_operator#create', as: 'add_operator_create'
+
   end 
 
 end

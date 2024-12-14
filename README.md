@@ -16,7 +16,7 @@ poi visitare rispettivamente [localhost:3000](http://localhost:3000) e [localhos
 
 per fare i test:
 
-test di registrazione e login : rails test:system --verbose
+test di registrazione e login : rails test test/system/users_test.rb --verbose
 
 test sul controller : rails test test/controllers/user/home_controller_test.rb --verbose
 

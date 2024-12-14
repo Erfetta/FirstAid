@@ -100,7 +100,7 @@
 <body class="body_user <%= @theme %>-theme">
 <div class="content-container">
     <div class="container">
-      <h2>Registrazione Utente</h2>
+        <h2>Registrazione Utente</h2>
         <% if flash[:alert] %>
             <p><%= flash[:alert] %></p>
         <% end %>
@@ -171,18 +171,18 @@
 </body>
 <script>
 const linkItems = document.querySelectorAll(".link-item");
-            const indicator = document.querySelector(".indicator_user");
+    const indicator = document.querySelector(".indicator_user");
 
-            function updateIndicator() {
-                const activeItem = document.querySelector(".link-item.active");
-                if (activeItem) {
-                    const { offsetLeft, offsetWidth } = activeItem;
-                    indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
-                }
-            }
+    function updateIndicator() {
+        const activeItem = document.querySelector(".link-item.active");
+        if (activeItem) {
+            const { offsetLeft, offsetWidth } = activeItem;
+            indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
+        }
+    }
 
-            updateIndicator();
-            window.addEventListener("resize", updateIndicator);
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
 </script>
 
 </html>
