@@ -43,3 +43,88 @@
 .logout-button span{
     color: black;
 }
+
+.passchange-button{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.passchange-button:hover{
+    background-color: #eee;
+}
+.passchange-button p{
+    margin: 0;
+    font-size: large;
+    font-weight: bold;
+}
+.passchange-button span{
+    color: black;
+}
+
+.op_changePass_popup {
+    display: none; /* Nascondi il pop-up di default */
+    position: fixed; /* Posiziona il pop-up in modo fisso */
+    z-index: 1; /* Assicurati che il pop-up sia sopra altri elementi */
+    left: 0;
+    top: 0;
+    width: 100%; /* Larghezza piena */
+    height: 100%; /* Altezza piena */
+    overflow: auto; /* Abilita lo scorrimento se necessario */
+    background-color: rgb(0,0,0); /* Colore di sfondo nero */
+    background-color: rgba(0,0,0,0.4); /* Sfondo nero con opacità */
+}
+.op_changePass_popup-content {
+    background-color: #fefefe; /* Colore di sfondo bianco */
+    margin: 15% auto; /* 15% dall'alto e centrato orizzontalmente */
+    padding: 20px; /* Padding interno */
+    border: 1px solid #888; /* Bordo grigio */
+    width: 80%; /* Larghezza del contenuto */
+    max-width: 500px; /* Larghezza massima */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Ombra */
+    border-radius: 10px; /* Angoli arrotondati */
+}
+.op_changePass_close {
+    color: #aaa; /* Colore del testo */
+    float: right; /* Allinea a destra */
+    font-size: 28px; /* Dimensione del font */
+    font-weight: bold; /* Grassetto */
+}
+.op_changePass_close:hover,
+.op_changePass_close:focus {
+    color: black; /* Colore del testo al passaggio del mouse o al focus */
+    text-decoration: none; /* Nessuna decorazione del testo */
+    cursor: pointer; /* Cambia il cursore */
+}
+.op_changePass_input {
+    margin-bottom: 15px; /* Spazio inferiore */
+}
+.op_changePass_input_field {
+    width: 100%; /* Larghezza piena */
+    padding: 10px; /* Padding interno */
+    margin: 5px 0 10px 0; /* Margine */
+    display: inline-block; /* Display inline-block */
+    border: 1px solid #ccc; /* Bordo grigio */
+    border-radius: 4px; /* Angoli arrotondati */
+    box-sizing: border-box; /* Box sizing */
+}
+.op_changePass_action {
+    text-align: center; /* Allinea al centro */
+}
+.op_changePass_submit {
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+}

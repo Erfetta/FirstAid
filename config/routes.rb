@@ -70,6 +70,7 @@ Rails.application.routes.draw do
     post 'verify_otp', to: 'operatorpage/login#verify_otp', as: 'verify_otp'
     get 'verify_otp', to: 'operatorpage/login#verify_otp'
 
+    post 'update_password', to: 'operatorpage/profile#update_password', as: 'update_password_operator'
 
   elsif Rails.env == 'supervisor'
     root 'supervisorpage/home#supervisor_index'

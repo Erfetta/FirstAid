@@ -41,6 +41,9 @@
                 <p><strong>Sede:</strong> <%= @operator.workplace %></p>
                 <p><strong>Supervisore:</strong> <%= @supervisor.name%> <%= @supervisor.surname %></p>
                 <p><strong>Email Supervisore:</strong> <%= @supervisor.email %></p>
+                <button class="passchange-button">
+                  <p> Cambio Password </p>
+                </button>
                 <%= button_to logout_path, method: :delete, class: 'logout-button' do %>
                   <p> Logout </p>
                   <span class="material-symbols-outlined">
@@ -49,10 +52,64 @@
                 <% end %>
             </div>
 
+            <div class="op_changePass_popup">
+              <div class="op_changePass_popup-content">
+                <span class="op_changePass_close">&times;</span>
+                <h2>Cambio Password</h2>
+                <%= form_for @operator, url: update_password_operator_path, method: :post do |f| %>
+                  <div class="op_changePass_input">
+                    <%= f.label :current_password, "Password Attuale" %>
+                    <%= f.password_field :current_password, class: 'op_changePass_input_field', required: true %>
+                  </div>
+                  <div class="op_changePass_input">
+                    <%= f.label :password, "Nuova Password" %>
+                    <%= f.password_field :password, class: 'op_changePass_input_field', required: true %>
+                  </div>
+                  <div class="op_changePass_input">
+                    <%= f.label :password_confirmation, "Conferma Password" %>
+                    <%= f.password_field :password_confirmation, class: 'op_changePass_input_field', required: true %>
+                  </div>
+                  <div class="op_changePass_action">
+                    <%= f.submit "Invia", class: 'op_changePass_submit' %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
         </div>
 
     </div>
-
-      
+ 
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+      // Ottieni gli elementi del DOM
+      const changePassButton = document.querySelector('.passchange-button');
+      const changePassPopup = document.querySelector('.op_changePass_popup');
+      const closePopupButton = document.querySelector('.op_changePass_close');
+
+      // Funzione per aprire il pop-up
+      function open_CP_Popup() {
+          changePassPopup.style.display = 'block';
+      }
+
+      // Funzione per chiudere il pop-up
+      function close_CP_Popup() {
+          changePassPopup.style.display = 'none';
+      }
+
+      // Aggiungi l'evento di click per aprire il pop-up
+      changePassButton.addEventListener('click', open_CP_Popup);
+
+      // Aggiungi l'evento di click per chiudere il pop-up
+      closePopupButton.addEventListener('click', close_CP_Popup);
+
+      // Chiudi il pop-up se l'utente clicca fuori dal contenuto del pop-up
+      window.addEventListener('click', (event) => {
+          if (event.target === changePassPopup) {
+              close_CP_Popup();
+          }
+      });
+  });
+</script>
 </html>

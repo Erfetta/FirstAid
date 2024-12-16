@@ -26,22 +26,22 @@
                 <p><%= flash[:alert] %></p>
             <% end %>
             <%= form_for :operator, url: add_operator_create_path do |f| %>
-                <div class="field">
-                    <%= f.label :email %>
+                <div class="sup_field">
+                    <%= f.label :Email %>
                     <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
                 </div>
-                <div class="field">
-                    <%= f.label :name %>
+                <div class="sup_field">
+                    <%= f.label :Nome %>
                     <%= f.text_field :name, required: true  %>
                 </div>
-                <div class="field">
-                    <%= f.label :surname %>
+                <div class="sup_field">
+                    <%= f.label :Cognome %>
                     <%= f.text_field :surname, required: true  %>
                 </div>
                 <%= f.hidden_field :password %>
                 <%= f.hidden_field :workplace %>
                 <%= f.hidden_field :supervisor_id, value: @supervisor_id %>
-                <div class="actions">
+                <div class="sup_actions">
                     <%= f.submit "Aggiungi" %>
                 </div>
             <% end %>
