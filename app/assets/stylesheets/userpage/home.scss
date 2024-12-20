@@ -403,7 +403,33 @@ body.dark-theme {
     text-decoration: none;
     cursor: pointer;
   }
+
   
+  .rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc; /* Colore delle stelle non selezionate */
+    transition: color 0.3s;
+}
+
+.star.active {
+    color: #FFD700; /* Colore delle stelle selezionate */
+}
+
+.star:hover {
+    color: #FFD700; /* Colore delle stelle quando passiamo sopra con il mouse */
+}
+
+.star.bxs-star {
+    color: #FFD700; /* Colore delle stelle selezionate */
+}
+
   
 
 

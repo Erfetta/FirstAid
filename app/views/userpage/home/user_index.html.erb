@@ -8,6 +8,8 @@
         <!-- CSS -->     
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
         
     </head>
     <body>
@@ -28,10 +30,15 @@
         <h2>Recensione</h2>
 
         <%= form_with url: review_path, method: :post, remote: true, id: "review-form" do |form| %>
-        <div>
-            <label for="rating">Rating (da 1 a 5):</label>
-            <%= form.select :rating, options_for_select([1, 2, 3, 4, 5]), { include_blank: "Scegli un rating" }, id: "rating" %>
+       <div class="rating new-review">
+        <input type="number" name="rating" data-rating="0" hidden>
+        <i class='bx bx-star star' style="--i: 1;" data-value="1"></i>
+        <i class='bx bx-star star' style="--i: 2;" data-value="2"></i>
+        <i class='bx bx-star star' style="--i: 3;" data-value="3"></i>
+        <i class='bx bx-star star' style="--i: 4;" data-value="4"></i>
+        <i class='bx bx-star star' style="--i: 5;" data-value="5"></i>
         </div>
+
 
         <div>
             <label for="review_text">Recensione:</label>
@@ -101,8 +108,9 @@
   const indicator = document.querySelector(".indicator_user");
   const modal = document.getElementById("review-modal");
   const closeButton = document.getElementById("close-review-modal");
-  const ratingSelect = document.getElementById("rating");
+  const ratingSelect = document.querySelector("input[name='rating']"); // Seleziona per name
   const reviewForm = document.getElementById("review-form"); // Seleziona il form
+  
 
   // Debug: Verifica se la modale viene trovata correttamente
   console.log("Modal trovato:", modal);
@@ -135,36 +143,50 @@
   }
 
   // Quando si clicca sulla "X", chiudi la modale e imposta il rating a -1
-  closeButton.addEventListener("click", function() {
+  closeButton.addEventListener("click", function () {
     modal.style.display = "none";
     console.log("X cliccata: la modale è stata chiusa.");
-
+    
     // Imposta il valore del rating a -1
-    if (ratingSelect) {
-      ratingSelect.value = -1; // Impostiamo il valore selezionato a -1
-      console.log("Rating impostato a:", ratingSelect.value);
-    }
-
-    // Invia il form dopo aver chiuso la modale
-    reviewForm.submit(); // Aggiungi questa riga per inviare il form
+    ratingSelect.value = -1; // Usa l'attributo name per accedere al campo
+    console.log("Rating impostato a:", ratingSelect.value);
+    
+    // Invia il form
+    reviewForm.submit();
   });
 
   // Gestione della chiusura della modale cliccando fuori dal contenitore
-  window.addEventListener("click", function(event) {
+  window.addEventListener("click", function (event) {
     if (event.target === modal) {
       modal.style.display = "none";
       console.log("Cliccato fuori dalla modale: la modale è stata chiusa.");
 
       // Imposta il valore del rating a -1
-      if (ratingSelect) {
-        ratingSelect.value = -1; // Impostiamo il valore del rating a -1
-        console.log("Rating impostato a:", ratingSelect.value);
-      }
+      ratingSelect.value = -1;
+      console.log("Rating impostato a:", ratingSelect.value);
 
-      // Invia il form dopo aver chiuso la modale
-      reviewForm.submit(); // Aggiungi questa riga per inviare il form
+      // Invia il form
+      reviewForm.submit();
     }
   });
+
+  const allStar = document.querySelectorAll('.new-review .star');
+    const ratingValue = document.querySelector('.new-review input[name="rating"]');
+
+    allStar.forEach((item, idx) => {
+        item.addEventListener('click', function () {
+            ratingValue.value = idx + 1; // Imposta il valore del campo nascosto
+            allStar.forEach((star, i) => {
+                if (i <= idx) {
+                    star.classList.replace('bx-star', 'bxs-star');
+                    star.classList.add('active');
+                } else {
+                    star.classList.replace('bxs-star', 'bx-star');
+                    star.classList.remove('active');
+                }
+            });
+        });
+    });
 });
 
         </script>
