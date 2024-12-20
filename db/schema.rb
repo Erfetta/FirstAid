@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_12_09_184329) do
+ActiveRecord::Schema.define(version: 2024_12_20_115041) do
 
   create_table "measurement_data", force: :cascade do |t|
     t.string "measurement_type"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2024_12_09_184329) do
     t.integer "contact_method", null: false
     t.integer "flagCell"
     t.integer "flagInfo"
+    t.integer "rating"
+    t.text "review_text"
   end
 
   create_table "reports", force: :cascade do |t|

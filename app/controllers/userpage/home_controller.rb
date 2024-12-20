@@ -2,7 +2,7 @@ module Userpage
   class HomeController < ApplicationController
     def user_index
       @users = User.all
-
+      @report_pending = ReportDone.find_by(user_id: current_user.id, rating: nil)
       # Elimina i dati obsoleti
       @users.each(&:delete_old_data)
       @report_exists = false
@@ -81,6 +81,46 @@ module Userpage
         flash[:alert] = 'Errore nella creazione del report'
       end
     end
+
+    def review
+      puts "### Inizio metodo review"
+    
+      @report_pending = ReportDone.find_by(user_id: current_user.id, rating: nil)
+      
+      if @report_pending
+        puts "### Report trovato, id report: #{@report_pending.id}"
+    
+        @report_pending.rating = params[:rating]
+        @report_pending.review_text = params[:review_text]
+        
+        puts "### Rating: #{@report_pending.rating}"
+        puts "### Review text: #{@report_pending.review_text}"
+    
+        if @report_pending.save
+          puts "### Report salvato con successo"
+          flash.now[:notice] = "Recensione salvata con successo!"
+        else
+          puts "### Errore nel salvataggio del report"
+          flash.now[:alert] = "Si è verificato un errore nel salvataggio della recensione."
+          puts "Errori di validazione: #{@report_pending.errors.full_messages.join(', ')}"
+        end
+      else
+        puts "### Nessun report trovato"
+        flash.now[:alert] = "Non hai report in attesa di recensione."
+      end
+    
+      respond_to do |format|
+        format.js { render 'create' }  # renderizza il file create.js.erb
+        format.html { redirect_to root_path, notice: "Recensione inviata!" }
+      end
+    end
+    
+    
+    
+    
+    
+  
+
 
     private
     def tutorialID

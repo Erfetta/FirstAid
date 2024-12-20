@@ -17,6 +17,36 @@
             <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API_KEY']%>&callback=initMap&v=weekly" defer></script>
         </div>
 
+
+        <% if @report_pending.present? %>
+    <!-- Modal per la recensione -->
+    <div id="review-modal">
+        <div class="modal-content">
+        <!-- Pulsante per chiudere la modale -->
+        <span id="close-review-modal" class="close">&times;</span>
+        
+        <h2>Recensione</h2>
+
+        <%= form_with url: review_path, method: :post, remote: true, id: "review-form" do |form| %>
+        <div>
+            <label for="rating">Rating (da 1 a 5):</label>
+            <%= form.select :rating, options_for_select([1, 2, 3, 4, 5]), { include_blank: "Scegli un rating" }, id: "rating" %>
+        </div>
+
+        <div>
+            <label for="review_text">Recensione:</label>
+            <%= form.text_area :review_text, id: "review_text" %>
+        </div>
+
+        <%= form.submit "Salva Recensione" %>
+        <% end %>
+
+        </div>
+    </div>
+    <% end %>
+
+
+
     <!-- Tre bottoni sotto la mappa -->
     <div class="button-container_user">
         <%= link_to tutorial_path, class: 'button_user small-button_user' do %>
@@ -67,31 +97,76 @@
         <!-- JavaScript -->
          <script>
             document.addEventListener("DOMContentLoaded", () => {
-                const linkItems = document.querySelectorAll(".link-item");
-                const indicator = document.querySelector(".indicator_user");
+  const linkItems = document.querySelectorAll(".link-item");
+  const indicator = document.querySelector(".indicator_user");
+  const modal = document.getElementById("review-modal");
+  const closeButton = document.getElementById("close-review-modal");
+  const ratingSelect = document.getElementById("rating");
+  const reviewForm = document.getElementById("review-form"); // Seleziona il form
 
-                function updateIndicator() {
-                    const activeItem = document.querySelector(".link-item.active");
-                    if (activeItem) {
-                        const { offsetLeft, offsetWidth } = activeItem;
-                        indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
-                    }
-                }
+  // Debug: Verifica se la modale viene trovata correttamente
+  console.log("Modal trovato:", modal);
 
-                linkItems.forEach((linkItem) => {
-                    linkItem.addEventListener("click", () => {
-                        document.querySelector(".link-item.active")?.classList.remove("active");
-                        linkItem.classList.add("active");
-                        updateIndicator();
-                    });
-                });
+  function updateIndicator() {
+    const activeItem = document.querySelector(".link-item.active");
+    if (activeItem) {
+      const { offsetLeft, offsetWidth } = activeItem;
+      indicator.style.left = `${offsetLeft + (offsetWidth / 2)}px`;
+    }
+  }
 
-                updateIndicator();
-                window.addEventListener("resize", updateIndicator);
+  linkItems.forEach((linkItem) => {
+    linkItem.addEventListener("click", () => {
+      document.querySelector(".link-item.active")?.classList.remove("active");
+      linkItem.classList.add("active");
+      updateIndicator();
+    });
+  });
 
-                
+  updateIndicator();
+  window.addEventListener("resize", updateIndicator);
 
-            });
+  // Debug: Verifica che il report sia presente
+  const reportPending = <%= @report_pending.present? %>;
+  console.log("Report pending:", reportPending);
+  
+  if (reportPending) {
+    modal.style.display = "block";
+  }
+
+  // Quando si clicca sulla "X", chiudi la modale e imposta il rating a -1
+  closeButton.addEventListener("click", function() {
+    modal.style.display = "none";
+    console.log("X cliccata: la modale è stata chiusa.");
+
+    // Imposta il valore del rating a -1
+    if (ratingSelect) {
+      ratingSelect.value = -1; // Impostiamo il valore selezionato a -1
+      console.log("Rating impostato a:", ratingSelect.value);
+    }
+
+    // Invia il form dopo aver chiuso la modale
+    reviewForm.submit(); // Aggiungi questa riga per inviare il form
+  });
+
+  // Gestione della chiusura della modale cliccando fuori dal contenitore
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      console.log("Cliccato fuori dalla modale: la modale è stata chiusa.");
+
+      // Imposta il valore del rating a -1
+      if (ratingSelect) {
+        ratingSelect.value = -1; // Impostiamo il valore del rating a -1
+        console.log("Rating impostato a:", ratingSelect.value);
+      }
+
+      // Invia il form dopo aver chiuso la modale
+      reviewForm.submit(); // Aggiungi questa riga per inviare il form
+    }
+  });
+});
+
         </script>
     </div>
     </body>

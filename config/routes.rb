@@ -24,6 +24,11 @@ Rails.application.routes.draw do
     get '/reports/:id/exists', to: 'chat#exists'
 
     patch '/userpage/update_delete_data_after', to: 'userpage/profiles#update_delete_data_after'
+   
+   
+    # In config/routes.rb
+    post 'userpage/review', to: 'userpage/home#review', as: 'review' 
+
 
 
     #definizione rotta per la pagina di attesa
