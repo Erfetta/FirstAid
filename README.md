@@ -22,6 +22,8 @@ test sul controller : rails test test/controllers/user/home_controller_test.rb -
 
 test sul modello : rails test test/models/user_test.rb --verbose
 
+test report: rails test test/system/report_flow_test.rb --verbose
+
 
 Domande segnalazione emergenza:
 1) Il paziente è coscente?

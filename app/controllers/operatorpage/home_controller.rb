@@ -19,8 +19,11 @@ module Operatorpage
     def update_op_id
       @report = Report.find(params[:id])
       @report.operator_id = current_operator.id
+      Rails.logger.info "Saving report with ID: #{@report.id} in environment: #{Rails.env}"
       if @report.save
         redirect_to show_report_path
+      else
+        Rails.logger.error "Failed to save report: #{@report.errors.full_messages}"
       end
     end
 
@@ -29,6 +32,8 @@ module Operatorpage
       @report.operator_id = nil
       if @report.save
         redirect_to show_report_path
+      else
+        Rails.logger.error "Failed to save report: #{@report.errors.full_messages}"
       end
     end
 

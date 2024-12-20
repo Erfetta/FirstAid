@@ -1,14 +1,22 @@
+# test_helper.rb
 ENV['RAILS_ENV'] ||= 'test'
 require_relative "../config/environment"
 require "rails/test_help"
 
+# Esempio di backup e ripristino con Postgres
+
 class ActiveSupport::TestCase
-  # Run tests in parallel with specified workers
-  #parallelize(workers: :number_of_processors)
 
-
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  self.use_transactional_tests = false
   fixtures :all
-
-  # Add more helper methods to be used by all tests here...
+  
+  setup do
+    system("cp db/development.sqlite3 db/development_backup.sqlite3")
+  end
+  teardown do
+    system("rm db/development.sqlite3")
+    system("cp db/development_backup.sqlite3 db/development.sqlite3")
+    system("rm db/development_backup.sqlite3")
+  end
 end
+
