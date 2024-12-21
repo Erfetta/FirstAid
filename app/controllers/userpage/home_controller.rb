@@ -2,13 +2,13 @@ module Userpage
   class HomeController < ApplicationController
     def user_index
       @users = User.all
-      @report_pending = ReportDone.find_by(user_id: current_user.id, rating: nil)
       # Elimina i dati obsoleti
       @users.each(&:delete_old_data)
       @report_exists = false
       @user_report = nil
       if current_user.present?
         @user_reports = Report.where(user_id: current_user.id)
+        @report_pending = ReportDone.find_by(user_id: current_user.id, rating: nil)
         for report in @user_reports
           if report.contact_method == 1
             @user_report = report
@@ -84,8 +84,11 @@ module Userpage
 
     def review
       puts "### Inizio metodo review"
-    
-      @report_pending = ReportDone.find_by(user_id: current_user.id, rating: nil)
+      if current_user.nil?
+        @report_pending = nil
+      else
+        @report_pending = ReportDone.find_by(user_id: current_user.id, rating: nil)
+      end
       
       if @report_pending
         puts "### Report trovato, id report: #{@report_pending.id}"

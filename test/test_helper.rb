@@ -10,13 +10,5 @@ class ActiveSupport::TestCase
   self.use_transactional_tests = false
   fixtures :all
   
-  setup do
-    system("cp db/development.sqlite3 db/development_backup.sqlite3")
-  end
-  teardown do
-    system("rm db/development.sqlite3")
-    system("cp db/development_backup.sqlite3 db/development.sqlite3")
-    system("rm db/development_backup.sqlite3")
-  end
 end
 

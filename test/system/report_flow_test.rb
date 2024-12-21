@@ -1,33 +1,34 @@
 require "application_system_test_case"
 
 class ReportFlowTest < ApplicationSystemTestCase
+
   test "user creates a report and operator accepts it" do
     # Utente accede al sistema e crea un report
     puts "Inizio Test"
 
-#    visit "http://localhost:3000/login"
-#    fill_in "Email", with: "prova5@gamil.com"
-#    fill_in "Password", with: "123456"
-#    click_on "Login"
+    visit "http://localhost:3000/login"
+    fill_in "Email", with: "prova5@gamil.com"
+    fill_in "Password", with: "123456"
+    click_on "Login"
 
-#    puts "Accesso con utente"
+    puts "Accesso con utente"
     # L'utente compila il questionario
-#    visit "http://localhost:3000/new"
+    visit "http://localhost:3000/new"
 
-#    puts "Apertura pagina new report"
+    puts "Apertura pagina new report"
     # Clic sul primo pulsante dello slide attivo
-#    find("button#true1").click
+    find("button#true1").click
    
-#    find('.button-container_user button:last-of-type').click
+    find('.button-container_user button:last-of-type').click
 
-#    find('#sendBtn2').click
+    find('#sendBtn2').click
 
-#    click_on "INVIA"
+    click_on "INVIA"
 
-#    puts "Report inviato"
+    puts "Report inviato"
     # Verifica che l'utente sia sulla pagina di attesa
-#    assert current_url.start_with?("http://localhost:3000/waiting")
-#    assert_text "Attendere, uno dei nostri operatori risponderà a breve ..."
+    assert current_url.start_with?("http://localhost:3000/waiting")
+    assert_text "Attendere, uno dei nostri operatori risponderà a breve ..."
 
     # Resize pagina 
     page.driver.browser.manage.window.resize_to(1920, 1080)
@@ -46,10 +47,6 @@ class ReportFlowTest < ApplicationSystemTestCase
     click_on "Verifica"
     
     puts "Inserito OTP"
-
-    #within("#reports-section") do
-    #  first(".report_area_operator").click
-    #end
 
     sleep 10 # attendo che caricano i report
     reports_section = find(".reports_section_operator")
@@ -73,9 +70,32 @@ class ReportFlowTest < ApplicationSystemTestCase
     find(".chooseReportBtn").click
     puts "Prendi incarico"
 
+    find('.map-chat_selector_button2').click
+    puts "Apertura chat"
+
     sleep 1
 
-    #find('.select-chat_button').click
+    fill_in "message-input", with: "Salve, mi dica della sua emergenza"
+    click_on "Invia"
+    puts "Messaggio inviato"
+
+    sleep 2
+
+    # Torno alla pagina utente
+    visit "http://localhost:3000/"
+
+    page.driver.browser.manage.window.resize_to(640, 1080)
+    puts "Resize pagina da operatore a utente"
+
+    sleep 1
+
+    visit "http://localhost:3000/chat/#{report_id}"
+    puts "Apertura chat"
+
+    assert_text "Salve, mi dica della sua emergenza"
+
+    fill_in "message-input", with: "Ho bisogno di un ambulanza al più presto"
+    click_on "Invia"
     
   end
 end

@@ -1,6 +1,9 @@
 require "test_helper"
 
 class User2Test < ActiveSupport::TestCase
+  self.test_order = :sorted
+  parallelize(workers: 4)
+
   test "should not save user without email" do
     user = User.new(password: "password123", password_confirmation: "password123")
     assert_not user.save, "Saved the user without an email"

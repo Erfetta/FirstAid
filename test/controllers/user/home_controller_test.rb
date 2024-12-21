@@ -1,6 +1,15 @@
 require "test_helper"
 
 class User::HomeControllerTest < ActionDispatch::IntegrationTest
+
+  setup do
+    system("cp db/development.sqlite3 db/development_backup.sqlite3")
+  end
+  teardown do
+    system("mv db/development_backup.sqlite3 db/development_temp.sqlite3")
+    system("mv db/development_temp.sqlite3 db/development.sqlite3")
+  end
+
   test "should create user and redirect to login" do
     post registration_create_path, params: { 
       user: {

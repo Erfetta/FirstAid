@@ -1,6 +1,15 @@
 require "application_system_test_case"
 
 class UsersTest < ApplicationSystemTestCase
+
+  setup do
+    system("cp db/development.sqlite3 db/development_backup.sqlite3")
+  end
+  teardown do
+    system("mv db/development_backup.sqlite3 db/development_temp.sqlite3")
+    system("mv db/development_temp.sqlite3 db/development.sqlite3")
+  end
+
   test "user can register, login, and view profile" do
     # Step 1: Registrazione
     visit new_user_registration_path  # Visita la pagina di registrazione
