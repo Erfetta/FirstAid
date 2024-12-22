@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <%= javascript_include_tag 'Chart.bundle' %>
+    <%= javascript_include_tag 'chartkick' %>
+</head>
+<body>
+    <div class="container_navbar_supervisor">
+        <nav class="navbar_supervisor">
+            <%= button_to root_path, method: :get, class: 'nav-button_operator' do %>
+                <span class="material-symbols-outlined">
+                home
+                </span>
+            <% end %>
+            <%= button_to profile_path, method: :get, class: 'nav-button_operator' do %>
+                <span class="material-symbols-outlined">
+                person
+                </span>
+            <% end %>
+        </nav>
+
+        <div class="container_recap_sup">
+            <div class="chart-container-wrapper">
+                <div class="chart_container">
+                    <%= column_chart @daily_data, title: "Report per giorno" %>
+                </div>
+                <div class="chart_container">
+                    <%= column_chart @weekly_data, title: "Report per settimana" %>
+                </div>
+                <div class="chart_container">
+                    <%= column_chart @monthly_data, title: "Report per mese" %>
+                </div>
+            </div>
+            <div class="info-container-recap">
+                <div class="info-recap">
+                    <h2>Informazioni Report</h2>
+                    <p>Numero di report totali: <%= @contReport %></p>
+                    <p>Media report giornaliera: <%= @daily_data.values.sum / @daily_data.keys.length %></p>
+                    <p>Media report settimanale: <%= @weekly_data.values.sum / @weekly_data.keys.length %></p>
+                    <p>Media report mensile: <%= @monthly_data.values.sum / @monthly_data.keys.length %></p>
+                    <%= button_to "Lista Report", sup_report_list_path, method: :get, class: 'btn btn-primary'%>
+                </div>
+                <div class="info-recap">
+                    <h2>Informazioni Operatori</h2>
+                    <p>Numero di operatori totali: <%= @contOperator %></p>
+                    <p>Numero di operatori attivi: <%= @contOpActive %></p>
+                    <p>Media report per operatore: <%= @rep4op %></p>
+                    <p>Media feedback operatori: <%= @avgReview %></p>
+                    <%= button_to "Lista Operatori", root_path, method: :get, class: 'btn btn-primary'%>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

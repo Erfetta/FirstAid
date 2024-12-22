@@ -46,6 +46,49 @@ module Supervisorpage
       end
     end
 
+    def sup_recap
+      operators = Operator.where(supervisor_id: current_supervisor.id)
+      reports = ReportDone.where(operator_id: operators.pluck(:id))
+      @contReport = reports.count
+
+      @daily_data = reports
+        .group(Arel.sql("strftime('%Y-%m-%d', created_at)"))
+        .count
+
+      @weekly_data = reports
+        .group(Arel.sql("strftime('%Y-%W', created_at)"))
+        .count
+
+      @monthly_data = reports
+        .group(Arel.sql("strftime('%Y-%m', created_at)"))
+        .count
+
+      @contOperator = operators.count
+      @rep4op = (@contReport.to_f / @contOperator).round(2)
+      supRev = 0
+      contRev = 0
+      for rep in reports
+        if rep.rating != nil && rep.rating != -1
+          supRev += rep.rating
+          contRev += 1
+        end
+      end
+      if contRev == 0
+        @avgReview = 0
+      else
+        @avgReview = (supRev.to_f / contRev).round(2)
+      end
+
+      @contOpActive = 0
+      for op in operators
+        rep = ReportDone.where(operator_id: op.id).count
+        if rep > 0
+          @contOpActive += 1
+        end
+      end
+
+    end
+
     private
 
     def set_report

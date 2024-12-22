@@ -86,6 +86,7 @@ Rails.application.routes.draw do
     get 'sup_show_op/:id', to: 'supervisorpage/home#sup_show_op', as: 'sup_show_op'
     get 'sup_show_report/:id', to: 'supervisorpage/home#sup_show_report', as: 'sup_show_report'
     get 'sup_report_list', to: 'supervisorpage/home#sup_report_list', as: 'sup_report_list'
+    get 'sup_recap', to: 'supervisorpage/home#sup_recap', as: 'sup_recap'
 
     namespace :supervisorpage do
       resources :reports, only: [:show, :update] # Rotte per la parte supervisor
