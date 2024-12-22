@@ -17,6 +17,21 @@ module Supervisorpage
 
     def sup_show_op
       @contReport = ReportDone.where(operator_id: @operator.id).count
+      reports = ReportDone.where(operator_id: @operator.id).order(created_at: :desc)
+
+      sumReview = 0
+      contReview = 0
+      for rep in reports
+        if rep.rating != nil && rep.rating != -1
+          sumReview += rep.rating
+          contReview += 1
+        end
+      end
+      if contReview == 0
+        @avgReview = 0
+      else
+        @avgReview = (sumReview.to_f / contReview).round(2)
+      end
     end
 
     def sup_show_report
@@ -24,7 +39,11 @@ module Supervisorpage
     end
 
     def sup_report_list
-      @reports = ReportDone.all
+      @operators = Operator.where(supervisor_id: current_supervisor.id)
+      @reports = []
+      for operator in @operators
+        @reports.concat(ReportDone.where(operator_id: operator.id))
+      end
     end
 
     private

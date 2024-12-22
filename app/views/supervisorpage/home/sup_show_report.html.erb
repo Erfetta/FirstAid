@@ -151,9 +151,17 @@
                 <p><strong>Età:</strong> <%= @user.age %></p>
                 <p><strong>Sesso:</strong> <%= @user.sex %></p>
                 <% if @report.flagCell == 1%>
-                <p><strong>Cellulare:</strong> <%= @user.phone %></p>
+                  <p><strong>Cellulare:</strong> <%= @user.phone %></p>
                 <% else %>
-                <p><strong>Cellulare:</strong> Non condiviso</p>
+                  <p><strong>Cellulare:</strong> Non condiviso</p>
+                <% end %>
+                <% if @report.rating == -1 || @report.rating == nil%>
+                  <p><strong>Valutazione:</strong> Non assegnata</p>
+                <% else %>
+                  <p><strong>Valutazione:</strong> <%= @report.rating %></p>
+                  <% if @report.review_text != nil && @report.review_text != "" %>
+                    <p><strong>Commento:</strong> <%= @report.review_text %></p>
+                  <% end %>
                 <% end %>
               <% else %>
                 <h2>Utente non registrato </h2>
