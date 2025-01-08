@@ -1,6 +1,6 @@
-# FIRSTAID
+# FirstAid
 
-## TEST
+### TEST
 per eseguire i test usare i rispettivi comandi:
 
 test di registrazione e login: 
@@ -15,11 +15,11 @@ test sul modello :
 
 avviare i server per il test complesso
 
-test report: 
+test complesso sul report: 
 
     rails test test/system/report_flow_test.rb --verbose
 
-## START SERVERS
+### SERVER
 per avviare i server aprire tre shell e digitare in una:
 
     rails server -e user -p 3000 --pid tmp/pids/server_user.pid
@@ -30,5 +30,5 @@ nella terza:
 
     rails server -e supervisor -p 5000 --pid tmp/pids/server_supervisor.pid
     
-poi visitare rispettivamente [localhost:3000](http://localhost:3000) e [localhost:4000](http://localhost:4000) [localhost:5000](http://localhost:5000) 
+poi visitare rispettivamente [localhost:3000](http://localhost:3000), [localhost:4000](http://localhost:4000) e [localhost:5000](http://localhost:5000) 
 
