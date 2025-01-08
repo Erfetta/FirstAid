@@ -35,3 +35,5 @@
 
 # Ignore the environment file
 /.env
+log/operator.log
+log/user.log
