@@ -95,6 +95,9 @@ Rails.application.routes.draw do
     get 'add_operator', to: 'supervisorpage/add_operator#new', as: 'add_operator'
     post 'add_operator', to: 'supervisorpage/add_operator#create', as: 'add_operator_create'
 
+    post 'verify_otp', to: 'supervisorpage/login#verify_otp', as: 'verify_otp'
+    get 'verify_otp', to: 'supervisorpage/login#verify_otp'
+
   end 
 
 end

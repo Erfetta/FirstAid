@@ -59,5 +59,6 @@ module Operatorpage
         end
       end
     end
+    
   end
 end

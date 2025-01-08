@@ -38,9 +38,21 @@
                 <div class="info-recap">
                     <h2>Informazioni Report</h2>
                     <p>Numero di report totali: <%= @contReport %></p>
-                    <p>Media report giornaliera: <%= @daily_data.values.sum / @daily_data.keys.length %></p>
-                    <p>Media report settimanale: <%= @weekly_data.values.sum / @weekly_data.keys.length %></p>
-                    <p>Media report mensile: <%= @monthly_data.values.sum / @monthly_data.keys.length %></p>
+                    <% if @daily_data.keys.length == 0%>
+                        <p>Media report giornaliera: 0</p>
+                    <% else%>
+                        <p>Media report giornaliera: <%= @daily_data.values.sum / @daily_data.keys.length %></p>
+                    <% end %>
+                    <% if @weekly_data.keys.length == 0%>
+                        <p>Media report settimanale: 0</p>
+                    <% else%>
+                        <p>Media report settimanale: <%= @weekly_data.values.sum / @weekly_data.keys.length %></p>
+                    <% end %>
+                    <% if @monthly_data.keys.length == 0%>
+                        <p>Media report mensile: 0</p>
+                    <% else%>
+                        <p>Media report mensile: <%= @monthly_data.values.sum / @monthly_data.keys.length %></p>
+                    <% end %>
                     <%= button_to "Lista Report", sup_report_list_path, method: :get, class: 'btn btn-primary'%>
                 </div>
                 <div class="info-recap">

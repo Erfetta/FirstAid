@@ -25,7 +25,6 @@
 #    workplace: "Milano"
 #  )
 
-
 #  Operator.create!(
 #    email: "fettuccia56@gmail.com",
 #    password: "password123",
@@ -35,5 +34,3 @@
 #    workplace: "Roma",
 #    supervisor_id: 1 
 #    )
-
- 

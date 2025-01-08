@@ -6059,3 +6059,28 @@ Migrating to AddRatingAndReviewTextToReportDones (20241220115041)
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOtpToSupervisors (20250108182100)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "supervisor" ADD "otp" varchar[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOtpToSupervisors (20250108182100)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "supervisors" ADD "otp" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "supervisors" ADD "otp_expires_at" datetime[0m
+  [1m[36mActiveRecord::SchemaMigration Create (29.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20250108182100"]]
+  [1m[36mTRANSACTION (45.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSupervisor Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "supervisors" WHERE "supervisors"."email" = ? LIMIT ?[0m  [["email", "alessio.lavore@gmail.com"], ["LIMIT", 1]]
+  [1m[36mSupervisor Create (4.5ms)[0m  [1m[32mINSERT INTO "supervisors" ("email", "encrypted_password", "name", "surname", "workplace", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alessio.lavore@gmail.com"], ["encrypted_password", "$2a$12$PAEo2YpnU69wrQeirGe4Be2gB8OOGChO8gyZoA5dd3DF9Hvw18UcG"], ["name", "Alessio"], ["surname", "Lavore"], ["workplace", "Ciampino"], ["created_at", "2025-01-08 18:29:22.463385"], ["updated_at", "2025-01-08 18:29:22.463385"]]
+  [1m[36mTRANSACTION (59.7ms)[0m  [1m[36mcommit transaction[0m

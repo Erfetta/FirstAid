@@ -6,4 +6,9 @@ class SupervisorMailer < ApplicationMailer
     @workplace = workplace
     mail(to: email, subject: 'Registrazione Operatore - Credenziali di accesso')
   end
+  def send_otp(supervisor)
+    @supervisor = supervisor
+    @otp = supervisor.otp
+    mail(to: @supervisor.email, subject: 'Il tuo codice OTP per l’accesso')
+  end
 end

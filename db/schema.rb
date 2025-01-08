@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_12_20_115041) do
+ActiveRecord::Schema.define(version: 2025_01_08_182100) do
 
   create_table "measurement_data", force: :cascade do |t|
     t.string "measurement_type"
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 2024_12_20_115041) do
     t.string "workplace"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "otp"
+    t.datetime "otp_expires_at"
     t.index ["email"], name: "index_supervisors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_supervisors_on_reset_password_token", unique: true
   end
