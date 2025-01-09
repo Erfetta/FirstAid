@@ -48,9 +48,13 @@ class ReportFlowTest < ApplicationSystemTestCase
     
     puts "Inserito OTP"
 
-    sleep 10 # attendo che caricano i report
+
     reports_section = find(".reports_section_operator")
-    first_report = reports_section.all(".report_area_operator").first    
+    first_report = reports_section.all(".report_area_operator").first   
+    while first_report.nil?
+      sleep 1 # attendo che la pagina abbia finito di leggere dal db i dati necessari
+      first_report = reports_section.all(".report_area_operator").first
+    end 
     first_report.click
 
     puts "Apertura primo report"
