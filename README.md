@@ -32,3 +32,4 @@ nella terza:
     
 poi visitare rispettivamente [localhost:3000](http://localhost:3000), [localhost:4000](http://localhost:4000) e [localhost:5000](http://localhost:5000) 
 
+https://chatgpt.com/share/6787e4e7-8820-8001-b09d-8a9972aec993
