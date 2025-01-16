@@ -81,36 +81,58 @@
 <!-- JavaScript -->
     <script>
     document.addEventListener("DOMContentLoaded", () => {
+const dataDeleteSelect = document.querySelector("#data-delete-time");
 
-        const dataDeleteSelect = document.querySelector("#data-delete-time");
-
-    // Funzione per inviare il valore al server
-    function updateDeleteDataAfter(value) {
-      fetch('/userpage/update_delete_data_after', {
-        method: 'PATCH',
+    // Recupera il valore attuale dal server
+    fetch('/userpage/get_delete_data_after', {
+        method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
-          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-        },
-        body: JSON.stringify({ delete_data_after: value })
-      })
-      .then(response => {
-        if (!response.ok) throw new Error("Errore durante il salvataggio");
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+        }
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("Errore durante il recupero dei dati dal server");
         return response.json();
-      })
-      .then(data => {
-        console.log("Impostazione aggiornata con successo:", data);
-      })
-      .catch(error => {
-        console.error("Errore:", error);
-      });
-    }
-
-    // Aggiungi un listener al menu a tendina
-    dataDeleteSelect.addEventListener("change", (event) => {
-      const selectedValue = event.target.value;
-      updateDeleteDataAfter(selectedValue);
+    })
+    .then(data => {
+        // Imposta il valore dal server nel menu a tendina
+        if (data.delete_data_after) {
+            dataDeleteSelect.value = data.delete_data_after;
+        } else {
+            // Se non c'è valore sul server, lascia il selettore senza opzioni selezionate
+            dataDeleteSelect.value = "";
+        }
+    })
+    .catch(error => {
+        console.error("Errore nel recupero del valore:", error);
     });
+
+    // Aggiorna il valore sul server quando l'utente cambia l'opzione
+    dataDeleteSelect.addEventListener("change", (event) => {
+        const selectedValue = event.target.value;
+
+        fetch('/userpage/update_delete_data_after', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+            },
+            body: JSON.stringify({ delete_data_after: selectedValue })
+        })
+        .then(response => {
+            if (!response.ok) throw new Error("Errore durante il salvataggio");
+            return response.json();
+        })
+        .then(data => {
+            console.log("Impostazione aggiornata con successo:", data);
+        })
+        .catch(error => {
+            console.error("Errore:", error);
+        });
+    });
+
+    
 
         // Recupera i selettori
     const graphTimeSelect = document.querySelector("select[name='graph-time']");

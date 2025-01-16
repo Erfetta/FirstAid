@@ -54,8 +54,12 @@ class Userpage::ProfilesController < ApplicationController
     end
   end
 
+  def get_delete_data_after
+    user = current_user
+    render json: { delete_data_after: user.delete_data_after }
+  end
+
   def update_delete_data_after
-    # Supponendo che il record sia associato all'utente autenticato
     user = current_user
     if user.update(delete_data_after: params[:delete_data_after])
       render json: { success: true, message: 'Impostazione aggiornata con successo' }

@@ -23,6 +23,8 @@ Rails.application.routes.draw do
    
     get '/reports/:id/exists', to: 'chat#exists'
 
+
+    get '/userpage/get_delete_data_after', to: 'userpage/profiles#get_delete_data_after'
     patch '/userpage/update_delete_data_after', to: 'userpage/profiles#update_delete_data_after'
    
    
