@@ -7,46 +7,84 @@
 </head>
 
 <style>
-  #messages {
-    max-height: 400px;
-    overflow-y: auto;
+  .chat-box {
+    height: 100%;
+    width: 100%;
     border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .chat-section{
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    margin: 10px;
+    margin-top: 30px;
+  }
+
+  .message {
+    max-width: 60%;
+    margin-bottom: 10px;
     padding: 10px;
-    margin-top: 20px;
-}
+    border-radius: 10px;
+    position: relative;
+  }
+  .current-message {
+    background-color: lightblue;
+    margin-left: auto; /* Posizione a destra */
+    text-align: right; /* Allinea il testo a destra */
+  }
+  .other-message {
+    background-color: lightgreen;
+    margin-right: auto; /* Posizione a sinistra */
+    text-align: left; /* Allinea il testo a sinistra */
+  }
 
-.message {
-  max-width: 60%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.current-message {
-  background-color: lightblue;
-  margin-left: auto; /* Posizione a destra */
-  text-align: right; /* Allinea il testo a destra */
-}
-
-.other-message {
-  background-color: lightgreen;
-  margin-right: auto; /* Posizione a sinistra */
-  text-align: left; /* Allinea il testo a sinistra */
-}
+  .chat-form-container{
+    height: 50px;
+    background-color: #333;
+  }
+  .chat-form-container form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+  }
+  .chat-form-container input{
+    width: 40%;
+    height: 30px;
+    padding: 0 1rem;
+    border-radius: 10px;
+  }
+  .chat-form-container button{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+  }
+  .buttonToHome{
+    display: flex;
+    margin: 10px;
+  }
 </style>
 
 <body>
-<!-- Mostra i messaggi -->
-<div id="messages"></div>
+  
+  <div class="chat-box">
+    <%= link_to 'Torna alla Home', root_path, class: 'buttonToHome' %>
+    <!-- Area messaggi -->
+    <div class="chat-section" id="messages"></div>
 
-<!-- Form per inviare un nuovo messaggio -->
-<form id="chat-form">
-  <input type="text" id="message-input" placeholder="Scrivi un messaggio" required>
-  <button type="submit">Invia</button>
-</form>
-
-<%= link_to 'Torna alla Home', root_path, class: 'button' %>
+    <!-- Form per inviare un nuovo messaggio -->
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input type="text" id="message-input" placeholder="Scrivi un messaggio" required>
+        <button type="submit">Invia</button>
+      </form>
+    </div>
+  </div>
 </body>
 
 <script type="module">
