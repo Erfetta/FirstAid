@@ -48,36 +48,41 @@ class ReportFlowTest < ApplicationSystemTestCase
     
     puts "Inserito OTP"
 
-    flag = false
-    while !flag
-      begin
-        reports_section = find(".reports_section_operator")
-        flag = true
-      rescue
-        sleep 1
-      end
-    end
-    puts "Reports section trovata"
-    first_report = reports_section.all(".report_area_operator").first   
-    while first_report.nil?
-      sleep 1 # attendo che la pagina abbia finito di leggere dal db i dati necessari
-      first_report = reports_section.all(".report_area_operator").first
-    end 
-    puts "Report trovato"
-    puts first_report.text
-    first_report.click
+    sleep 2
+    rep_id = Report.last.id
+    puts "ID del report più recente: #{rep_id}"
 
+#    flag = false
+#    while !flag
+#      begin
+#        reports_section = find(".reports_section_operator")
+#        flag = true
+#      rescue
+#        sleep 1
+#      end
+#    end
+#    puts "Reports section trovata"
+#    first_report = reports_section.all(".report_area_operator").first   
+#    while first_report.nil?
+#      sleep 1 # attendo che la pagina abbia finito di leggere dal db i dati necessari
+#      first_report = reports_section.all(".report_area_operator").first
+#    end 
+#    puts "Report trovato"
+#    puts first_report.text
+#    first_report.click
+
+    visit "http://localhost:4000/show_report/#{rep_id}"
     puts "Apertura primo report"
     # Verifica che l'URL contenga la stringa 'show_report'
     assert_includes current_url, "show_report"
     sleep 1
 
-    first_report = find(".report_info_c1")
+    first_report_info = find(".report_info_c1")
     # Estrai l'ID del report
-    report_id = first_report.find("p", text: "Richiesta n°:").text.split(":").last.strip
+    report_id = first_report_info.find("p", text: "Richiesta n°:").text.split(":").last.strip
 
     # Stampa l'ID per il debug
-    puts "ID del report: #{report_id}"
+    puts "ID del report aperto: #{report_id}"
 
     sleep 1 # attendo che la pagina abbia finito di leggere dal db i dati necessari
     
