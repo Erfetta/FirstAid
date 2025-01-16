@@ -52,25 +52,6 @@ class ReportFlowTest < ApplicationSystemTestCase
     rep_id = Report.last.id
     puts "ID del report più recente: #{rep_id}"
 
-#    flag = false
-#    while !flag
-#      begin
-#        reports_section = find(".reports_section_operator")
-#        flag = true
-#      rescue
-#        sleep 1
-#      end
-#    end
-#    puts "Reports section trovata"
-#    first_report = reports_section.all(".report_area_operator").first   
-#    while first_report.nil?
-#      sleep 1 # attendo che la pagina abbia finito di leggere dal db i dati necessari
-#      first_report = reports_section.all(".report_area_operator").first
-#    end 
-#    puts "Report trovato"
-#    puts first_report.text
-#    first_report.click
-
     visit "http://localhost:4000/show_report/#{rep_id}"
     puts "Apertura primo report"
     # Verifica che l'URL contenga la stringa 'show_report'
